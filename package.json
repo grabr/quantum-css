@@ -1,0 +1,26 @@
+{
+  "name": "@grabrinc/quantum-css",
+  "version": "0.0.1",
+  "author": "Grabr Inc.",
+  "description": "Functional CSS library",
+  "main": "css/index.css",
+  "files": [
+    "css/",
+    "scss/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Grabr/quantum-css"
+  },
+  "homepage": "https://github.com/Grabr/quantum-css",
+  "scripts": {
+    "package": "gulp sass",
+    "watch": "gulp watch",
+    "publish:patch": "npm version patch; npm run package; npm publish",
+    "publish:release": "npm version minor; npm run package; npm publish"
+  },
+  "devDependencies": {
+    "gulp": "",
+    "gulp-sass": ""
+  }
+}

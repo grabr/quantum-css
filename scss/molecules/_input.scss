@@ -1,0 +1,26 @@
+// Button
+.input {
+  @extend .bds-s, .bdw1;
+  @extend .trp-c, .trd200ms;
+
+  &z { // Size
+    &-s {
+      @extend .fz16, .fw300;
+      @extend .py10, .px10;
+    }
+    &-m {
+      @extend .fz16, .fw300;
+      @extend .py15, .px15;
+    }
+  }
+
+  &r { // Radius
+    &-s,
+    &-m { @extend .bdr4 }
+  }
+
+  &c { // Style
+    &-g { @extend .bgc-g3, .bgc-g7-f, .c-b, .bdc-tt }
+    &-w { @extend .bgc-w, .c-b, .bdc-g7, .bdc-g12-f }
+  }
+}

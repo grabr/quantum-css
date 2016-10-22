@@ -1,0 +1,8 @@
+.fi {
+  &#{$literal-sep} {
+    &cc { color: currentColor }
+    &tt { color: transparent }
+  }
+
+  @include generate-partials($background-colors, fill);
+}

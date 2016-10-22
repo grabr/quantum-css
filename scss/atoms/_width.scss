@@ -1,0 +1,8 @@
+.w {
+  @include responsiveness() {
+    @include generate-partials($widths, width);
+
+    &max { @include generate-partials($widths, max-width) }
+    &min { @include generate-partials($widths, min-width) }
+  }
+}

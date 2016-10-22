@@ -1,0 +1,15 @@
+.m {
+  @include responsiveness() {
+    &x#{$literal-sep} {
+      &a {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    &, &y, &t { @include generate-partials($margins, margin-top) }
+    &, &x, &r { @include generate-partials($margins, margin-right) }
+    &, &y, &b { @include generate-partials($margins, margin-bottom) }
+    &, &x, &l { @include generate-partials($margins, margin-left) }
+  }
+}

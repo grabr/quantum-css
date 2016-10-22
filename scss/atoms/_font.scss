@@ -1,0 +1,97 @@
+.f {
+  &z {
+    &#{$literal-sep} {
+      &xxs {font-size: xx-small }
+      &xs  {font-size: x-small }
+      &s   {font-size: small }
+      &m   {font-size: medium }
+      &l   {font-size: large }
+      &xl  {font-size: x-large }
+      &xxl {font-size: xx-large }
+      &lr  {font-size: larger }
+      &sr  {font-size: smaller }
+      &i   {font-size: inherit }
+    }
+
+    @include generate-partials($font-sizes, font-size);
+  }
+
+  &f {
+    &#{$literal-sep} {
+      &s  {font-family: serif }
+      &ss {font-family: sans-serif }
+      &m  {font-family: monospace }
+      &c  {font-family: cursive }
+      &f  {font-family: fantasy }
+      &i  {font-family: inherit }
+    }
+
+    @include generate-partials($font-families, font-family);
+  }
+
+  &w {
+    &#{$ordinal-sep} {
+      @for $weight from 1 through 9 {
+        &#{$weight * 100} { font-weight: $weight * 100 }
+      }
+    }
+
+    &#{$literal-sep} {
+      &b  { @extend .fw700 }
+      &br { font-weight: bolder }
+      &lr { font-weight: lighter }
+      &n  { @extend .fw400 }
+      &i  { font-weight: inherit }
+    }
+  }
+
+  &s#{$literal-sep} {
+    &n { font-style: normal }
+    &i { font-style: italic }
+    &o { font-style: oblique }
+  }
+
+  &v#{$literal-sep} {
+    &cl  { font-variant: common-ligatures }
+    &apc { font-variant: all-petite-caps }
+    &asc { font-variant: all-small-caps }
+    &sc  { font-variant: small-caps }
+    &c   { font-variant: contextual }
+    &df  { font-variant: diagonal-fractions }
+    &sf  { font-variant: stacked-fractions }
+    &hf  { font-variant: historical-forms }
+    &hl  { font-variant: historical-ligatures }
+    &i   { font-variant: inherit }
+    &n   { font-variant: normal }
+    &tn  { font-variant: tabular-nums }
+    &pn  { font-variant: proportional-nums }
+    &pw  { font-variant: proportional-width }
+  }
+
+  &za#{$literal-sep} {
+    &n { font-size-adjust: none }
+  }
+
+  &st#{$literal-sep} {
+    &n  { font-stretch: normal }
+    &uc { font-stretch: ultra-condensed }
+    &ec { font-stretch: extra-condensed }
+    &c  { font-stretch: condensed }
+    &sc { font-stretch: semi-condensed }
+    &se { font-stretch: semi-expanded }
+    &e  { font-stretch: expanded }
+    &ee { font-stretch: extra-expanded }
+    &ue { font-stretch: ultra-expanded }
+  }
+}
+
+.wfsm#{$literal-sep} {
+  &a  { -webkit-font-smoothing: antialiased }
+  &sa { -webkit-font-smoothing: subpixel-antialiased }
+  &n  { -webkit-font-smoothing: none }
+}
+
+.mfsm#{$literal-sep} {
+  &a { -moz-osx-font-smoothing: auto }
+  &g { -moz-osx-font-smoothing: grayscale }
+}

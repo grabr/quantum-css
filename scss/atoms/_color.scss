@@ -1,0 +1,9 @@
+.c {
+  &#{$literal-sep} {
+    &tt { color: transparent }
+    &i  { color: inherit }
+  }
+
+  @include generate-partials($colors, color);
+  @include generate-partials($colors-pseudo, color, map-keys($pseudo-classes));
+}

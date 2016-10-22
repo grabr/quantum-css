@@ -1,0 +1,27 @@
+.ov {
+  &#{$literal-sep} {
+    &v { overflow: visible }
+    &h { overflow: hidden }
+    &s { overflow: scroll }
+    &a { overflow: auto }
+  }
+
+  &x#{$literal-sep} {
+    &v { overflow-x: visible }
+    &h { overflow-x: hidden }
+    &s { overflow-x: scroll }
+    &a { overflow-x: auto }
+  }
+
+  &y#{$literal-sep} {
+    &v { overflow-y: visible }
+    &h { overflow-y: hidden }
+    &s { overflow-y: scroll }
+    &a { overflow-y: auto }
+  }
+
+  &w#{$literal-sep} {
+    &n { overflow-wrap: normal }
+    &b { overflow-wrap: break-word }
+  }
+}

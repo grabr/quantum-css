@@ -1,0 +1,14 @@
+.tbl#{$literal-sep} {
+  &a { table-layout: auto }
+  &f { table-layout: fixed }
+}
+
+.cps#{$literal-sep} {
+  &t { caption-side: top }
+  &b { caption-side: bottom }
+}
+
+.ec#{$literal-sep} {
+  &s { empty-cells: show }
+  &h { empty-cells: hide }
+}

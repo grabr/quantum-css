@@ -1,0 +1,6 @@
+.rz#{$literal-sep} {
+  &n { resize: none }
+  &b { resize: both }
+  &h { resize: horizontal }
+  &v { resize: vertical }
+}

@@ -1,0 +1,21 @@
+.lis {
+  &#{$literal-sep} {
+    &n { list-style: none }
+  }
+
+  &p#{$literal-sep} {
+    &i { list-style-position: inside }
+    &o { list-style-position: outside }
+  }
+
+  &t#{$literal-sep} {
+    &n    { list-style-type: none }
+    &d    { list-style-type: disc }
+    &c    { list-style-type: circle }
+    &s    { list-style-type: square }
+    &dc   { list-style-type: decimal }
+    &dclz { list-style-type: decimal-leading-zero }
+    &lr   { list-style-type: lower-roman }
+    &ur   { list-style-type: upper-roman }
+  }
+}

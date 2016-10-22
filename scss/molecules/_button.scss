@@ -1,0 +1,22 @@
+.btn {
+  @extend .fw-i;
+  @extend .bds-s, .bdw1;
+  @extend .trp-c, .trd200ms;
+
+  &z { // Size
+    &-s { @extend .py10, .px20 }
+    &-m { @extend .py15, .px30 }
+  }
+
+  &r { // Radius
+    &-s,
+    &-m { @extend .bdr4 }
+  }
+
+  &c { // Style
+    &-bb { @extend .bgc-bb, .bgc-dbb-hf, .c-w, .bdc-tt } // Brand blue
+    &-o  { @extend .bgc-tt, .bgc-g3-hf, .c-bb, .c-dbb-hf, .bdc-bb, .bdc-dbb-hf } // Outline
+    &-fb { @extend .bgc-fb, .bgc-dfb-hf, .c-w, .bdc-tt } // Facebook
+    &-tw { @extend .bgc-tw, .bgc-dtw-hf, .c-w, .bdc-tt } // Twitter
+  }
+}

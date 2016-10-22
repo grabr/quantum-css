@@ -1,0 +1,12 @@
+.p {
+  @include responsiveness() {
+    &b#{$ordinal-sep} {
+      &100p { padding-bottom: 100% }
+    }
+
+    &, &y, &t { @include generate-partials($paddings, padding-top) }
+    &, &x, &r { @include generate-partials($paddings, padding-right) }
+    &, &y, &b { @include generate-partials($paddings, padding-bottom) }
+    &, &x, &l { @include generate-partials($paddings, padding-left) }
+  }
+}

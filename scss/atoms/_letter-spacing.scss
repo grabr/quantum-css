@@ -1,0 +1,8 @@
+.lts {
+  &#{$literal-sep} {
+    &n { letter-spacing: normal }
+    &i { letter-spacing: inherit }
+  }
+
+  @include generate-partials($letter-spacings, letter-spacing);
+}

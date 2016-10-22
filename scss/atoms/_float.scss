@@ -1,0 +1,9 @@
+.fl {
+  @include responsiveness() {
+    &#{$literal-sep} {
+      &l { float: left }
+      &r { float: right }
+      &n { float: none }
+    }
+  }
+}

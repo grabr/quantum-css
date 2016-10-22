@@ -1,0 +1,42 @@
+// Generates partial for column width, shifts ans offset
+@mixin generate-grid-cols(
+  $col-count: $grid-col-count
+) {
+  @for $i from 1 through $col-count {
+    $width: percentage($i / $col-count);
+    $id: #{$ordinal-sep}#{$i};
+
+    &c#{$id}  { width: $width }
+    &o#{$id}  { margin-left: $width }
+    &sl#{$id} { right: $width }
+    &sr#{$id} { left:  $width }
+  }
+}
+
+@mixin generate-grid(
+  $gutter:      0,
+  $width:       null,
+  $col-count:   $grid-col-count,
+  $breakpoints: $breakpoints
+) {
+  width: $width;
+  padding-left:  $gutter;
+  padding-right: $gutter;
+
+  &r {
+    margin-left:  $gutter / -2;
+    margin-right: $gutter / -2;
+  }
+
+  $gc-id: unique-id();
+  @at-root {
+    %#{$gc-id} {
+      position: relative;
+      padding-left:  $gutter / 2;
+      padding-right: $gutter / 2;
+    }
+  }
+  @for $i from 1 through $col-count {
+    &c#{$ordinal-sep}#{$i} { @extend %#{$gc-id} }
+  }
+}

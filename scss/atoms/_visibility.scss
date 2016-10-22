@@ -1,0 +1,9 @@
+.v {
+  @include responsiveness() {
+    &#{$literal-sep} {
+      &v { visibility: visible }
+      &h { visibility: hidden }
+      &c { visibility: collapse }
+    }
+  }
+}

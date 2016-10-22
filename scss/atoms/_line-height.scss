@@ -1,0 +1,13 @@
+.lh {
+  &#{$literal-sep} {
+    &n { line-height: normal }
+    &i { line-height: inherit }
+  }
+
+  &#{$ordinal-sep} {
+    &0 { line-height: 0 }
+    &1 { line-height: 1 }
+  }
+
+  @include generate-partials($line-heights, line-height);
+}

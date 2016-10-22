@@ -1,0 +1,82 @@
+.fx {
+  &#{$literal-sep} {
+    // Shorthands to create flex rows and columns by adding a single class name.
+    &r, &rr, &c, &cr { @extend .d#{$literal-sep}fx !optional }
+  }
+
+  &,
+  &d {
+    &#{$literal-sep} {
+      &r  { flex-direction: row }
+      &rr { flex-direction: row-reverse }
+      &c  { flex-direction: column }
+      &cr { flex-direction: column-reverse }
+    }
+  }
+
+  &w#{$literal-sep} {
+    &n  { flex-wrap: nowrap }
+    &w  { flex-wrap: wrap }
+    &wr { flex-wrap: wrap-reverse }
+  }
+
+  &g#{$ordinal-sep} {
+    @for $grow from 0 through 10 {
+      &#{$grow} { flex-grow: $grow }
+    }
+  }
+
+  &s#{$ordinal-sep} {
+    @for $shrink from 0 through 10 {
+      &#{$shrink} { flex-shrink: $shrink }
+    }
+  }
+
+  &b#{$literal-sep} {
+    &a   { flex-basis: auto }
+    &mac { flex-basis: max-content }
+    &mic { flex-basis: min-content }
+    &fc  { flex-basis: fit-content }
+    &c   { flex-basis: content }
+  }
+}
+
+.js#{$literal-sep} {
+  &fs { justify-content: flex-start }
+  &fe { justify-content: flex-end }
+  &c  { justify-content: center }
+  &sb { justify-content: space-between }
+  &sa { justify-content: space-around }
+}
+
+.ai#{$literal-sep} {
+  &fs { align-items: flex-start }
+  &fe { align-items: flex-end }
+  &c  { align-items: center }
+  &bs { align-items: baseline }
+  &s  { align-items: stretch }
+}
+
+.ac#{$literal-sep} {
+  &fs { align-content: flex-start }
+  &fe { align-content: flex-end }
+  &c  { align-content: center }
+  &sb { align-content: space-between }
+  &sa { align-content: space-around }
+  &s  { align-content: stretch }
+}
+
+.as#{$literal-sep} {
+  &a  { align-self: auto }
+  &fs { align-self: flex-start }
+  &fe { align-self: flex-end }
+  &c  { align-self: center }
+  &b  { align-self: baseline }
+  &s  { align-self: stretch }
+}
+
+.ord#{$ordinal-sep} {
+  @for $order from 0 through 10 {
+    &#{$order} { order: $order * 10 }
+  }
+}

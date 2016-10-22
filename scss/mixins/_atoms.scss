@@ -1,0 +1,106 @@
+// Get last item from the list.
+@function last($list) {
+  @return nth($list, length($list));
+}
+
+// Set last item to list and return new list.
+@function set-last($list, $value) {
+  @return set-nth($list, length($list), $value);
+}
+
+// Create media query for requested breakpoint.
+@mixin respond-to(
+  $breakpoint-id,
+  $breakpoints: $breakpoints
+) {
+  $width: map-get($breakpoints, $breakpoint-id);
+
+  @if $width == 0 {
+    @content;
+  }
+  @else {
+    @media (min-width: $width) {
+      @content;
+    }
+  }
+}
+
+// Inject breakpoint prefix for each selector in context and place inside corresponding media query.
+@mixin responsiveness(
+  $breakpoint-ids: map-keys($breakpoints),
+  $breakpoints:    $breakpoints
+) {
+  @if str-length(#{&}) == 0 {
+    @error 'Breakpoints should be spread in context: .foo { @include spread-breakpoints }';
+  }
+
+  @each $breakpoint-id in $breakpoint-ids {
+    @include respond-to($breakpoint-id) {
+
+      @if str-length(#{$breakpoint-id}) == 0 {
+        @content;
+      }
+      @else {
+        $selectors: ();
+        @each $selector in & {
+          // Prepend breakpoint to the last selector.
+          $class: str-insert(last($selector), #{$breakpoint-id}#{$breakpoint-sep}, 2);
+          $selectors: append($selectors, set-last($selector, $class), comma);
+        }
+        @at-root {
+          #{$selectors} { @content }
+        }
+      }
+    }
+  }
+}
+
+// Generates cartesian product of `$props` and `$value`.
+//
+// $props - list of CSS property names.
+// $value - value to assign to each property.
+@mixin spread-properties($props, $value) {
+  @each $prop in $props {
+    #{$prop}: $value;
+  }
+}
+
+// Generates &-bound partial for each key-value pair from `$values`.
+// Each partial has name `&#{key}` and contains each property from `$props` with value `#{value}`.
+//
+// $values - map from class name partial to value
+// $props - list of CSS property names
+// [$pseudo-class-ids] - list of pseudo-class ids to attach to generation
+// [$pseudo-class] - map from id to list of pseudo classes to append
+@mixin generate-partials(
+  $values,
+  $props,
+  $pseudo-class-ids: null,
+  $pseudo-classes:   $pseudo-classes
+) {
+  @each $value-id, $value in $values {
+    $value-sep: if(str-length(#{$value-id}) == 0, null, if(type-of($value-id) == string, $literal-sep, $ordinal-sep));
+
+    @if $pseudo-class-ids {
+      // Ensure that pseudo class selectors are attached to the same rule.
+      $partial-id: unique-id();
+      @at-root %#{$partial-id} {
+        @include spread-properties($props, $value);
+      }
+
+      @each $pseudo-class-id in $pseudo-class-ids {
+        @each $pseudo-class in map-get($pseudo-classes, $pseudo-class-id) {
+          &#{$value-sep}#{$value-id}#{$pseudo-class-sep}#{$pseudo-class-id}:#{$pseudo-class} {
+            // Partial extension class can be absent when no properties were spread.
+            @extend %#{$partial-id} !optional;
+          }
+        }
+      }
+    }
+    @else {
+      &#{$value-sep}#{$value-id} {
+        @include spread-properties($props, $value);
+      }
+    }
+  }
+}

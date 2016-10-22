@@ -1,0 +1,6 @@
+.cl#{$literal-sep} {
+  &l { clear: left }
+  &r { clear: right }
+  &b { clear: both }
+  &n { clear: none }
+}

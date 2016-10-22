@@ -1,0 +1,51 @@
+.t {
+  @include responsiveness() {
+    &a {
+      &#{$literal-sep} {
+        &l { text-align: left }
+        &c { text-align: center }
+        &r { text-align: right }
+        &j { text-align: justify }
+      }
+
+      &l#{$literal-sep} {
+        &l { text-align-last: left }
+        &c { text-align-last: center }
+        &r { text-align-last: right }
+        &j { text-align-last: justify }
+      }
+    }
+  }
+
+  &i { @include generate-partials($text-indents, text-indent) }
+
+  &d {
+    @include generate-partials((u: underline, n: none), text-decoration, map-keys($pseudo-classes));
+
+    &#{$literal-sep} {
+      &n  { text-decoration: none }
+      &u  { text-decoration: underline }
+      &o  { text-decoration: overline }
+      &lt { text-decoration: line-through }
+    }
+  }
+
+  &t#{$literal-sep} {
+    &c  { text-transform: capitalize }
+    &u  { text-transform: uppercase }
+    &l  { text-transform: lowercase }
+    &n  { text-transform: none }
+    &fw { text-transform: full-width }
+  }
+
+  &j#{$literal-sep} {
+    &a  { text-justify: auto }
+    &iw { text-justify: inter-word }
+    &d  { text-justify: distribute }
+  }
+
+  &ov#{$literal-sep} {
+    &e { text-overflow: ellipsis }
+    &c { text-overflow: clip }
+  }
+}

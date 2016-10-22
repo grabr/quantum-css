@@ -1,0 +1,7 @@
+.ws#{$literal-sep} {
+  &n  { white-space: normal }
+  &p  { white-space: pre }
+  &nw { white-space: nowrap }
+  &pw { white-space: pre-wrap }
+  &pl { white-space: pre-line }
+}

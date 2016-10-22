@@ -1,0 +1,10 @@
+.va#{$literal-sep} {
+  &sp { vertical-align: super }
+  &t  { vertical-align: top }
+  &tt { vertical-align: text-top }
+  &m  { vertical-align: middle }
+  &bs { vertical-align: baseline }
+  &b  { vertical-align: bottom }
+  &tb { vertical-align: text-bottom }
+  &sb { vertical-align: sub }
+}

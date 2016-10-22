@@ -1,0 +1,39 @@
+.g {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  &r {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @each $breakpoint-id in map-keys($breakpoints) {
+    $gutter: map-get($grid-gutters, $breakpoint-id);
+
+    @include respond-to($breakpoint-id) {
+      @include generate-grid($gutter, map-get($grid-widths, $breakpoint-id));
+    }
+    @include responsiveness($breakpoint-id) {
+      @include generate-grid-cols();
+
+      @at-root {
+        .p {
+          &#{$literal-sep}g { padding:        $gutter }
+          &x#{$literal-sep}g {
+            padding-left:  $gutter;
+            padding-right: $gutter;
+          }
+          &y#{$literal-sep}g {
+            padding-top:    $gutter;
+            padding-bottom: $gutter;
+          }
+          &t#{$literal-sep}g { padding-top:    $gutter }
+          &r#{$literal-sep}g { padding-right:  $gutter }
+          &b#{$literal-sep}g { padding-bottom: $gutter }
+          &l#{$literal-sep}g { padding-left:   $gutter }
+        }
+      }
+    }
+  }
+}

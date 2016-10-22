@@ -1,0 +1,49 @@
+.bd {
+  @include responsiveness() {
+    &c {
+      &#{$literal-sep} {
+        &cc { border-color: currentColor }
+        &tt { border-color: transparent }
+        &i  { border-color: inherit }
+      }
+
+      @include generate-partials($border-colors-pseudo, border-color, map-keys($pseudo-classes));
+    }
+
+    &c, &tc { @include generate-partials($border-colors, border-top-color) }
+    &c, &rc { @include generate-partials($border-colors, border-right-color) }
+    &c, &bc { @include generate-partials($border-colors, border-bottom-color) }
+    &c, &lc { @include generate-partials($border-colors, border-left-color) }
+
+    &w, &tw { @include generate-partials($border-widths, border-top-width) }
+    &w, &rw { @include generate-partials($border-widths, border-right-width) }
+    &w, &bw { @include generate-partials($border-widths, border-bottom-width) }
+    &w, &lw { @include generate-partials($border-widths, border-left-width) }
+
+    &r, &tr, &rr, &trr { @include generate-partials($border-radiuses, border-top-right-radius) }
+    &r, &tr, &lr, &tlr { @include generate-partials($border-radiuses, border-top-left-radius) }
+    &r, &br, &rr, &brr { @include generate-partials($border-radiuses, border-bottom-right-radius) }
+    &r, &br, &lr, &blr { @include generate-partials($border-radiuses, border-bottom-left-radius) }
+  }
+
+  &s#{$literal-sep} {
+    &n      { border-style: none }
+    &h      { border-style: hidden }
+    &dt     { border-style: dotted }
+    &ds     { border-style: dashed }
+    &s      { border-style: solid }
+    &db     { border-style: double }
+    &dtds   { border-style: dot-dash }
+    &dtdtds { border-style: dot-dot-dash }
+    &w      { border-style: wave }
+    &g      { border-style: groove }
+    &r      { border-style: ridge }
+    &i      { border-style: inset }
+    &o      { border-style: outset }
+  }
+
+  &cl#{$literal-sep} {
+    &c { border-collapse: collapse }
+    &s { border-collapse: separate }
+  }
+}

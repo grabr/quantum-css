@@ -1,0 +1,11 @@
+.pos#{$literal-sep} {
+  &s { position: static }
+  &a { position: absolute }
+  &r { position: relative }
+  &f { position: fixed }
+}
+
+.t { @include generate-partials($positions, top) }
+.r { @include generate-partials($positions, right) }
+.b { @include generate-partials($positions, bottom) }
+.l { @include generate-partials($positions, left) }

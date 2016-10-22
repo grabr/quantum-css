@@ -1,0 +1,23 @@
+.ts {
+  &t {
+    &x {
+      &#{$ordinal-sep} {
+        &-100p { transform: translateX(-100%) }
+        &100p  { transform: translateX(100%) }
+        &-50p  { transform: translateX(-50%) }
+        &50p   { transform: translateX(50%) }
+        &0     { transform: translateX(0) }
+      }
+    }
+
+    &y {
+      &#{$ordinal-sep} {
+        &-100p { transform: translateY(-100%) }
+        &100p  { transform: translateY(100%) }
+        &-50p  { transform: translateY(-50%) }
+        &50p   { transform: translateY(50%) }
+        &0     { transform: translateY(0) }
+      }
+    }
+  }
+}

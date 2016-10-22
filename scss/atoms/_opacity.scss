@@ -1,0 +1,5 @@
+.op#{$ordinal-sep} {
+  @for $opacity from 0 through 100 {
+    &#{$opacity} { opacity: $opacity / 100 }
+  }
+}

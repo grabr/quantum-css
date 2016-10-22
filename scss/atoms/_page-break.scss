@@ -1,0 +1,22 @@
+.pgb {
+  &b#{$literal-sep} {
+    &a  { page-break-after: auto }
+    &al { page-break-after: always }
+    &av { page-break-after: avoid }
+    &l  { page-break-after: left }
+    &r  { page-break-after: right }
+  }
+
+  &i#{$literal-sep} {
+    &a  { page-break-inside: auto }
+    &av { page-break-inside: avoid }
+  }
+
+  &a#{$literal-sep} {
+    &a  { page-break-after: auto }
+    &al { page-break-after: always }
+    &av { page-break-after: avoid }
+    &l  { page-break-after: left }
+    &r  { page-break-after: right }
+  }
+}

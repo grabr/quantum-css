@@ -1,0 +1,24 @@
+.tr {
+  &p#{$literal-sep} {
+    &n { transition-property: none }
+    &a { transition-property: all }
+    &c { transition-property: color, background-color, border-color, text-decoration-color }
+    &t { transition-property: transform }
+  }
+
+  &d#{$ordinal-sep} {
+    @for $duration from 1 through 10 {
+      &#{$duration * 100ms} { transition-duration: $duration * 100ms }
+    }
+  }
+
+  &tf#{$literal-sep} {
+    &e   { transition-timing-function: ease }
+    &ei  { transition-timing-function: ease-in }
+    &eo  { transition-timing-function: ease-out }
+    &eio { transition-timing-function: ease-in-out }
+    &l   { transition-timing-function: linear }
+    &ss  { transition-timing-function: step-start }
+    &se  { transition-timing-function: step-end }
+  }
+}

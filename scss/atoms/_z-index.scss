@@ -1,0 +1,12 @@
+.z {
+  &#{$ordinal-sep} {
+    @for $z-index from 0 through 10 {
+      &#{$z-index * 10} { z-index: $z-index * 10 }
+    }
+  }
+
+  &#{$literal-sep} {
+    &a { z-index: auto }
+    &i { z-index: inherit }
+  }
+}

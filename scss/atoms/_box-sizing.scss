@@ -1,0 +1,5 @@
+.bxz#{$literal-sep} {
+  &cb { box-sizing: content-box }
+  &bb { box-sizing: border-box }
+  &i  { box-sizing: inherit }
+}

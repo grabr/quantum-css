@@ -1,0 +1,5 @@
+.us#{$literal-sep} {
+  &n { user-select: none }
+  &t { user-select: text }
+  &a { user-select: all }
+}

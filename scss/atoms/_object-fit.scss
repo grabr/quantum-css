@@ -1,0 +1,8 @@
+.of#{$literal-sep} {
+  &n  { object-fit: none }
+  &f  { object-fit: fill }
+  &ct { object-fit: contain }
+  &cv { object-fit: cover }
+  &sd { object-fit: scale-down }
+  &i  { object-fit: inherit }
+}
