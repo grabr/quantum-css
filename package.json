@@ -1,6 +1,5 @@
 {
-  "name": "@grabrinc/quantum-css",
-  "private": true,
+  "name": "quantum-css",
   "version": "0.0.1",
   "author": "Grabr Inc.",
   "description": "Functional CSS library",
