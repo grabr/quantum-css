@@ -52,9 +52,9 @@ Template `button.btn.btnz-m.btnr-m.btnc-bb`
 ###### Example
 
 ```html
-<button class="btn btnz-m btnr-m btnc-bb"
+<button class="btn btnz-m btnr-m btnc-or"
         type="button">
-  Brand Blue
+  Outlined Red
 </button>
 ```
 
@@ -62,7 +62,5 @@ Template `button.btn.btnz-m.btnr-m.btnc-bb`
 - `.btn` Button common styles.
 - `.btnz-s`, `.btnz-m` Button sizes: small, medium.
 - `.btnr-s`, `.btnr-m` Button radiuses: small, medium.
-- `.btnc-bb` Button color: Brand blue.
-- `.btnc-o` Button color: Outline.
-- `.btnc-fb` Button color: Facebook.
-- `.btnc-tw` Button color: Twitter.
+- `.btnc-or` Button color: Outlined red.
+- `.btnc-g` Button color: Green.
