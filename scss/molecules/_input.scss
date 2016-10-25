@@ -1,26 +1,31 @@
 // Button
 .input {
-  @extend .bds-s, .bdw1;
-  @extend .trp-c, .trd200ms;
+  @include extend-atoms(
+          bds s, bdw 1,
+          trp c, trd 200ms
+  );
 
   &z { // Size
     &-s {
-      @extend .fz16, .fw300;
-      @extend .py10, .px10;
+      @include extend-atoms(
+              fz 1r,
+              p 0_25r
+      );
     }
     &-m {
-      @extend .fz16, .fw300;
-      @extend .py15, .px15;
+      @include extend-atoms(
+              fz 1r,
+              p 0_75r
+      );
     }
   }
 
   &r { // Radius
     &-s,
-    &-m { @extend .bdr4 }
+    &-m { @include extend-atoms(bdr 5) }
   }
 
   &c { // Style
-    &-g { @extend .bgc-g3, .bgc-g7-f, .c-b, .bdc-tt }
-    &-w { @extend .bgc-w, .c-b, .bdc-g7, .bdc-g12-f }
+    &-gr { @include extend-atoms(bgc g1, bgc g2 f, c bk, bdc tt) }
   }
 }

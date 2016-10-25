@@ -1,5 +1,7 @@
 @import '_normalize';
 @import 'atomic';
 
-//@import 'molecules/button';
-//@import 'molecules/input';
+@import 'mixins/_extend-atoms';
+
+@import 'molecules/button';
+@import 'molecules/input';

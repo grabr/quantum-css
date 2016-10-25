@@ -1,0 +1,18 @@
+@mixin extend-atoms($specs...) {
+  $atoms: ();
+
+  @each $spec in $specs {
+
+    $prop-id: nth($spec, 1);
+    $value-id: nth($spec, 2);
+
+    $pseudo-id: null;
+    @if length($spec) > 2 {
+      $pseudo-id: nth($spec, 3);
+    }
+
+    $atoms: append($atoms, unquote('.#{$prop-id}#{value-sep($value-id)}#{$value-id}#{if($pseudo-id, $pseudo-sep, null)}#{$pseudo-id}'), comma);
+  }
+
+  @extend #{$atoms};
+}

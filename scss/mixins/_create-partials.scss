@@ -40,6 +40,11 @@
   }
 }
 
+// Choose separator depending on $value-id.
+@function value-sep($value-id) {
+  @return if(str-length(#{$value-id}) == 0, null, if(type-of($value-id) == string, $literal-sep, $ordinal-sep));
+}
+
 // Generates partials for each id-value pair from `$values`.
 // Each partial is named `&#{id}` and contains each property from `$props` with value `#{value}`.
 //
@@ -55,10 +60,7 @@
   $create-no-pseudo: true
 ) {
   @each $value-id, $value in $values {
-    // Choose separator depending on $value-id.
-    $value-sep: if(str-length(#{$value-id}) == 0, null, if(type-of($value-id) == string, $literal-sep, $ordinal-sep));
-
-    &#{$value-sep}#{$value-id} {
+    &#{value-sep($value-id)}#{$value-id} {
 
       // Append pseudo ids to selector when needed.
       @if $pseudo-ids {
