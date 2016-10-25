@@ -1,9 +1,7 @@
-.v {
-  @include responsiveness() {
-    &#{$literal-sep} {
-      &v { visibility: visible }
-      &h { visibility: hidden }
-      &c { visibility: collapse }
-    }
+@include create-responsive-classes(v) {
+  &#{$literal-sep} {
+    &v { visibility: visible }
+    &h { visibility: hidden }
+    &c { visibility: collapse }
   }
 }

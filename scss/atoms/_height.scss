@@ -1,8 +1,13 @@
-.h {
-  @include responsiveness() {
-    @include generate-partials($heights, height);
+@include create-responsive-classes(h) {
+  @include create-partials($heights, height);
 
-    &max { @include generate-partials($heights, max-height) }
-    &min { @include generate-partials($heights, min-height) }
+  &max {
+    &#{$literal-sep} {
+      &n { max-height: none }
+    }
+
+    @include create-partials($heights, max-height);
   }
+
+  &min { @include create-partials($heights, min-height) }
 }

@@ -1,34 +1,27 @@
 .bg {
-  &c {
-    &#{$literal-sep} {
-      &cc { background-color: currentColor }
-      &tt { background-color: transparent }
-      &i  { background-color: inherit }
-
-      // Debug background colors
-      &db { background-color: rgba(#00f, .5) }
-      &dr { background-color: rgba(#f00, .5) }
-    }
-
-    @include generate-partials($background-colors, background-color);
-    @include generate-partials($background-colors-pseudo, background-color, map-keys($pseudo-classes));
-  }
-
-  &i#{$literal-sep} {
-    &n { background-image: none }
-  }
-
-  &r#{$literal-sep} {
-    &n { background-repeat: no-repeat }
-    &x { background-repeat: repeat-x }
-    &y { background-repeat: repeat-y }
-    &s { background-repeat: space }
-    &r { background-repeat: round }
-  }
-
   &a#{$literal-sep} {
     &f { background-attachment: fixed }
     &s { background-attachment: scroll }
+  }
+
+  &cp#{$literal-sep} {
+    &bb { background-clip: border-box }
+    &pb { background-clip: padding-box }
+    &cb { background-clip: content-box }
+    &i  { background-clip: inherit }
+  }
+
+  &c { @include create-cartesian-partials($background-colors, background-color) }
+
+  &i#{$literal-sep} {
+    &n { background-image: none }
+    &i { background-image: inherit }
+  }
+
+  &o#{$literal-sep} {
+    &bb { background-origin: border-box }
+    &pb { background-origin: padding-box }
+    &cb { background-origin: content-box }
   }
 
   &p {
@@ -56,27 +49,17 @@
     }
   }
 
-  &cp#{$literal-sep} {
-    &bb { background-clip: border-box }
-    &pb { background-clip: padding-box }
-    &cb { background-clip: content-box }
-  }
-
-  &o#{$literal-sep} {
-    &bb { background-origin: border-box }
-    &pb { background-origin: padding-box }
-    &cb { background-origin: content-box }
+  &r#{$literal-sep} {
+    &n { background-repeat: no-repeat }
+    &x { background-repeat: repeat-x }
+    &y { background-repeat: repeat-y }
+    &s { background-repeat: space }
+    &r { background-repeat: round }
   }
 
   &z#{$literal-sep} {
     &a  { background-size: auto }
     &ct { background-size: contain }
     &cv { background-size: cover }
-  }
-
-  &bm#{$literal-sep} {
-    &n { background-blend-mode: normal }
-    &d { background-blend-mode: darken }
-    &l { background-blend-mode: luminosity }
   }
 }

@@ -1,26 +1,26 @@
-.t {
-  @include responsiveness() {
-    &a {
-      &#{$literal-sep} {
-        &l { text-align: left }
-        &c { text-align: center }
-        &r { text-align: right }
-        &j { text-align: justify }
-      }
+@include create-responsive-classes(t) {
+  &a {
+    &#{$literal-sep} {
+      &l { text-align: left }
+      &c { text-align: center }
+      &r { text-align: right }
+      &j { text-align: justify }
+    }
 
-      &l#{$literal-sep} {
-        &l { text-align-last: left }
-        &c { text-align-last: center }
-        &r { text-align-last: right }
-        &j { text-align-last: justify }
-      }
+    &l#{$literal-sep} {
+      &l { text-align-last: left }
+      &c { text-align-last: center }
+      &r { text-align-last: right }
+      &j { text-align-last: justify }
     }
   }
+}
 
-  &i { @include generate-partials($text-indents, text-indent) }
+.t {
+  &i { @include create-partials($text-indents, text-indent) }
 
   &d {
-    @include generate-partials((u: underline, n: none), text-decoration, map-keys($pseudo-classes));
+    @include create-cartesian-partials((u: underline, n: none), text-decoration);
 
     &#{$literal-sep} {
       &n  { text-decoration: none }

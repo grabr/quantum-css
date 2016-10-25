@@ -13,7 +13,7 @@
       &i   {font-size: inherit }
     }
 
-    @include generate-partials($font-sizes, font-size);
+    @include create-partials($font-sizes, font-size);
   }
 
   &f {
@@ -26,7 +26,7 @@
       &i  {font-family: inherit }
     }
 
-    @include generate-partials($font-families, font-family);
+    @include create-partials($font-families, font-family);
   }
 
   &w {

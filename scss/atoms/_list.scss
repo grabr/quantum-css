@@ -1,11 +1,13 @@
 .lis {
   &#{$literal-sep} {
     &n { list-style: none }
+    &i { list-style: inherit }
   }
 
   &p#{$literal-sep} {
-    &i { list-style-position: inside }
-    &o { list-style-position: outside }
+    &in { list-style-position: inside }
+    &o  { list-style-position: outside }
+    &i  { list-style-position: inherit }
   }
 
   &t#{$literal-sep} {
@@ -17,5 +19,6 @@
     &dclz { list-style-type: decimal-leading-zero }
     &lr   { list-style-type: lower-roman }
     &ur   { list-style-type: upper-roman }
+    &i    { list-style-type: inherit }
   }
 }

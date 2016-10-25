@@ -5,7 +5,7 @@
   &f { position: fixed }
 }
 
-.t { @include generate-partials($positions, top) }
-.r { @include generate-partials($positions, right) }
-.b { @include generate-partials($positions, bottom) }
-.l { @include generate-partials($positions, left) }
+@include create-responsive-classes(t) { @include create-partials($positions, top) }
+@include create-responsive-classes(r) { @include create-partials($positions, right) }
+@include create-responsive-classes(b) { @include create-partials($positions, bottom) }
+@include create-responsive-classes(l) { @include create-partials($positions, left) }

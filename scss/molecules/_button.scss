@@ -1,4 +1,7 @@
 .btn {
+  @include extend(bds s, bdw 1);
+
+
   @extend .fw-i;
   @extend .bds-s, .bdw1;
   @extend .trp-c, .trd200ms;

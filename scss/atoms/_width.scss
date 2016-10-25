@@ -1,8 +1,13 @@
-.w {
-  @include responsiveness() {
-    @include generate-partials($widths, width);
+@include create-responsive-classes(w) {
+  @include create-partials($widths, width);
 
-    &max { @include generate-partials($widths, max-width) }
-    &min { @include generate-partials($widths, min-width) }
+  &max {
+    &#{$literal-sep} {
+      &n { max-width: none }
+    }
+
+    @include create-partials($widths, max-width);
   }
+
+  &min { @include create-partials($widths, min-width) }
 }

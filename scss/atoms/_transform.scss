@@ -1,23 +1,21 @@
-.ts {
-  &t {
-    &x {
-      &#{$ordinal-sep} {
-        &-100p { transform: translateX(-100%) }
-        &100p  { transform: translateX(100%) }
-        &-50p  { transform: translateX(-50%) }
-        &50p   { transform: translateX(50%) }
-        &0     { transform: translateX(0) }
-      }
-    }
+@include create-responsive-classes(ts) {
+  &#{$literal-sep} {
+    &n { transform: none }
+    &i { transform: inherit }
+  }
 
-    &y {
-      &#{$ordinal-sep} {
-        &-100p { transform: translateY(-100%) }
-        &100p  { transform: translateY(100%) }
-        &-50p  { transform: translateY(-50%) }
-        &50p   { transform: translateY(50%) }
-        &0     { transform: translateY(0) }
-      }
-    }
+  &r#{$literal-sep} {
+    &-ccw2t { transform: rotate(-2turn) }
+    &-ccw1t { transform: rotate(-1turn) }
+    &-cw1t  { transform: rotate(1turn) }
+    &-cw2t  { transform: rotate(2turn) }
+  }
+
+  &s#{$ordinal-sep} {
+    &0   { transform: scale(0) }
+    &25  { transform: scale(0.25) }
+    &50  { transform: scale(0.5) }
+    &75  { transform: scale(0.75) }
+    &200 { transform: scale(2) }
   }
 }

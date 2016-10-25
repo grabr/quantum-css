@@ -1,9 +1,7 @@
-.fl {
-  @include responsiveness() {
-    &#{$literal-sep} {
-      &l { float: left }
-      &r { float: right }
-      &n { float: none }
-    }
+@include create-responsive-classes(fl) {
+  &#{$literal-sep} {
+    &l { float: left }
+    &r { float: right }
+    &n { float: none }
   }
 }

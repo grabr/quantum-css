@@ -9,5 +9,5 @@
     &1 { line-height: 1 }
   }
 
-  @include generate-partials($line-heights, line-height);
+  @include create-partials($line-heights, line-height);
 }

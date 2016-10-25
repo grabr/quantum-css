@@ -1,170 +1,257 @@
-// Generator
+// Setup
 // -------------
-$breakpoint-sep:   '_' !default;
-$pseudo-class-sep: '-' !default;
-$literal-sep:      '-' !default;
-$ordinal-sep:      '' !default;
+$breakpoint-sep: '_' !default;
+$pseudo-sep:     '-' !default;
+$literal-sep:    '-' !default;
+$ordinal-sep:    '' !default;
 
-
-// Specificity
-// -------------
 // Mapping from breakpoint prefix to min-width when breakpoint is applied.
 $breakpoints: (
   null: 0,
-  SM:   580px,
-  MD:   992px,
-  LG:   1280px,
-);
-$pseudo-classes: (
-  hf: hover focus,
-  h:  hover,
-  f:  focus,
-);
+  SM:   576px,
+  MD:   768px,
+  LG:   992px,
+  XL:   1200px,
+) !default;
+
+// Pseudo-class and pseudo-element suffixes.
+// Specify space separated list to apply all pseudos to same class:
+// `$pseudos: (foo: empty hover)` would produce `.c-w-foo:empty:hover`.
+//
+// Specify comma separated list to create several selectors with given pseudos:
+// `$pseudos: (foo: (hover, focus))` would produce `.c-w-foo:hover` and `.c-w-foo:focus`.
+//
+// Specify comma separated list of space separated lists to create combination
+// of options described above:
+// `$pseudos: (foo: (empty hover, nth-of-type(2) focus))` would produce
+// `.c-w-foo:empty:hover` and `.c-w-foo:nth-of-type(2):focus`.
+$pseudos: (
+  hf: (hover, focus),
+  h: hover,
+  f: focus,
+) !default;
 
 
 // Grid
 // -------------
 $grid-gutter-base: 20px;
+
 $grid-col-count: 12;
+
 $grid-gutters: (
   null: 0,
   SM:   $grid-gutter-base,
   MD:   $grid-gutter-base,
   LG:   $grid-gutter-base,
+  XL:   $grid-gutter-base,
 );
+
 $grid-widths: (
   null: 100%,
-  SM:   720px,
-  MD:   960px,
-  LG:   1220px,
+  SM:   540px,
+  MD:   720px,
+  LG:   960px,
+  XL:   1140px,
 );
 
 
-// Common Colors
+// Colors
 // -------------
-$common-colors: (
-  // Grayscale
-  w:   #fff,
-  g3:  #f8f8f8, // 248 = 3% gray
-  g7:  #eee,    // 238 = 3% gray
-  g12: #e0e0e0, // 224 = 12% gray
-  b:   #000,
+// This variable is used only in this file.
+// Colors are taken from the Tango palette and serve demonstration purposes only.
+// http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines#Color_Palette
+// Abbreviations:
+//   l - Light
+//   d - Dark
+$predefined-colors: (
+  //// Greyscale
+  //w:  #fff,
+  //g1: #eeeeec,
+  //g2: #d3d7cf,
+  //g3: #babdb6,
+  //g4: #888a85,
+  //g5: #555753,
+  //g6: #2e3436,
+  //bk: #000,
+  //
+  //// Yellow
+  //ly: #fce94f,
+  //y:  #edd400,
+  //dy: #c4a000,
+  //
+  //// Orange
+  //lo: #fcaf3e,
+  //o:  #f57900,
+  //do: #ce5c00,
+  //
+  //// Brown
+  //lb: #e9b96e,
+  //b:  #c17d11,
+  //db: #8f5902,
+  //
+  //// Green
+  //lg: #8ae234,
+  //g:  #73d216,
+  //dg: #4e9a06,
+  //
+  //// Navy
+  //ln: #729fcf,
+  //n:  #3465a4,
+  //dn: #204a87,
+  //
+  //// Purple
+  //lp: #ad7f8a,
+  //p:  #75507b,
+  //dp: #5c3566,
+  //
+  //// Red
+  //lr: #ef2929,
+  //r:  #cc0000,
+  //dr: #a40000,
 
-  // Brand
-  bb:  #48A8c1,             // Brand blue
-  dbb: darken(#55a9b6, 7%), // Dark brand blue
-);
+  cc: currentColor,
+  tt: transparent,
+  i:  inherit,
+) !default;
 
 
-// Background
+// Backgrounds
 // -------------
-$background-colors: map-merge($common-colors, (
-  y:   #fff3ea,            // Yellow
-  stb: rgba(#000, .4),     // Semi-transparent black
-  str: rgba(#ff806f, .93), // Semi-transparent red
-  fb:  #48649f,            // Facebook
-  tw:  #50acee,            // Twitter
-));
-$background-colors-pseudo: map-merge($common-colors, (
-  dfb: darken(#48649f, 7%), // Facebook
-  dtw: darken(#50acee, 7%), // Twitter
-));
-
-
-// Foreground
-// -------------
-$colors: map_merge($common-colors, (
-  g44: #8f8f95, // 143 = 44% gray
-  g65: #57585a, // 88 = 65% gray
-  r:   #ff806f, // Red
-));
-$colors-pseudo: $common-colors;
+$background-colors: $predefined-colors !default;
 
 
 // Borders
 // -------------
+$border-colors: $predefined-colors !default;
+
 $border-widths: (
-  0: 0,
-  1: 1px,
-);
-$border-radiuses: (
-  4:  4px,  // Buttons
-  99: 99px, // Pills and circles
+  1:  1px,
   i:  inherit,
-);
-$border-colors:        $common-colors;
-$border-colors-pseudo: $common-colors;
+) !default;
+
+$border-radiuses: (
+  10: 10px,
+  5:  5px,
+  c:  9999px, // Circle
+  i:  inherit,
+) !default;
+
+$border-styles: (
+  n:      none,
+  h:      hidden,
+  dt:     dotted,
+  ds:     dashed,
+  s:      solid,
+  db:     double,
+  dtds:   dot-dash,
+  dtdtds: dot-dot-dash,
+  w:      wave,
+  g:      groove,
+  r:      ridge,
+  in:     inset,
+  o:      outset,
+  i:      inherit,
+) !default;
 
 
-// Font & Text
+// Text
 // -------------
-$font-size-base: 16px;
-$line-height-base: 1.2;
-$font-families: (
-  ss: (Circe, sans-serif)
-);
+$colors: $predefined-colors !default;
+
+$font-size-root: 16px !default;
+
 $font-sizes: (
-  11: 11px,
-  16: $font-size-base,
-  22: 22px,
-  32: 32px,
-  43: 43px, // Headings
-);
-$text-indents: ();
+  1r: 1rem, // Base size
+
+  lg: 1.25rem,
+  sm: .875rem,
+  xs: .75rem,
+
+  h1: 2.5rem,
+  h2: 2rem,
+  h3: 1.75rem,
+  h4: 1.5rem,
+  h5: 1.25rem,
+  h6: 1rem,
+
+  d1: 6rem,
+  d2: 5.5rem,
+  d3: 4.5rem,
+  d4: 3.5rem,
+) !default;
+
+$font-families: (
+  ss: (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif),
+  s:  (Georgia, 'Times New Roman', Times, serif),
+  m:  (Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace)
+) !default;
+
 $line-heights: (
-  13: 1.3,
-);
-$letter-spacings: ();
+  h: 1.1, // Headings
+  t: 1.3, // Text
+) !default;
+
+$letter-spacings: (
+  1: 1px,
+  2: 2px,
+) !default;
+
+$text-indents: (
+  1r:     1rem,
+  -9999r: -9999px,
+) !default;
 
 
 // Spacings
 // -------------
-$margins:  (
-  -10: -10px,
-  -5:  -5px,
-  5:   5px,
-  10:  10px,
-  15:  15px,
-  20:  20px,
-  30:  30px,
-  50:  50px,
-  70:  70px,
-);
+$margins: (
+  '-3r':    -3rem,
+  '-1_5r':  -1.5rem,
+  '-1_25r': -1.25rem,
+  '-1r':    -1rem,
+  '-0_75r': -.75rem,
+  '-0_5r':  -.5rem,
+  '-0_25r': -.25rem,
+  '0':      0,
+  '0_25r':  .25rem,
+  '0_5r':   .5rem,
+  '0_75r':  .75rem,
+  '1r':     1rem,
+  '1_25r':  1.25rem,
+  '1_5r':   1.5rem,
+  '3r':     3rem,
+) !default;
+
 $paddings: (
-  5:  5px,
-  10: 10px,
-  15: 15px,
-  20: 20px,
-  30: 30px,
-  50: 50px,
-  70: 70px,
-);
-
-
-// Dimensions
-// -------------
-$heights: (
-  // Guideline
-  10:  10px,  // Small star
-  24:  24px,  // Navbar icons
-  35:  35px,  // Avatar
-  80:  80px,  // Large avatar
-  100: 100px, // Popular direction icon
-  260: 260px, // Grab card image,
-
-  // System
-  100p: 100%,
-  50p:  50%,
-  0:    0,
-);
-$widths: $heights;
+  0:     0,
+  0_25r: .25rem,
+  0_5r:  .5rem,
+  0_75r: .75rem,
+  1r:    1rem,
+  1_25r: 1.25rem,
+  1_5r:  1.5rem,
+  3r:    3rem,
+) !default;
 
 
 // Positions
 // -------------
 $positions: (
-  0:    0,
-  15:   15px,
-  50p:  50%,
-  100p: 100%,
-);
+  -50p:  -50%,
+  -100p: -100%,
+   100p:  100%,
+   50p:   50%,
+   0:     0,
+) !default;
+
+
+// Dimensions
+// -------------
+$widths: (
+  100p:  100%,
+  50p:   50%,
+  0:     0,
+  i:     inherit
+) !default;
+
+$heights: $widths !default;

@@ -1,41 +1,39 @@
-.d {
-  @include responsiveness() {
-    &#{$literal-sep} {
-      &n  { display: none }
-      &b  { display: block }
-      &fx { display: flex }
-      &li { display: list-item }
-      &ri { display: run-in }
+@include create-responsive-classes(d) {
+  &#{$literal-sep} {
+    &n  { display: none }
+    &b  { display: block }
+    &fx { display: flex }
+    &li { display: list-item }
+    &ri { display: run-in }
 
-      &i {
-        display: inline;
+    &i {
+      display: inline;
 
-        &tb { display: inline-table }
-        &fx { display: inline-flex }
-        &b  { display: inline-block }
-      }
+      &tb { display: inline-table }
+      &fx { display: inline-flex }
+      &b  { display: inline-block }
+    }
 
-      &tb {
-        display: table;
+    &tb {
+      display: table;
 
-        &cp { display: table-caption }
-        &c  { display: table-column }
-        &cg { display: table-column-group }
-        &hg { display: table-header-group }
-        &fg { display: table-footer-group }
-        &r  { display: table-row }
-        &rg { display: table-row-group }
-        &cl { display: table-cell }
-      }
+      &cp { display: table-caption }
+      &c  { display: table-column }
+      &cg { display: table-column-group }
+      &hg { display: table-header-group }
+      &fg { display: table-footer-group }
+      &r  { display: table-row }
+      &rg { display: table-row-group }
+      &cl { display: table-cell }
+    }
 
-      &rb {
-        display: ruby;
+    &rb {
+      display: ruby;
 
-        &b  { display: ruby-base }
-        &bc { display: ruby-base-container }
-        &t  { display: ruby-text }
-        &tc { display: ruby-text-container }
-      }
+      &b  { display: ruby-base }
+      &bc { display: ruby-base-container }
+      &t  { display: ruby-text }
+      &tc { display: ruby-text-container }
     }
   }
 }

@@ -1,49 +1,34 @@
-.bd {
-  @include responsiveness() {
-    &c {
-      &#{$literal-sep} {
-        &cc { border-color: currentColor }
-        &tt { border-color: transparent }
-        &i  { border-color: inherit }
-      }
+@include create-responsive-classes(bd) {
 
-      @include generate-partials($border-colors-pseudo, border-color, map-keys($pseudo-classes));
-    }
+  &c  { @include create-cartesian-partials($border-colors, border-color) }
+  &tc { @include create-cartesian-partials($border-colors, border-top-color) }
+  &rc { @include create-cartesian-partials($border-colors, border-right-color) }
+  &bc { @include create-cartesian-partials($border-colors, border-bottom-color) }
+  &lc { @include create-cartesian-partials($border-colors, border-left-color) }
 
-    &c, &tc { @include generate-partials($border-colors, border-top-color) }
-    &c, &rc { @include generate-partials($border-colors, border-right-color) }
-    &c, &bc { @include generate-partials($border-colors, border-bottom-color) }
-    &c, &lc { @include generate-partials($border-colors, border-left-color) }
+  &w  { @include create-partials($border-widths, border-width) }
+  &tw { @include create-partials($border-widths, border-top-width) }
+  &rw { @include create-partials($border-widths, border-right-width) }
+  &bw { @include create-partials($border-widths, border-bottom-width) }
+  &lw { @include create-partials($border-widths, border-left-width) }
 
-    &w, &tw { @include generate-partials($border-widths, border-top-width) }
-    &w, &rw { @include generate-partials($border-widths, border-right-width) }
-    &w, &bw { @include generate-partials($border-widths, border-bottom-width) }
-    &w, &lw { @include generate-partials($border-widths, border-left-width) }
+  &s  { @include create-partials($border-styles, border-style) }
+  &ts { @include create-partials($border-styles, border-top-style) }
+  &rs { @include create-partials($border-styles, border-right-style) }
+  &bs { @include create-partials($border-styles, border-bottom-style) }
+  &ls { @include create-partials($border-styles, border-left-style) }
 
-    &r, &tr, &rr, &trr { @include generate-partials($border-radiuses, border-top-right-radius) }
-    &r, &tr, &lr, &tlr { @include generate-partials($border-radiuses, border-top-left-radius) }
-    &r, &br, &rr, &brr { @include generate-partials($border-radiuses, border-bottom-right-radius) }
-    &r, &br, &lr, &blr { @include generate-partials($border-radiuses, border-bottom-left-radius) }
-  }
+  &r             { @include create-partials($border-radiuses, border-radius) }
+  &tr, &rr, &trr { @include create-partials($border-radiuses, border-top-right-radius) }
+  &tr, &lr, &tlr { @include create-partials($border-radiuses, border-top-left-radius) }
+  &br, &rr, &brr { @include create-partials($border-radiuses, border-bottom-right-radius) }
+  &br, &lr, &blr { @include create-partials($border-radiuses, border-bottom-left-radius) }
+}
 
-  &s#{$literal-sep} {
-    &n      { border-style: none }
-    &h      { border-style: hidden }
-    &dt     { border-style: dotted }
-    &ds     { border-style: dashed }
-    &s      { border-style: solid }
-    &db     { border-style: double }
-    &dtds   { border-style: dot-dash }
-    &dtdtds { border-style: dot-dot-dash }
-    &w      { border-style: wave }
-    &g      { border-style: groove }
-    &r      { border-style: ridge }
-    &i      { border-style: inset }
-    &o      { border-style: outset }
-  }
-
-  &cl#{$literal-sep} {
+.bg {
+  &ce#{$literal-sep} {
     &c { border-collapse: collapse }
     &s { border-collapse: separate }
+    &i { border-collapse: inherit }
   }
 }
