@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "author": "Grabr Inc.",
   "description": "Functional CSS library",
-  "main": "css/index.css",
+  "main": "css/molecular.css",
   "files": [
     "css/",
     "scss/"
