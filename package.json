@@ -16,8 +16,8 @@
   "scripts": {
     "package": "gulp sass",
     "watch": "gulp watch",
-    "publish:patch": "npm version patch; npm run package; npm publish",
-    "publish:release": "npm version minor; npm run package; npm publish"
+    "publish:patch": "npm version patch && npm run package && npm publish",
+    "publish:release": "npm version minor && npm run package && npm publish"
   },
   "devDependencies": {
     "gulp": "",
