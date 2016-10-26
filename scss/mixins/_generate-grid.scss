@@ -2,11 +2,13 @@
 @mixin generate-grid-cols(
   $col-count: $grid-col-count
 ) {
-  @for $i from 1 through $col-count {
+  @for $i from 0 through $col-count {
     $width: percentage($i / $col-count);
     $id: #{$ordinal-sep}#{$i};
 
-    &c#{$id}  { width: $width }
+    @if $i != 0 {
+      &c#{$id}  { width: $width }
+    }
     &o#{$id}  { margin-left: $width }
     &sl#{$id} { right: $width }
     &sr#{$id} { left:  $width }
