@@ -34,9 +34,9 @@ $pseudos: (
 
 // Grid
 // -------------
-$grid-gutter-base: 20px;
+$grid-gutter-base: 20px !default;
 
-$grid-col-count: 12;
+$grid-col-count: 12 !default;
 
 $grid-gutters: (
   null: 0,
@@ -44,7 +44,7 @@ $grid-gutters: (
   MD:   $grid-gutter-base,
   LG:   $grid-gutter-base,
   XL:   $grid-gutter-base,
-);
+) !default;
 
 $grid-widths: (
   null: 100%,
@@ -52,7 +52,7 @@ $grid-widths: (
   MD:   720px,
   LG:   960px,
   XL:   1140px,
-);
+) !default;
 
 
 // Colors
