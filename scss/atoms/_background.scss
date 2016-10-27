@@ -1,3 +1,7 @@
+@include create-responsive-classes(bg) {
+  &c { @include create-cartesian-partials($background-colors, background-color) }
+}
+
 .bg {
   &a#{$literal-sep} {
     &f { background-attachment: fixed }
@@ -10,8 +14,6 @@
     &cb { background-clip: content-box }
     &i  { background-clip: inherit }
   }
-
-  &c { @include create-cartesian-partials($background-colors, background-color) }
 
   &i#{$literal-sep} {
     &n { background-image: none }
