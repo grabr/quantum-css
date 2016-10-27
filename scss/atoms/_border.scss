@@ -1,22 +1,22 @@
 @include create-responsive-classes(bd) {
 
-  &c  { @include create-cartesian-partials($border-colors, border-color) }
-  &tc { @include create-cartesian-partials($border-colors, border-top-color) }
-  &rc { @include create-cartesian-partials($border-colors, border-right-color) }
-  &bc { @include create-cartesian-partials($border-colors, border-bottom-color) }
-  &lc { @include create-cartesian-partials($border-colors, border-left-color) }
+  &c       { @include create-cartesian-partials($border-colors, border-color) }
+  &ys, &tc { @include create-cartesian-partials($border-colors, border-top-color) }
+  &xs, &rc { @include create-cartesian-partials($border-colors, border-right-color) }
+  &ys, &bc { @include create-cartesian-partials($border-colors, border-bottom-color) }
+  &xs, &lc { @include create-cartesian-partials($border-colors, border-left-color) }
 
-  &w  { @include create-partials($border-widths, border-width) }
-  &tw { @include create-partials($border-widths, border-top-width) }
-  &rw { @include create-partials($border-widths, border-right-width) }
-  &bw { @include create-partials($border-widths, border-bottom-width) }
-  &lw { @include create-partials($border-widths, border-left-width) }
+  &w       { @include create-partials($border-widths, border-width) }
+  &ys, &tw { @include create-partials($border-widths, border-top-width) }
+  &xs, &rw { @include create-partials($border-widths, border-right-width) }
+  &ys, &bw { @include create-partials($border-widths, border-bottom-width) }
+  &xs, &lw { @include create-partials($border-widths, border-left-width) }
 
-  &s  { @include create-partials($border-styles, border-style) }
-  &ts { @include create-partials($border-styles, border-top-style) }
-  &rs { @include create-partials($border-styles, border-right-style) }
-  &bs { @include create-partials($border-styles, border-bottom-style) }
-  &ls { @include create-partials($border-styles, border-left-style) }
+  &s       { @include create-partials($border-styles, border-style) }
+  &ys, &ts { @include create-partials($border-styles, border-top-style) }
+  &xs, &rs { @include create-partials($border-styles, border-right-style) }
+  &ys, &bs { @include create-partials($border-styles, border-bottom-style) }
+  &xs, &ls { @include create-partials($border-styles, border-left-style) }
 
   &r             { @include create-partials($border-radiuses, border-radius) }
   &tr, &rr, &trr { @include create-partials($border-radiuses, border-top-right-radius) }
