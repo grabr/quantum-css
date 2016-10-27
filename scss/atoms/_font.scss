@@ -1,4 +1,4 @@
-.f {
+@include create-responsive-classes(f) {
   &z {
     &#{$literal-sep} {
       &xxs {font-size: xx-small }
@@ -37,10 +37,10 @@
     }
 
     &#{$literal-sep} {
-      &b  { @extend .fw700 }
+      &n  { font-weight: normal }
+      &b  { font-weight: bold }
       &br { font-weight: bolder }
       &lr { font-weight: lighter }
-      &n  { @extend .fw400 }
       &i  { font-weight: inherit }
     }
   }
@@ -50,7 +50,9 @@
     &i { font-style: italic }
     &o { font-style: oblique }
   }
+}
 
+.f {
   &v#{$literal-sep} {
     &cl  { font-variant: common-ligatures }
     &apc { font-variant: all-petite-caps }
