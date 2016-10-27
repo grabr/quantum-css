@@ -1,6 +1,6 @@
 {
   "name": "quantum-css",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Grabr Inc.",
   "description": "Functional CSS library",
   "main": "css/molecular.css",
