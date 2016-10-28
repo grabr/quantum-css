@@ -25,3 +25,8 @@
     &b { overflow-wrap: break-word }
   }
 }
+
+.wovs#{$literal-sep} {
+  &t { -webkit-overflow-scrolling: touch }
+  &a { -webkit-overflow-scrolling: auto }
+}
