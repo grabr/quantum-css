@@ -1,1 +1,3 @@
-.c { @include create-cartesian-partials($colors, color) }
+@include create-responsive-classes(c) {
+  @include create-cartesian-partials($colors, color);
+}
