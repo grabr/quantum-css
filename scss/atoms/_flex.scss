@@ -1,4 +1,4 @@
-.fx {
+@include create-responsive-classes(fx) {
   &#{$literal-sep} {
     // Shorthands to create flex rows and columns by adding a single class name.
     &r, &rr, &c, &cr { @extend .d#{$literal-sep}fx !optional }
