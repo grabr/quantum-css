@@ -364,7 +364,7 @@ Template `.g>.gr>.gc`
 
 1. <code><b>g</b>r</code> Grid row.
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>1</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>12</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>c1</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>c12</code>
 Grid column span. `gc2` would occupy two columns of grid. Grid has same number of columns on every breakpoint.
 
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o0</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o12</code>
