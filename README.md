@@ -273,7 +273,6 @@ $border-styles: (
 
 ### Cursor
 
-.cur#{$literal-sep} {
 - <code>.<b>c</b>-a</code> → `cursor: auto`
 - <code>.<b>c</b>-d</code> → `cursor: default`
 - <code>.<b>c</b>-cm</code> → `cursor: context-menu`
