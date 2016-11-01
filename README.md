@@ -4,7 +4,7 @@ Functional CSS library in SCSS.
 
 ## Contents
 - Atoms
-  - background-color
+  - [background-color](#background-color)
   - background-attachment
   - background-clip
   - background-image
