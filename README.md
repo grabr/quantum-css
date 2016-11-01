@@ -99,7 +99,8 @@ Functional CSS library in SCSS.
   - [`word-break`](#word-break)
   - [`word-wrap`](#word-wrap)<p/>
 - Molecules
-  - [Flex](#flex)
+  - [Flex](#flex)<p/>
+- [License](#license)
 
 
 ## Variables
@@ -958,3 +959,8 @@ Shortcut to create flex column.
 
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-cr</code> ⇢ [`d-fx`](#display) [`fxd-cr`](#flex-direction)
 Shortcut to create reversed flex column.
+
+
+## License
+
+The code is available under [MIT licence](LICENSE.txt).
