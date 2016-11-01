@@ -1,20 +1,17 @@
 // Button
 .input {
-  @include extend-atoms(
-          bds s, bdw 1,
-          trp c, trd 200ms
-  );
+  @include extend-atoms(bds s, bdw 1);
 
   &z { // Size
     &-s {
       @include extend-atoms(
-              fz 1r,
+              fz i,
               p 0_25r
       );
     }
     &-m {
       @include extend-atoms(
-              fz 1r,
+              fz i,
               p 0_75r
       );
     }

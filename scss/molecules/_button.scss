@@ -1,8 +1,7 @@
 .btn {
   @include extend-atoms(
           fw i,
-          bds s, bdw 1,
-          trp c, trd 200ms
+          bds s, bdw 1
   );
 
   &z#{$literal-sep} { // Size
