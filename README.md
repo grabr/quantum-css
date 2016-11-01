@@ -4,49 +4,122 @@ Functional CSS library in SCSS.
 
 ## Contents
 - Atoms
-  - [background-color](#background-color)
-  - background-attachment
-  - background-clip
-  - background-image
-  - background-origin
+  - [`background-color`](#background-color)
+  - [`background-attachment`](#background-attachment)
+  - [`background-clip`](#background-clip)
+  - [`background-image`](#background-image)
+  - [`background-origin`](#background-origin)
+  - [`background-position`](#background-position)
+  - [`background-position-x`](#background-position-x)
+  - [`background-position-y`](#background-position-y)
+  - [`background-repeat`](#background-repeat)
+  - [`background-size`](#background-size)
+  - [`border-color`](#border-color)
+  - [`border-width`](#border-width)
+  - [`border-style`](#border-style)
+  - [`border-collapse`](#border-collapse)
+  - [`box-sizing`](#box-sizing)
+  - [`clear`](#clear)
+  - [`color`](#color)
+  - [`cursor`](#cursor)
+  - [`display`](#display)
+  - [`fill`](#fill)
+  - [`flex-direction`](#flex-direction)
+  - [`flex-wrap`](#flex-wrap)
+  - [`flex-grow`](#flex-grow)
+  - [`flex-shrink`](#flex-shrink)
+  - [`flex-basis`](#flex-basis)
+  - [`justify-content`](#justify-content)
+  - [`align-items`](#align-items)
+  - [`align-content`](#align-content)
+  - [`align-self`](#align-self)
+  - [`order`](#order)
+  - [`float`](#float)
+  - [`font-size`](#font-size)
+  - [`font-family`](#font-family)
+  - [`font-weight`](#font-weight)
+  - [`font-style`](#font-style)
+  - [`font-variant`](#font-variant)
+  - [`font-size-adjust`](#font-size-adjust)
+  - [`font-stretch`](#font-stretch)
+  - [`-webkit-font-smoothing`](#-webkit-font-smoothing)
+  - [`-moz-osx-font-smoothing`](#-moz-osx-font-smoothing)
+  - [`height`](#height)
+  - [`width`](#width)
+  - [`letter-spacing`](#letter-spacing)
+  - [`line-height`](#line-height)
+  - [`list-style`](#list-style)
+  - [`list-style-position`](#list-style-position)
+  - [`list-style-type`](#list-style-type)
+  - [`margin` `margin-top` `margin-right` `margin-bottom` `margin-left`](#margin)
+  - [`padding` `padding-top` `padding-right` `padding-bottom` `padding-left`](#padding)
+  - [`object-fit`](#object-fit)
+  - [`opacity`](#opacity)
+  - [`z-index`](#z-index)
+  - [`page-break-before`](#page-break-before)
+  - [`page-break-inside`](#page-break-inside)
+  - [`page-break-after`](#page-break-after)
+  - [`position`](#position)
+  - [`top right bottom left`](#top right bottom left) 
+  - [`resize`](#resize)
+  - [`table-layout`](#table-layout)
+  - [`caption-side`](#caption-side)
+  - [`empty-cells`](#empty-cells)
+  - [`text-align`](#text-align)
+  - [`text-align-last`](#text-align-last)
+  - [`text-indent`](#text-indent)
+  - [`text-decoration`](#text-decoration)
+  - [`text-transform`](#text-transform)
+  - [`text-justify`](#text-justify)
+  - [`text-overflow`](#text-overflow)
+  - [`transform`](#transform)
+  - [`transition-property`](#transition-property)
+  - [`transition-duration`](#transition-duration)
+  - [`transition-timing-function`](#transition-timing-function)
+  - [`user-select`](#user-select)
+  - [`vertical-align`](#vertical-align)
+  - [`visibility`](#visibility)
+  - [`white-space`](#white-space)
+  - [`word-break`](#word-break)
+  - [`word-wrap`](#word-wrap)<p/>
 - Molecules
+  - [Flex](#flex)
 
 
-### Setup
+## Setup
 
-#### Breakpoints
-#### Pseudos
-#### Palette
+### Breakpoints
+### Pseudos
+### Palette
 
 
+## Atoms
 
-### Atoms
-
-#### [`background-color`](https://developer.mozilla.org/en/docs/Web/CSS/background-color)
+### [`background-color`](https://developer.mozilla.org/en/docs/Web/CSS/background-color)
 <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bg</b>c{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `background-color: {value}`
 
 Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)</code>.
 
-#### [`background-attachment`](https://developer.mozilla.org/en/docs/Web/CSS/background-attachment)
+### [`background-attachment`](https://developer.mozilla.org/en/docs/Web/CSS/background-attachment)
 1. <code><b>bg</b>a-f</code> ⇢ `fixed`
 1. <code><b>bg</b>a-s</code> ⇢ `scroll`
 
-#### [`background-clip`](https://developer.mozilla.org/en/docs/Web/CSS/background-clip)
+### [`background-clip`](https://developer.mozilla.org/en/docs/Web/CSS/background-clip)
 1. <code><b>bg</b>cp-bb</code> ⇢ `border-box`
 1. <code><b>bg</b>cp-pb</code> ⇢ `padding-box`
 1. <code><b>bg</b>cp-cb</code> ⇢ `content-box`
 1. <code><b>bg</b>cp-i</code>  ⇢ `inherit`
 
-#### [`background-image`](https://developer.mozilla.org/en/docs/Web/CSS/background-image)
+### [`background-image`](https://developer.mozilla.org/en/docs/Web/CSS/background-image)
 1. <code><b>bg</b>i-n</code> ⇢ `none`
 1. <code><b>bg</b>i-i</code> ⇢ `inherit`
 
-#### [`background-origin`](https://developer.mozilla.org/en/docs/Web/CSS/background-origin)
+### [`background-origin`](https://developer.mozilla.org/en/docs/Web/CSS/background-origin)
 1. <code><b>bg</b>o-bb</code> ⇢ `border-box`
 1. <code><b>bg</b>o-pb</code> ⇢ `padding-box`
 1. <code><b>bg</b>o-cb</code> ⇢ `content-box`
 
-#### [`background-position`](https://developer.mozilla.org/en/docs/Web/CSS/background-position)
+### [`background-position`](https://developer.mozilla.org/en/docs/Web/CSS/background-position)
 1. <code><b>bg</b>p-tc</code> ⇢ `top center`
 1. <code><b>bg</b>p-tl</code> ⇢ `top left`
 1. <code><b>bg</b>p-cr</code> ⇢ `center right`
@@ -56,29 +129,29 @@ Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)<
 1. <code><b>bg</b>p-bc</code> ⇢ `bottom center`
 1. <code><b>bg</b>p-bl</code> ⇢ `bottom left`
 
-#### [`background-position-x`](https://developer.mozilla.org/en/docs/Web/CSS/background-position-x)
+### [`background-position-x`](https://developer.mozilla.org/en/docs/Web/CSS/background-position-x)
 1. <code><b>bg</b>px-r</code> ⇢ `right`
 1. <code><b>bg</b>px-c</code> ⇢ `center`
 1. <code><b>bg</b>px-l</code> ⇢ `left`
 
-#### [`background-position-y`](https://developer.mozilla.org/en/docs/Web/CSS/background-position-y)
+### [`background-position-y`](https://developer.mozilla.org/en/docs/Web/CSS/background-position-y)
 1. <code><b>bg</b>py-t</code> ⇢ `top`
 1. <code><b>bg</b>py-c</code> ⇢ `center`
 1. <code><b>bg</b>py-b</code> ⇢ `bottom`
 
-#### [`background-repeat`](https://developer.mozilla.org/en/docs/Web/CSS/background-repeat)
+### [`background-repeat`](https://developer.mozilla.org/en/docs/Web/CSS/background-repeat)
 1. <code><b>bg</b>r-n</code> ⇢ `no-repeat`
 1. <code><b>bg</b>r-x</code> ⇢ `repeat-x`
 1. <code><b>bg</b>r-y</code> ⇢ `repeat-y`
 1. <code><b>bg</b>r-s</code> ⇢ `space`
 1. <code><b>bg</b>r-r</code> ⇢ `round`
 
-#### [`background-size`](https://developer.mozilla.org/en/docs/Web/CSS/background-size)
+### [`background-size`](https://developer.mozilla.org/en/docs/Web/CSS/background-size)
 1. <code><b>bg</b>z-a</code>  ⇢ `auto`
 1. <code><b>bg</b>z-ct</code> ⇢ `contain`
 1. <code><b>bg</b>z-cv</code> ⇢ `cover`
 
-#### [`border-color`](https://developer.mozilla.org/en/docs/Web/CSS/border-color)
+### [`border-color`](https://developer.mozilla.org/en/docs/Web/CSS/border-color)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>c{id}[-<a href="#pseudos">pseudo</a>]</code>  ⇢ `border-color: {value}`<p/>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xc{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `border-left-color: {value}` `border-top-color: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>yc{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `border-top-color: {value}` `border-bottom-color: {value}`<p/>
@@ -89,7 +162,7 @@ Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)<
 
 Specify mapping in <code><a href="#palette">$border-colors</a>: (id: value)</code>.
 
-#### [`border-width`](https://developer.mozilla.org/en/docs/Web/CSS/border-width)
+### [`border-width`](https://developer.mozilla.org/en/docs/Web/CSS/border-width)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>w{id}</code>  ⇢ `border-width: {value}`<p/>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xw{id}</code> ⇢ `border-left-width: {value}` `border-top-width: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>yw{id}</code> ⇢ `border-top-width: {value}` `border-bottom-width: {value}`<p/>
@@ -100,7 +173,7 @@ Specify mapping in <code><a href="#palette">$border-colors</a>: (id: value)</cod
 
 Specify mapping in <code><a href="#palette">$border-widths</a>: (id: value)</code>.
 
-#### [`border-style`](https://developer.mozilla.org/en/docs/Web/CSS/border-style)
+### [`border-style`](https://developer.mozilla.org/en/docs/Web/CSS/border-style)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>s{id}</code>  ⇢ `border-style: {value}`<p/>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xs{id}</code> ⇢ `border-left-style: {value}` `border-top-style: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>ys{id}</code> ⇢ `border-top-style: {value}` `border-bottom-style: {value}`<p/>
@@ -111,28 +184,28 @@ Specify mapping in <code><a href="#palette">$border-widths</a>: (id: value)</cod
 
 Specify mapping in <code><a href="#palette">$border-styles</a>: (id: value)</code>.
 
-#### [`border-collapse`](https://developer.mozilla.org/en/docs/Web/CSS/border-collapse)
+### [`border-collapse`](https://developer.mozilla.org/en/docs/Web/CSS/border-collapse)
 1. <code><b>bd</b>ce-c</code> ⇢ `collapse`
 1. <code><b>bd</b>ce-s</code> ⇢ `separate`
 1. <code><b>bd</b>ce-i</code> ⇢ `inherit`
 
-#### [`box-sizing`](https://developer.mozilla.org/en/docs/Web/CSS/box-sizing)
+### [`box-sizing`](https://developer.mozilla.org/en/docs/Web/CSS/box-sizing)
 1. <code><b>bxz</b>-cb</code> ⇢ `content-box`
 1. <code><b>bxz</b>-bb</code> ⇢ `border-box`
 1. <code><b>bxz</b>-i</code>  ⇢ `inherit`
 
-#### [`clear`](https://developer.mozilla.org/en/docs/Web/CSS/clear)
+### [`clear`](https://developer.mozilla.org/en/docs/Web/CSS/clear)
 1. <code><b>cl</b>-l</code> ⇢ `left`
 1. <code><b>cl</b>-r</code> ⇢ `right`
 1. <code><b>cl</b>-b</code> ⇢ `both`
 1. <code><b>cl</b>-n</code> ⇢ `none`
 
-#### [`color`](https://developer.mozilla.org/en/docs/Web/CSS/color)
+### [`color`](https://developer.mozilla.org/en/docs/Web/CSS/color)
 <code>[<a href="#breakpoints">breakpoint</a>\_]<b>c</b>{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `color: {value}`
 
 Specify mapping in <code><a href="#palette">$colors</a>: (id: value)</code>.
 
-#### [`cursor`](https://developer.mozilla.org/en/docs/Web/CSS/cursor)
+### [`cursor`](https://developer.mozilla.org/en/docs/Web/CSS/cursor)
 1. <code><b>cur</b>-a</code>     ⇢ `auto`
 1. <code><b>cur</b>-d</code>     ⇢ `default`
 1. <code><b>cur</b>-cm</code>    ⇢ `context-menu`
@@ -169,7 +242,7 @@ Specify mapping in <code><a href="#palette">$colors</a>: (id: value)</code>.
 1. <code><b>cur</b>-gr</code>    ⇢ `grabbing`
 1. <code><b>cur</b>-n</code>     ⇢ `none`
 
-#### [`display`](https://developer.mozilla.org/en/docs/Web/CSS/display)
+### [`display`](https://developer.mozilla.org/en/docs/Web/CSS/display)
 1. <code><b>d</b>-n</code>    ⇢ `none`
 1. <code><b>d</b>-b</code>    ⇢ `block`
 1. <code><b>d</b>-fx</code>   ⇢ `flex`
@@ -194,50 +267,50 @@ Specify mapping in <code><a href="#palette">$colors</a>: (id: value)</code>.
 1. <code><b>d</b>-rbt</code>  ⇢ `ruby-text`
 1. <code><b>d</b>-rbtc</code> ⇢ `ruby-text-container`
 
-#### [`fill`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill)
+### [`fill`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill)
 <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fi</b>{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `fill: {value}`
 
 Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)</code>.
 
-#### [`flex-direction`](https://developer.mozilla.org/en/docs/Web/CSS/flex-direction)
+### [`flex-direction`](https://developer.mozilla.org/en/docs/Web/CSS/flex-direction)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>d-r</code>  ⇢ `row`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>d-rr</code> ⇢ `row-reverse`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>d-c</code>  ⇢ `column`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>d-cr</code> ⇢ `column-reverse`
 
-#### [`flex-wrap`](https://developer.mozilla.org/en/docs/Web/CSS/flex-wrap)
+### [`flex-wrap`](https://developer.mozilla.org/en/docs/Web/CSS/flex-wrap)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>w-n</code>  ⇢ `nowrap`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>w-w</code>  ⇢ `wrap`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>w-wr</code> ⇢ `wrap-reverse`
 
-#### [`flex-grow`](https://developer.mozilla.org/en/docs/Web/CSS/flex-grow)
+### [`flex-grow`](https://developer.mozilla.org/en/docs/Web/CSS/flex-grow)
 <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g0</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g10</code>  ⇢ `flex-grow: 0` &hellip; `flex-grow: 10`
 
-#### [`flex-shrink`](https://developer.mozilla.org/en/docs/Web/CSS/flex-shrink)
+### [`flex-shrink`](https://developer.mozilla.org/en/docs/Web/CSS/flex-shrink)
 <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s0</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s10</code>  ⇢ `flex-shrink: 0` &hellip; `flex-shrink: 10`
 
-#### [`flex-basis`](https://developer.mozilla.org/en/docs/Web/CSS/flex-basis)
+### [`flex-basis`](https://developer.mozilla.org/en/docs/Web/CSS/flex-basis)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>b-a</code>   ⇢ `auto`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>b-mac</code> ⇢ `max-content`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>b-mic</code> ⇢ `min-content`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>b-fc</code>  ⇢ `fit-content`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>b-c</code>   ⇢ `content`
 
-#### [`justify-content`](https://developer.mozilla.org/en/docs/Web/CSS/justify-content)
+### [`justify-content`](https://developer.mozilla.org/en/docs/Web/CSS/justify-content)
 1. <code><b>jc</b>-fs</code> ⇢ `flex-start`
 1. <code><b>jc</b>-fe</code> ⇢ `flex-end`
 1. <code><b>jc</b>-c</code>  ⇢ `center`
 1. <code><b>jc</b>-sb</code> ⇢ `space-between`
 1. <code><b>jc</b>-sa</code> ⇢ `space-around`
 
-#### [`align-items`](https://developer.mozilla.org/en/docs/Web/CSS/align-items)
+### [`align-items`](https://developer.mozilla.org/en/docs/Web/CSS/align-items)
 1. <code><b>ai</b>-fs</code> ⇢ `flex-start`
 1. <code><b>ai</b>-fe</code> ⇢ `flex-end`
 1. <code><b>ai</b>-c</code>  ⇢ `center`
 1. <code><b>ai</b>-bs</code> ⇢ `baseline`
 1. <code><b>ai</b>-s</code>  ⇢ `stretch`
 
-#### [`align-content`](https://developer.mozilla.org/en/docs/Web/CSS/align-content)
+### [`align-content`](https://developer.mozilla.org/en/docs/Web/CSS/align-content)
 1. <code><b>ac</b>-fs</code> ⇢ `flex-start`
 1. <code><b>ac</b>-fe</code> ⇢ `flex-end`
 1. <code><b>ac</b>-c</code>  ⇢ `center`
@@ -245,7 +318,7 @@ Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)<
 1. <code><b>ac</b>-sa</code> ⇢ `space-around`
 1. <code><b>ac</b>-s</code>  ⇢ `stretch`
 
-#### [`align-self`](https://developer.mozilla.org/en/docs/Web/CSS/align-self)
+### [`align-self`](https://developer.mozilla.org/en/docs/Web/CSS/align-self)
 1. <code><b>as</b>-a</code>  ⇢ `auto`
 1. <code><b>as</b>-fs</code> ⇢ `flex-start`
 1. <code><b>as</b>-fe</code> ⇢ `flex-end`
@@ -253,15 +326,15 @@ Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)<
 1. <code><b>as</b>-b</code>  ⇢ `baseline`
 1. <code><b>as</b>-s</code>  ⇢ `stretch`
 
-#### [`order`](https://developer.mozilla.org/en/docs/Web/CSS/order)
+### [`order`](https://developer.mozilla.org/en/docs/Web/CSS/order)
 <code><b>ord</b>0</code> &hellip; <code><b>ord</b>10</code> ⇢ `order: 0` &hellip; `order: 10`
 
-#### [`float`](https://developer.mozilla.org/en/docs/Web/CSS/float)
+### [`float`](https://developer.mozilla.org/en/docs/Web/CSS/float)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fl</b>-l</code> ⇢ `left`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fl</b>-r</code> ⇢ `right`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fl</b>-n</code> ⇢ `none`
 
-#### [`font-size`](https://developer.mozilla.org/en/docs/Web/CSS/font-size)
+### [`font-size`](https://developer.mozilla.org/en/docs/Web/CSS/font-size)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>z-xxs</code> ⇢ `xx-small`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>z-xs</code>  ⇢ `x-small`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>z-s</code>   ⇢ `small`
@@ -276,7 +349,7 @@ Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)<
 
 Specify mapping in <code><a href="#palette">$font-sizes</a>: (id: value)</code>.
 
-#### [`font-family`](https://developer.mozilla.org/en/docs/Web/CSS/font-family)
+### [`font-family`](https://developer.mozilla.org/en/docs/Web/CSS/font-family)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-s</code>   ⇢ `serif`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-ss</code>  ⇢ `sans-serif`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-m</code>   ⇢ `monospace`
@@ -287,7 +360,7 @@ Specify mapping in <code><a href="#palette">$font-sizes</a>: (id: value)</code>.
 
 Specify mapping in <code><a href="#palette">$font-families</a>: (id: value)</code>.
 
-#### [`font-weight`](https://developer.mozilla.org/en/docs/Web/CSS/font-weight)
+### [`font-weight`](https://developer.mozilla.org/en/docs/Web/CSS/font-weight)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w100</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w900</code>  ⇢ `font-weight: 100` &hellip; `font-weight: 900`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-n</code>  ⇢ `normal`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-b</code>  ⇢ `bold`
@@ -295,12 +368,12 @@ Specify mapping in <code><a href="#palette">$font-families</a>: (id: value)</cod
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-lr</code> ⇢ `lighter`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-i</code>  ⇢ `inherit`
 
-#### [`font-style`](https://developer.mozilla.org/en/docs/Web/CSS/font-style)
+### [`font-style`](https://developer.mozilla.org/en/docs/Web/CSS/font-style)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-n</code>  ⇢ `normal`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-i</code>  ⇢ `italic`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-o</code>  ⇢ `oblique`
 
-#### [`font-variant`](https://developer.mozilla.org/en/docs/Web/CSS/font-variant)
+### [`font-variant`](https://developer.mozilla.org/en/docs/Web/CSS/font-variant)
 1. <code><b>f</b>v-cl</code>  ⇢ `common-ligatures`
 1. <code><b>f</b>v-apc</code> ⇢ `all-petite-caps`
 1. <code><b>f</b>v-asc</code> ⇢ `all-small-caps`
@@ -316,10 +389,10 @@ Specify mapping in <code><a href="#palette">$font-families</a>: (id: value)</cod
 1. <code><b>f</b>v-pn</code>  ⇢ `proportional-nums`
 1. <code><b>f</b>v-pw</code>  ⇢ `proportional-width`
 
-#### [`font-size-adjust`](https://developer.mozilla.org/en/docs/Web/CSS/font-size-adjust)
+### [`font-size-adjust`](https://developer.mozilla.org/en/docs/Web/CSS/font-size-adjust)
 1. <code><b>f</b>za-n</code>  ⇢ `none`
 
-#### [`font-stretch`](https://developer.mozilla.org/en/docs/Web/CSS/font-stretch)
+### [`font-stretch`](https://developer.mozilla.org/en/docs/Web/CSS/font-stretch)
 1. <code><b>f</b>st-n</code>  ⇢ `normal`
 1. <code><b>f</b>st-uc</code> ⇢ `ultra-condensed`
 1. <code><b>f</b>st-ec</code> ⇢ `extra-condensed`
@@ -330,16 +403,16 @@ Specify mapping in <code><a href="#palette">$font-families</a>: (id: value)</cod
 1. <code><b>f</b>st-ee</code> ⇢ `extra-expanded`
 1. <code><b>f</b>st-ue</code> ⇢ `ultra-expanded`
 
-#### [`-webkit-font-smoothing`](https://developer.mozilla.org/en/docs/Web/CSS/-webkit-font-smoothing)
+### [`-webkit-font-smoothing`](https://developer.mozilla.org/en/docs/Web/CSS/-webkit-font-smoothing)
 1. <code><b>wf</b>sm-a</code>  ⇢ `antialiased`
 1. <code><b>wf</b>sm-sa</code> ⇢ `subpixel-antialiased`
 1. <code><b>wf</b>sm-n</code>  ⇢ `none`
 
-#### [`-moz-osx-font-smoothing`](https://developer.mozilla.org/en/docs/Web/CSS/-moz-osx-font-smoothing)
+### [`-moz-osx-font-smoothing`](https://developer.mozilla.org/en/docs/Web/CSS/-moz-osx-font-smoothing)
 1. <code><b>mf</b>sm-a</code> ⇢ `auto`
 1. <code><b>mf</b>sm-g</code> ⇢ `grayscale`
 
-#### [`height`](https://developer.mozilla.org/en/docs/Web/CSS/height)
+### [`height`](https://developer.mozilla.org/en/docs/Web/CSS/height)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>h</b>{id}</code>   ⇢ `height: {value}`<p/>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mah</b>-n</code>   ⇢ `max-height: none`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mah</b>{id}</code> ⇢ `max-height: {value}`<p/>
@@ -347,7 +420,7 @@ Specify mapping in <code><a href="#palette">$font-families</a>: (id: value)</cod
 
 Specify mapping in <code><a href="#palette">$heights</a>: (id: value)</code>.
 
-#### [`width`](https://developer.mozilla.org/en/docs/Web/CSS/width)
+### [`width`](https://developer.mozilla.org/en/docs/Web/CSS/width)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>w</b>{id}</code>   ⇢ `width: {value}`<p/>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>maw</b>-n</code>   ⇢ `max-width: none`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>maw</b>{id}</code> ⇢ `max-width: {value}`<p/>
@@ -355,14 +428,14 @@ Specify mapping in <code><a href="#palette">$heights</a>: (id: value)</code>.
 
 Specify mapping in <code><a href="#palette">$widths</a>: (id: value)</code>.
 
-#### [`letter-spacing`](https://developer.mozilla.org/en/docs/Web/CSS/letter-spacing)
+### [`letter-spacing`](https://developer.mozilla.org/en/docs/Web/CSS/letter-spacing)
 1. <code><b>ls</b>-n</code>   ⇢ `normal`
 1. <code><b>ls</b>-i</code>   ⇢ `inherit`<p/>
 1. <code><b>ls</b>{id}</code> ⇢ `letter-spacing: {value}`
 
 Specify mapping in <code><a href="#palette">$letter-spacings</a>: (id: value)</code>.
 
-#### [`line-height`](https://developer.mozilla.org/en/docs/Web/CSS/line-height)
+### [`line-height`](https://developer.mozilla.org/en/docs/Web/CSS/line-height)
 1. <code><b>lh</b>-n</code> ⇢ `normal`
 1. <code><b>lh</b>-i</code> ⇢ `inherit`
 1. <code><b>lh</b>0</code>  ⇢ `0`
@@ -371,16 +444,16 @@ Specify mapping in <code><a href="#palette">$letter-spacings</a>: (id: value)</c
 
 Specify mapping in <code><a href="#palette">$line-heights</a>: (id: value)</code>.
 
-#### [`list-style`](https://developer.mozilla.org/en/docs/Web/CSS/list-style)
+### [`list-style`](https://developer.mozilla.org/en/docs/Web/CSS/list-style)
 1. <code><b>li</b>s-n</code> ⇢ `none`
 1. <code><b>li</b>s-i</code> ⇢ `inherit`
 
-#### [`list-style-position`](https://developer.mozilla.org/en/docs/Web/CSS/list-style-position)
+### [`list-style-position`](https://developer.mozilla.org/en/docs/Web/CSS/list-style-position)
 1. <code><b>li</b>sp-in</code> ⇢ `inside`
 1. <code><b>li</b>sp-o</code>  ⇢ `outside`
 1. <code><b>li</b>sp-i</code>  ⇢ `inherit`
 
-#### [`list-style-type`](https://developer.mozilla.org/en/docs/Web/CSS/list-style-type)
+### [`list-style-type`](https://developer.mozilla.org/en/docs/Web/CSS/list-style-type)
 1. <code><b>li</b>st-n</code>    ⇢ `none`
 1. <code><b>li</b>st-d</code>    ⇢ `disc`
 1. <code><b>li</b>st-c</code>    ⇢ `circle`
@@ -391,7 +464,7 @@ Specify mapping in <code><a href="#palette">$line-heights</a>: (id: value)</code
 1. <code><b>li</b>st-ur</code>   ⇢ `upper-roman`
 1. <code><b>li</b>st-i</code>    ⇢ `inherit`
 
-#### [`margin`](https://developer.mozilla.org/en/docs/Web/CSS/margin)
+### [`margin`](https://developer.mozilla.org/en/docs/Web/CSS/margin)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>{id}</code>  ⇢ `margin: {value}`<p/>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>x-a</code>   ⇢ `margin-left: auto` `margin-right: auto`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>x{id}</code> ⇢ `margin-left: {value}` `margin-right: {value}`
@@ -403,7 +476,7 @@ Specify mapping in <code><a href="#palette">$line-heights</a>: (id: value)</code
 
 Specify mapping in <code><a href="#palette">$margins</a>: (id: value)</code>.
 
-#### [`padding`](https://developer.mozilla.org/en/docs/Web/CSS/padding)
+### [`padding`](https://developer.mozilla.org/en/docs/Web/CSS/padding)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>{id}</code>  ⇢ `padding: {value}`<p/>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>x{id}</code> ⇢ `padding-left: {value}` `padding-right: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>y{id}</code> ⇢ `padding-top: {value}` `padding-bottom: {value}`<p/>
@@ -415,7 +488,7 @@ Specify mapping in <code><a href="#palette">$margins</a>: (id: value)</code>.
 
 Specify mapping in <code><a href="#palette">$paddings</a>: (id: value)</code>.
 
-#### [`object-fit`](https://developer.mozilla.org/en/docs/Web/CSS/object-fit)
+### [`object-fit`](https://developer.mozilla.org/en/docs/Web/CSS/object-fit)
 1. <code><b>of</b>-n</code>  ⇢ `none`
 1. <code><b>of</b>-f</code>  ⇢ `fill`
 1. <code><b>of</b>-ct</code> ⇢ `contain`
@@ -423,39 +496,39 @@ Specify mapping in <code><a href="#palette">$paddings</a>: (id: value)</code>.
 1. <code><b>of</b>-sd</code> ⇢ `scale-down`
 1. <code><b>of</b>-i</code>  ⇢ `inherit`
 
-#### [`opacity`](https://developer.mozilla.org/en/docs/Web/CSS/opacity)
+### [`opacity`](https://developer.mozilla.org/en/docs/Web/CSS/opacity)
 <code><b>op</b>0</code> &hellip; <code><b>op</b>100</code> ⇢ `opacity: 0` &hellip; `opacity: 1`
 
-#### [`z-index`](https://developer.mozilla.org/en/docs/Web/CSS/z-index)
+### [`z-index`](https://developer.mozilla.org/en/docs/Web/CSS/z-index)
 1. <code><b>z</b>0</code> &hellip; <code><b>z</b>10</code>  ⇢ `z-index: 0` &hellip; `z-index: 10`
 1. <code><b>z</b>-a</code> ⇢ `auto`
 1. <code><b>z</b>-i</code> ⇢ `inherit`
 
-#### [`page-break-before`](https://developer.mozilla.org/en/docs/Web/CSS/page-break-before)
+### [`page-break-before`](https://developer.mozilla.org/en/docs/Web/CSS/page-break-before)
 1. <code><b>pgb</b>b-a</code>  ⇢ `auto`
 1. <code><b>pgb</b>b-al</code> ⇢ `always`
 1. <code><b>pgb</b>b-av</code> ⇢ `avoid`
 1. <code><b>pgb</b>b-l</code>  ⇢ `left`
 1. <code><b>pgb</b>b-r</code>  ⇢ `right`
 
-#### [`page-break-inside`](https://developer.mozilla.org/en/docs/Web/CSS/page-break-inside)
+### [`page-break-inside`](https://developer.mozilla.org/en/docs/Web/CSS/page-break-inside)
 1. <code><b>pgb</b>i-a</code>  ⇢ `auto`
 1. <code><b>pgb</b>i-av</code> ⇢ `avoid`
 
-#### [`page-break-after`](https://developer.mozilla.org/en/docs/Web/CSS/page-break-after)
+### [`page-break-after`](https://developer.mozilla.org/en/docs/Web/CSS/page-break-after)
 1. <code><b>pgb</b>a-a</code>  ⇢ `auto`
 1. <code><b>pgb</b>a-al</code> ⇢ `always`
 1. <code><b>pgb</b>a-av</code> ⇢ `avoid`
 1. <code><b>pgb</b>a-l</code>  ⇢ `left`
 1. <code><b>pgb</b>a-r</code>  ⇢ `right`
 
-#### [`position`](https://developer.mozilla.org/en/docs/Web/CSS/position)
+### [`position`](https://developer.mozilla.org/en/docs/Web/CSS/position)
 1. <code><b>pos</b>-s</code> ⇢ `static`
 1. <code><b>pos</b>-a</code> ⇢ `absolute`
 1. <code><b>pos</b>-r</code> ⇢ `relative`
 1. <code><b>pos</b>-f</code> ⇢ `fixed`
 
-#### [`top`](https://developer.mozilla.org/en/docs/Web/CSS/top) [`right`](https://developer.mozilla.org/en/docs/Web/CSS/right) [`bottom`](https://developer.mozilla.org/en/docs/Web/CSS/bottom) [`left`](https://developer.mozilla.org/en/docs/Web/CSS/left)
+### [`top`](https://developer.mozilla.org/en/docs/Web/CSS/top) [`right`](https://developer.mozilla.org/en/docs/Web/CSS/right) [`bottom`](https://developer.mozilla.org/en/docs/Web/CSS/bottom) [`left`](https://developer.mozilla.org/en/docs/Web/CSS/left)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>{id}</code> ⇢ `top: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>r</b>{id}</code> ⇢ `right: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>b</b>{id}</code> ⇢ `bottom: {value}`
@@ -463,64 +536,64 @@ Specify mapping in <code><a href="#palette">$paddings</a>: (id: value)</code>.
 
 Specify mapping in <code><a href="#palette">$positions</a>: (id: value)</code>.
 
-#### [`resize`](https://developer.mozilla.org/en/docs/Web/CSS/resize)
+### [`resize`](https://developer.mozilla.org/en/docs/Web/CSS/resize)
 1. <code><b>rz</b>-n</code> ⇢ `none`
 1. <code><b>rz</b>-b</code> ⇢ `both`
 1. <code><b>rz</b>-h</code> ⇢ `horizontal`
 1. <code><b>rz</b>-v</code> ⇢ `vertical`
 
-#### [`table-layout`](https://developer.mozilla.org/en/docs/Web/CSS/table-layout)
+### [`table-layout`](https://developer.mozilla.org/en/docs/Web/CSS/table-layout)
 1. <code><b>tbl</b>-a</code> ⇢ `auto`
 1. <code><b>tbl</b>-f</code> ⇢ `fixed`
 
-#### [`caption-side`](https://developer.mozilla.org/en/docs/Web/CSS/caption-side)
+### [`caption-side`](https://developer.mozilla.org/en/docs/Web/CSS/caption-side)
 1. <code><b>cps</b>-t</code> ⇢ `top`
 1. <code><b>cps</b>-b</code> ⇢ `bottom`
 
-#### [`empty-cells`](https://developer.mozilla.org/en/docs/Web/CSS/empty-cells)
+### [`empty-cells`](https://developer.mozilla.org/en/docs/Web/CSS/empty-cells)
 1. <code><b>ec</b>-s</code> ⇢ `show`
 1. <code><b>ec</b>-h</code> ⇢ `hide`
 
-#### [`text-align`](https://developer.mozilla.org/en/docs/Web/CSS/text-align)
+### [`text-align`](https://developer.mozilla.org/en/docs/Web/CSS/text-align)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>a-l</code> ⇢ `left`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>a-c</code> ⇢ `center`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>a-r</code> ⇢ `right`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>a-j</code> ⇢ `justify`
 
-#### [`text-align-last`](https://developer.mozilla.org/en/docs/Web/CSS/text-align-last)
+### [`text-align-last`](https://developer.mozilla.org/en/docs/Web/CSS/text-align-last)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>al-l</code> ⇢ `left`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>al-c</code> ⇢ `center`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>al-r</code> ⇢ `right`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>al-j</code> ⇢ `justify`
 
-#### [`text-indent`](https://developer.mozilla.org/en/docs/Web/CSS/text-indent)
+### [`text-indent`](https://developer.mozilla.org/en/docs/Web/CSS/text-indent)
 <code><b>t</b>i{id}</code> ⇢ `text-indent: {value}`
 
 Specify mapping in <code><a href="#palette">$text-indents</a>: (id: value)</code>.
 
-#### [`text-decoration`](https://developer.mozilla.org/en/docs/Web/CSS/text-decoration)
+### [`text-decoration`](https://developer.mozilla.org/en/docs/Web/CSS/text-decoration)
 1. <code><b>t</b>d-n</code>  ⇢ `none`
 1. <code><b>t</b>d-u</code>  ⇢ `underline`
 1. <code><b>t</b>d-o</code>  ⇢ `overline`
 1. <code><b>t</b>d-lt</code> ⇢ `line-through`
 
-#### [`text-transform`](https://developer.mozilla.org/en/docs/Web/CSS/text-transform)
+### [`text-transform`](https://developer.mozilla.org/en/docs/Web/CSS/text-transform)
 1. <code><b>t</b>t-c</code>  ⇢ `capitalize`
 1. <code><b>t</b>t-u</code>  ⇢ `uppercase`
 1. <code><b>t</b>t-l</code>  ⇢ `lowercase`
 1. <code><b>t</b>t-n</code>  ⇢ `none`
 1. <code><b>t</b>t-fw</code> ⇢ `full-width`
 
-#### [`text-justify`](https://developer.mozilla.org/en/docs/Web/CSS/text-justify)
+### [`text-justify`](https://developer.mozilla.org/en/docs/Web/CSS/text-justify)
 1. <code><b>t</b>j-a</code>  ⇢ `auto`
 1. <code><b>t</b>j-iw</code> ⇢ `inter-word`
 1. <code><b>t</b>j-d</code>  ⇢ `distribute`
 
-#### [`text-overflow`](https://developer.mozilla.org/en/docs/Web/CSS/text-overflow)
+### [`text-overflow`](https://developer.mozilla.org/en/docs/Web/CSS/text-overflow)
 1. <code><b>t</b>ov-e</code> ⇢ `ellipsis`
 1. <code><b>t</b>ov-c</code> ⇢ `clip`
 
-#### [`transform`](https://developer.mozilla.org/en/docs/Web/CSS/transform)
+### [`transform`](https://developer.mozilla.org/en/docs/Web/CSS/transform)
 1. <code><b>ts</b>-n</code> ⇢ `none`
 1. <code><b>ts</b>-i</code> ⇢ `inherit`<p/>
 1. <code><b>ts</b>r-ccw2t</code> ⇢ `rotate(-2turn)`
@@ -533,14 +606,14 @@ Specify mapping in <code><a href="#palette">$text-indents</a>: (id: value)</code
 1. <code><b>ts</b>s75</code>  ⇢ `scale(0.75)`
 1. <code><b>ts</b>s200</code> ⇢ `scale(2)`
 
-#### [`transition-property`](https://developer.mozilla.org/en/docs/Web/CSS/transition-property)
+### [`transition-property`](https://developer.mozilla.org/en/docs/Web/CSS/transition-property)
 1. <code><b>tr</b>p-n</code> ⇢ `none`
 1. <code><b>tr</b>p-a</code> ⇢ `all`
 
-#### [`transition-duration`](https://developer.mozilla.org/en/docs/Web/CSS/transition-duration)
+### [`transition-duration`](https://developer.mozilla.org/en/docs/Web/CSS/transition-duration)
 <code><b>tr</b>d100ms</code> &hellip; <code><b>tr</b>d1000ms</code>  ⇢ `transition-duration: 100ms` &hellip; `transition-duration: 1000ms`
 
-#### [`transition-timing-function`](https://developer.mozilla.org/en/docs/Web/CSS/transition-timing-function)
+### [`transition-timing-function`](https://developer.mozilla.org/en/docs/Web/CSS/transition-timing-function)
 1. <code><b>tr</b>tf-e</code>   ⇢ `ease`
 1. <code><b>tr</b>tf-ei</code>  ⇢ `ease-in`
 1. <code><b>tr</b>tf-eo</code>  ⇢ `ease-out`
@@ -549,12 +622,12 @@ Specify mapping in <code><a href="#palette">$text-indents</a>: (id: value)</code
 1. <code><b>tr</b>tf-ss</code>  ⇢ `step-start`
 1. <code><b>tr</b>tf-se</code>  ⇢ `step-end`
 
-#### [`user-select`](https://developer.mozilla.org/en/docs/Web/CSS/user-select)
+### [`user-select`](https://developer.mozilla.org/en/docs/Web/CSS/user-select)
 1. <code><b>us</b>-n</code> ⇢ `none`
 1. <code><b>us</b>-t</code> ⇢ `text`
 1. <code><b>us</b>-a</code> ⇢ `all`
 
-#### [`vertical-align`](https://developer.mozilla.org/en/docs/Web/CSS/vertical-align)
+### [`vertical-align`](https://developer.mozilla.org/en/docs/Web/CSS/vertical-align)
 1. <code><b>va</b>-sp</code> ⇢ `super`
 1. <code><b>va</b>-t</code>  ⇢ `top`
 1. <code><b>va</b>-tt</code> ⇢ `text-top`
@@ -564,31 +637,31 @@ Specify mapping in <code><a href="#palette">$text-indents</a>: (id: value)</code
 1. <code><b>va</b>-tb</code> ⇢ `text-bottom`
 1. <code><b>va</b>-sb</code> ⇢ `sub`
 
-#### [`visibility`](https://developer.mozilla.org/en/docs/Web/CSS/visibility)
+### [`visibility`](https://developer.mozilla.org/en/docs/Web/CSS/visibility)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-v</code> ⇢ `visible`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-h</code> ⇢ `hidden`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-c</code> ⇢ `collapse`
 
-#### [`white-space`](https://developer.mozilla.org/en/docs/Web/CSS/white-space)
+### [`white-space`](https://developer.mozilla.org/en/docs/Web/CSS/white-space)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-n </code> ⇢ `normal`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-p </code> ⇢ `pre`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-nw</code> ⇢ `nowrap`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-pw</code> ⇢ `pre-wrap`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-pl</code> ⇢ `pre-line`
 
-#### [`word-break`](https://developer.mozilla.org/en/docs/Web/CSS/word-break)
+### [`word-break`](https://developer.mozilla.org/en/docs/Web/CSS/word-break)
 1. <code><b>wo</b>b-n</code>  ⇢ `normal`
 1. <code><b>wo</b>b-ka</code> ⇢ `keep-all`
 1. <code><b>wo</b>b-ba</code> ⇢ `break-all`
 
-#### [`word-wrap`](https://developer.mozilla.org/en/docs/Web/CSS/word-wrap)
+### [`word-wrap`](https://developer.mozilla.org/en/docs/Web/CSS/word-wrap)
 1. <code><b>wo</b>w-n</code>  ⇢ `normal`
 1. <code><b>wo</b>w-bw</code> ⇢ `break-word`
 
 
-### Molecules
+## Molecules
 
-#### Flex
+### Flex
 
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-r</code>  ⇢ `display: flex` `flex-direction: row`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-rr</code> ⇢ `display: flex` `flex-direction: row-reverse`
