@@ -1,7 +1,7 @@
 {
   "name": "quantum-css",
   "version": "0.0.3",
-  "author": "Savva Mikhalevski <savva@grabr.io>",
+  "author": "Savva Mikhalevski <smikhalevski@gmail.com>",
   "description": "Functional CSS library",
   "keywords": [
     "SASS",
