@@ -234,7 +234,7 @@ Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)<
 1. <code><b>as</b>-s</code>  ⇢ `stretch`
 
 #### [`order`](https://developer.mozilla.org/en/docs/Web/CSS/order)
-<code><b>ord</b>0</code> &hellip; <code><b>ord</b>10</code>  ⇢ `order: 0` &hellip; `order: 10`
+<code><b>ord</b>0</code> &hellip; <code><b>ord</b>10</code> ⇢ `order: 0` &hellip; `order: 10`
 
 #### [`float`](https://developer.mozilla.org/en/docs/Web/CSS/float)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fl</b>-l</code> ⇢ `left`
@@ -371,6 +371,199 @@ Specify mapping in <code><a href="#palette">$line-heights</a>: (id: value)</code
 1. <code><b>li</b>st-ur</code>   ⇢ `upper-roman`
 1. <code><b>li</b>st-i</code>    ⇢ `inherit`
 
+#### [`margin`](https://developer.mozilla.org/en/docs/Web/CSS/margin)
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>{id}</code>  ⇢ `margin: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>x-a</code>   ⇢ `margin-left: auto` `margin-right: auto`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>x{id}</code> ⇢ `margin-left: {value}` `margin-right: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>y{id}</code> ⇢ `margin-top: {value}` `margin-bottom: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>t{id}</code> ⇢ `margin-top: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>r{id}</code> ⇢ `margin-right: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>b{id}</code> ⇢ `margin-bottom: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>l{id}</code> ⇢ `margin-left: {value}`
+
+Specify mapping in <code><a href="#palette">$margins</a>: (id: value)</code>.
+
+#### [`padding`](https://developer.mozilla.org/en/docs/Web/CSS/padding)
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>{id}</code>  ⇢ `padding: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>x-a</code>   ⇢ `padding-left: auto` `padding-right: auto`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>x{id}</code> ⇢ `padding-left: {value}` `padding-right: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>y{id}</code> ⇢ `padding-top: {value}` `padding-bottom: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>t{id}</code> ⇢ `padding-top: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>r{id}</code> ⇢ `padding-right: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>b{id}</code> ⇢ `padding-bottom: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>l{id}</code> ⇢ `padding-left: {value}`
+
+Specify mapping in <code><a href="#palette">$paddings</a>: (id: value)</code>.
+
+#### [`object-fit`](https://developer.mozilla.org/en/docs/Web/CSS/object-fit)
+1. <code><b>of</b>-n</code>  ⇢ `none`
+1. <code><b>of</b>-f</code>  ⇢ `fill`
+1. <code><b>of</b>-ct</code> ⇢ `contain`
+1. <code><b>of</b>-cv</code> ⇢ `cover`
+1. <code><b>of</b>-sd</code> ⇢ `scale-down`
+1. <code><b>of</b>-i</code>  ⇢ `inherit`
+
+#### [`opacity`](https://developer.mozilla.org/en/docs/Web/CSS/opacity)
+<code><b>op</b>0</code> &hellip; <code><b>op</b>100</code> ⇢ `opacity: 0` &hellip; `opacity: 1`
+
+#### [`z-index`](https://developer.mozilla.org/en/docs/Web/CSS/z-index)
+1. <code><b>z</b>0</code> &hellip; <code><b>z</b>10</code>  ⇢ `z-index: 0` &hellip; `z-index: 10`
+1. <code><b>z</b>-a</code> ⇢ `auto`
+1. <code><b>z</b>-i</code> ⇢ `inherit`
+
+#### [`page-break-before`](https://developer.mozilla.org/en/docs/Web/CSS/page-break-before)
+1. <code><b>pgb</b>b-a</code>  ⇢ `auto`
+1. <code><b>pgb</b>b-al</code> ⇢ `always`
+1. <code><b>pgb</b>b-av</code> ⇢ `avoid`
+1. <code><b>pgb</b>b-l</code>  ⇢ `left`
+1. <code><b>pgb</b>b-r</code>  ⇢ `right`
+
+#### [`page-break-inside`](https://developer.mozilla.org/en/docs/Web/CSS/page-break-inside)
+1. <code><b>pgb</b>i-a</code>  ⇢ `auto`
+1. <code><b>pgb</b>i-av</code> ⇢ `avoid`
+
+#### [`page-break-after`](https://developer.mozilla.org/en/docs/Web/CSS/page-break-after)
+1. <code><b>pgb</b>a-a</code>  ⇢ `auto`
+1. <code><b>pgb</b>a-al</code> ⇢ `always`
+1. <code><b>pgb</b>a-av</code> ⇢ `avoid`
+1. <code><b>pgb</b>a-l</code>  ⇢ `left`
+1. <code><b>pgb</b>a-r</code>  ⇢ `right`
+
+#### [`position`](https://developer.mozilla.org/en/docs/Web/CSS/position)
+1. <code><b>pos</b>-s</code> ⇢ `static`
+1. <code><b>pos</b>-a</code> ⇢ `absolute`
+1. <code><b>pos</b>-r</code> ⇢ `relative`
+1. <code><b>pos</b>-f</code> ⇢ `fixed`
+
+#### [`top`](https://developer.mozilla.org/en/docs/Web/CSS/top) [`right`](https://developer.mozilla.org/en/docs/Web/CSS/right) [`bottom`](https://developer.mozilla.org/en/docs/Web/CSS/bottom) [`left`](https://developer.mozilla.org/en/docs/Web/CSS/left)
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>{id}</code> ⇢ `top: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>r</b>{id}</code> ⇢ `right: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>b</b>{id}</code> ⇢ `bottom: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>l</b>{id}</code> ⇢ `left: {value}`
+
+Specify mapping in <code><a href="#palette">$positions</a>: (id: value)</code>.
+
+#### [`resize`](https://developer.mozilla.org/en/docs/Web/CSS/resize)
+1. <code><b>rz</b>-n</code> ⇢ `none`
+1. <code><b>rz</b>-b</code> ⇢ `both`
+1. <code><b>rz</b>-h</code> ⇢ `horizontal`
+1. <code><b>rz</b>-v</code> ⇢ `vertical`
+
+#### [`table-layout`](https://developer.mozilla.org/en/docs/Web/CSS/table-layout)
+1. <code><b>tbl</b>-a</code> ⇢ `auto`
+1. <code><b>tbl</b>-f</code> ⇢ `fixed`
+
+#### [`caption-side`](https://developer.mozilla.org/en/docs/Web/CSS/caption-side)
+1. <code><b>cps</b>-t</code> ⇢ `top`
+1. <code><b>cps</b>-b</code> ⇢ `bottom`
+
+#### [`empty-cells`](https://developer.mozilla.org/en/docs/Web/CSS/empty-cells)
+1. <code><b>ec</b>-s</code> ⇢ `show`
+1. <code><b>ec</b>-h</code> ⇢ `hide`
+
+#### [`text-align`](https://developer.mozilla.org/en/docs/Web/CSS/text-align)
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>a-l</code> ⇢ `left`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>a-c</code> ⇢ `center`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>a-r</code> ⇢ `right`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>a-j</code> ⇢ `justify`
+
+#### [`text-align-last`](https://developer.mozilla.org/en/docs/Web/CSS/text-align-last)
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>al-l</code> ⇢ `left`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>al-c</code> ⇢ `center`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>al-r</code> ⇢ `right`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>al-j</code> ⇢ `justify`
+
+#### [`text-indent`](https://developer.mozilla.org/en/docs/Web/CSS/text-indent)
+1. <code><b>t</b>i{id}</code> ⇢ `text-indent: {value}`
+
+Specify mapping in <code><a href="#palette">$text-indents</a>: (id: value)</code>.
+
+#### [`text-decoration`](https://developer.mozilla.org/en/docs/Web/CSS/text-decoration)
+1. <code><b>t</b>d-n</code>  ⇢ `none`
+1. <code><b>t</b>d-u</code>  ⇢ `underline`
+1. <code><b>t</b>d-o</code>  ⇢ `overline`
+1. <code><b>t</b>d-lt</code> ⇢ `line-through`
+
+#### [`text-transform`](https://developer.mozilla.org/en/docs/Web/CSS/text-transform)
+1. <code><b>t</b>t-c</code>  ⇢ `capitalize`
+1. <code><b>t</b>t-u</code>  ⇢ `uppercase`
+1. <code><b>t</b>t-l</code>  ⇢ `lowercase`
+1. <code><b>t</b>t-n</code>  ⇢ `none`
+1. <code><b>t</b>t-fw</code> ⇢ `full-width`
+
+#### [`text-justify`](https://developer.mozilla.org/en/docs/Web/CSS/text-justify)
+1. <code><b>t</b>j-a</code>  ⇢ `auto`
+1. <code><b>t</b>j-iw</code> ⇢ `inter-word`
+1. <code><b>t</b>j-d</code>  ⇢ `distribute`
+
+#### [`text-overflow`](https://developer.mozilla.org/en/docs/Web/CSS/text-overflow)
+1. <code><b>t</b>ov-e</code> ⇢ `ellipsis`
+1. <code><b>t</b>ov-c</code> ⇢ `clip`
+
+#### [`transform`](https://developer.mozilla.org/en/docs/Web/CSS/transform)
+1. <code><b>ts</b>-n</code> ⇢ `none`
+1. <code><b>ts</b>-i</code> ⇢ `inherit`<p/>
+1. <code><b>ts</b>r-ccw2t</code> ⇢ `rotate(-2turn)`
+1. <code><b>ts</b>r-ccw1t</code> ⇢ `rotate(-1turn)`
+1. <code><b>ts</b>r-cw1t</code>  ⇢ `rotate(1turn)`
+1. <code><b>ts</b>r-cw2t</code>  ⇢ `rotate(2turn)`<p/>
+1. <code><b>ts</b>s0</code>   ⇢ `scale(0)`
+1. <code><b>ts</b>s25</code>  ⇢ `scale(0.25)`
+1. <code><b>ts</b>s50</code>  ⇢ `scale(0.5)`
+1. <code><b>ts</b>s75</code>  ⇢ `scale(0.75)`
+1. <code><b>ts</b>s200</code> ⇢ `scale(2)`
+
+#### [`transition-property`](https://developer.mozilla.org/en/docs/Web/CSS/transition-property)
+1. <code><b>tr</b>p-n</code> ⇢ `none`
+1. <code><b>tr</b>p-a</code> ⇢ `all`
+
+#### [`transition-duration`](https://developer.mozilla.org/en/docs/Web/CSS/transition-duration)
+<code><b>tr</b>d100ms</code> &hellip; <code><b>tr</b>d1000ms</code>  ⇢ `transition-duration: 100ms` &hellip; `transition-duration: 1000ms`
+
+#### [`transition-timing-function`](https://developer.mozilla.org/en/docs/Web/CSS/transition-timing-function)
+1. <code><b>tr</b>tf-e</code>   ⇢ `ease`
+1. <code><b>tr</b>tf-ei</code>  ⇢ `ease-in`
+1. <code><b>tr</b>tf-eo</code>  ⇢ `ease-out`
+1. <code><b>tr</b>tf-eio</code> ⇢ `ease-in-out`
+1. <code><b>tr</b>tf-l</code>   ⇢ `linear`
+1. <code><b>tr</b>tf-ss</code>  ⇢ `step-start`
+1. <code><b>tr</b>tf-se</code>  ⇢ `step-end`
+
+#### [`user-select`](https://developer.mozilla.org/en/docs/Web/CSS/user-select)
+1. <code><b>us</b>-n</code> ⇢ `none`
+1. <code><b>us</b>-t</code> ⇢ `text`
+1. <code><b>us</b>-a</code> ⇢ `all`
+
+#### [`vertical-align`](https://developer.mozilla.org/en/docs/Web/CSS/vertical-align)
+1. <code><b>va</b>-sp</code> ⇢ `super`
+1. <code><b>va</b>-t</code>  ⇢ `top`
+1. <code><b>va</b>-tt</code> ⇢ `text-top`
+1. <code><b>va</b>-m</code>  ⇢ `middle`
+1. <code><b>va</b>-bs</code> ⇢ `baseline`
+1. <code><b>va</b>-b</code>  ⇢ `bottom`
+1. <code><b>va</b>-tb</code> ⇢ `text-bottom`
+1. <code><b>va</b>-sb</code> ⇢ `sub`
+
+#### [`visibility`](https://developer.mozilla.org/en/docs/Web/CSS/visibility)
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-v</code> ⇢ `visible`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-h</code> ⇢ `hidden`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-c</code> ⇢ `collapse`
+
+#### [`white-space`](https://developer.mozilla.org/en/docs/Web/CSS/white-space)
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-n </code> ⇢ `normal`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-p </code> ⇢ `pre`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-nw</code> ⇢ `nowrap`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-pw</code> ⇢ `pre-wrap`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>v</b>-pl</code> ⇢ `pre-line`
+
+#### [`word-break`](https://developer.mozilla.org/en/docs/Web/CSS/word-break)
+1. <code><b>wo</b>b-n</code>  ⇢ `normal`
+1. <code><b>wo</b>b-ka</code> ⇢ `keep-all`
+1. <code><b>wo</b>b-ba</code> ⇢ `break-all`
+
+#### [`word-wrap`](https://developer.mozilla.org/en/docs/Web/CSS/word-wrap)
+1. <code><b>wo</b>w-n</code>  ⇢ `normal`
+1. <code><b>wo</b>w-bw</code> ⇢ `break-word`
 
 
 
@@ -383,12 +576,9 @@ Specify mapping in <code><a href="#palette">$line-heights</a>: (id: value)</code
 
 
 
+### Molecules
 
-
-
-
-
-#### Flex Molecules
+#### Flex
 
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-r</code>  ⇢ `display: flex` `flex-direction: row`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-rr</code> ⇢ `display: flex` `flex-direction: row-reverse`
