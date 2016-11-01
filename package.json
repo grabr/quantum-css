@@ -1,6 +1,6 @@
 {
   "name": "quantum-css",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Savva Mikhalevski <smikhalevski@gmail.com>",
   "description": "Functional CSS library",
   "keywords": [
