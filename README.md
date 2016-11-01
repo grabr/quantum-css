@@ -965,4 +965,4 @@ Shortcut to create reversed flex column.
 
 ## License
 
-The code is available under [MIT licence](LICENSE.txt).
+The code is available under [MIT licence](LICENSE).
