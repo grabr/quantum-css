@@ -5,6 +5,7 @@
 Functional CSS library in SCSS.
 
 ## Contents
+- [Class Naming](#class-naming)
 - Variables
   - [Breakpoints](#breakpoints)
   - [Pseudos](#pseudos)
@@ -105,6 +106,24 @@ Functional CSS library in SCSS.
 - [License](#license)
 
 
+## Class Naming
+
+Every class name consist of following parts in given order:
+
+- Optional breakpoint name
+- Property abbreviation
+- Value abbreviation
+- Optional pseudo-class and/or pseudo-element modifier 
+
+You can configure separators between each parts of class name with following variables:
+
+- `$breakpoint-sep` is the separator between breakpoint name and property abbreviation. By default, `_` is used.
+- `$literal-sep` and `$ordinal-sep` define separators that are inserted between property name and literal value abbreviation or ordinal one respectively. By default, `$literal-sep` is set to minus `-` and `$ordinal-sep` is a blank string.
+- `$pseudo-sep` separates pseudo modifier from value abbreviation.
+
+Property and value abbreviations were heavily inspired by [Emmet](http://docs.emmet.io/cheat-sheet/).
+
+
 ## Variables
 
 ### Breakpoints
@@ -121,16 +140,7 @@ $breakpoints: (
 
 ### Pseudos
 
-Pseudo-class and pseudo-element suffixes.
-Specify space separated list to apply all pseudos to same class:
-`$pseudos: (foo: empty hover)` would produce `.c-w-foo:empty:hover`.
-
-Specify comma separated list to create several selectors with given pseudos:
-`$pseudos: (foo: (hover, focus))` would produce `.c-w-foo:hover` and `.c-w-foo:focus`.
-
-Specify comma separated list of space separated lists to create combination of options described above:
-`$pseudos: (foo: (empty hover, nth-of-type(2) focus))` would produce
-`.c-w-foo:empty:hover` and `.c-w-foo:nth-of-type(2):focus`.
+You can configure set of pseudo-classes and pseudo-elements for which atoms are generated via `$pseudos`. By default:
 
 ```scss
 $pseudos: (
@@ -139,6 +149,33 @@ $pseudos: (
   f: focus,
 ) !default;
 ```
+
+Comma-separated list defines selector disjunction. Ex. `(hf: (hover, focus))` following classes would be generated:
+
+```scss
+.bgc-w-hf:hover,
+.bgc-w-hf:focus {
+  background-color: white;
+}
+```
+
+Space-separated list defines selector conjunction. Ex. `(eh: empty hover)` following class would be generated:
+
+```scss
+.bgc-w-eh:empty:hover {
+  background-color: white;
+}
+```
+
+You can combine those two like `(ch: first-child hover, last-child hover)`:
+
+```scss
+.bgc-w-ch:first-child:hover,
+.bgc-w-ch:last-child:hover {
+  background-color: white;
+}
+```
+
 
 ### Palette
 
@@ -965,4 +1002,4 @@ Shortcut to create reversed flex column.
 
 ## License
 
-The code is available under [MIT licence](LICENSE).
+The code is available under [MIT licence](LICENSE.txt).
