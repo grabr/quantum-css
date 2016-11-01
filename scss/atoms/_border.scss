@@ -1,16 +1,16 @@
 @include create-responsive-classes(bd) {
 
   &c       { @include create-cartesian-partials($border-colors, border-color) }
-  &ys, &tc { @include create-cartesian-partials($border-colors, border-top-color) }
-  &xs, &rc { @include create-cartesian-partials($border-colors, border-right-color) }
-  &ys, &bc { @include create-cartesian-partials($border-colors, border-bottom-color) }
-  &xs, &lc { @include create-cartesian-partials($border-colors, border-left-color) }
+  &yc, &tc { @include create-cartesian-partials($border-colors, border-top-color) }
+  &xc, &rc { @include create-cartesian-partials($border-colors, border-right-color) }
+  &yc, &bc { @include create-cartesian-partials($border-colors, border-bottom-color) }
+  &xc, &lc { @include create-cartesian-partials($border-colors, border-left-color) }
 
   &w       { @include create-partials($border-widths, border-width) }
-  &ys, &tw { @include create-partials($border-widths, border-top-width) }
-  &xs, &rw { @include create-partials($border-widths, border-right-width) }
-  &ys, &bw { @include create-partials($border-widths, border-bottom-width) }
-  &xs, &lw { @include create-partials($border-widths, border-left-width) }
+  &yw, &tw { @include create-partials($border-widths, border-top-width) }
+  &xw, &rw { @include create-partials($border-widths, border-right-width) }
+  &yw, &bw { @include create-partials($border-widths, border-bottom-width) }
+  &xw, &lw { @include create-partials($border-widths, border-left-width) }
 
   &s       { @include create-partials($border-styles, border-style) }
   &ys, &ts { @include create-partials($border-styles, border-top-style) }
@@ -25,7 +25,7 @@
   &br, &lr, &blr { @include create-partials($border-radiuses, border-bottom-left-radius) }
 }
 
-.bg {
+.bd {
   &ce#{$literal-sep} {
     &c { border-collapse: collapse }
     &s { border-collapse: separate }
