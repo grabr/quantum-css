@@ -320,7 +320,56 @@ Specify mapping in <code><a href="#palette">$font-families</a>: (id: value)</cod
 1. <code><b>mf</b>sm-a</code> ⇢ `auto`
 1. <code><b>mf</b>sm-g</code> ⇢ `grayscale`
 
+#### [`height`](https://developer.mozilla.org/en/docs/Web/CSS/height)
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>h</b>{id}</code>   ⇢ `height: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mah</b>-n</code>   ⇢ `max-height: none`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mah</b>{id}</code> ⇢ `max-height: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mih</b>{id}</code> ⇢ `min-height: {value}`
 
+Specify mapping in <code><a href="#palette">$heights</a>: (id: value)</code>.
+
+#### [`width`](https://developer.mozilla.org/en/docs/Web/CSS/width)
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>w</b>{id}</code>   ⇢ `width: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>maw</b>-n</code>   ⇢ `max-width: none`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>maw</b>{id}</code> ⇢ `max-width: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>miw</b>{id}</code> ⇢ `min-width: {value}`
+
+Specify mapping in <code><a href="#palette">$widths</a>: (id: value)</code>.
+
+#### [`letter-spacing`](https://developer.mozilla.org/en/docs/Web/CSS/letter-spacing)
+1. <code><b>ls</b>-n</code>   ⇢ `normal`
+1. <code><b>ls</b>-i</code>   ⇢ `inherit`
+1. <code><b>ls</b>{id}</code> ⇢ `letter-spacing: {value}`
+
+Specify mapping in <code><a href="#palette">$letter-spacings</a>: (id: value)</code>.
+
+#### [`line-height`](https://developer.mozilla.org/en/docs/Web/CSS/line-height)
+1. <code><b>lh</b>-n</code> ⇢ `normal`
+1. <code><b>lh</b>-i</code> ⇢ `inherit`
+1. <code><b>lh</b>0</code>  ⇢ `0`
+1. <code><b>lh</b>1</code>  ⇢ `1`
+
+Specify mapping in <code><a href="#palette">$line-heights</a>: (id: value)</code>.
+
+#### [`list-style`](https://developer.mozilla.org/en/docs/Web/CSS/list-style)
+1. <code><b>li</b>s-n</code> ⇢ `none`
+1. <code><b>li</b>s-i</code> ⇢ `inherit`
+
+#### [`list-style-position`](https://developer.mozilla.org/en/docs/Web/CSS/list-style-position)
+1. <code><b>li</b>sp-in</code> ⇢ `inside`
+1. <code><b>li</b>sp-o</code>  ⇢ `outside`
+1. <code><b>li</b>sp-i</code>  ⇢ `inherit`
+
+#### [`list-style-type`](https://developer.mozilla.org/en/docs/Web/CSS/list-style-type)
+1. <code><b>li</b>st-n</code>    ⇢ `none`
+1. <code><b>li</b>st-d</code>    ⇢ `disc`
+1. <code><b>li</b>st-c</code>    ⇢ `circle`
+1. <code><b>li</b>st-s</code>    ⇢ `square`
+1. <code><b>li</b>st-dc</code>   ⇢ `decimal`
+1. <code><b>li</b>st-dclz</code> ⇢ `decimal-leading-zero`
+1. <code><b>li</b>st-lr</code>   ⇢ `lower-roman`
+1. <code><b>li</b>st-ur</code>   ⇢ `upper-roman`
+1. <code><b>li</b>st-i</code>    ⇢ `inherit`
 
 
 
