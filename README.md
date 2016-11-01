@@ -5,7 +5,7 @@
 Functional CSS library in SCSS.
 
 ## Contents
-- [Class Naming](#class-naming)
+- [Class Naming](#class-naming)<p/>
 - Variables
   - [Breakpoints](#breakpoints)
   - [Pseudos](#pseudos)
@@ -108,7 +108,7 @@ Functional CSS library in SCSS.
 
 ## Class Naming
 
-Every class name consist of following parts in given order:
+Every class name consists of following parts in given order:
 
 - Optional breakpoint name
 - Property abbreviation
