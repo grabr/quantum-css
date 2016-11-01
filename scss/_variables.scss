@@ -63,7 +63,7 @@ $grid-widths: (
 // Abbreviations:
 //   l - Light
 //   d - Dark
-$predefined-colors: (
+$palette: (
   //// Greyscale
   w:  #fff,
   g1: #eeeeec,
@@ -117,12 +117,12 @@ $predefined-colors: (
 
 // Backgrounds
 // -------------
-$background-colors: $predefined-colors !default;
+$background-colors: $palette !default;
 
 
 // Borders
 // -------------
-$border-colors: $predefined-colors !default;
+$border-colors: $palette !default;
 
 $border-widths: (
   1:  1px,
@@ -156,28 +156,27 @@ $border-styles: (
 
 // Text
 // -------------
-$colors: $predefined-colors !default;
-
-$font-size-root: 16px !default;
+$colors: $palette !default;
 
 $font-sizes: (
-  1r: 1rem, // Base size
+  16: 16px, // Base size
 
-  lg: 1.25rem,
-  sm: .875rem,
   xs: .75rem,
+  s:  .875rem,
+  m:  1rem,
+  l:  1.25rem,
 
-  h1: 2.5rem,
-  h2: 2rem,
-  h3: 1.75rem,
-  h4: 1.5rem,
-  h5: 1.25rem,
   h6: 1rem,
+  h5: 1.25rem,
+  h4: 1.5rem,
+  h3: 1.75rem,
+  h2: 2rem,
+  h1: 2.5rem,
 
-  d1: 6rem,
-  d2: 5.5rem,
-  d3: 4.5rem,
   d4: 3.5rem,
+  d3: 4.5rem,
+  d2: 5.5rem,
+  d1: 6rem,
 ) !default;
 
 $font-families: (
@@ -249,10 +248,10 @@ $positions: (
 // Dimensions
 // -------------
 $widths: (
-  100p:  100%,
-  50p:   50%,
-  0:     0,
-  i:     inherit
+  100p: 100%,
+  50p:  50%,
+  0:    0,
+  i:    inherit
 ) !default;
 
 $heights: $widths !default;

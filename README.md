@@ -3,6 +3,21 @@
 Functional CSS library in SCSS.
 
 ## Contents
+- Variables
+  - Breakpoints
+  - Pseudos
+  - Palette
+  - Border Widths
+  - Border Radiuses
+  - Border Styles
+  - Font Sizes
+  - Font Families
+  - Line Heights
+  - Letter Spacings
+  - Text Indents
+  - Margins &amp; Paddings
+  - Positions
+  - Dimensions</p>
 - Atoms
   - [`background-color`](#background-color)
   - [`background-attachment`](#background-attachment)
@@ -14,9 +29,9 @@ Functional CSS library in SCSS.
   - [`background-position-y`](#background-position-y)
   - [`background-repeat`](#background-repeat)
   - [`background-size`](#background-size)
-  - [`border-color`](#border-color)
-  - [`border-width`](#border-width)
-  - [`border-style`](#border-style)
+  - [`border-color` `border-top-color` `border-right-color` `border-bottom-color` `border-left-color`](#border-color)
+  - [`border-width` `border-top-width` `border-right-width` `border-bottom-width` `border-left-width`](#border-width)
+  - [`border-style` `border-top-style` `border-right-style` `border-bottom-style` `border-left-style`](#border-style)
   - [`border-collapse`](#border-collapse)
   - [`box-sizing`](#box-sizing)
   - [`clear`](#clear)
@@ -86,11 +101,239 @@ Functional CSS library in SCSS.
   - [Flex](#flex)
 
 
-## Setup
+## Variables
 
 ### Breakpoints
+
+```scss
+$breakpoints: (
+  null: 0,
+  SM:   576px,
+  MD:   768px,
+  LG:   992px,
+  XL:   1200px,
+) !default;
+```
+
 ### Pseudos
+
+Pseudo-class and pseudo-element suffixes.
+Specify space separated list to apply all pseudos to same class:
+`$pseudos: (foo: empty hover)` would produce `.c-w-foo:empty:hover`.
+
+Specify comma separated list to create several selectors with given pseudos:
+`$pseudos: (foo: (hover, focus))` would produce `.c-w-foo:hover` and `.c-w-foo:focus`.
+
+Specify comma separated list of space separated lists to create combination of options described above:
+`$pseudos: (foo: (empty hover, nth-of-type(2) focus))` would produce
+`.c-w-foo:empty:hover` and `.c-w-foo:nth-of-type(2):focus`.
+
+```scss
+$pseudos: (
+  hf: (hover, focus),
+  h: hover,
+  f: focus,
+) !default;
+```
+
 ### Palette
+
+By default, [Tango palette](http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines#Color_Palette)
+is used for every color-related atom. You can specify your own palette overriding corresponding variable
+in [`_variables.scss`](scss/_variables.scss).
+
+```scss
+// Abbreviations:
+//   l - Light
+//   d - Dark
+$palette: (
+  //// Greyscale
+  w:  #fff,
+  g1: #eeeeec,
+  g2: #d3d7cf,
+  g3: #babdb6,
+  g4: #888a85,
+  g5: #555753,
+  g6: #2e3436,
+  bk: #000,
+
+  // Yellow
+  ly: #fce94f,
+  y:  #edd400,
+  dy: #c4a000,
+
+  // Orange
+  lo: #fcaf3e,
+  o:  #f57900,
+  do: #ce5c00,
+
+  // Brown
+  lb: #e9b96e,
+  b:  #c17d11,
+  db: #8f5902,
+
+  // Green
+  lg: #8ae234,
+  g:  #73d216,
+  dg: #4e9a06,
+
+  // Navy
+  ln: #729fcf,
+  n:  #3465a4,
+  dn: #204a87,
+
+  // Purple
+  lp: #ad7f8a,
+  p:  #75507b,
+  dp: #5c3566,
+
+  // Red
+  lr: #ef2929,
+  r:  #cc0000,
+  dr: #a40000,
+
+  cc: currentColor,
+  tt: transparent,
+  i:  inherit,
+) !default;
+```
+
+### Border Widths
+
+`<div class="bdw1"></div>`
+
+```scss
+$border-widths: (
+  1:  1px,
+  i:  inherit,
+) !default;
+```
+
+### Border Radiuses
+
+`<div class="bdr-c"></div>`
+
+```scss
+$border-radiuses: (
+  10: 10px,
+  5:  5px,
+  c:  9999px, // Circle
+  i:  inherit,
+) !default;
+```
+
+### Border Styles
+
+By default, all available border styles are included. Border style atoms are emitted for every breakpoint what can
+cause significant increase of outputted CSS file. Be sure to remove unused border styles in order to reduce file size.
+
+```scss
+$border-styles: (
+  n:      none,
+  h:      hidden,
+  dt:     dotted,
+  ds:     dashed,
+  s:      solid,
+  db:     double,
+  dtds:   dot-dash,
+  dtdtds: dot-dot-dash,
+  w:      wave,
+  g:      groove,
+  r:      ridge,
+  in:     inset,
+  o:      outset,
+  i:      inherit,
+) !default;
+```
+
+### Font Sizes
+
+```scss
+$font-sizes: (
+  16: 16px, // Base size
+
+  xs: .75rem,
+  s:  .875rem,
+  m:  1rem,
+  l:  1.25rem,
+
+  h6: 1rem,
+  h5: 1.25rem,
+  h4: 1.5rem,
+  h3: 1.75rem,
+  h2: 2rem,
+  h1: 2.5rem,
+
+  d4: 3.5rem,
+  d3: 4.5rem,
+  d2: 5.5rem,
+  d1: 6rem,
+) !default;
+```
+
+### Font Families
+
+Font family is a comma separated list of font names.
+
+```scss
+$font-families: (
+  ss: (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif),
+  s:  (Georgia, 'Times New Roman', Times, serif),
+  m:  (Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace)
+) !default;
+```
+
+### Line Heights
+
+```scss
+$line-heights: (
+  h: 1.1, // Headings
+  t: 1.3, // Text
+) !default;
+```
+
+### Letter Spacings
+
+```scss
+$letter-spacings: (
+  1: 1px,
+  2: 2px,
+) !default;
+```
+
+### Text Indents
+
+```scss
+$text-indents: (
+  1r: 1rem,
+  os: -9999px, // Off-screen
+) !default;
+```
+
+### Margins &amp; Paddings
+
+### Positions
+
+```scss
+$positions: (
+  -50p:  -50%,
+  -100p: -100%,
+   100p:  100%,
+   50p:   50%,
+   0:     0,
+) !default;
+```
+
+### Dimensions
+
+```scss
+$widths: (
+  100p: 100%,
+  50p:  50%,
+  0:    0,
+  i:    inherit
+) !default;
+```
 
 
 ## Atoms
@@ -171,7 +414,7 @@ Specify mapping in <code><a href="#palette">$border-colors</a>: (id: value)</cod
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rw{id}</code> ⇢ `border-right-width: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>lw{id}</code> ⇢ `border-left-width: {value}`
 
-Specify mapping in <code><a href="#palette">$border-widths</a>: (id: value)</code>.
+Specify mapping in <code><a href="#border-widths">$border-widths</a>: (id: value)</code>.
 
 #### [`border-style`](https://developer.mozilla.org/en/docs/Web/CSS/border-style)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>s{id}</code>  ⇢ `border-style: {value}`<p/>
@@ -347,7 +590,7 @@ Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)<
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>z-i</code>   ⇢ `inherit`<p/>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>z{id}</code> ⇢ `font-size: {value}`
 
-Specify mapping in <code><a href="#palette">$font-sizes</a>: (id: value)</code>.
+Specify mapping in <code><a href="#font-sizes">$font-sizes</a>: (id: value)</code>.
 
 #### [`font-family`](https://developer.mozilla.org/en/docs/Web/CSS/font-family)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-s</code>   ⇢ `serif`
@@ -358,7 +601,7 @@ Specify mapping in <code><a href="#palette">$font-sizes</a>: (id: value)</code>.
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-i</code>   ⇢ `inherit`<p/>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s{id}</code> ⇢ `font-family: {value}`
 
-Specify mapping in <code><a href="#palette">$font-families</a>: (id: value)</code>.
+Specify mapping in <code><a href="#font-families">$font-families</a>: (id: value)</code>.
 
 #### [`font-weight`](https://developer.mozilla.org/en/docs/Web/CSS/font-weight)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w100</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w900</code>  ⇢ `font-weight: 100` &hellip; `font-weight: 900`
@@ -418,7 +661,7 @@ Specify mapping in <code><a href="#palette">$font-families</a>: (id: value)</cod
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mah</b>{id}</code> ⇢ `max-height: {value}`<p/>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mih</b>{id}</code> ⇢ `min-height: {value}`
 
-Specify mapping in <code><a href="#palette">$heights</a>: (id: value)</code>.
+Specify mapping in <code><a href="#dimensions">$heights</a>: (id: value)</code>.
 
 #### [`width`](https://developer.mozilla.org/en/docs/Web/CSS/width)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>w</b>{id}</code>   ⇢ `width: {value}`<p/>
@@ -426,14 +669,14 @@ Specify mapping in <code><a href="#palette">$heights</a>: (id: value)</code>.
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>maw</b>{id}</code> ⇢ `max-width: {value}`<p/>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>miw</b>{id}</code> ⇢ `min-width: {value}`
 
-Specify mapping in <code><a href="#palette">$widths</a>: (id: value)</code>.
+Specify mapping in <code><a href="#dimensions">$widths</a>: (id: value)</code>.
 
 #### [`letter-spacing`](https://developer.mozilla.org/en/docs/Web/CSS/letter-spacing)
 1. <code><b>ls</b>-n</code>   ⇢ `normal`
 1. <code><b>ls</b>-i</code>   ⇢ `inherit`<p/>
 1. <code><b>ls</b>{id}</code> ⇢ `letter-spacing: {value}`
 
-Specify mapping in <code><a href="#palette">$letter-spacings</a>: (id: value)</code>.
+Specify mapping in <code><a href="#letter-spacings">$letter-spacings</a>: (id: value)</code>.
 
 #### [`line-height`](https://developer.mozilla.org/en/docs/Web/CSS/line-height)
 1. <code><b>lh</b>-n</code> ⇢ `normal`
@@ -442,7 +685,7 @@ Specify mapping in <code><a href="#palette">$letter-spacings</a>: (id: value)</c
 1. <code><b>lh</b>1</code>  ⇢ `1`<p/>
 1. <code><b>lh</b>{id}</code> ⇢ `line-height: {value}`
 
-Specify mapping in <code><a href="#palette">$line-heights</a>: (id: value)</code>.
+Specify mapping in <code><a href="#line-heights">$line-heights</a>: (id: value)</code>.
 
 #### [`list-style`](https://developer.mozilla.org/en/docs/Web/CSS/list-style)
 1. <code><b>li</b>s-n</code> ⇢ `none`
@@ -474,7 +717,7 @@ Specify mapping in <code><a href="#palette">$line-heights</a>: (id: value)</code
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>b{id}</code> ⇢ `margin-bottom: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>l{id}</code> ⇢ `margin-left: {value}`
 
-Specify mapping in <code><a href="#palette">$margins</a>: (id: value)</code>.
+Specify mapping in <code><a href="#margins">$margins</a>: (id: value)</code>.
 
 #### [`padding`](https://developer.mozilla.org/en/docs/Web/CSS/padding)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>{id}</code>  ⇢ `padding: {value}`<p/>
@@ -486,7 +729,7 @@ Specify mapping in <code><a href="#palette">$margins</a>: (id: value)</code>.
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>b{id}</code> ⇢ `padding-bottom: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>l{id}</code> ⇢ `padding-left: {value}`
 
-Specify mapping in <code><a href="#palette">$paddings</a>: (id: value)</code>.
+Specify mapping in <code><a href="#paddings">$paddings</a>: (id: value)</code>.
 
 #### [`object-fit`](https://developer.mozilla.org/en/docs/Web/CSS/object-fit)
 1. <code><b>of</b>-n</code>  ⇢ `none`
@@ -534,7 +777,7 @@ Specify mapping in <code><a href="#palette">$paddings</a>: (id: value)</code>.
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>b</b>{id}</code> ⇢ `bottom: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>l</b>{id}</code> ⇢ `left: {value}`
 
-Specify mapping in <code><a href="#palette">$positions</a>: (id: value)</code>.
+Specify mapping in <code><a href="#positions">$positions</a>: (id: value)</code>.
 
 #### [`resize`](https://developer.mozilla.org/en/docs/Web/CSS/resize)
 1. <code><b>rz</b>-n</code> ⇢ `none`
@@ -569,7 +812,7 @@ Specify mapping in <code><a href="#palette">$positions</a>: (id: value)</code>.
 #### [`text-indent`](https://developer.mozilla.org/en/docs/Web/CSS/text-indent)
 <code><b>t</b>i{id}</code> ⇢ `text-indent: {value}`
 
-Specify mapping in <code><a href="#palette">$text-indents</a>: (id: value)</code>.
+Specify mapping in <code><a href="#text-indents">$text-indents</a>: (id: value)</code>.
 
 #### [`text-decoration`](https://developer.mozilla.org/en/docs/Web/CSS/text-decoration)
 1. <code><b>t</b>d-n</code>  ⇢ `none`
