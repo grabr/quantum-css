@@ -4,21 +4,21 @@ Functional CSS library in SCSS.
 
 ## Contents
 - Variables
-  - Breakpoints
-  - Pseudos
-  - Palette
-  - Border Widths
-  - Border Radiuses
-  - Border Styles
-  - Font Sizes
-  - Font Families
-  - Line Heights
-  - Letter Spacings
-  - Text Indents
-  - Margins &amp; Paddings
-  - Positions
-  - Dimensions</p>
-- Grid
+  - [Breakpoints](#breakpoints)
+  - [Pseudos](#pseudos)
+  - [Palette](#palette)
+  - [Border Widths](#border-widths)
+  - [Border Radiuses](#border-radiuses)
+  - [Border Styles](#border-styles)
+  - [Font Sizes](#font-sizes)
+  - [Font Families](#font-families)
+  - [Line Heights](#line-heights)
+  - [Letter Spacings](#letter-spacings)
+  - [Text Indents](#text-indents)
+  - [Margins &amp; Paddings](#margins-paddings)
+  - [Positions](#positions)
+  - [Dimensions](#dimensions)</p>
+- [Grid](#grid)</p>
 - Atoms
   - [`background-color`](#background-color)
   - [`background-attachment`](#background-attachment)
