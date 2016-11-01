@@ -18,6 +18,7 @@ Functional CSS library in SCSS.
   - Margins &amp; Paddings
   - Positions
   - Dimensions</p>
+- Grid
 - Atoms
   - [`background-color`](#background-color)
   - [`background-attachment`](#background-attachment)
@@ -334,6 +335,46 @@ $widths: (
   i:    inherit
 ) !default;
 ```
+
+
+## Grid
+
+Template `.g>.gr>.gc`
+
+```html
+<div class="g">
+  <div class="gr">
+    <div class="gc12 MD_gc6">
+      Occupies 12 cols on small screen, 6 cols starting from MD breakpoint
+    </div>
+  </div>
+  <div class="gr">
+    <div class="gc6">
+      <!-- Nested grid rows -->
+      <div class="gr">
+        <div class="gc6"></div>
+        <div class="gc6"></div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+1. <code><b>g</b></code> Grid container. Changes its `max-width` depending on curently active breakpoint.
+
+1. <code><b>g</b>r</code> Grid row.
+
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>1</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>12</code>
+Grid column span. `gc2` would occupy two columns of grid. Grid has same number of columns on every breakpoint.
+
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o0</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o12</code>
+Grid column offset.
+
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl0</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl12</code>
+Grid shift column left.
+
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr0</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr12</code>
+Grid shift column right.
 
 
 ## Atoms
@@ -907,10 +948,13 @@ Specify mapping in <code><a href="#text-indents">$text-indents</a>: (id: value)<
 ### Flex
 
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-r</code>  ⇢ [`d-fx`](#display) [`fxd-r`](#flex-direction)
-<p>Shortcut to create flex row</p>
+Shortcut to create flex row.
+
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-rr</code> ⇢ [`d-fx`](#display) [`fxd-rr`](#flex-direction)
-<p>Shortcut to create flex reversed row</p>
+Shortcut to create reversed flex row.
+
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-c</code>  ⇢ [`d-fx`](#display) [`fxd-c`](#flex-direction)
-<p>Shortcut to create flex column</p>
+Shortcut to create flex column.
+
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-cr</code> ⇢ [`d-fx`](#display) [`fxd-cr`](#flex-direction)
-<p>Shortcut to create flex reversed column</p>
+Shortcut to create reversed flex column.
