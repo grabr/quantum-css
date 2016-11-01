@@ -1,8 +1,16 @@
 {
   "name": "quantum-css",
   "version": "0.0.3",
-  "author": "Grabr Inc.",
+  "author": "Savva Mikhalevski <savva@grabr.io>",
   "description": "Functional CSS library",
+  "keywords": [
+    "SASS",
+    "SCSS",
+    "CSS",
+    "functional",
+    "atomic"
+  ],
+  "license": "MIT",
   "main": "css/molecular.css",
   "files": [
     "css/",
@@ -11,6 +19,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Grabr/quantum-css"
+  },
+  "bugs": {
+    "url": "https://github.com/Grabr/quantum-css/issues"
   },
   "homepage": "https://github.com/Grabr/quantum-css",
   "scripts": {
