@@ -664,13 +664,10 @@ Specify mapping in <code><a href="#palette">$text-indents</a>: (id: value)</code
 ### Flex
 
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-r</code>  ⇢ [`d-fx`](#display) [`fxd-r`](#flex-direction)
-Shortcut to create flex row
-
+<p>Shortcut to create flex row</p>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-rr</code> ⇢ [`d-fx`](#display) [`fxd-rr`](#flex-direction)
-Shortcut to create flex reversed row
-
+<p>Shortcut to create flex reversed row</p>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-c</code>  ⇢ [`d-fx`](#display) [`fxd-c`](#flex-direction)
-Shortcut to create flex column
-
+<p>Shortcut to create flex column</p>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-cr</code> ⇢ [`d-fx`](#display) [`fxd-cr`](#flex-direction)
-Shortcut to create flex reversed column
+<p>Shortcut to create flex reversed column</p>
