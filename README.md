@@ -1,5 +1,7 @@
 # Quantum CSS
 
+[![npm version](https://badge.fury.io/js/quantum-css.svg)](https://www.npmjs.com/package/quantum-css)
+
 Functional CSS library in SCSS.
 
 ## Contents
