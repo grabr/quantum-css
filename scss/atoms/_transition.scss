@@ -2,8 +2,6 @@
   &p#{$literal-sep} {
     &n { transition-property: none }
     &a { transition-property: all }
-    &c { transition-property: color, background-color, border-color }
-    &t { transition-property: transform }
   }
 
   &d#{$ordinal-sep} {
