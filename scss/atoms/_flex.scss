@@ -77,6 +77,6 @@
 
 .ord#{$ordinal-sep} {
   @for $order from 0 through 10 {
-    &#{$order} { order: $order * 10 }
+    &#{$order} { order: $order }
   }
 }

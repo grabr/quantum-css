@@ -1,10 +1,10 @@
 .pgb {
   &b#{$literal-sep} {
-    &a  { page-break-after: auto }
-    &al { page-break-after: always }
-    &av { page-break-after: avoid }
-    &l  { page-break-after: left }
-    &r  { page-break-after: right }
+    &a  { page-break-before: auto }
+    &al { page-break-before: always }
+    &av { page-break-before: avoid }
+    &l  { page-break-before: left }
+    &r  { page-break-before: right }
   }
 
   &i#{$literal-sep} {
