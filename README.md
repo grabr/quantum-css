@@ -663,7 +663,14 @@ Specify mapping in <code><a href="#palette">$text-indents</a>: (id: value)</code
 
 ### Flex
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-r</code>  ⇢ `display: flex` `flex-direction: row`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-rr</code> ⇢ `display: flex` `flex-direction: row-reverse`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-c</code>  ⇢ `display: flex` `flex-direction: column`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-cr</code> ⇢ `display: flex` `flex-direction: column-reverse`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-r</code>  ⇢ [`d-fx`](#display) [`fxd-r`](#flex-direction)
+Shortcut to create flex row
+
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-rr</code> ⇢ [`d-fx`](#display) [`fxd-rr`](#flex-direction)
+Shortcut to create flex reversed row
+
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-c</code>  ⇢ [`d-fx`](#display) [`fxd-c`](#flex-direction)
+Shortcut to create flex column
+
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-cr</code> ⇢ [`d-fx`](#display) [`fxd-cr`](#flex-direction)
+Shortcut to create flex reversed column
