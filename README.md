@@ -6,12 +6,20 @@ Functional CSS library in SCSS.
 
 ## Contents
 
+1. [Naming Conventions](#naming-conventions)
+
+  - [Value Aliases](#value-aliases)
+  - [Color Values](#color-values)
+  - [Unit-less Properties](#unit-less-properties)
+
+2. [Pseudo-classes and Pseudo-elements](#pseudo-classes-and-pseudo-elements)
+
 1. **Grid System**
 
   - [Containers](#grid-containers)
   - [Rows](#grid-rows)
   - [Columns](#grid-columns)
-  - [Column Displacement](#column-displacement)
+  - [Column Ordering](#column-ordering)
 
 1. **Atom Index**
 
@@ -159,6 +167,91 @@ Functional CSS library in SCSS.
 3. [**License**](#license)
 
 
+## Naming Conventions
+
+In Quantum CSS every class name consists of four parts in given order:
+
+- Optional breakpoint name: `SM_`, `MD_`, etc.
+- Property abbreviation: <a href="#border-color"><code><b>bd</b>tc</code></a>, <a href="#border-color"><code><b>ws</b></code></a>, etc. 
+- Value abbreviation: `-w`, `100p`, `-ccw2t`
+- Optional pseudo-class and/or pseudo-element modifier: `-hf`, `-h`, etc. 
+
+You can configure separators between each parts of class name with following variables:
+
+- `$breakpoint-sep` holds separator between breakpoint name and property abbreviation. By default,  underscore`_` is used.
+
+- `$literal-sep` and `$ordinal-sep` define separators that are inserted between property name and literal value abbreviation or ordinal one respectively. By default, `$literal-sep` is set to minus `-` and `$ordinal-sep` is a blank string.
+
+- `$pseudo-sep` separates pseudo modifier from value abbreviation.
+
+Property and value abbreviations were heavily inspired by [Emmet](http://docs.emmet.io/cheat-sheet/).
+
+### Value Aliases
+
+Aliases for commonly used values:
+
+- `p` ⇢ `%`
+- `e` ⇢ `em`
+- `x` ⇢ `ex`
+- `r` ⇢ `rem`
+
+Use these aliases instead of full units:
+
+- <a href="#width"><code><b>w</b>100p</code></a> ⇢ `width: 100%`
+- <a href="#height"><code>SM_<b>mah</b>0</code></a> ⇢ `max-height: 0`
+
+
+### Color Values
+
+Use names for colors for better readability. By default, [Tango palette](http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines#Color_Palette) is used for every color-related atom. You can specify your own palette overriding variables in [`_variables.scss`](scss/_variables.scss).
+
+- <a href="#border-color"><code><b>bd</b>rc-w</code></a> ⇢ `border-right-color: white`
+- <a href="#border-color"><code>LG_<b>c</b>-b</code></a> ⇢ `color: black`
+
+
+### Unit-less Properties
+
+Some CSS properties are defined as unit-less, e.g. no unit suffix will be outputted:
+
+- <a href="#line-height"><code><b>lh</b>1</code></a> ⇢ `line-height: 1`
+- <a href="#font-weight"><code><b>f</b>w400</code></a> ⇢ `font-weight: 400`
+- <a href="#"><code><b>op</b>37</code></a> ⇢ `opacity: 0.37`
+
+
+## Pseudo-classes and Pseudo-elements
+
+You can configure set of pseudo-classes and pseudo-elements for which atoms are generated via `$pseudos`. To emit disjunction of pseudos use comma-separated list.
+
+```scss
+$pseudos: (hf: (hover, focus));
+
+.bgc-w-hf:hover,
+.bgc-w-hf:focus {
+  background-color: white;
+}
+```
+
+Space-separated list defines selector conjunction:
+
+```scss
+$pseudos: (eh: empty hover);
+
+.bgc-w-eh:empty:hover {
+  background-color: white;
+}
+```
+
+Combine those different list types for precise class targeting:
+
+```scss
+$pseudos: (ch: (first-child hover, last-child hover));
+
+.bgc-w-ch:first-child:hover,
+.bgc-w-ch:last-child:hover {
+  background-color: white;
+}
+```
+
 
 ## Grid System
 
@@ -193,11 +286,11 @@ Rows are horizontal groups of columns that ensure your columns are lined up prop
 
 Content should be placed within columns, and only columns may be immediate children of rows.
 
-Column classes indicate the number of columns you’d like to use out of the possible 12 per row. So if you want three equal-width columns, you’d use <code>SM_<b>g</b>c4</code>. You can change number of columns in grid altering `$grid-col-count`.
+Column classes indicate the number of columns you’d like to use out of the possible 12 per row. So if you want three equal-width columns, you’d use <code>SM_<b>g</b>c4</code>. You can change number of columns in grid altering [`$grid-col-count`](scss/_variables.scss).
 
 Column widths are set in percentages, so they’re always fluid and sized relative to their parent element.
 
-Columns have horizontal padding to create the gutters between individual columns. Gutters can be configured per every breakpoint via `$grid-gutters`.
+Columns have horizontal padding to create the gutters between individual columns. Gutters can be configured per every breakpoint via [`$grid-gutters`](scss/_variables.scss).
 
 ```html
 <div class="g g-f">
@@ -209,7 +302,7 @@ Columns have horizontal padding to create the gutters between individual columns
 </div>
 ```
 
-#### Column Displacement
+#### Column Ordering
 
 In addition to column clearing at responsive breakpoints, you may need to reset offsets, pushes, or pulls.
 
@@ -233,7 +326,7 @@ Change the order of columns by relatively shifting them to the left with <code>[
 #### [`background-color`](https://developer.mozilla.org/en/docs/Web/CSS/background-color)
 <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bg</b>c{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `background-color: {value}`
 
-Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$background-colors</a>: (id: value)</code>.
 
 #### [`background-attachment`](https://developer.mozilla.org/en/docs/Web/CSS/background-attachment)
 1. <code><b>bg</b>a-f</code> ⇢ `fixed`
@@ -295,7 +388,7 @@ Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)<
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rc{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `border-right-color: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>lc{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `border-left-color: {value}`
 
-Specify mapping in <code><a href="#palette">$border-colors</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$border-colors</a>: (id: value)</code>.
 
 #### [`border-width`](https://developer.mozilla.org/en/docs/Web/CSS/border-width)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>w{id}</code>  ⇢ `border-width: {value}`
@@ -306,7 +399,7 @@ Specify mapping in <code><a href="#palette">$border-colors</a>: (id: value)</cod
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rw{id}</code> ⇢ `border-right-width: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>lw{id}</code> ⇢ `border-left-width: {value}`
 
-Specify mapping in <code><a href="#border-widths">$border-widths</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$border-widths</a>: (id: value)</code>.
 
 #### [`border-style`](https://developer.mozilla.org/en/docs/Web/CSS/border-style)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>s{id}</code>  ⇢ `border-style: {value}`
@@ -317,7 +410,11 @@ Specify mapping in <code><a href="#border-widths">$border-widths</a>: (id: value
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rs{id}</code> ⇢ `border-right-style: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>ls{id}</code> ⇢ `border-left-style: {value}`
 
-Specify mapping in <code><a href="#palette">$border-styles</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$border-styles</a>: (id: value)</code>.
+
+By default, all available border styles are included. Border style atoms are emitted for every breakpoint what can
+cause significant increase of outputted CSS file. Be sure to remove unused border styles in order to reduce file size.
+
 
 #### [`border-radius`](https://developer.mozilla.org/en/docs/Web/CSS/border-radius)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>r{id}</code>   ⇢ `border-radius: {value}`
@@ -330,7 +427,7 @@ Specify mapping in <code><a href="#palette">$border-styles</a>: (id: value)</cod
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>brr{id}</code> ⇢ `border-bottom-right-radius: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>blr{id}</code> ⇢ `border-bottom-left-radius: {value}`
 
-Specify mapping in <code><a href="#palette">$border-radiuses</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$border-radiuses</a>: (id: value)</code>.
 
 #### [`border-collapse`](https://developer.mozilla.org/en/docs/Web/CSS/border-collapse)
 1. <code><b>bd</b>ce-c</code> ⇢ `collapse`
@@ -351,7 +448,7 @@ Specify mapping in <code><a href="#palette">$border-radiuses</a>: (id: value)</c
 #### [`color`](https://developer.mozilla.org/en/docs/Web/CSS/color)
 <code>[<a href="#breakpoints">breakpoint</a>\_]<b>c</b>{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `color: {value}`
 
-Specify mapping in <code><a href="#palette">$colors</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$colors</a>: (id: value)</code>.
 
 #### [`cursor`](https://developer.mozilla.org/en/docs/Web/CSS/cursor)
 1. <code><b>cur</b>-a</code>     ⇢ `auto`
@@ -418,7 +515,7 @@ Specify mapping in <code><a href="#palette">$colors</a>: (id: value)</code>.
 #### [`fill`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill)
 <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fi</b>{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `fill: {value}`
 
-Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$background-colors</a>: (id: value)</code>.
 
 #### [`flex-direction`](https://developer.mozilla.org/en/docs/Web/CSS/flex-direction)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>d-r</code>  ⇢ `row`
@@ -495,7 +592,7 @@ Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)<
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>z-i</code>   ⇢ `inherit`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>z{id}</code> ⇢ `font-size: {value}`
 
-Specify mapping in <code><a href="#font-sizes">$font-sizes</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$font-sizes</a>: (id: value)</code>.
 
 #### [`font-family`](https://developer.mozilla.org/en/docs/Web/CSS/font-family)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-s</code>   ⇢ `serif`
@@ -506,7 +603,7 @@ Specify mapping in <code><a href="#font-sizes">$font-sizes</a>: (id: value)</cod
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-i</code>   ⇢ `inherit`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s{id}</code> ⇢ `font-family: {value}`
 
-Specify mapping in <code><a href="#font-families">$font-families</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$font-families</a>: (id: value)</code>.
 
 #### [`font-weight`](https://developer.mozilla.org/en/docs/Web/CSS/font-weight)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w100</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w900</code>  ⇢ `font-weight: 100`…`font-weight: 900`
@@ -566,7 +663,7 @@ Specify mapping in <code><a href="#font-families">$font-families</a>: (id: value
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mah</b>{id}</code> ⇢ `max-height: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mih</b>{id}</code> ⇢ `min-height: {value}`
 
-Specify mapping in <code><a href="#dimensions">$heights</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$heights</a>: (id: value)</code>.
 
 #### [`width`](https://developer.mozilla.org/en/docs/Web/CSS/width)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>w</b>{id}</code>   ⇢ `width: {value}`
@@ -574,14 +671,14 @@ Specify mapping in <code><a href="#dimensions">$heights</a>: (id: value)</code>.
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>maw</b>{id}</code> ⇢ `max-width: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>miw</b>{id}</code> ⇢ `min-width: {value}`
 
-Specify mapping in <code><a href="#dimensions">$widths</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$widths</a>: (id: value)</code>.
 
 #### [`letter-spacing`](https://developer.mozilla.org/en/docs/Web/CSS/letter-spacing)
 1. <code><b>ls</b>-n</code>   ⇢ `normal`
 1. <code><b>ls</b>-i</code>   ⇢ `inherit`
 1. <code><b>ls</b>{id}</code> ⇢ `letter-spacing: {value}`
 
-Specify mapping in <code><a href="#letter-spacings">$letter-spacings</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$letter-spacings</a>: (id: value)</code>.
 
 #### [`line-height`](https://developer.mozilla.org/en/docs/Web/CSS/line-height)
 1. <code><b>lh</b>-n</code> ⇢ `normal`
@@ -590,7 +687,7 @@ Specify mapping in <code><a href="#letter-spacings">$letter-spacings</a>: (id: v
 1. <code><b>lh</b>1</code>  ⇢ `1`
 1. <code><b>lh</b>{id}</code> ⇢ `line-height: {value}`
 
-Specify mapping in <code><a href="#line-heights">$line-heights</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$line-heights</a>: (id: value)</code>.
 
 #### [`list-style`](https://developer.mozilla.org/en/docs/Web/CSS/list-style)
 1. <code><b>li</b>s-n</code> ⇢ `none`
@@ -622,7 +719,7 @@ Specify mapping in <code><a href="#line-heights">$line-heights</a>: (id: value)<
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>b{id}</code> ⇢ `margin-bottom: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>l{id}</code> ⇢ `margin-left: {value}`
 
-Specify mapping in <code><a href="#margins">$margins</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$margins</a>: (id: value)</code>.
 
 #### [`padding`](https://developer.mozilla.org/en/docs/Web/CSS/padding)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>{id}</code>  ⇢ `padding: {value}`
@@ -634,7 +731,7 @@ Specify mapping in <code><a href="#margins">$margins</a>: (id: value)</code>.
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>b{id}</code> ⇢ `padding-bottom: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>l{id}</code> ⇢ `padding-left: {value}`
 
-Specify mapping in <code><a href="#paddings">$paddings</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$paddings</a>: (id: value)</code>.
 
 #### [`object-fit`](https://developer.mozilla.org/en/docs/Web/CSS/object-fit)
 1. <code><b>of</b>-n</code>  ⇢ `none`
@@ -708,7 +805,7 @@ Specify mapping in <code><a href="#paddings">$paddings</a>: (id: value)</code>.
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>b</b>{id}</code> ⇢ `bottom: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>l</b>{id}</code> ⇢ `left: {value}`
 
-Specify mapping in <code><a href="#positions">$positions</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$positions</a>: (id: value)</code>.
 
 #### [`resize`](https://developer.mozilla.org/en/docs/Web/CSS/resize)
 1. <code><b>rz</b>-n</code> ⇢ `none`
@@ -743,7 +840,7 @@ Specify mapping in <code><a href="#positions">$positions</a>: (id: value)</code>
 #### [`text-indent`](https://developer.mozilla.org/en/docs/Web/CSS/text-indent)
 <code><b>t</b>i{id}</code> ⇢ `text-indent: {value}`
 
-Specify mapping in <code><a href="#text-indents">$text-indents</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$text-indents</a>: (id: value)</code>.
 
 #### [`text-decoration`](https://developer.mozilla.org/en/docs/Web/CSS/text-decoration)
 1. <code><b>t</b>d-n</code>  ⇢ `none`
