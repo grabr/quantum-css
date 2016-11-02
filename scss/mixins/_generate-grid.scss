@@ -21,9 +21,12 @@
   $col-count:   $grid-col-count,
   $breakpoints: $breakpoints
 ) {
-  width: $width;
   padding-left:  $gutter;
   padding-right: $gutter;
+
+  &#{$literal-sep}f {
+    width: $width;
+  }
 
   &r {
     margin-left:  $gutter / -2;
