@@ -19,7 +19,7 @@ With this library you don’t need to write any rules and media queries. You can
 </button>
 ```
 
-```scss
+```sass
 .btn {
   @extend .cur-p; // Pointer cursor
   @extend .bds-s, .bdw1; // Border style solid and border width 1px
