@@ -536,12 +536,12 @@ These shortcuts are available if [display](#display) atom is included.
 
 #### [`flex-grow`](https://developer.mozilla.org/en/docs/Web/CSS/flex-grow)
 
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g0</code>…<code><b>fx</b>g10</code>  → `flex-grow: 0`…`flex-grow: 10`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g0</code>…<code><b>fx</b>g10</code>  → `flex-grow: 0`…`10`
 
 
 #### [`flex-shrink`](https://developer.mozilla.org/en/docs/Web/CSS/flex-shrink)
 
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s0</code>…<code><b>fx</b>s10</code>  → `flex-shrink: 0`…`flex-shrink: 10`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s0</code>…<code><b>fx</b>s10</code>  → `flex-shrink: 0`…`10`
 
 
 #### [`flex-basis`](https://developer.mozilla.org/en/docs/Web/CSS/flex-basis)
@@ -634,7 +634,7 @@ Specify mapping in <code><a href="scss/_variables.scss">$positions</a>: (id: val
 
 #### [`z-index`](https://developer.mozilla.org/en/docs/Web/CSS/z-index)
 
-1. <code><b>z</b>0</code>…<code><b>z</b>10</code>  → `z-index: 0`…`z-index: 10`
+1. <code><b>z</b>0</code>…<code><b>z</b>10</code>  → `z-index: 0`…`10`
 1. <code><b>z</b>-a</code> → `auto`
 1. <code><b>z</b>-i</code> → `inherit`
 
@@ -685,7 +685,7 @@ Specify mapping in <code><a href="scss/_variables.scss">$font-families</a>: (id:
 
 #### [`font-weight`](https://developer.mozilla.org/en/docs/Web/CSS/font-weight)
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w100</code>…<code><b>f</b>w900</code>  → `font-weight: 100`…`font-weight: 900`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w100</code>…<code><b>f</b>w900</code>  → `font-weight: 100`…`900`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-n</code>  → `normal`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-b</code>  → `bold`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-br</code> → `bolder`
@@ -760,7 +760,7 @@ Specify mapping in <code><a href="scss/_variables.scss">$font-families</a>: (id:
 
 #### [`transition-duration`](https://developer.mozilla.org/en/docs/Web/CSS/transition-duration)
 
-<code><b>tr</b>d100ms</code>…<code><b>tr</b>d1000ms</code>  → `transition-duration: 100ms`…`transition-duration: 1000ms`
+<code><b>tr</b>d100ms</code>…<code><b>tr</b>d1000ms</code>  → `transition-duration: 100ms`…`1000ms`
 
 
 #### [`transition-timing-function`](https://developer.mozilla.org/en/docs/Web/CSS/transition-timing-function)
