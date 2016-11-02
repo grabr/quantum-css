@@ -6,13 +6,13 @@ Functional CSS library in SCSS.
 
 ## Contents
 
-1. [Naming Conventions](#naming-conventions)
+1. [**Naming Conventions**](#naming-conventions)
 
   - [Value Aliases](#value-aliases)
   - [Color Values](#color-values)
   - [Unit-less Properties](#unit-less-properties)
 
-2. [Pseudo-classes and Pseudo-elements](#pseudo-classes-and-pseudo-elements)
+2. [**Pseudo-classes and Pseudo-elements**](#pseudo-classes-and-pseudo-elements)
 
 1. **Grid System**
 
@@ -223,7 +223,9 @@ Some CSS properties are defined as unit-less, e.g. no unit suffix will be output
 You can configure set of pseudo-classes and pseudo-elements for which atoms are generated via `$pseudos`. To emit disjunction of pseudos use comma-separated list.
 
 ```scss
-$pseudos: (hf: (hover, focus));
+$pseudos: (
+  hf: (hover, focus)
+);
 
 .bgc-w-hf:hover,
 .bgc-w-hf:focus {
@@ -234,7 +236,9 @@ $pseudos: (hf: (hover, focus));
 Space-separated list defines selector conjunction:
 
 ```scss
-$pseudos: (eh: empty hover);
+$pseudos: (
+  eh: empty hover
+);
 
 .bgc-w-eh:empty:hover {
   background-color: white;
@@ -244,7 +248,9 @@ $pseudos: (eh: empty hover);
 Combine those different list types for precise class targeting:
 
 ```scss
-$pseudos: (ch: (first-child hover, last-child hover));
+$pseudos: (
+  ch: (first-child hover, last-child hover)
+);
 
 .bgc-w-ch:first-child:hover,
 .bgc-w-ch:last-child:hover {
