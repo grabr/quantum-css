@@ -4,6 +4,9 @@
 @import 'mixins/create-partials';
 @import 'mixins/generate-grid';
 
+@import 'utilities/clearfix';
+@import 'utilities/grid';
+
 @import 'atoms/background';
 @import 'atoms/border';
 @import 'atoms/box-sizing';
@@ -38,6 +41,3 @@
 @import 'atoms/width';
 @import 'atoms/word';
 @import 'atoms/z-index';
-
-@import 'utilities/clearfix';
-@import 'utilities/grid';

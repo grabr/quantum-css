@@ -41,42 +41,52 @@
   }
 }
 
-.jc#{$literal-sep} {
-  &fs { justify-content: flex-start }
-  &fe { justify-content: flex-end }
-  &c  { justify-content: center }
-  &sb { justify-content: space-between }
-  &sa { justify-content: space-around }
+@include create-responsive-classes(jc) {
+  &#{$literal-sep} {
+    &fs { justify-content: flex-start }
+    &fe { justify-content: flex-end }
+    &c  { justify-content: center }
+    &sb { justify-content: space-between }
+    &sa { justify-content: space-around }
+  }
 }
 
-.ai#{$literal-sep} {
-  &fs { align-items: flex-start }
-  &fe { align-items: flex-end }
-  &c  { align-items: center }
-  &bs { align-items: baseline }
-  &s  { align-items: stretch }
+@include create-responsive-classes(ai) {
+  &#{$literal-sep} {
+    &fs { align-items: flex-start }
+    &fe { align-items: flex-end }
+    &c  { align-items: center }
+    &bs { align-items: baseline }
+    &s  { align-items: stretch }
+  }
 }
 
-.ac#{$literal-sep} {
-  &fs { align-content: flex-start }
-  &fe { align-content: flex-end }
-  &c  { align-content: center }
-  &sb { align-content: space-between }
-  &sa { align-content: space-around }
-  &s  { align-content: stretch }
+@include create-responsive-classes(ac) {
+  &#{$literal-sep} {
+    &fs { align-content: flex-start }
+    &fe { align-content: flex-end }
+    &c  { align-content: center }
+    &sb { align-content: space-between }
+    &sa { align-content: space-around }
+    &s  { align-content: stretch }
+  }
 }
 
-.as#{$literal-sep} {
-  &a  { align-self: auto }
-  &fs { align-self: flex-start }
-  &fe { align-self: flex-end }
-  &c  { align-self: center }
-  &b  { align-self: baseline }
-  &s  { align-self: stretch }
+@include create-responsive-classes(as) {
+  &#{$literal-sep} {
+    &a  { align-self: auto }
+    &fs { align-self: flex-start }
+    &fe { align-self: flex-end }
+    &c  { align-self: center }
+    &b  { align-self: baseline }
+    &s  { align-self: stretch }
+  }
 }
 
-.ord#{$ordinal-sep} {
-  @for $order from 0 through 10 {
-    &#{$order} { order: $order }
+@include create-responsive-classes(ord) {
+  &#{$ordinal-sep} {
+    @for $order from 0 through 10 {
+      &#{$order} { order: $order }
+    }
   }
 }

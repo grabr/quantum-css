@@ -555,45 +555,45 @@ These shortcuts are available if [display](#display) atom is included.
 
 #### [`justify-content`](https://developer.mozilla.org/en/docs/Web/CSS/justify-content)
 
-1. <code><b>jc</b>-fs</code> → `flex-start`
-1. <code><b>jc</b>-fe</code> → `flex-end`
-1. <code><b>jc</b>-c</code>  → `center`
-1. <code><b>jc</b>-sb</code> → `space-between`
-1. <code><b>jc</b>-sa</code> → `space-around`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>jc</b>-fs</code> → `flex-start`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>jc</b>-fe</code> → `flex-end`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>jc</b>-c</code>  → `center`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>jc</b>-sb</code> → `space-between`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>jc</b>-sa</code> → `space-around`
 
 
 #### [`align-items`](https://developer.mozilla.org/en/docs/Web/CSS/align-items)
 
-1. <code><b>ai</b>-fs</code> → `flex-start`
-1. <code><b>ai</b>-fe</code> → `flex-end`
-1. <code><b>ai</b>-c</code>  → `center`
-1. <code><b>ai</b>-bs</code> → `baseline`
-1. <code><b>ai</b>-s</code>  → `stretch`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>ai</b>-fs</code> → `flex-start`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>ai</b>-fe</code> → `flex-end`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>ai</b>-c</code>  → `center`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>ai</b>-bs</code> → `baseline`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>ai</b>-s</code>  → `stretch`
 
 
 #### [`align-content`](https://developer.mozilla.org/en/docs/Web/CSS/align-content)
 
-1. <code><b>ac</b>-fs</code> → `flex-start`
-1. <code><b>ac</b>-fe</code> → `flex-end`
-1. <code><b>ac</b>-c</code>  → `center`
-1. <code><b>ac</b>-sb</code> → `space-between`
-1. <code><b>ac</b>-sa</code> → `space-around`
-1. <code><b>ac</b>-s</code>  → `stretch`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>ac</b>-fs</code> → `flex-start`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>ac</b>-fe</code> → `flex-end`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>ac</b>-c</code>  → `center`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>ac</b>-sb</code> → `space-between`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>ac</b>-sa</code> → `space-around`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>ac</b>-s</code>  → `stretch`
 
 
 #### [`align-self`](https://developer.mozilla.org/en/docs/Web/CSS/align-self)
 
-1. <code><b>as</b>-a</code>  → `auto`
-1. <code><b>as</b>-fs</code> → `flex-start`
-1. <code><b>as</b>-fe</code> → `flex-end`
-1. <code><b>as</b>-c</code>  → `center`
-1. <code><b>as</b>-b</code>  → `baseline`
-1. <code><b>as</b>-s</code>  → `stretch`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>as</b>-a</code>  → `auto`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>as</b>-fs</code> → `flex-start`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>as</b>-fe</code> → `flex-end`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>as</b>-c</code>  → `center`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>as</b>-b</code>  → `baseline`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>as</b>-s</code>  → `stretch`
 
 
 #### [`order`](https://developer.mozilla.org/en/docs/Web/CSS/order)
 
-<code><b>ord</b>0</code>…<code><b>ord</b>10</code> → `order: 0`…`order: 10`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>ord</b>0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>ord</b>10</code> → `order: 0`…`order: 10`
 
 
 ### Positioning
