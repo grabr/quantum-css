@@ -21,7 +21,7 @@ Functional CSS library in SCSS.
   - [Columns](#grid-columns)
   - [Column Ordering](#column-ordering)
 
-1. **Atom Index**
+1. [**Atom Index**](#atom-index)
 
   - Background  
      [`background-color`](#background-color)  
@@ -329,6 +329,8 @@ Change the order of columns by relatively shifting them to the left with <code>[
 
 ## Atom Index
 
+Values for each atom are listed in the order they are listed in generated CSS.
+
 #### [`background-color`](https://developer.mozilla.org/en/docs/Web/CSS/background-color)
 <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bg</b>c{id}[-<a href="#pseudos">pseudo</a>]</code> → `background-color: {value}`
 
@@ -526,10 +528,10 @@ Specify mapping in <code><a href="scss/_variables.scss">$background-colors</a>: 
 ### Flexible Box Layout
 These shortcuts are available if [display](#display) atom is included.
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-r</code>  = <a href="display"><code><b>d</b>-fx</code></a>, <code><b>fx</b>d-r</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-rr</code> = <a href="display"><code><b>d</b>-fx</code></a>, <code><b>fx</b>d-rr</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-c</code>  = <a href="display"><code><b>d</b>-fx</code></a>, <code><b>fx</b>d-c</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-cr</code> = <a href="display"><code><b>d</b>-fx</code></a>, <code><b>fx</b>d-cr</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-r</code>  = <a href="#display"><code><b>d</b>-fx</code></a>, <code><b>fx</b>d-r</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-rr</code> = <a href="#display"><code><b>d</b>-fx</code></a>, <code><b>fx</b>d-rr</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-c</code>  = <a href="#display"><code><b>d</b>-fx</code></a>, <code><b>fx</b>d-c</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-cr</code> = <a href="#display"><code><b>d</b>-fx</code></a>, <code><b>fx</b>d-cr</code>
 
 #### [`flex-direction`](https://developer.mozilla.org/en/docs/Web/CSS/flex-direction)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>d-r</code>  → `row`
