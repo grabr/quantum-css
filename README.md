@@ -47,7 +47,10 @@ Functional CSS library in SCSS.
      [`float`](#float)  
      [`clear`](#clear)  
      [`position`](#position)  
-     [`top` `right` `bottom` `left`](#top-right-bottom-left)  
+     [`top`](#top)  
+     [`right`](#right)  
+     [`bottom`](#bottom)  
+     [`left`](#left)  
      [`z-index`](#z-index)  
   
   - Fonts  
@@ -900,10 +903,22 @@ Specify mapping in <code><a href="#paddings">$paddings</a>: (id: value)</code>.
 1. <code><b>pos</b>-r</code> ⇢ `relative`
 1. <code><b>pos</b>-f</code> ⇢ `fixed`
 
-#### [`top`](https://developer.mozilla.org/en/docs/Web/CSS/top) [`right`](https://developer.mozilla.org/en/docs/Web/CSS/right) [`bottom`](https://developer.mozilla.org/en/docs/Web/CSS/bottom) [`left`](https://developer.mozilla.org/en/docs/Web/CSS/left)
+#### [`top`](https://developer.mozilla.org/en/docs/Web/CSS/top)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>{id}</code> ⇢ `top: {value}`
+
+Specify mapping in <code><a href="#positions">$positions</a>: (id: value)</code>.
+
+#### [`right`](https://developer.mozilla.org/en/docs/Web/CSS/right)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>r</b>{id}</code> ⇢ `right: {value}`
+
+Specify mapping in <code><a href="#positions">$positions</a>: (id: value)</code>.
+
+#### [`bottom`](https://developer.mozilla.org/en/docs/Web/CSS/bottom)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>b</b>{id}</code> ⇢ `bottom: {value}`
+
+Specify mapping in <code><a href="#positions">$positions</a>: (id: value)</code>.
+
+#### [`left`](https://developer.mozilla.org/en/docs/Web/CSS/left)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>l</b>{id}</code> ⇢ `left: {value}`
 
 Specify mapping in <code><a href="#positions">$positions</a>: (id: value)</code>.
