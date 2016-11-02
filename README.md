@@ -318,9 +318,9 @@ Columns have horizontal padding to create the gutters between individual columns
 
 In addition to column clearing at responsive breakpoints, you may need to reset offsets, pushes, or pulls.
 
-Move columns to the right using <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o12</code> classes. These classes increase the left margin of a column by specified number of columns. For example, `MD_go4` moved `MD_gc4` over four columns.
+Move columns to the right using <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o0</code>…<code><b>g</b>o12</code> classes. These classes increase the left margin of a column by specified number of columns. For example, `MD_go4` moved `MD_gc4` over four columns.
 
-Change the order of columns by relatively shifting them to the left with <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl12</code> or to the right with <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr12</code> classes.
+Change the order of columns by relatively shifting them to the left with <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl0</code>…<code><b>g</b>sl12</code> or to the right with <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr0</code>…<code><b>g</b>sr12</code> classes.
 
 ```html
 <div class="g g-f">
@@ -536,12 +536,12 @@ These shortcuts are available if [display](#display) atom is included.
 
 #### [`flex-grow`](https://developer.mozilla.org/en/docs/Web/CSS/flex-grow)
 
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g10</code>  → `flex-grow: 0`…`flex-grow: 10`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g0</code>…<code><b>fx</b>g10</code>  → `flex-grow: 0`…`flex-grow: 10`
 
 
 #### [`flex-shrink`](https://developer.mozilla.org/en/docs/Web/CSS/flex-shrink)
 
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s10</code>  → `flex-shrink: 0`…`flex-shrink: 10`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s0</code>…<code><b>fx</b>s10</code>  → `flex-shrink: 0`…`flex-shrink: 10`
 
 
 #### [`flex-basis`](https://developer.mozilla.org/en/docs/Web/CSS/flex-basis)
@@ -593,7 +593,7 @@ These shortcuts are available if [display](#display) atom is included.
 
 #### [`order`](https://developer.mozilla.org/en/docs/Web/CSS/order)
 
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>ord</b>0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>ord</b>10</code> → `order: 0`…`order: 10`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>ord</b>0</code>…<code><b>ord</b>10</code> → `order: 0`…`order: 10`
 
 
 ### Positioning
@@ -685,7 +685,7 @@ Specify mapping in <code><a href="scss/_variables.scss">$font-families</a>: (id:
 
 #### [`font-weight`](https://developer.mozilla.org/en/docs/Web/CSS/font-weight)
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w100</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w900</code>  → `font-weight: 100`…`font-weight: 900`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w100</code>…<code><b>f</b>w900</code>  → `font-weight: 100`…`font-weight: 900`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-n</code>  → `normal`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-b</code>  → `bold`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-br</code> → `bolder`
