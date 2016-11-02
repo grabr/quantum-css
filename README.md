@@ -15,7 +15,7 @@ Functional CSS library in SCSS.
      [`background-image`](#background-image)  
      [`background-origin`](#background-origin)  
      [`background-repeat`](#background-repeat)  
-     [`background-size`](#background-size)
+     [`background-size`](#background-size)  
      
      [`background-position`](#background-position)  
      [`background-position-x`](#background-position-x)  
@@ -111,7 +111,7 @@ Functional CSS library in SCSS.
   - Colors  
      [`color`](#color)  
      [`fill`](#fill)  
-     [`opacity`](#opacity)
+     [`opacity`](#opacity)  
   
   - Box Model  
      [`box-sizing`](#box-sizing)  
@@ -152,276 +152,6 @@ Functional CSS library in SCSS.
 3. [**License**](#license)
 
 
-## Class Naming
-
-Every class name consists of following parts in given order:
-
-- Optional breakpoint name
-- Property abbreviation
-- Value abbreviation
-- Optional pseudo-class and/or pseudo-element modifier 
-
-You can configure separators between each parts of class name with following variables:
-
-- `$breakpoint-sep` is the separator between breakpoint name and property abbreviation. By default, `_` is used.
-- `$literal-sep` and `$ordinal-sep` define separators that are inserted between property name and literal value abbreviation or ordinal one respectively. By default, `$literal-sep` is set to minus `-` and `$ordinal-sep` is a blank string.
-- `$pseudo-sep` separates pseudo modifier from value abbreviation.
-
-Property and value abbreviations were heavily inspired by [Emmet](http://docs.emmet.io/cheat-sheet/).
-
-
-## Variables
-
-### Breakpoints
-
-```scss
-$breakpoints: (
-  null: 0,
-  SM:   576px,
-  MD:   768px,
-  LG:   992px,
-  XL:   1200px,
-) !default;
-```
-
-### Pseudos
-
-You can configure set of pseudo-classes and pseudo-elements for which atoms are generated via `$pseudos`. By default:
-
-```scss
-$pseudos: (
-  hf: (hover, focus),
-  h: hover,
-  f: focus,
-) !default;
-```
-
-Comma-separated list defines selector disjunction. Ex. `(hf: (hover, focus))` following classes would be generated:
-
-```scss
-.bgc-w-hf:hover,
-.bgc-w-hf:focus {
-  background-color: white;
-}
-```
-
-Space-separated list defines selector conjunction. Ex. `(eh: empty hover)` following class would be generated:
-
-```scss
-.bgc-w-eh:empty:hover {
-  background-color: white;
-}
-```
-
-You can combine those two like `(ch: first-child hover, last-child hover)`:
-
-```scss
-.bgc-w-ch:first-child:hover,
-.bgc-w-ch:last-child:hover {
-  background-color: white;
-}
-```
-
-
-### Palette
-
-By default, [Tango palette](http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines#Color_Palette)
-is used for every color-related atom. You can specify your own palette overriding corresponding variable
-in [`_variables.scss`](scss/_variables.scss).
-
-```scss
-// Abbreviations:
-//   l - Light
-//   d - Dark
-$palette: (
-  //// Greyscale
-  w:  #fff,
-  g1: #eeeeec,
-  g2: #d3d7cf,
-  g3: #babdb6,
-  g4: #888a85,
-  g5: #555753,
-  g6: #2e3436,
-  bk: #000,
-
-  // Yellow
-  ly: #fce94f,
-  y:  #edd400,
-  dy: #c4a000,
-
-  // Orange
-  lo: #fcaf3e,
-  o:  #f57900,
-  do: #ce5c00,
-
-  // Brown
-  lb: #e9b96e,
-  b:  #c17d11,
-  db: #8f5902,
-
-  // Green
-  lg: #8ae234,
-  g:  #73d216,
-  dg: #4e9a06,
-
-  // Navy
-  ln: #729fcf,
-  n:  #3465a4,
-  dn: #204a87,
-
-  // Purple
-  lp: #ad7f8a,
-  p:  #75507b,
-  dp: #5c3566,
-
-  // Red
-  lr: #ef2929,
-  r:  #cc0000,
-  dr: #a40000,
-
-  cc: currentColor,
-  tt: transparent,
-  i:  inherit,
-) !default;
-```
-
-### Border Widths
-
-`<div class="bdw1"></div>`
-
-```scss
-$border-widths: (
-  1:  1px,
-  i:  inherit,
-) !default;
-```
-
-### Border Radiuses
-
-`<div class="bdr-c"></div>`
-
-```scss
-$border-radiuses: (
-  10: 10px,
-  5:  5px,
-  c:  9999px, // Circle
-  i:  inherit,
-) !default;
-```
-
-### Border Styles
-
-By default, all available border styles are included. Border style atoms are emitted for every breakpoint what can
-cause significant increase of outputted CSS file. Be sure to remove unused border styles in order to reduce file size.
-
-```scss
-$border-styles: (
-  n:      none,
-  h:      hidden,
-  dt:     dotted,
-  ds:     dashed,
-  s:      solid,
-  db:     double,
-  dtds:   dot-dash,
-  dtdtds: dot-dot-dash,
-  w:      wave,
-  g:      groove,
-  r:      ridge,
-  in:     inset,
-  o:      outset,
-  i:      inherit,
-) !default;
-```
-
-### Font Sizes
-
-```scss
-$font-sizes: (
-  16: 16px, // Base size
-
-  xs: .75rem,
-  s:  .875rem,
-  m:  1rem,
-  l:  1.25rem,
-
-  h6: 1rem,
-  h5: 1.25rem,
-  h4: 1.5rem,
-  h3: 1.75rem,
-  h2: 2rem,
-  h1: 2.5rem,
-
-  d4: 3.5rem,
-  d3: 4.5rem,
-  d2: 5.5rem,
-  d1: 6rem,
-) !default;
-```
-
-### Font Families
-
-Font family is a comma separated list of font names.
-
-```scss
-$font-families: (
-  ss: (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif),
-  s:  (Georgia, 'Times New Roman', Times, serif),
-  m:  (Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace)
-) !default;
-```
-
-### Line Heights
-
-```scss
-$line-heights: (
-  h: 1.1, // Headings
-  t: 1.3, // Text
-) !default;
-```
-
-### Letter Spacings
-
-```scss
-$letter-spacings: (
-  1: 1px,
-  2: 2px,
-) !default;
-```
-
-### Text Indents
-
-```scss
-$text-indents: (
-  1r: 1rem,
-  os: -9999px, // Off-screen
-) !default;
-```
-
-### Margins &amp; Paddings
-
-### Positions
-
-```scss
-$positions: (
-  -50p:  -50%,
-  -100p: -100%,
-   100p:  100%,
-   50p:   50%,
-   0:     0,
-) !default;
-```
-
-### Dimensions
-
-```scss
-$widths: (
-  100p: 100%,
-  50p:  50%,
-  0:    0,
-  i:    inherit
-) !default;
-```
-
 
 ## Grid
 
@@ -450,16 +180,16 @@ Template `.g>.gr>.gc`
 
 1. <code><b>g</b>r</code> Grid row.
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>c1</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>c12</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>c1</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>c12</code>
 Grid column span. `gc2` would occupy two columns of grid. Grid has same number of columns on every breakpoint.
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o0</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o12</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o12</code>
 Grid column offset.
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl0</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl12</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl12</code>
 Grid shift column left.
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr0</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr12</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr12</code>
 Grid shift column right.
 
 
@@ -667,10 +397,10 @@ Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)<
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>w-wr</code> ⇢ `wrap-reverse`
 
 #### [`flex-grow`](https://developer.mozilla.org/en/docs/Web/CSS/flex-grow)
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g0</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g10</code>  ⇢ `flex-grow: 0` &hellip; `flex-grow: 10`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g10</code>  ⇢ `flex-grow: 0`…`flex-grow: 10`
 
 #### [`flex-shrink`](https://developer.mozilla.org/en/docs/Web/CSS/flex-shrink)
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s0</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s10</code>  ⇢ `flex-shrink: 0` &hellip; `flex-shrink: 10`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s10</code>  ⇢ `flex-shrink: 0`…`flex-shrink: 10`
 
 #### [`flex-basis`](https://developer.mozilla.org/en/docs/Web/CSS/flex-basis)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>b-a</code>   ⇢ `auto`
@@ -710,7 +440,7 @@ Specify mapping in <code><a href="#palette">$background-colors</a>: (id: value)<
 1. <code><b>as</b>-s</code>  ⇢ `stretch`
 
 #### [`order`](https://developer.mozilla.org/en/docs/Web/CSS/order)
-<code><b>ord</b>0</code> &hellip; <code><b>ord</b>10</code> ⇢ `order: 0` &hellip; `order: 10`
+<code><b>ord</b>0</code>…<code><b>ord</b>10</code> ⇢ `order: 0`…`order: 10`
 
 #### [`float`](https://developer.mozilla.org/en/docs/Web/CSS/float)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fl</b>-l</code> ⇢ `left`
@@ -744,7 +474,7 @@ Specify mapping in <code><a href="#font-sizes">$font-sizes</a>: (id: value)</cod
 Specify mapping in <code><a href="#font-families">$font-families</a>: (id: value)</code>.
 
 #### [`font-weight`](https://developer.mozilla.org/en/docs/Web/CSS/font-weight)
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w100</code> &hellip; <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w900</code>  ⇢ `font-weight: 100` &hellip; `font-weight: 900`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w100</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w900</code>  ⇢ `font-weight: 100`…`font-weight: 900`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-n</code>  ⇢ `normal`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-b</code>  ⇢ `bold`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-br</code> ⇢ `bolder`
@@ -906,10 +636,10 @@ Specify mapping in <code><a href="#paddings">$paddings</a>: (id: value)</code>.
 1. <code><b>wov</b>s-a</code> ⇢ `auto`
 
 #### [`opacity`](https://developer.mozilla.org/en/docs/Web/CSS/opacity)
-<code><b>op</b>0</code> &hellip; <code><b>op</b>100</code> ⇢ `opacity: 0` &hellip; `opacity: 1`
+<code><b>op</b>0</code>…<code><b>op</b>100</code> ⇢ `opacity: 0`…`opacity: 1`
 
 #### [`z-index`](https://developer.mozilla.org/en/docs/Web/CSS/z-index)
-1. <code><b>z</b>0</code> &hellip; <code><b>z</b>10</code>  ⇢ `z-index: 0` &hellip; `z-index: 10`
+1. <code><b>z</b>0</code>…<code><b>z</b>10</code>  ⇢ `z-index: 0`…`z-index: 10`
 1. <code><b>z</b>-a</code> ⇢ `auto`
 1. <code><b>z</b>-i</code> ⇢ `inherit`
 
@@ -1015,7 +745,7 @@ Specify mapping in <code><a href="#text-indents">$text-indents</a>: (id: value)<
 1. <code><b>tr</b>p-a</code> ⇢ `all`
 
 #### [`transition-duration`](https://developer.mozilla.org/en/docs/Web/CSS/transition-duration)
-<code><b>tr</b>d100ms</code> &hellip; <code><b>tr</b>d1000ms</code>  ⇢ `transition-duration: 100ms` &hellip; `transition-duration: 1000ms`
+<code><b>tr</b>d100ms</code>…<code><b>tr</b>d1000ms</code>  ⇢ `transition-duration: 100ms`…`transition-duration: 1000ms`
 
 #### [`transition-timing-function`](https://developer.mozilla.org/en/docs/Web/CSS/transition-timing-function)
 1. <code><b>tr</b>tf-e</code>   ⇢ `ease`
@@ -1082,4 +812,4 @@ Shortcut to create reversed flex column.
 
 ## License
 
-The code is available under [MIT licence](LICENSE.txt).
+The code is available under [MIT licence](LICENSE).
