@@ -2,7 +2,7 @@
   "name": "quantum-css",
   "version": "0.0.7",
   "author": "Savva Mikhalevski <smikhalevski@gmail.com>",
-  "description": "Functional CSS library",
+  "description": "Functional CSS library in SCSS",
   "keywords": [
     "SASS",
     "SCSS",
@@ -11,7 +11,7 @@
     "atomic"
   ],
   "license": "MIT",
-  "main": "css/molecular.css",
+  "main": "css/index.css",
   "files": [
     "css/",
     "scss/"
