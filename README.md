@@ -263,7 +263,7 @@ $pseudos: (
 ## Grid System
 
 
-#### <a name="grid-containers"></a>Containers <code><b>g</b></code>
+### <a name="grid-containers"></a>Containers <code><b>g</b></code>
 
 As well as in [Bootstrap](http://v4-alpha.getbootstrap.com/layout/overview/#containers) Containers are the most basic layout element and are required when using grid system. Use <code><b>g</b>-f</code> to create a fixed-width centered responsive layout of columns.
 
@@ -278,7 +278,7 @@ While containers _can_ be nested, most layouts do not require a nested container
 Widths of fixed-width container are stored in `$grid-widths`.
 
 
-#### <a name="grid-rows"></a>Rows <code><b>g</b>r</code>
+### <a name="grid-rows"></a>Rows <code><b>g</b>r</code>
 
 Rows are horizontal groups of columns that ensure your columns are lined up properly.
 
@@ -291,7 +291,7 @@ Rows are horizontal groups of columns that ensure your columns are lined up prop
 ```
 
 
-#### <a name="grid-columns"></a>Columns <code><b>g</b>c</code>
+### <a name="grid-columns"></a>Columns <code><b>g</b>c</code>
 
 Content should be placed within columns, and only columns may be immediate children of rows.
 
@@ -312,7 +312,7 @@ Columns have horizontal padding to create the gutters between individual columns
 ```
 
 
-#### Column Ordering
+### Column Ordering
 
 In addition to column clearing at responsive breakpoints, you may need to reset offsets, pushes, or pulls.
 
