@@ -67,7 +67,7 @@ Functional CSS library in SCSS.
   - Transforms  
      [`transform`](#transform)  
 
-  - Flexible Box Layout  
+  - [Flexible Box Layout](#flexible-box-layout)  
      [`flex-direction`](#flex-direction)  
      [`flex-wrap`](#flex-wrap)  
      [`flex-grow`](#flex-grow)  
@@ -387,8 +387,8 @@ Specify mapping in <code><a href="scss/_variables.scss">$background-colors</a>: 
 
 #### [`border-color`](https://developer.mozilla.org/en/docs/Web/CSS/border-color)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>c{id}[-<a href="#pseudos">pseudo</a>]</code>  ⇢ `border-color: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xc{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `border-left-color: {value}` `border-top-color: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>yc{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `border-top-color: {value}` `border-bottom-color: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xc{id}[-<a href="#pseudos">pseudo</a>]</code> = <code><b>bd</b>lc{id}</code>, <code><b>bd</b>rc{id}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>yc{id}[-<a href="#pseudos">pseudo</a>]</code> = <code><b>bd</b>tc{id}</code>, <code><b>bd</b>bc{id}</code>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tc{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `border-top-color: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>bc{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `border-bottom-color: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rc{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `border-right-color: {value}`
@@ -398,8 +398,8 @@ Specify mapping in <code><a href="scss/_variables.scss">$border-colors</a>: (id:
 
 #### [`border-width`](https://developer.mozilla.org/en/docs/Web/CSS/border-width)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>w{id}</code>  ⇢ `border-width: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xw{id}</code> ⇢ `border-left-width: {value}` `border-top-width: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>yw{id}</code> ⇢ `border-top-width: {value}` `border-bottom-width: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xw{id}</code> = <code><b>bd</b>lw{id}</code>, <code><b>bd</b>rw{id}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>yw{id}</code> = <code><b>bd</b>tw{id}</code>, <code><b>bd</b>bw{id}</code>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tw{id}</code> ⇢ `border-top-width: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>bw{id}</code> ⇢ `border-bottom-width: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rw{id}</code> ⇢ `border-right-width: {value}`
@@ -409,8 +409,8 @@ Specify mapping in <code><a href="scss/_variables.scss">$border-widths</a>: (id:
 
 #### [`border-style`](https://developer.mozilla.org/en/docs/Web/CSS/border-style)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>s{id}</code>  ⇢ `border-style: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xs{id}</code> ⇢ `border-left-style: {value}` `border-top-style: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>ys{id}</code> ⇢ `border-top-style: {value}` `border-bottom-style: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xs{id}</code> = <code><b>bd</b>ls{id}</code>, <code><b>bd</b>rs{id}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>ys{id}</code> = <code><b>bd</b>ts{id}</code>, <code><b>bd</b>bs{id}</code>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>ts{id}</code> ⇢ `border-top-style: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>bs{id}</code> ⇢ `border-bottom-style: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rs{id}</code> ⇢ `border-right-style: {value}`
@@ -424,10 +424,10 @@ cause significant increase of outputted CSS file. Be sure to remove unused borde
 
 #### [`border-radius`](https://developer.mozilla.org/en/docs/Web/CSS/border-radius)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>r{id}</code>   ⇢ `border-radius: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tr{id}</code>  ⇢ `border-top-left-radius: {value}` `border-top-right-radius: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rr{id}</code>  ⇢ `border-top-right-radius: {value}` `border-bottom-right-radius: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>br{id}</code>  ⇢ `border-bottom-left-radius: {value}` `border-bottom-right-radius: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>lr{id}</code>  ⇢ `border-top-left-radius: {value}` `border-bottom-left-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tr{id}</code>  = <code><b>bd</b>tlr{id}</code>, <code><b>bd</b>trr{id}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rr{id}</code>  = <code><b>bd</b>trr{id}</code>, <code><b>bd</b>brr{id}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>br{id}</code>  = <code><b>bd</b>blr{id}</code>, <code><b>bd</b>brr{id}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>lr{id}</code>  = <code><b>bd</b>tlr{id}</code>, <code><b>bd</b>blr{id}</code>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>trr{id}</code> ⇢ `border-top-right-radius: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tlr{id}</code> ⇢ `border-top-left-radius: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>brr{id}</code> ⇢ `border-bottom-right-radius: {value}`
@@ -522,6 +522,14 @@ Specify mapping in <code><a href="scss/_variables.scss">$colors</a>: (id: value)
 <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fi</b>{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `fill: {value}`
 
 Specify mapping in <code><a href="scss/_variables.scss">$background-colors</a>: (id: value)</code>.
+
+### Flexible Box Layout
+These shortcuts are available if [display](#display) atom is included.
+
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-r</code>  = <a href="display"><code><b>d</b>-fx</code></a>, <code><b>fx</b>d-r</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-rr</code> = <a href="display"><code><b>d</b>-fx</code></a>, <code><b>fx</b>d-rr</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-c</code>  = <a href="display"><code><b>d</b>-fx</code></a>, <code><b>fx</b>d-c</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-cr</code> = <a href="display"><code><b>d</b>-fx</code></a>, <code><b>fx</b>d-cr</code>
 
 #### [`flex-direction`](https://developer.mozilla.org/en/docs/Web/CSS/flex-direction)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>d-r</code>  ⇢ `row`
@@ -717,9 +725,9 @@ Specify mapping in <code><a href="scss/_variables.scss">$line-heights</a>: (id: 
 
 #### [`margin`](https://developer.mozilla.org/en/docs/Web/CSS/margin)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>{id}</code>  ⇢ `margin: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>x-a</code>   ⇢ `margin-left: auto` `margin-right: auto`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>x{id}</code> ⇢ `margin-left: {value}` `margin-right: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>y{id}</code> ⇢ `margin-top: {value}` `margin-bottom: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>x-a</code>   ⇢ `margin-left: auto`, `margin-right: auto`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>x{id}</code> = <code><b>m</b>l{id}</code>, <code><b>m</b>r{id}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>y{id}</code> = <code><b>m</b>t{id}</code>, <code><b>m</b>b{id}</code>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>t{id}</code> ⇢ `margin-top: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>r{id}</code> ⇢ `margin-right: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>b{id}</code> ⇢ `margin-bottom: {value}`
@@ -729,8 +737,8 @@ Specify mapping in <code><a href="scss/_variables.scss">$margins</a>: (id: value
 
 #### [`padding`](https://developer.mozilla.org/en/docs/Web/CSS/padding)
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>{id}</code>  ⇢ `padding: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>x{id}</code> ⇢ `padding-left: {value}` `padding-right: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>y{id}</code> ⇢ `padding-top: {value}` `padding-bottom: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>x{id}</code> = <code><b>p</b>l{id}</code>, <code><b>p</b>r{id}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>y{id}</code> = <code><b>p</b>t{id}</code>, <code><b>p</b>b{id}</code>
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>t{id}</code> ⇢ `padding-top: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>r{id}</code> ⇢ `padding-right: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>b100p</code> ⇢ `padding-bottom: 100%`
@@ -929,23 +937,6 @@ Specify mapping in <code><a href="scss/_variables.scss">$text-indents</a>: (id: 
 #### [`word-wrap`](https://developer.mozilla.org/en/docs/Web/CSS/word-wrap)
 1. <code><b>wo</b>w-n</code>  ⇢ `normal`
 1. <code><b>wo</b>w-bw</code> ⇢ `break-word`
-
-
-## Molecules
-
-### Flex Shortcuts
-
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-r</code>  ⇢ [`d-fx`](#display) [`fxd-r`](#flex-direction)
-Shortcut to create flex row.
-
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-rr</code> ⇢ [`d-fx`](#display) [`fxd-rr`](#flex-direction)
-Shortcut to create reversed flex row.
-
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-c</code>  ⇢ [`d-fx`](#display) [`fxd-c`](#flex-direction)
-Shortcut to create flex column.
-
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>-cr</code> ⇢ [`d-fx`](#display) [`fxd-cr`](#flex-direction)
-Shortcut to create reversed flex column.
 
 
 ## License
