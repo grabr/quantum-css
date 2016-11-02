@@ -195,6 +195,8 @@ Aliases for commonly used values:
 - `e` → `em`
 - `x` → `ex`
 - `r` → `rem`
+- `d` → `deg`
+- `t` → `turn`
 
 Use these aliases instead of full units:
 
@@ -503,15 +505,9 @@ Specify mapping in <code><a href="scss/_variables.scss">$border-radiuses</a>: (i
 
 1. <code><b>ts</b>-n</code> → `none`
 1. <code><b>ts</b>-i</code> → `inherit`
-1. <code><b>ts</b>r-ccw2t</code> → `rotate(-2turn)`
-1. <code><b>ts</b>r-ccw1t</code> → `rotate(-1turn)`
-1. <code><b>ts</b>r-cw1t</code>  → `rotate(1turn)`
-1. <code><b>ts</b>r-cw2t</code>  → `rotate(2turn)`
-1. <code><b>ts</b>s0</code>   → `scale(0)`
-1. <code><b>ts</b>s25</code>  → `scale(0.25)`
-1. <code><b>ts</b>s50</code>  → `scale(0.5)`
-1. <code><b>ts</b>s75</code>  → `scale(0.75)`
-1. <code><b>ts</b>s200</code> → `scale(2)`
+1. <code><b>ts</b>r45d</code>…<code><b>tr</b>r360d</code>   → `transform: rotate(45deg)`…`transform: rotate(360deg)`
+1. <code><b>ts</b>r-45d</code>…<code><b>tr</b>r-360d</code> → `transform: rotate(-45deg)`…`transform: rotate(-360deg)`
+1. <code><b>ts</b>s0</code>…<code><b>tr</b>s200</code>      → `transform: scale(0)`…`transform: scale(2)`
 
 
 ### Flexible Box Layout

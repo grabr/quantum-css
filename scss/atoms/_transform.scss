@@ -5,17 +5,17 @@
   }
 
   &r#{$literal-sep} {
-    &-ccw2t { transform: rotate(-2turn) }
-    &-ccw1t { transform: rotate(-1turn) }
-    &-cw1t  { transform: rotate(1turn) }
-    &-cw2t  { transform: rotate(2turn) }
+    @for $i from 1 through 8 {
+      $angle: $i * 45;
+      &ccw#{$angle}d { transform: rotate(-#{$angle}deg) }
+      &cw#{$angle}d  { transform: rotate( #{$angle}deg) }
+    }
   }
 
   &s#{$ordinal-sep} {
-    &0   { transform: scale(0) }
-    &25  { transform: scale(0.25) }
-    &50  { transform: scale(0.5) }
-    &75  { transform: scale(0.75) }
-    &200 { transform: scale(2) }
+    @for $i from 0 through 8 {
+      $scale: $i * 25;
+      &#{$scale} { transform: scale(#{$scale}) }
+    }
   }
 }
