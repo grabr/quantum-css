@@ -22,8 +22,25 @@ Functional CSS library in SCSS.
      
   - Border  
      [`border-color`](#border-color)  
+     [`border-top-color`](#border-color)  
+     [`border-right-color`](#border-color)  
+     [`border-bottom-color`](#border-color)  
+     [`border-left-color`](#border-color)  
      [`border-width`](#border-width)  
+     [`border-top-width`](#border-width)  
+     [`border-right-width`](#border-width)  
+     [`border-bottom-width`](#border-width)  
+     [`border-left-width`](#border-width)  
      [`border-style`](#border-style)  
+     [`border-top-style`](#border-style)  
+     [`border-right-style`](#border-style)  
+     [`border-bottom-style`](#border-style)  
+     [`border-left-style`](#border-style)  
+     [`border-radius`](#border-radius)  
+     [`border-top-right-radius`](#border-radius)  
+     [`border-top-left-radius`](#border-radius)  
+     [`border-bottom-right-radius`](#border-radius)  
+     [`border-bottom-left-radius`](#border-radius)  
   
   - Images  
      [`object-fit`](#object-fit)  
@@ -47,10 +64,10 @@ Functional CSS library in SCSS.
      [`float`](#float)  
      [`clear`](#clear)  
      [`position`](#position)  
-     [`top`](#top)  
-     [`right`](#right)  
-     [`bottom`](#bottom)  
-     [`left`](#left)  
+     [`top`](#top-right-bottom-left)  
+     [`right`](#top-right-bottom-left)  
+     [`bottom`](#top-right-bottom-left)  
+     [`left`](#top-right-bottom-left)  
      [`z-index`](#z-index)  
   
   - Fonts  
@@ -533,6 +550,19 @@ Specify mapping in <code><a href="#border-widths">$border-widths</a>: (id: value
 
 Specify mapping in <code><a href="#palette">$border-styles</a>: (id: value)</code>.
 
+#### [`border-radius`](https://developer.mozilla.org/en/docs/Web/CSS/border-radius)
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>r{id}</code>   ⇢ `border-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tr{id}</code>  ⇢ `border-top-left-radius: {value}` `border-top-right-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rr{id}</code>  ⇢ `border-top-right-radius: {value}` `border-bottom-right-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>br{id}</code>  ⇢ `border-bottom-left-radius: {value}` `border-bottom-right-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>lr{id}</code>  ⇢ `border-top-left-radius: {value}` `border-bottom-left-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>trr{id}</code> ⇢ `border-top-right-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tlr{id}</code> ⇢ `border-top-left-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>brr{id}</code> ⇢ `border-bottom-right-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>blr{id}</code> ⇢ `border-bottom-left-radius: {value}`
+
+Specify mapping in <code><a href="#palette">$border-radiuses</a>: (id: value)</code>.
+
 #### [`border-collapse`](https://developer.mozilla.org/en/docs/Web/CSS/border-collapse)
 1. <code><b>bd</b>ce-c</code> ⇢ `collapse`
 1. <code><b>bd</b>ce-s</code> ⇢ `separate`
@@ -903,23 +933,11 @@ Specify mapping in <code><a href="#paddings">$paddings</a>: (id: value)</code>.
 1. <code><b>pos</b>-r</code> ⇢ `relative`
 1. <code><b>pos</b>-f</code> ⇢ `fixed`
 
-#### [`top`](https://developer.mozilla.org/en/docs/Web/CSS/top)
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>{id}</code> ⇢ `top: {value}`
-
-Specify mapping in <code><a href="#positions">$positions</a>: (id: value)</code>.
-
-#### [`right`](https://developer.mozilla.org/en/docs/Web/CSS/right)
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>r</b>{id}</code> ⇢ `right: {value}`
-
-Specify mapping in <code><a href="#positions">$positions</a>: (id: value)</code>.
-
-#### [`bottom`](https://developer.mozilla.org/en/docs/Web/CSS/bottom)
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>b</b>{id}</code> ⇢ `bottom: {value}`
-
-Specify mapping in <code><a href="#positions">$positions</a>: (id: value)</code>.
-
-#### [`left`](https://developer.mozilla.org/en/docs/Web/CSS/left)
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>l</b>{id}</code> ⇢ `left: {value}`
+#### [`top`](https://developer.mozilla.org/en/docs/Web/CSS/top) [`right`](https://developer.mozilla.org/en/docs/Web/CSS/right) [`bottom`](https://developer.mozilla.org/en/docs/Web/CSS/bottom) [`left`](https://developer.mozilla.org/en/docs/Web/CSS/left)
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>{id}</code> ⇢ `top: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>r</b>{id}</code> ⇢ `right: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>b</b>{id}</code> ⇢ `bottom: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>l</b>{id}</code> ⇢ `left: {value}`
 
 Specify mapping in <code><a href="#positions">$positions</a>: (id: value)</code>.
 
