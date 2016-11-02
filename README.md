@@ -2,7 +2,47 @@
 
 [![npm version](https://badge.fury.io/js/quantum-css.svg)](https://www.npmjs.com/package/quantum-css)
 
-Functional CSS library in SCSS.
+> Everything should be made as simple as possible, but no simpler.
+>
+> Albert Einstein <sup>[1](http://quoteinvestigator.com/2011/05/13/einstein-simple/)</sup>
+
+
+## Preface 
+
+Quantum CSS is an atomic CSS library written in SCSS.
+
+With this library you don’t need to write any rules and media queries. You can create molecules out of avaialble atoms, extending them using `@extend`. Have a look at the sample button component with rounded corners, hover and focus transition animations:
+
+```html
+<button class="btn btnz-s btns-bb bdr4 SM_btnz-n" type="button">
+  <!-- Content -->
+</button>
+```
+
+```scss
+.btn {
+  @extend .cur-p; // Pointer cursor
+  @extend .bds-s, .bdw1; // Border style solid and border width 1px
+  @extend .trp-c, .trd200ms; // Transitions
+
+  &z {
+    &-s { @extend .px15, .h40 }
+  }
+
+  &s {
+    &-fb  { @extend .bgc-fb, .c-w, .bdc-tt, .SM_bgc-dfb-hf } // Facebook
+    &-tw  { @extend .bgc-tw, .c-w, .bdc-tt, .SM_bgc-dtw-hf } // Twitter
+  }
+}
+
+.SM_btnz {
+  &-n { @extend .SM_px30, .SM_h50 }
+}
+```
+
+Buttons styles `btnz-fb` and `btnz-tw` do not change colors on hover and focus on small screens to provide better experience on touch devices.
+
+This appoach allows you to have highly standardize UIs and the tool would provide you a clean messages when using unexpected style classes.
 
 
 ## Contents
