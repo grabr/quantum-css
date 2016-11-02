@@ -31,7 +31,7 @@ Functional CSS library in SCSS.
   - Transforms  
      [`transform`](#transform)  
 
-  - Flexible Box Layout
+  - Flexible Box Layout  
      [`flex-direction`](#flex-direction)  
      [`flex-wrap`](#flex-wrap)  
      [`flex-grow`](#flex-grow)  
@@ -43,7 +43,7 @@ Functional CSS library in SCSS.
      [`align-self`](#align-self)  
      [`order`](#order)  
   
-  - Positioning
+  - Positioning  
      [`float`](#float)  
      [`clear`](#clear)  
      [`position`](#position)  
@@ -89,7 +89,7 @@ Functional CSS library in SCSS.
      [`fill`](#fill)  
      [`opacity`](#opacity)
   
-  - Box Model
+  - Box Model  
      [`box-sizing`](#box-sizing)  
      [`height`](#height)  
      [`width`](#width)  
@@ -107,11 +107,11 @@ Functional CSS library in SCSS.
   
   - User Interface  
      [`cursor`](#cursor)  
-     [`resize`](#resize)
+     [`resize`](#resize)  
      [`text-overflow`](#text-overflow)  
      [`user-select`](#user-select)  
      
-  - Table
+  - Table  
      [`border-collapse`](#border-collapse)  
      [`caption-side`](#caption-side)  
      [`empty-cells`](#empty-cells)  
