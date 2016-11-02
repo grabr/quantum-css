@@ -14,11 +14,12 @@ Functional CSS library in SCSS.
      [`background-clip`](#background-clip)  
      [`background-image`](#background-image)  
      [`background-origin`](#background-origin)  
+     [`background-repeat`](#background-repeat)  
+     [`background-size`](#background-size)
+     
      [`background-position`](#background-position)  
      [`background-position-x`](#background-position-x)  
      [`background-position-y`](#background-position-y)  
-     [`background-repeat`](#background-repeat)  
-     [`background-size`](#background-size)
      
   - Border  
      [`border-color`](#border-color)  
@@ -26,16 +27,19 @@ Functional CSS library in SCSS.
      [`border-right-color`](#border-color)  
      [`border-bottom-color`](#border-color)  
      [`border-left-color`](#border-color)  
+     
      [`border-width`](#border-width)  
      [`border-top-width`](#border-width)  
      [`border-right-width`](#border-width)  
      [`border-bottom-width`](#border-width)  
      [`border-left-width`](#border-width)  
+     
      [`border-style`](#border-style)  
      [`border-top-style`](#border-style)  
      [`border-right-style`](#border-style)  
      [`border-bottom-style`](#border-style)  
      [`border-left-style`](#border-style)  
+     
      [`border-radius`](#border-radius)  
      [`border-top-right-radius`](#border-radius)  
      [`border-top-left-radius`](#border-radius)  
