@@ -38,12 +38,6 @@
     &fw { text-transform: full-width }
   }
 
-  &j#{$literal-sep} {
-    &a  { text-justify: auto }
-    &iw { text-justify: inter-word }
-    &d  { text-justify: distribute }
-  }
-
   &ov#{$literal-sep} {
     &e { text-overflow: ellipsis }
     &c { text-overflow: clip }
