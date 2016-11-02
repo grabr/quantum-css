@@ -505,9 +505,9 @@ Specify mapping in <code><a href="scss/_variables.scss">$border-radiuses</a>: (i
 
 1. <code><b>ts</b>-n</code> → `none`
 1. <code><b>ts</b>-i</code> → `inherit`
-1. <code><b>ts</b>r45d</code>…<code><b>tr</b>r360d</code>   → `transform: rotate(45deg)`…`transform: rotate(360deg)`
-1. <code><b>ts</b>r-45d</code>…<code><b>tr</b>r-360d</code> → `transform: rotate(-45deg)`…`transform: rotate(-360deg)`
-1. <code><b>ts</b>s0</code>…<code><b>tr</b>s200</code>      → `transform: scale(0)`…`transform: scale(2)`
+1. <code><b>ts</b>r45d</code>…<code><b>tr</b>r360d</code>   → `transform: rotate(45deg)`…`rotate(360deg)`
+1. <code><b>ts</b>r-45d</code>…<code><b>tr</b>r-360d</code> → `transform: rotate(-45deg)`…`rotate(-360deg)`
+1. <code><b>ts</b>s0</code>…<code><b>tr</b>s200</code>      → `transform: scale(0)`…`scale(2)`
 
 
 ### Flexible Box Layout
@@ -593,7 +593,7 @@ These shortcuts are available if [display](#display) atom is included.
 
 #### [`order`](https://developer.mozilla.org/en/docs/Web/CSS/order)
 
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>ord</b>0</code>…<code><b>ord</b>10</code> → `order: 0`…`order: 10`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>ord</b>0</code>…<code><b>ord</b>10</code> → `order: 0`…`10`
 
 
 ### Positioning
@@ -895,7 +895,7 @@ Specify mapping in <code><a href="scss/_variables.scss">$colors</a>: (id: value)
 
 #### [`opacity`](https://developer.mozilla.org/en/docs/Web/CSS/opacity)
 
-<code><b>op</b>0</code>…<code><b>op</b>100</code> → `opacity: 0`…`opacity: 1`
+<code><b>op</b>0</code>…<code><b>op</b>100</code> → `opacity: 0`…`1`
 
 
 ### Box Model
