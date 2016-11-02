@@ -6,7 +6,14 @@ Functional CSS library in SCSS.
 
 ## Contents
 
-1. **Atoms**
+1. **Grid System**
+
+  - [Containers](#grid-containers)
+  - [Rows](#grid-rows)
+  - [Columns](#grid-columns)
+  - [Column Displacement](#column-displacement)
+
+1. **Atom Index**
 
   - Background  
      [`background-color`](#background-color)  
@@ -153,47 +160,75 @@ Functional CSS library in SCSS.
 
 
 
-## Grid
+## Grid System
 
-Template `.g>.gr>.gc`
+#### <a name="grid-containers"></a>Containers <code><b>g</b></code>
+
+As well as in [Bootstrap](http://v4-alpha.getbootstrap.com/layout/overview/#containers) Containers are the most basic layout element and are required when using grid system. Use <code><b>g</b>-f</code> to create a fixed-width centered responsive layout of columns.
+
+While containers _can_ be nested, most layouts do not require a nested container.
 
 ```html
-<div class="g">
+<div class="g g-f">
+  <!-- Fixed-width grid conteiner -->
+</div>
+```
+
+Widths of fixed-width container are stored in `$grid-widths`.
+
+
+#### <a name="grid-rows"></a>Rows <code><b>g</b>r</code>
+
+Rows are horizontal groups of columns that ensure your columns are lined up properly.
+
+```html
+<div class="g g-f">
   <div class="gr">
-    <div class="gc12 MD_gc6">
-      Occupies 12 cols on small screen, 6 cols starting from MD breakpoint
-    </div>
+    <!-- Place columns here -->
   </div>
+</div>
+```
+
+#### <a name="grid-columns"></a>Columns <code><b>g</b>c</code>
+
+Content should be placed within columns, and only columns may be immediate children of rows.
+
+Column classes indicate the number of columns you’d like to use out of the possible 12 per row. So if you want three equal-width columns, you’d use <code>SM_<b>g</b>c4</code>. You can change number of columns in grid altering `$grid-col-count`.
+
+Column widths are set in percentages, so they’re always fluid and sized relative to their parent element.
+
+Columns have horizontal padding to create the gutters between individual columns. Gutters can be configured per every breakpoint via `$grid-gutters`.
+
+```html
+<div class="g g-f">
   <div class="gr">
-    <div class="gc6">
-      <!-- Nested grid rows -->
-      <div class="gr">
-        <div class="gc6"></div>
-        <div class="gc6"></div>
-      </div>
+    <div class="gc12 SM_gc6">
+      <!-- Place content here -->
     </div>
   </div>
 </div>
 ```
 
-1. <code><b>g</b></code> Grid container. Changes its `max-width` depending on curently active breakpoint.
+#### Column Displacement
 
-1. <code><b>g</b>r</code> Grid row.
+In addition to column clearing at responsive breakpoints, you may need to reset offsets, pushes, or pulls.
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>c1</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>c12</code>
-Grid column span. `gc2` would occupy two columns of grid. Grid has same number of columns on every breakpoint.
+Move columns to the right using <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o12</code> classes. These classes increase the left margin of a column by specified number of columns. For example, `MD_go4` moved `MD_gc4` over four columns.
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o12</code>
-Grid column offset.
+Change the order of columns by relatively shifting them to the left with <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl12</code> or to the right with <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr12</code> classes.
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl12</code>
-Grid shift column left.
+```html
+<div class="g g-f">
+  <div class="gr">
+    <div class="gc12 SM_gc6 SM_go3">
+      <!-- Place content here -->
+    </div>
+  </div>
+</div>
+```
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr0</code>…<code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr12</code>
-Grid shift column right.
 
-
-## Atoms
+## Atom Index
 
 #### [`background-color`](https://developer.mozilla.org/en/docs/Web/CSS/background-color)
 <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bg</b>c{id}[-<a href="#pseudos">pseudo</a>]</code> ⇢ `background-color: {value}`
