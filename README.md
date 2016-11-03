@@ -430,7 +430,7 @@ Values for each atom are listed in the order they are listed in generated CSS.
 - `[breakpoint_]` and `[-pseudo]` Optional [breakpoint](#breakpoints) and [pseudo-element or pseudo-class](#pseudos).
 - `{key}` and `{value}` Placeholders for map key and map value.
 
-For example, `tss(0…200/25)` expand to `tss0`, `tss25`, `tss50`, etc.
+Example `[breakpoint_]fw(100…900/100)` expands to `fw100`, `fw200` … `SM_fw100`, `SM_fw200` … `LG_fw900`.
 
 
 ### Background
