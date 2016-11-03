@@ -996,11 +996,18 @@ Specify mapping in <code><a href="scss/_variables.scss">$colors</a>: (key: value
 ### Box Model
 
 
+#### [`box-shadow`](https://developer.mozilla.org/en/docs/Web/CSS/box-shadow)
+
+<code><b>bx</b>s{key}[-<a href="#pseudos">pseudo</a>]</code> → `box-shadow: {value}`
+
+Specify mapping in <code><a href="scss/_variables.scss">$box-shadows</a>: (key: value)</code>.
+
+
 #### [`box-sizing`](https://developer.mozilla.org/en/docs/Web/CSS/box-sizing)
 
-1. <code><b>bxz</b>-cb</code> → `content-box`
-1. <code><b>bxz</b>-bb</code> → `border-box`
-1. <code><b>bxz</b>-i</code>  → `inherit`
+1. <code><b>bx</b>z-cb</code> → `content-box`
+1. <code><b>bx</b>z-bb</code> → `border-box`
+1. <code><b>bx</b>z-i</code>  → `inherit`
 
 
 #### [`height`](https://developer.mozilla.org/en/docs/Web/CSS/height)

@@ -1,0 +1,3 @@
+.bxs {
+  @include create-cartesian-partials($box-shadows, box-shadow);
+}
