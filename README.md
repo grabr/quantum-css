@@ -64,7 +64,7 @@ Benefits of using `@extend` approach:
 
 1. [**Breakpoints**](#breakpoints)
 
-1. [**Pseudo-classes and Pseudo-elements**](#pseudo-classes-and-pseudo-elements)
+1. [**Pseudo-classes and Pseudo-elements**](#pseudos)
 
 1. **Grid System**
 
@@ -298,7 +298,7 @@ Some CSS properties are defined as unit-less, e.g. no unit suffix will be output
 One of the most powerful features of Quantum is breakpoint-based media queries.
 
 
-## Pseudo-classes and Pseudo-elements
+## <a name="pseudos"></a>Pseudo-classes and Pseudo-elements
 
 You can configure set of pseudo-classes and pseudo-elements for which atoms are generated via `$pseudos`. To emit disjunction of pseudos use comma-separated list.
 
