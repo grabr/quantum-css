@@ -11,10 +11,12 @@
 
 Quantum CSS is an atomic CSS library written in SCSS.
 
-With this library you don’t need to write any rules and media queries. You can create molecules out of avaialble atoms, extending them using `@extend`. Have a look at the sample button component with rounded corners, hover and focus transition animations:
+You won’t need to write any rules and media queries while using Quantum CSS. Creating highly responsive UIs becomes pleasure while extension pattern provides means of controlled customization. You can create molecules with avaialble atoms using `@extend`.
+
+Here is a sample button component with rounded corners, hover and focus transition animations (which are disabled on small screens to provide better experience on touch devices):
 
 ```html
-<button class="btn btnz-s btns-bb bdr4 SM_btnz-n" type="button">
+<button class="btn btnz-s btns-bb btn-r SM_btnz-n" type="button">
   <!-- Content -->
 </button>
 ```
@@ -24,9 +26,11 @@ With this library you don’t need to write any rules and media queries. You can
   @extend .cur-p; // Pointer cursor
   @extend .bds-s, .bdw1; // Border style solid and border width 1px
   @extend .trp-c, .trd200ms; // Transitions
+  
+  &-r { @extend .bdr4 } // Rounded corners
 
   &z {
-    &-s { @extend .px15, .h40 }
+    &-s { @extend .px15, .h40 } // Horizontal padding and height
   }
 
   &s {
@@ -40,9 +44,13 @@ With this library you don’t need to write any rules and media queries. You can
 }
 ```
 
-Buttons styles `btnz-fb` and `btnz-tw` do not change colors on hover and focus on small screens to provide better experience on touch devices.
+Benefits of using `@extend` approach:
 
-This appoach allows you to have highly standardize UIs and the tool would provide you a clean messages when using unexpected style classes.
+- Highly standardized styles. You have to use limited amount of building blocks, which forces you to have more order in your design.
+
+- Compilation time errors. Build fails if unknown atoms are used.
+
+- Easy to remember class names. Atoms naming convention was heavily inspired by [Emmet](http://docs.emmet.io/cheat-sheet/), and most of the time abbreviations are first letters of words that property or value names consist of.
 
 
 ## Contents
@@ -54,7 +62,9 @@ This appoach allows you to have highly standardize UIs and the tool would provid
   - [Color Values](#color-values)
   - [Unit-less Properties](#unit-less-properties)
 
-2. [**Pseudo-classes and Pseudo-elements**](#pseudo-classes-and-pseudo-elements)
+1. [**Breakpoints**](#breakpoints)
+
+1. [**Pseudo-classes and Pseudo-elements**](#pseudo-classes-and-pseudo-elements)
 
 1. **Grid System**
 
@@ -224,8 +234,6 @@ You can configure separators between each parts of class name with following var
 
 - `$pseudo-sep` separates pseudo modifier from value abbreviation.
 
-Property and value abbreviations were heavily inspired by [Emmet](http://docs.emmet.io/cheat-sheet/).
-
 
 ### Value Aliases
 
@@ -238,15 +246,40 @@ Aliases for commonly used values:
 - `d` → `deg`
 - `t` → `turn`
 
-Use these aliases instead of full units:
+These aliases are used instead of full units:
 
 - <a href="#width"><code><b>w</b>100p</code></a> → `width: 100%`
-- <a href="#height"><code>SM_<b>mah</b>0</code></a> → `max-height: 0`
+- <a href="#height"><code>SM_<b>mah</b>42</code></a> → `max-height: 42px`
 
 
 ### Color Values
 
-Use names for colors for better readability. By default, [Tango palette](http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines#Color_Palette) is used for every color-related atom. You can specify your own palette overriding variables in [`_variables.scss`](scss/_variables.scss).
+Names for colors are used fo increase readability. By default, [Tango palette](http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines#Color_Palette) is used for every color-related atom. You can specify your own palette overriding variables in [`_variables.scss`](scss/_variables.scss).
+
+Color         | Dark `d`  | Medium    | Light `l`
+------------- | --------- | --------- | ---------
+Yellow `y`    | `#fce94f` | `#edd400` | `#c4a000`
+Orange `o`    | `#fcaf3e` | `#f57900` | `#ce5c00`
+Chocolate `c` | `#e9b96e` | `#c17d11` | `#8f5902`
+Green `g`     | `#8ae234` | `#73d216` | `#4e9a06`
+Navy `n`      | `#729fcf` | `#3465a4` | `#204a87`
+Purple `p`    | `#ad7f8a` | `#75507b` | `#5c3566`
+Red `r`       | `#ef2929` | `#cc0000` | `#a40000`
+
+Greyscale is also available:
+
+Color         | Value
+------------- | ---------
+White `w`     | `#fff`
+Grey 15% `g1` | `#eeeeec`
+Grey 30% `g2` | `#d3d7cf`
+Grey 45% `g3` | `#babdb6`
+Grey 60% `g4` | `#888a85`
+Grey 75% `g5` | `#555753`
+Grey 90% `g6` | `#2e3436`
+Black `b`     | `#000`
+
+Dark navy background with white text on it: <a href="#background-color"><code><b>bg</b>c-dn</code></a>, <a href="#color"><code><b>c</b>-w</code></a>. Other examples:
 
 - <a href="#border-color"><code><b>bd</b>rc-w</code></a> → `border-right-color: white`
 - <a href="#border-color"><code>LG_<b>c</b>-b</code></a> → `color: black`
@@ -259,6 +292,10 @@ Some CSS properties are defined as unit-less, e.g. no unit suffix will be output
 - <a href="#line-height"><code><b>lh</b>1</code></a> → `line-height: 1`
 - <a href="#font-weight"><code><b>f</b>w400</code></a> → `font-weight: 400`
 - <a href="#"><code><b>op</b>37</code></a> → `opacity: 0.37`
+
+## Breakpoints
+
+One of the most powerful features of Quantum is breakpoint-based media queries.
 
 
 ## Pseudo-classes and Pseudo-elements
