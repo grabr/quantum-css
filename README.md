@@ -11,7 +11,7 @@
 
 Quantum CSS is an atomic CSS library written in SCSS.
 
-You won’t need to write any rules and media queries while using Quantum CSS. Creating highly responsive UIs becomes pleasure while extension pattern provides means of controlled customization. You can create molecules with avaialble atoms using `@extend`.
+You won’t need to write any rules and media queries while using Quantum CSS. Creating highly responsive UIs becomes pleasure while extension pattern provides means of controlled customization. You can create molecules with avaialble atoms using [`@extend`][1].
 
 Here is a sample button component with rounded corners, hover and focus transition animations (which are disabled on small screens to provide better experience on touch devices):
 
@@ -44,7 +44,7 @@ Here is a sample button component with rounded corners, hover and focus transiti
 }
 ```
 
-Benefits of using `@extend` approach:
+Benefits of using [`@extend`][1] approach:
 
 - Highly standardized styles. You have to use limited amount of building blocks, which forces you to have more order in your design.
 
@@ -1233,3 +1233,5 @@ Specify mapping in <code><a href="scss/_variables.scss">$paddings</a>: (id: valu
 ## License
 
 The code is available under [MIT licence](LICENSE).
+
+[1]: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend
