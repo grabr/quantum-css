@@ -221,18 +221,20 @@ Benefits of using [`@extend`][1] approach:
 
 In Quantum CSS every class name consists of four parts in given order:
 
-- Optional breakpoint name: `SM_`, `MD_`, etc.
+- Optional [breakpoint](#breakpoints) name: `SM_`, `MD_`, etc.
 - Property abbreviation: <a href="#border-color"><code><b>bd</b>tc</code></a>, <a href="#border-color"><code><b>ws</b></code></a>, etc. 
-- Value abbreviation: `-w`, `100p`, `-ccw2t`
+- Value abbreviation: `-w`, `100p`, `360d`, etc.
 - Optional pseudo-class and/or pseudo-element modifier: `-hf`, `-h`, etc. 
 
 You can configure separators between each parts of class name with following variables:
 
-- `$breakpoint-sep` holds separator between breakpoint name and property abbreviation. By default,  underscore`_` is used.
+- `$breakpoint-sep = "_"` holds separator between breakpoint name and property abbreviation.
 
-- `$literal-sep` and `$ordinal-sep` define separators that are inserted between property name and literal value abbreviation or ordinal one respectively. By default, `$literal-sep` is set to minus `-` and `$ordinal-sep` is a blank string.
+- `$literal-sep = "-"` and `$ordinal-sep = ""` define separators that are inserted between property name and literal value abbreviation or ordinal one respectively.
 
-- `$pseudo-sep` separates pseudo modifier from value abbreviation.
+- `$pseudo-sep = ""` separates pseudo modifier from value abbreviation.
+
+Examles and atom index use default separator values.
 
 
 ### Value Aliases
@@ -256,33 +258,38 @@ These aliases are used instead of full units:
 
 Names for colors are used fo increase readability. By default, [Tango palette](http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines#Color_Palette) is used for every color-related atom. You can specify your own palette overriding variables in [`_variables.scss`](scss/_variables.scss).
 
-Color         | Dark `d`  | Medium    | Light `l`
-------------- | --------- | --------- | ---------
-Yellow `y`    | `#fce94f` | `#edd400` | `#c4a000`
-Orange `o`    | `#fcaf3e` | `#f57900` | `#ce5c00`
-Chocolate `c` | `#e9b96e` | `#c17d11` | `#8f5902`
-Green `g`     | `#8ae234` | `#73d216` | `#4e9a06`
-Navy `n`      | `#729fcf` | `#3465a4` | `#204a87`
-Purple `p`    | `#ad7f8a` | `#75507b` | `#5c3566`
-Red `r`       | `#ef2929` | `#cc0000` | `#a40000`
+Greyscale        | Value
+---------------- | ---------
+1. White `w`     | `#fff`
+2. Grey 15% `g1` | `#eeeeec`
+3. Grey 30% `g2` | `#d3d7cf`
+4. Grey 45% `g3` | `#babdb6`
+5. Grey 60% `g4` | `#888a85`
+6. Grey 75% `g5` | `#555753`
+7. Grey 90% `g6` | `#2e3436`
+8. Black `b`     | `#000`
 
-Greyscale is also available:
+Color             | Light `l` | Medium    | Dark `d`
+----------------- | --------- | --------- | ---------
+ 9. Yellow    `y` | `#fce94f` | `#edd400` | `#c4a000`
+10. Orange    `o` | `#fcaf3e` | `#f57900` | `#ce5c00`
+11. Chocolate `c` | `#e9b96e` | `#c17d11` | `#8f5902`
+12. Green     `g` | `#8ae234` | `#73d216` | `#4e9a06`
+13. Navy      `n` | `#729fcf` | `#3465a4` | `#204a87`
+14. Purple    `p` | `#ad7f8a` | `#75507b` | `#5c3566`
+15. Red       `r` | `#ef2929` | `#cc0000` | `#a40000`
 
-Color         | Value
-------------- | ---------
-White `w`     | `#fff`
-Grey 15% `g1` | `#eeeeec`
-Grey 30% `g2` | `#d3d7cf`
-Grey 45% `g3` | `#babdb6`
-Grey 60% `g4` | `#888a85`
-Grey 75% `g5` | `#555753`
-Grey 90% `g6` | `#2e3436`
-Black `b`     | `#000`
+CSS-literal colors:
 
-Dark navy background with white text on it: <a href="#background-color"><code><b>bg</b>c-dn</code></a>, <a href="#color"><code><b>c</b>-w</code></a>. Other examples:
+- `cc` → [`currentColor`](https://developer.mozilla.org/en/docs/Web/CSS/color_value#currentColor_keyword)  
+- `t`  → `transparent`
+- `i`  → `inherit`
 
+Atom examples:
+
+- <a href="#background-color"><code>SM_<b>bg</b>c-dg</code></a> → `background-color: #4e9a06` Dark green
 - <a href="#border-color"><code><b>bd</b>rc-w</code></a> → `border-right-color: white`
-- <a href="#border-color"><code>LG_<b>c</b>-b</code></a> → `color: black`
+- <a href="#color"><code>LG_<b>c</b>-b</code></a> → `color: black`
 
 
 ### Unit-less Properties
@@ -291,7 +298,7 @@ Some CSS properties are defined as unit-less, e.g. no unit suffix will be output
 
 - <a href="#line-height"><code><b>lh</b>1</code></a> → `line-height: 1`
 - <a href="#font-weight"><code><b>f</b>w400</code></a> → `font-weight: 400`
-- <a href="#"><code><b>op</b>37</code></a> → `opacity: 0.37`
+- <a href="#opacity"><code><b>op</b>37</code></a> → `opacity: 0.37`
 
 ## Breakpoints
 
