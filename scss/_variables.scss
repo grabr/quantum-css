@@ -57,14 +57,8 @@ $grid-widths: (
 
 // Colors
 // -------------
-// This variable is used only in this file.
-// Colors are taken from the Tango palette and serve demonstration purposes only.
-// http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines#Color_Palette
-// Abbreviations:
-//   l - Light
-//   d - Dark
 $palette: (
-  //// Greyscale
+  // Greyscale
   w:  #fff,
   g1: #eeeeec,
   g2: #d3d7cf,
@@ -72,7 +66,7 @@ $palette: (
   g4: #888a85,
   g5: #555753,
   g6: #2e3436,
-  bk: #000,
+  b: #000,
 
   // Yellow
   ly: #fce94f,
@@ -84,10 +78,10 @@ $palette: (
   o:  #f57900,
   do: #ce5c00,
 
-  // Brown
-  lb: #e9b96e,
-  b:  #c17d11,
-  db: #8f5902,
+  // Chocolate
+  lc: #e9b96e,
+  c:  #c17d11,
+  dc: #8f5902,
 
   // Green
   lg: #8ae234,
