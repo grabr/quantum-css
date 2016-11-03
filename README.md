@@ -66,7 +66,7 @@ Benefits of using [`@extend`][1] approach:
 
 1. [**Pseudo-classes and Pseudo-elements**](#pseudos)
 
-1. **Grid System**
+1. [**Grid System**](#grid-system)
 
   - [Containers](#grid-containers)
   - [Rows](#grid-rows)
@@ -74,6 +74,8 @@ Benefits of using [`@extend`][1] approach:
   - [Column Ordering](#column-ordering)
 
 1. [**Atom Index**](#atom-index)
+
+  - [**Name Pattern**](#name-pattern)
 
   - [**Background**](#background)  
      [`background-color`](#background-color)  
@@ -402,9 +404,9 @@ Columns have horizontal padding to create the gutters between individual columns
 
 In addition to column clearing at responsive breakpoints, you may need to reset offsets, pushes, or pulls.
 
-Move columns to the right using <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o0</code>…<code><b>g</b>o12</code> classes. These classes increase the left margin of a column by specified number of columns. For example, `MD_go4` moved `MD_gc4` over four columns.
+Move columns to the right using <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>o(0…12/1)</code> classes. These classes increase the left margin of a column by specified number of columns. For example, `MD_go4` moved `MD_gc4` over four columns.
 
-Change the order of columns by relatively shifting them to the left with <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl0</code>…<code><b>g</b>sl12</code> or to the right with <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr0</code>…<code><b>g</b>sr12</code> classes.
+Change the order of columns by relatively shifting them to the left with <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sl(0…12/1)</code> or to the right with <code>[<a href="#breakpoints">breakpoint</a>\_]<b>g</b>sr(0…12/1)</code> classes.
 
 ```html
 <div class="g g-f">
@@ -422,14 +424,23 @@ Change the order of columns by relatively shifting them to the left with <code>[
 Values for each atom are listed in the order they are listed in generated CSS.
 
 
+### Name Pattern
+
+- `(1…10/2)` Range of possible values from `1` to `10` with step `2`.
+- `[breakpoint_]` and `[-pseudo]` Optional [breakpoint](#breakpoints) and [pseudo-element or pseudo-class](#pseudos).
+- `{key}` and `{value}` Placeholders for map key and map value.
+
+For example, `tss(0…200/25)` expand to `tss0`, `tss25`, `tss50`, etc.
+
+
 ### Background
 
 
 #### [`background-color`](https://developer.mozilla.org/en/docs/Web/CSS/background-color)
 
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>bg</b>c{id}[-<a href="#pseudos">pseudo</a>]</code> → `background-color: {value}`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>bg</b>c{key}[-<a href="#pseudos">pseudo</a>]</code> → `background-color: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$background-colors</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$background-colors</a>: (key: value)</code>.
 
 
 #### [`background-attachment`](https://developer.mozilla.org/en/docs/Web/CSS/background-attachment)
@@ -503,9 +514,9 @@ Specify mapping in <code><a href="scss/_variables.scss">$background-colors</a>: 
 
 #### [`fill`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill)
 
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fi</b>{id}[-<a href="#pseudos">pseudo</a>]</code> → `fill: {value}`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fi</b>{key}[-<a href="#pseudos">pseudo</a>]</code> → `fill: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$background-colors</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$background-colors</a>: (key: value)</code>.
 
 
 ### Border
@@ -513,41 +524,41 @@ Specify mapping in <code><a href="scss/_variables.scss">$background-colors</a>: 
 
 #### [`border-color`](https://developer.mozilla.org/en/docs/Web/CSS/border-color)
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>c{id}[-<a href="#pseudos">pseudo</a>]</code>  → `border-color: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xc{id}[-<a href="#pseudos">pseudo</a>]</code> = <code><b>bd</b>lc{id}</code>, <code><b>bd</b>rc{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>yc{id}[-<a href="#pseudos">pseudo</a>]</code> = <code><b>bd</b>tc{id}</code>, <code><b>bd</b>bc{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tc{id}[-<a href="#pseudos">pseudo</a>]</code> → `border-top-color: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>bc{id}[-<a href="#pseudos">pseudo</a>]</code> → `border-bottom-color: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rc{id}[-<a href="#pseudos">pseudo</a>]</code> → `border-right-color: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>lc{id}[-<a href="#pseudos">pseudo</a>]</code> → `border-left-color: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>c{key}[-<a href="#pseudos">pseudo</a>]</code>  → `border-color: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xc{key}[-<a href="#pseudos">pseudo</a>]</code> = <code><b>bd</b>lc{key}</code>, <code><b>bd</b>rc{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>yc{key}[-<a href="#pseudos">pseudo</a>]</code> = <code><b>bd</b>tc{key}</code>, <code><b>bd</b>bc{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tc{key}[-<a href="#pseudos">pseudo</a>]</code> → `border-top-color: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>bc{key}[-<a href="#pseudos">pseudo</a>]</code> → `border-bottom-color: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rc{key}[-<a href="#pseudos">pseudo</a>]</code> → `border-right-color: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>lc{key}[-<a href="#pseudos">pseudo</a>]</code> → `border-left-color: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$border-colors</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$border-colors</a>: (key: value)</code>.
 
 
 #### [`border-width`](https://developer.mozilla.org/en/docs/Web/CSS/border-width)
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>w{id}</code>  → `border-width: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xw{id}</code> = <code><b>bd</b>lw{id}</code>, <code><b>bd</b>rw{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>yw{id}</code> = <code><b>bd</b>tw{id}</code>, <code><b>bd</b>bw{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tw{id}</code> → `border-top-width: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>bw{id}</code> → `border-bottom-width: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rw{id}</code> → `border-right-width: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>lw{id}</code> → `border-left-width: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>w{key}</code>  → `border-width: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xw{key}</code> = <code><b>bd</b>lw{key}</code>, <code><b>bd</b>rw{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>yw{key}</code> = <code><b>bd</b>tw{key}</code>, <code><b>bd</b>bw{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tw{key}</code> → `border-top-width: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>bw{key}</code> → `border-bottom-width: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rw{key}</code> → `border-right-width: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>lw{key}</code> → `border-left-width: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$border-widths</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$border-widths</a>: (key: value)</code>.
 
 
 #### [`border-style`](https://developer.mozilla.org/en/docs/Web/CSS/border-style)
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>s{id}</code>  → `border-style: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xs{id}</code> = <code><b>bd</b>ls{id}</code>, <code><b>bd</b>rs{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>ys{id}</code> = <code><b>bd</b>ts{id}</code>, <code><b>bd</b>bs{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>ts{id}</code> → `border-top-style: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>bs{id}</code> → `border-bottom-style: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rs{id}</code> → `border-right-style: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>ls{id}</code> → `border-left-style: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>s{key}</code>  → `border-style: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>xs{key}</code> = <code><b>bd</b>ls{key}</code>, <code><b>bd</b>rs{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>ys{key}</code> = <code><b>bd</b>ts{key}</code>, <code><b>bd</b>bs{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>ts{key}</code> → `border-top-style: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>bs{key}</code> → `border-bottom-style: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rs{key}</code> → `border-right-style: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>ls{key}</code> → `border-left-style: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$border-styles</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$border-styles</a>: (key: value)</code>.
 
 By default, all available border styles are included. Border style atoms are emitted for every breakpoint what can
 cause significant increase of outputted CSS file. Be sure to remove unused border styles in order to reduce file size.
@@ -556,17 +567,17 @@ cause significant increase of outputted CSS file. Be sure to remove unused borde
 
 #### [`border-radius`](https://developer.mozilla.org/en/docs/Web/CSS/border-radius)
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>r{id}</code>   → `border-radius: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tr{id}</code>  = <code><b>bd</b>tlr{id}</code>, <code><b>bd</b>trr{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rr{id}</code>  = <code><b>bd</b>trr{id}</code>, <code><b>bd</b>brr{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>br{id}</code>  = <code><b>bd</b>blr{id}</code>, <code><b>bd</b>brr{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>lr{id}</code>  = <code><b>bd</b>tlr{id}</code>, <code><b>bd</b>blr{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>trr{id}</code> → `border-top-right-radius: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tlr{id}</code> → `border-top-left-radius: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>brr{id}</code> → `border-bottom-right-radius: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>blr{id}</code> → `border-bottom-left-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>r{key}</code>   → `border-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tr{key}</code>  = <code><b>bd</b>tlr{key}</code>, <code><b>bd</b>trr{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>rr{key}</code>  = <code><b>bd</b>trr{key}</code>, <code><b>bd</b>brr{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>br{key}</code>  = <code><b>bd</b>blr{key}</code>, <code><b>bd</b>brr{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>lr{key}</code>  = <code><b>bd</b>tlr{key}</code>, <code><b>bd</b>blr{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>trr{key}</code> → `border-top-right-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>tlr{key}</code> → `border-top-left-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>brr{key}</code> → `border-bottom-right-radius: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>bd</b>blr{key}</code> → `border-bottom-left-radius: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$border-radiuses</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$border-radiuses</a>: (key: value)</code>.
 
 
 ### Images
@@ -589,9 +600,9 @@ Specify mapping in <code><a href="scss/_variables.scss">$border-radiuses</a>: (i
 
 1. <code><b>ts</b>-n</code> → `none`
 1. <code><b>ts</b>-i</code> → `inherit`
-1. <code><b>ts</b>r45d</code>…<code><b>tr</b>r360d</code>   → `transform: rotate(45deg)`…`rotate(360deg)`
-1. <code><b>ts</b>r-45d</code>…<code><b>tr</b>r-360d</code> → `transform: rotate(-45deg)`…`rotate(-360deg)`
-1. <code><b>ts</b>s0</code>…<code><b>tr</b>s200</code>      → `transform: scale(0)`…`scale(2)`
+1. <code><b>ts</b>r(45d…360/45d)</code>    → `transform: rotate(45deg)`…`rotate(360deg)`
+1. <code><b>ts</b>r(-45d…-360/-45d)</code> → `transform: rotate(-45deg)`…`rotate(-360deg)`
+1. <code><b>ts</b>s(0…200/25)</code>       → `transform: scale(0)`…`scale(2)`
 
 
 ### Flexible Box Layout
@@ -620,12 +631,12 @@ These shortcuts are available if [display](#display) atom is included.
 
 #### [`flex-grow`](https://developer.mozilla.org/en/docs/Web/CSS/flex-grow)
 
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g0</code>…<code><b>fx</b>g10</code>  → `flex-grow: 0`…`10`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>g(0…10/1)</code> → `flex-grow: 0`…`10`
 
 
 #### [`flex-shrink`](https://developer.mozilla.org/en/docs/Web/CSS/flex-shrink)
 
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s0</code>…<code><b>fx</b>s10</code>  → `flex-shrink: 0`…`10`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>fx</b>s(0…10/1)</code> → `flex-shrink: 0`…`10`
 
 
 #### [`flex-basis`](https://developer.mozilla.org/en/docs/Web/CSS/flex-basis)
@@ -677,7 +688,7 @@ These shortcuts are available if [display](#display) atom is included.
 
 #### [`order`](https://developer.mozilla.org/en/docs/Web/CSS/order)
 
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>ord</b>0</code>…<code><b>ord</b>10</code> → `order: 0`…`10`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>ord</b>(0…10/1)</code> → `order: 0`…`10`
 
 
 ### Positioning
@@ -708,17 +719,17 @@ These shortcuts are available if [display](#display) atom is included.
 
 #### [`top`](https://developer.mozilla.org/en/docs/Web/CSS/top) [`right`](https://developer.mozilla.org/en/docs/Web/CSS/right) [`bottom`](https://developer.mozilla.org/en/docs/Web/CSS/bottom) [`left`](https://developer.mozilla.org/en/docs/Web/CSS/left)
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>{id}</code> → `top: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>r</b>{id}</code> → `right: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>b</b>{id}</code> → `bottom: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>l</b>{id}</code> → `left: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>{key}</code> → `top: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>r</b>{key}</code> → `right: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>b</b>{key}</code> → `bottom: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>l</b>{key}</code> → `left: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$positions</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$positions</a>: (key: value)</code>.
 
 
 #### [`z-index`](https://developer.mozilla.org/en/docs/Web/CSS/z-index)
 
-1. <code><b>z</b>0</code>…<code><b>z</b>10</code>  → `z-index: 0`…`10`
+1. <code><b>z</b>(0…10/1)</code>  → `z-index: 0`…`10`
 1. <code><b>z</b>-a</code> → `auto`
 1. <code><b>z</b>-i</code> → `inherit`
 
@@ -738,9 +749,9 @@ Specify mapping in <code><a href="scss/_variables.scss">$positions</a>: (id: val
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>z-lr</code>  → `larger`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>z-sr</code>  → `smaller`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>z-i</code>   → `inherit`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>z{id}</code> → `font-size: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>z{key}</code> → `font-size: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$font-sizes</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$font-sizes</a>: (key: value)</code>.
 
 
 #### [`line-height`](https://developer.mozilla.org/en/docs/Web/CSS/line-height)
@@ -749,9 +760,9 @@ Specify mapping in <code><a href="scss/_variables.scss">$font-sizes</a>: (id: va
 1. <code><b>lh</b>-i</code> → `inherit`
 1. <code><b>lh</b>0</code>  → `0`
 1. <code><b>lh</b>1</code>  → `1`
-1. <code><b>lh</b>{id}</code> → `line-height: {value}`
+1. <code><b>lh</b>{key}</code> → `line-height: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$line-heights</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$line-heights</a>: (key: value)</code>.
 
 
 #### [`font-family`](https://developer.mozilla.org/en/docs/Web/CSS/font-family)
@@ -762,14 +773,14 @@ Specify mapping in <code><a href="scss/_variables.scss">$line-heights</a>: (id: 
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-c</code>   → `cursive`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-f</code>   → `fantasy`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s-i</code>   → `inherit`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s{id}</code> → `font-family: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>s{key}</code> → `font-family: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$font-families</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$font-families</a>: (key: value)</code>.
 
 
 #### [`font-weight`](https://developer.mozilla.org/en/docs/Web/CSS/font-weight)
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w100</code>…<code><b>f</b>w900</code>  → `font-weight: 100`…`900`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w(100…900/100)</code>  → `font-weight: 100`…`900`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-n</code>  → `normal`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-b</code>  → `bold`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>f</b>w-br</code> → `bolder`
@@ -844,7 +855,7 @@ Specify mapping in <code><a href="scss/_variables.scss">$font-families</a>: (id:
 
 #### [`transition-duration`](https://developer.mozilla.org/en/docs/Web/CSS/transition-duration)
 
-<code><b>tr</b>d100ms</code>…<code><b>tr</b>d1000ms</code>  → `transition-duration: 100ms`…`1000ms`
+<code><b>tr</b>d(100ms…1000ms/100ms)</code>  → `transition-duration: 100ms`…`1000ms`
 
 
 #### [`transition-timing-function`](https://developer.mozilla.org/en/docs/Web/CSS/transition-timing-function)
@@ -865,9 +876,9 @@ Specify mapping in <code><a href="scss/_variables.scss">$font-families</a>: (id:
 
 1. <code><b>ls</b>-n</code>   → `normal`
 1. <code><b>ls</b>-i</code>   → `inherit`
-1. <code><b>ls</b>{id}</code> → `letter-spacing: {value}`
+1. <code><b>ls</b>{key}</code> → `letter-spacing: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$letter-spacings</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$letter-spacings</a>: (key: value)</code>.
 
 
 #### [`overflow-wrap`](https://developer.mozilla.org/en/docs/Web/CSS/overflow-wrap)
@@ -894,9 +905,9 @@ Specify mapping in <code><a href="scss/_variables.scss">$letter-spacings</a>: (i
 
 #### [`text-indent`](https://developer.mozilla.org/en/docs/Web/CSS/text-indent)
 
-<code><b>t</b>i{id}</code> → `text-indent: {value}`
+<code><b>t</b>i{key}</code> → `text-indent: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$text-indents</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$text-indents</a>: (key: value)</code>.
 
 
 #### [`text-decoration`](https://developer.mozilla.org/en/docs/Web/CSS/text-decoration)
@@ -972,14 +983,14 @@ Specify mapping in <code><a href="scss/_variables.scss">$text-indents</a>: (id: 
 
 #### [`color`](https://developer.mozilla.org/en/docs/Web/CSS/color)
 
-<code>[<a href="#breakpoints">breakpoint</a>\_]<b>c</b>{id}[-<a href="#pseudos">pseudo</a>]</code> → `color: {value}`
+<code>[<a href="#breakpoints">breakpoint</a>\_]<b>c</b>{key}[-<a href="#pseudos">pseudo</a>]</code> → `color: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$colors</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$colors</a>: (key: value)</code>.
 
 
 #### [`opacity`](https://developer.mozilla.org/en/docs/Web/CSS/opacity)
 
-<code><b>op</b>0</code>…<code><b>op</b>100</code> → `opacity: 0`…`1`
+<code><b>op</b>(0…100/1)</code> → `opacity: 0`…`1`
 
 
 ### Box Model
@@ -994,50 +1005,50 @@ Specify mapping in <code><a href="scss/_variables.scss">$colors</a>: (id: value)
 
 #### [`height`](https://developer.mozilla.org/en/docs/Web/CSS/height)
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>h</b>{id}</code>   → `height: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>h</b>{key}</code>   → `height: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mah</b>-n</code>   → `max-height: none`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mah</b>{id}</code> → `max-height: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mih</b>{id}</code> → `min-height: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mah</b>{key}</code> → `max-height: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>mih</b>{key}</code> → `min-height: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$heights</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$heights</a>: (key: value)</code>.
 
 
 #### [`width`](https://developer.mozilla.org/en/docs/Web/CSS/width)
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>w</b>{id}</code>   → `width: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>w</b>{key}</code>   → `width: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>maw</b>-n</code>   → `max-width: none`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>maw</b>{id}</code> → `max-width: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>miw</b>{id}</code> → `min-width: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>maw</b>{key}</code> → `max-width: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>miw</b>{key}</code> → `min-width: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$widths</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$widths</a>: (key: value)</code>.
 
 
 #### [`margin`](https://developer.mozilla.org/en/docs/Web/CSS/margin)
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>{id}</code>  → `margin: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>{key}</code>  → `margin: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>x-a</code>   → `margin-left: auto`, `margin-right: auto`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>x{id}</code> = <code><b>m</b>l{id}</code>, <code><b>m</b>r{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>y{id}</code> = <code><b>m</b>t{id}</code>, <code><b>m</b>b{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>t{id}</code> → `margin-top: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>r{id}</code> → `margin-right: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>b{id}</code> → `margin-bottom: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>l{id}</code> → `margin-left: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>x{key}</code> = <code><b>m</b>l{key}</code>, <code><b>m</b>r{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>y{key}</code> = <code><b>m</b>t{key}</code>, <code><b>m</b>b{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>t{key}</code> → `margin-top: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>r{key}</code> → `margin-right: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>b{key}</code> → `margin-bottom: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>m</b>l{key}</code> → `margin-left: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$margins</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$margins</a>: (key: value)</code>.
 
 
 #### [`padding`](https://developer.mozilla.org/en/docs/Web/CSS/padding)
 
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>{id}</code>  → `padding: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>x{id}</code> = <code><b>p</b>l{id}</code>, <code><b>p</b>r{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>y{id}</code> = <code><b>p</b>t{id}</code>, <code><b>p</b>b{id}</code>
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>t{id}</code> → `padding-top: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>r{id}</code> → `padding-right: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>{key}</code>  → `padding: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>x{key}</code> = <code><b>p</b>l{key}</code>, <code><b>p</b>r{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>y{key}</code> = <code><b>p</b>t{key}</code>, <code><b>p</b>b{key}</code>
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>t{key}</code> → `padding-top: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>r{key}</code> → `padding-right: {value}`
 1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>b100p</code> → `padding-bottom: 100%`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>b{id}</code> → `padding-bottom: {value}`
-1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>l{id}</code> → `padding-left: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>b{key}</code> → `padding-bottom: {value}`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>p</b>l{key}</code> → `padding-left: {value}`
 
-Specify mapping in <code><a href="scss/_variables.scss">$paddings</a>: (id: value)</code>.
+Specify mapping in <code><a href="scss/_variables.scss">$paddings</a>: (key: value)</code>.
 
 
 #### [`overflow`](https://developer.mozilla.org/en/docs/Web/CSS/overflow)
