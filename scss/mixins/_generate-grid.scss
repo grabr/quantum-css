@@ -7,7 +7,11 @@
     $id: #{$ordinal-sep}#{$i};
 
     @if $i != 0 {
-      &c#{$id}  { width: $width }
+      &c#{$id}  {
+        width: 100%;
+        min-width: $width;
+        max-width: $width;
+      }
     }
     &o#{$id}  { margin-left: $width }
     &sl#{$id} { right: $width }

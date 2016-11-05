@@ -15,7 +15,7 @@
   }
 
   &w#{$literal-sep} {
-    &n  { flex-wrap: nowrap }
+    &nw { flex-wrap: nowrap }
     &w  { flex-wrap: wrap }
     &wr { flex-wrap: wrap-reverse }
   }
