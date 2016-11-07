@@ -8,8 +8,7 @@
 
     @if $i != 0 {
       &c#{$id}  {
-        width: 100%;
-        min-width: $width;
+        flex: 0 0 $width;
         max-width: $width;
       }
     }
@@ -41,6 +40,8 @@
   @at-root {
     %#{$gc-id} {
       position: relative;
+      min-height: 1px;
+      width: 100%;
       padding-left:  $gutter / 2;
       padding-right: $gutter / 2;
     }
