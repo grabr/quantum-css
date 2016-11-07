@@ -2,9 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/quantum-css.svg)](https://www.npmjs.com/package/quantum-css)
 
-> Everything should be made as simple as possible, but no simpler.
->
-> Albert Einstein <sup>[1](http://quoteinvestigator.com/2011/05/13/einstein-simple/)</sup>
+> “Everything should be made as simple as possible, but no simpler.” &ndash; Albert Einstein <sup>[1](http://quoteinvestigator.com/2011/05/13/einstein-simple/)</sup>
 
 
 ## Preface 
