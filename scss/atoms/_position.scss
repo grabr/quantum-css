@@ -1,8 +1,10 @@
-.pos#{$literal-sep} {
-  &s { position: static }
-  &a { position: absolute }
-  &r { position: relative }
-  &f { position: fixed }
+@include create-responsive-classes(pos) {
+  &#{$literal-sep} {
+    &s { position: static }
+    &a { position: absolute }
+    &r { position: relative }
+    &f { position: fixed }
+  }
 }
 
 @include create-responsive-classes(t) { @include create-partials($positions, top) }
