@@ -12,26 +12,29 @@
   ],
   "license": "MIT",
   "main": "css/index.css",
+  "style": "css/index.css",
   "files": [
     "css/",
     "scss/"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Grabr/quantum-css"
+    "url": "git+https://github.com/Grabr/quantum-css.git"
   },
   "bugs": {
     "url": "https://github.com/Grabr/quantum-css/issues"
   },
   "homepage": "https://github.com/Grabr/quantum-css",
   "scripts": {
-    "package": "gulp sass",
+    "build": "gulp sass",
     "watch": "gulp watch",
-    "publish:patch": "npm version patch && npm run package && npm publish",
-    "publish:release": "npm version minor && npm run package && npm publish"
+    "test": "echo no tests specified; exit 0"
   },
   "devDependencies": {
-    "gulp": "",
-    "gulp-sass": ""
+    "gulp": "~3.9.1",
+    "gulp-sass": "~2.3.2",
+    "gulp-postcss": "~6.2.0",
+    "postcss-import": "~8.2.0",
+    "cssnano": "~3.8.0"
   }
 }
