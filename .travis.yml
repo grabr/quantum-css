@@ -5,25 +5,26 @@ env:
   global:
     - GIT_NAME=Travis-CI
     - GIT_EMAIL=travis-ci@grabr.io
+    - GIT_BRANCH=master
     - GH_REPO=Grabr/quantum-css.git
 before_install:
+  - npm i -g makeshift
+  - makeshift -s $NPM_ORG -r registry.npmjs.org
+install:
+  - npm i
+  - npm run build
+before_deploy:
   - git config --global user.name $GIT_NAME
   - git config --global user.email $GIT_EMAIL
   - git remote set-url origin https://$GH_TOKEN@github.com/$GH_REPO
-install:
-  - npm i
-  - npm version patch -m "%s [ci skip]"
-  - npm run build
 deploy:
-  - provider: script
-    skip_cleanup: true
-    on:
-      branch: master
-      condition: $TRAVIS_EVENT_TYPE = push
-    script: git push origin HEAD:$TRAVIS_BRANCH
-  - provider: npm
-    skip_cleanup: true
-    api_key: $NPM_TOKEN
-    on:
-      branch: master
-      condition: $TRAVIS_EVENT_TYPE = push
+  on:
+    branch: $GIT_BRANCH
+  api_key: $NPM_TOKEN
+  skip_cleanup: true
+  provider: script
+  script: >
+    set -ex;
+    npm version patch -m "%s [ci skip]";
+    git push origin HEAD:$GIT_BRANCH;
+    npm publish;
