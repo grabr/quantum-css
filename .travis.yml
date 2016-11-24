@@ -5,9 +5,13 @@ env:
   global:
     - GIT_NAME=Travis-CI
     - GIT_EMAIL=travis-ci@grabr.io
+    - GH_REPO=Grabr/quantum-css.git
 before_install:
   - git config --global user.name $GIT_NAME
   - git config --global user.email $GIT_EMAIL
+
+  # $GH_TOKEN is defined in Travis CI settings.
+  - git remote set-url origin https://$GH_TOKEN@github.com/$GH_REPO
 install:
   - npm i
   - npm version patch -m "%s [ci skip]"
@@ -19,7 +23,7 @@ deploy:
     branch: master
     condition: $TRAVIS_EVENT_TYPE = push
 
-  # Token is defined in Travis CI settings.
+  # $NPM_TOKEN is defined in Travis CI settings.
   api_key: $NPM_TOKEN
   script: >
     set -ex;
