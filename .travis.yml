@@ -3,12 +3,9 @@ node_js:
   - 6.1
 env:
   global:
-    - NPM_ORG=@grabrinc
     - GIT_NAME=Travis-CI
     - GIT_EMAIL=travis-ci@grabr.io
 before_install:
-  - npm i -g makeshift
-  - makeshift -s $NPM_ORG -r registry.npmjs.org
   - git config --global user.name $GIT_NAME
   - git config --global user.email $GIT_EMAIL
 install:
