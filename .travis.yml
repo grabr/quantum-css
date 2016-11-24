@@ -9,23 +9,21 @@ env:
 before_install:
   - git config --global user.name $GIT_NAME
   - git config --global user.email $GIT_EMAIL
-
-  # $GH_TOKEN is defined in Travis CI settings.
   - git remote set-url origin https://$GH_TOKEN@github.com/$GH_REPO
 install:
   - npm i
   - npm version patch -m "%s [ci skip]"
   - npm run build
 deploy:
-  provider: script
-  skip_cleanup: true
-  on:
-    branch: master
-    condition: $TRAVIS_EVENT_TYPE = push
-
-  # $NPM_TOKEN is defined in Travis CI settings.
-  api_key: $NPM_TOKEN
-  script: >
-    set -ex;
-    git push origin HEAD:$TRAVIS_BRANCH;
-    npm publish;
+  - provider: script
+    skip_cleanup: true
+    on:
+      branch: master
+      condition: $TRAVIS_EVENT_TYPE = push
+    script: git push origin HEAD:$TRAVIS_BRANCH
+  - provider: npm
+    skip_cleanup: true
+    api_key: $NPM_TOKEN
+    on:
+      branch: master
+      condition: $TRAVIS_EVENT_TYPE = push
