@@ -6,7 +6,6 @@ env:
     - NPM_ORG=@grabrinc
     - GIT_NAME=Travis-CI
     - GIT_EMAIL=travis-ci@grabr.io
-    - GH_REPO=Grabr/grabr-css.git
 before_install:
   - npm i -g makeshift
   - makeshift -s $NPM_ORG -r registry.npmjs.org
