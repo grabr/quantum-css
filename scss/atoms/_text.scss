@@ -14,10 +14,6 @@
       &j { text-align-last: justify }
     }
   }
-}
-
-.t {
-  &i { @include create-partials($text-indents, text-indent) }
 
   &d {
     @include create-cartesian-partials((u: underline, n: none), text-decoration);
@@ -29,6 +25,10 @@
       &lt { text-decoration: line-through }
     }
   }
+}
+
+.t {
+  &i { @include create-partials($text-indents, text-indent) }
 
   &t#{$literal-sep} {
     &c  { text-transform: capitalize }

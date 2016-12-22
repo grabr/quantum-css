@@ -1,0 +1,15 @@
+.fi {
+  @include create-partials($background-colors, fill);
+
+  &r#{$literal-sep} {
+    &nz { fill-rule: nonzero }
+    &eo { fill-rule: evenodd }
+    &i  { fill-rule: inherit }
+  }
+
+  &op#{$ordinal-sep} {
+    @for $opacity from 0 through 100 {
+      &#{$opacity} { opacity: $opacity / 100 }
+    }
+  }
+}

@@ -15,16 +15,6 @@ $breakpoints: (
 ) !default;
 
 // Pseudo-class and pseudo-element suffixes.
-// Specify space separated list to apply all pseudos to same class:
-// `$pseudos: (foo: empty hover)` would produce `.c-w-foo:empty:hover`.
-//
-// Specify comma separated list to create several selectors with given pseudos:
-// `$pseudos: (foo: (hover, focus))` would produce `.c-w-foo:hover` and `.c-w-foo:focus`.
-//
-// Specify comma separated list of space separated lists to create combination
-// of options described above:
-// `$pseudos: (foo: (empty hover, nth-of-type(2) focus))` would produce
-// `.c-w-foo:empty:hover` and `.c-w-foo:nth-of-type(2):focus`.
 $pseudos: (
   hf: (hover, focus),
   h: hover,
@@ -58,6 +48,10 @@ $grid-widths: (
 // Colors
 // -------------
 $palette: (
+  cc: currentColor,
+  tt: transparent,
+  i:  inherit,
+
   // Greyscale
   w:  #fff,
   g1: #eeeeec,
@@ -102,10 +96,6 @@ $palette: (
   lr: #ef2929,
   r:  #cc0000,
   dr: #a40000,
-
-  cc: currentColor,
-  tt: transparent,
-  i:  inherit,
 ) !default;
 
 
@@ -119,18 +109,19 @@ $background-colors: $palette !default;
 $border-colors: $palette !default;
 
 $border-widths: (
-  1:  1px,
-  i:  inherit,
+  i: inherit,
+  1: 1px,
 ) !default;
 
 $border-radiuses: (
+  i:  inherit,
   10: 10px,
   5:  5px,
-  c:  9999px, // Circle
-  i:  inherit,
+  c:  999px, // Circle
 ) !default;
 
 $border-styles: (
+  i:      inherit,
   n:      none,
   h:      hidden,
   dt:     dotted,
@@ -144,7 +135,6 @@ $border-styles: (
   r:      ridge,
   in:     inset,
   o:      outset,
-  i:      inherit,
 ) !default;
 
 
@@ -153,13 +143,16 @@ $border-styles: (
 $colors: $palette !default;
 
 $font-sizes: (
-  16: 16px, // Base size
+  // Root font size
+  16: 16px,
 
+  // Override literal values
   xs: .75rem,
   s:  .875rem,
   m:  1rem,
   l:  1.25rem,
 
+  // Headers
   h6: 1rem,
   h5: 1.25rem,
   h4: 1.5rem,
@@ -167,6 +160,7 @@ $font-sizes: (
   h2: 2rem,
   h1: 2.5rem,
 
+  // Display
   d4: 3.5rem,
   d3: 4.5rem,
   d2: 5.5rem,
@@ -176,7 +170,7 @@ $font-sizes: (
 $font-families: (
   ss: (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif),
   s:  (Georgia, 'Times New Roman', Times, serif),
-  m:  (Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace)
+  m:  (Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace),
 ) !default;
 
 $line-heights: (
@@ -190,64 +184,52 @@ $letter-spacings: (
 ) !default;
 
 $text-indents: (
-  1r:     1rem,
-  -9999r: -9999px,
+  1r: 1rem,
 ) !default;
 
 
 // Spacings
 // -------------
 $margins: (
-  '-3r':    -3rem,
-  '-1_5r':  -1.5rem,
-  '-1_25r': -1.25rem,
-  '-1r':    -1rem,
-  '-0_75r': -.75rem,
-  '-0_5r':  -.5rem,
-  '-0_25r': -.25rem,
-  '0':      0,
-  '0_25r':  .25rem,
-  '0_5r':   .5rem,
-  '0_75r':  .75rem,
-  '1r':     1rem,
-  '1_25r':  1.25rem,
-  '1_5r':   1.5rem,
-  '3r':     3rem,
+  5:  5px,
+  10: 10px,
+  15: 15px,
+  20: 20px,
+  40: 40px,
 ) !default;
 
 $paddings: (
-  0:     0,
-  0_25r: .25rem,
-  0_5r:  .5rem,
-  0_75r: .75rem,
-  1r:    1rem,
-  1_25r: 1.25rem,
-  1_5r:  1.5rem,
-  2r:    2rem,
-  3r:    3rem,
+  5:  5px,
+  10: 10px,
+  15: 15px,
+  20: 20px,
+  40: 40px,
 ) !default;
 
 
 // Positions
 // -------------
 $positions: (
-  -50p:  -50%,
-  -100p: -100%,
-   100p:  100%,
-   50p:   50%,
-   0:     0,
+  0:     0,
+  50p:   50%,
+  100p:  100%,
 ) !default;
 
 
 // Dimensions
 // -------------
 $widths: (
-  100p: 100%,
-  50p:  50%,
+  i:    inherit,
   0:    0,
-  i:    inherit
+  50p:  50%,
+  100p: 100%,
 ) !default;
 
-$heights: $widths !default;
+$heights: (
+  i:    inherit,
+  0:    0,
+  50p:  50%,
+  100p: 100%,
+) !default;
 
 $box-shadows: () !default;

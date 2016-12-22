@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "gulp": "~3.9.1",
-    "gulp-sass": "~2.3.2",
+    "gulp-sass": "~3.0.0",
     "gulp-postcss": "~6.2.0",
     "postcss-import": "~8.2.0",
     "cssnano": "~3.8.0"

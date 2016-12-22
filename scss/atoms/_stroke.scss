@@ -1,0 +1,23 @@
+.st {
+  @include create-partials($border-colors, stroke);
+
+  &w { @include create-partials($border-widths, stroke-width) }
+
+  &lc#{$literal-sep} {
+    &b { stroke-linecap: butt }
+    &s { stroke-linecap: square }
+    &r { stroke-linecap: round }
+  }
+
+  &lj#{$literal-sep} {
+    &m { stroke-linejoin: miter }
+    &r { stroke-linejoin: round }
+    &b { stroke-linejoin: bevel }
+  }
+
+  &op#{$ordinal-sep} {
+    @for $opacity from 0 through 100 {
+      &#{$opacity} { opacity: $opacity / 100 }
+    }
+  }
+}

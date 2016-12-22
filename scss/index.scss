@@ -15,7 +15,7 @@
 @import 'atoms/color';
 @import 'atoms/cursor';
 @import 'atoms/display';
-@import 'atoms/svg';
+@import 'atoms/fill';
 @import 'atoms/flex';
 @import 'atoms/float';
 @import 'atoms/font';
@@ -31,11 +31,13 @@
 @import 'atoms/page-break';
 @import 'atoms/position';
 @import 'atoms/resize';
+@import 'atoms/stroke';
 @import 'atoms/table';
 @import 'atoms/text';
 @import 'atoms/transform';
 @import 'atoms/transition';
 @import 'atoms/user-select';
+@import 'atoms/vector-effect';
 @import 'atoms/vertical-align';
 @import 'atoms/visibility';
 @import 'atoms/white-space';

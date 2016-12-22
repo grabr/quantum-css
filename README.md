@@ -20,7 +20,7 @@ Here is a sample button component with rounded corners, hover and focus transiti
 </button>
 ```
 
-```less
+```sass
 .btn {
   @extend .px15, .h40; // Size
   @extend .bds-s, .bdw1, .bdr5; // Border style solid, border width 1px and rounded corners
@@ -203,27 +203,25 @@ Benefits of using [`@extend`][1] approach:
   - [**Miscellaneous**](#miscellaneous)  
      [`display`](#display)  
   
-3. [**License**](#license)
+1. [**License**](#license)
 
 
 ## Naming Conventions
 
 In Quantum CSS every class name consists of four parts in given order:
 
-- Optional [breakpoint](#breakpoints) name: `SM_`, `MD_`, etc.
-- Property abbreviation: <a href="#border-color"><code><b>bd</b>tc</code></a>, <a href="#border-color"><code><b>ws</b></code></a>, etc. 
-- Value abbreviation: `-w`, `100p`, `360d`, etc.
-- Optional pseudo-class and/or pseudo-element modifier: `-hf`, `-h`, etc. 
+1. Optional [breakpoint](#breakpoints) name: `SM`, `MD` etc.
+1. Property abbreviation: <a href="#border-color"><code><b>bd</b>tc</code></a>, <a href="#border-color"><code><b>ws</b></code></a> etc. 
+1. Value abbreviation: `w`, `100p`, `360d` etc.
+1. Optional pseudo-class or pseudo-element modifier: `hf`, `h` etc. 
 
 You can configure separators between each parts of class name with following variables:
 
-- `$breakpoint-sep = "_"` holds separator between breakpoint name and property abbreviation.
+- `$breakpoint-sep` define separator between breakpoint name and property abbreviation.
 
-- `$literal-sep = "-"` and `$ordinal-sep = ""` define separators that are inserted between property name and literal value abbreviation or ordinal one respectively.
+- `$literal-sep` and `$ordinal-sep` define separators that are inserted between property name and literal value abbreviation or ordinal one respectively.
 
-- `$pseudo-sep = ""` separates pseudo modifier from value abbreviation.
-
-Examles and atom index use default separator values.
+- `$pseudo-sep` defines separator between pseudo modifier from value abbreviation.
 
 
 ### Value Aliases
@@ -240,7 +238,7 @@ Aliases for commonly used values:
 These aliases are used instead of full units:
 
 - <a href="#width"><code><b>w</b>100p</code></a> → `width: 100%`
-- <a href="#height"><code>SM_<b>mah</b>42</code></a> → `max-height: 42px`
+- <a href="#height"><code>SM_<b>mah</b>42</code></a> → `@media (min-width: 576px) { max-height: 42px }`
 
 
 ### Color Values
@@ -274,7 +272,7 @@ CSS-literal colors:
 - `t`  → `transparent`
 - `i`  → `inherit`
 
-Atom examples:
+Generated atom examples:
 
 - <a href="#background-color"><code>SM_<b>bg</b>c-dg</code></a> → `background-color: #4e9a06` Dark green
 - <a href="#border-color"><code><b>bd</b>rc-w</code></a> → `border-right-color: white`
@@ -298,39 +296,33 @@ One of the most powerful features of Quantum is breakpoint-based media queries.
 
 You can configure set of pseudo-classes and pseudo-elements for which atoms are generated via `$pseudos`. To emit disjunction of pseudos use comma-separated list.
 
-```scss
-$pseudos: (
-  hf: (hover, focus)
-);
+```sass
+$pseudos: (hf: (hover, focus));
 
-.bgc-w-hf:hover,
-.bgc-w-hf:focus {
-  background-color: white;
+.c-w-hf:hover,
+.c-w-hf:focus {
+  color: white;
 }
 ```
 
 Space-separated list defines selector conjunction:
 
-```scss
-$pseudos: (
-  eh: empty hover
-);
+```sass
+$pseudos: (eh: empty hover);
 
-.bgc-w-eh:empty:hover {
-  background-color: white;
+.c-w-eh:empty:hover {
+  color: white;
 }
 ```
 
 Combine those different list types for precise class targeting:
 
-```scss
-$pseudos: (
-  ch: (first-child hover, last-child hover)
-);
+```sass
+$pseudos: (foo: (active hover, active focus));
 
-.bgc-w-ch:first-child:hover,
-.bgc-w-ch:last-child:hover {
-  background-color: white;
+.c-w-foo:active:hover,
+.c-w-foo:active:focus {
+  color: white;
 }
 ```
 
@@ -899,10 +891,10 @@ Specify mapping in <code><a href="scss/_variables.scss">$text-indents</a>: (key:
 
 #### [`text-decoration`](https://developer.mozilla.org/en/docs/Web/CSS/text-decoration)
 
-1. <code><b>t</b>d-n</code>  → `none`
-1. <code><b>t</b>d-u</code>  → `underline`
-1. <code><b>t</b>d-o</code>  → `overline`
-1. <code><b>t</b>d-lt</code> → `line-through`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>d-n[-<a href="#pseudos">pseudo</a>]</code> → `none`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>d-u[-<a href="#pseudos">pseudo</a>]</code> → `underline`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>d-o</code> → `overline`
+1. <code>[<a href="#breakpoints">breakpoint</a>\_]<b>t</b>d-lt</code> → `line-through`
 
 
 #### [`text-transform`](https://developer.mozilla.org/en/docs/Web/CSS/text-transform)

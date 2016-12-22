@@ -1,4 +1,4 @@
-// Generates partial for column width, shifts ans offset
+// Generates partials for column width, shifts ans offset.
 @mixin generate-grid-cols(
   $col-count: $grid-col-count
 ) {
@@ -6,12 +6,13 @@
     $width: percentage($i / $col-count);
     $id: #{$ordinal-sep}#{$i};
 
-    @if $i != 0 {
+    @if $i > 0 {
       &c#{$id}  {
         flex: 0 0 $width;
         max-width: $width;
       }
     }
+
     &o#{$id}  { margin-left: $width }
     &sl#{$id} { right: $width }
     &sr#{$id} { left:  $width }
@@ -24,11 +25,15 @@
   $col-count:   $grid-col-count,
   $breakpoints: $breakpoints
 ) {
+  width: $width;
   padding-left:  $gutter;
   padding-right: $gutter;
 
-  &#{$literal-sep}f {
-    width: $width;
+  &#{$literal-sep} {
+    &f {
+      width: auto;
+      max-width: 100%;
+    }
   }
 
   &r {
@@ -40,8 +45,8 @@
   @at-root {
     %#{$gc-id} {
       position: relative;
-      min-height: 1px;
       width: 100%;
+      min-height: 1px;
       padding-left:  $gutter / 2;
       padding-right: $gutter / 2;
     }

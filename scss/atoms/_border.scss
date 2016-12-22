@@ -1,5 +1,4 @@
 @include create-responsive-classes(bd) {
-
   &c       { @include create-cartesian-partials($border-colors, border-color) }
   &yc, &tc { @include create-cartesian-partials($border-colors, border-top-color) }
   &xc, &rc { @include create-cartesian-partials($border-colors, border-right-color) }
