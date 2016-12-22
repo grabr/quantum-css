@@ -10,44 +10,32 @@
 
 Quantum CSS is an atomic CSS library written in SCSS.
 
-You won’t need to write any rules and media queries while using Quantum CSS. Creating highly responsive UIs becomes pleasure while extension pattern provides means of controlled customization. You can create molecules with avaialble atoms using [`@extend`][1].
+You won’t need to write any CSS rules and media queries while using Quantum CSS. Creating highly responsive UIs becomes pleasure while extension pattern provides means of controlled customization. You can create molecules with avaialble atoms using [`@extend`][1].
 
 Here is a sample button component with rounded corners, hover and focus transition animations (which are disabled on small screens to provide better experience on touch devices):
 
 ```html
-<button class="btn btnz-s btns-bb btn-r SM_btnz-n" type="button">
+<button class="btn btn-fb" type="button">
   <!-- Content -->
 </button>
 ```
 
-```sass
+```less
 .btn {
-  @extend .cur-p; // Pointer cursor
-  @extend .bds-s, .bdw1; // Border style solid and border width 1px
-  @extend .trp-c, .trd200ms; // Transitions
-  
-  &-r { @extend .bdr4 } // Rounded corners
+  @extend .px15, .h40; // Size
+  @extend .bds-s, .bdw1, .bdr5; // Border style solid, border width 1px and rounded corners
+  @extend .trp-c, .trd200ms; // Color transitions
 
-  &z {
-    &-s { @extend .px15, .h40 } // Horizontal padding and height
-  }
-
-  &s {
-    &-fb  { @extend .bgc-fb, .c-w, .bdc-tt, .SM_bgc-dfb-hf } // Facebook
-    &-tw  { @extend .bgc-tw, .c-w, .bdc-tt, .SM_bgc-dtw-hf } // Twitter
-  }
-}
-
-.SM_btnz {
-  &-n { @extend .SM_px30, .SM_h50 }
+  &-fb  { @extend .bgc-fb, .c-w, .bdc-tt, .SM_bgc-dfb-hf } // Facebook
+  &-tw  { @extend .bgc-tw, .c-w, .bdc-tt, .SM_bgc-dtw-hf } // Twitter
 }
 ```
 
 Benefits of using [`@extend`][1] approach:
 
-- Highly standardized styles. You have to use limited amount of building blocks, which forces you to have more order in your design.
+- Highly standardized styles. Limited amount of building blocks allows you to have more order in your design.
 
-- Compilation time errors. Build fails if unknown atoms are used.
+- Stylesheet compilation time errors. Build fails if unknown atoms are used.
 
 - Easy to remember class names. Atoms naming convention was heavily inspired by [Emmet](http://docs.emmet.io/cheat-sheet/), and most of the time abbreviations are first letters of words that property or value names consist of.
 
