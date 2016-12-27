@@ -31,7 +31,7 @@
 
   &w {
     &#{$ordinal-sep} {
-      @for $weight from 1 through 9 {
+      @for $weight from 1 through 9 { // 100 … 900
         &#{$weight * 100} { font-weight: $weight * 100 }
       }
     }
@@ -87,13 +87,13 @@
   }
 }
 
-.wfsm#{$literal-sep} {
+.-wfsm#{$literal-sep} {
   &a  { -webkit-font-smoothing: antialiased }
   &sa { -webkit-font-smoothing: subpixel-antialiased }
   &n  { -webkit-font-smoothing: none }
 }
 
-.mfsm#{$literal-sep} {
+.-mfsm#{$literal-sep} {
   &a { -moz-osx-font-smoothing: auto }
   &g { -moz-osx-font-smoothing: grayscale }
 }

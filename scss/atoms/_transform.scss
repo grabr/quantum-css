@@ -10,7 +10,7 @@
     }
 
     &#{$literal-sep} {
-      @for $i from 1 through 8 {
+      @for $i from 1 through 8 { // 45 … 360
         $angle: $i * 45;
         &ccw#{$angle}d { transform: rotate(-#{$angle}deg) }
         &cw#{$angle}d  { transform: rotate( #{$angle}deg) }
@@ -18,26 +18,47 @@
     }
   }
 
-  &s#{$ordinal-sep} {
-    @for $i from 0 through 8 {
+  &sc#{$ordinal-sep} {
+    @for $i from 0 through 8 { // 0 … 2x
       $scale: $i * 25;
       &#{$scale} { transform: scale(#{$scale / 100}) }
     }
   }
 
   &t {
-    &x#{$ordinal-sep} {
-      @for $i from -4 through 4 {
-        $x: $i * 25;
-        &#{$x}p { transform: translateX(#{$x * 1%}) }
-      }
-    }
+    @for $i from -4 through 4 { // -100% … 100%
+      $shift: $i * 25;
 
-    &y#{$ordinal-sep} {
-      @for $i from -4 through 4 {
-        $y: $i * 25;
-        &#{$y}p { transform: translateY(#{$y * 1%}) }
+      &x#{$ordinal-sep} {
+        &#{$shift}p { transform: translateX(#{$shift * 1%}) }
+      }
+
+      &y#{$ordinal-sep} {
+        &#{$shift}p { transform: translateY(#{$shift * 1%}) }
       }
     }
   }
+
+  &s#{$literal-sep} {
+    &p3d { transform-style: preserve-3d }
+    &f   { transform-style: flat }
+    &i   { transform-style: inherit }
+  }
+
+  &o#{$literal-sep} {
+    &lt { transform-origin: left top }
+    &lb { transform-origin: left bottom }
+    &lc { transform-origin: left center }
+    &rt { transform-origin: right top }
+    &rb { transform-origin: right bottom }
+    &rc { transform-origin: right center }
+    &ct { transform-origin: center top }
+    &cb { transform-origin: center bottom }
+    &cc { transform-origin: center center }
+  }
+}
+
+.bv#{$literal-sep} {
+  &v { backface-visibility: visible }
+  &h { backface-visibility: hidden }
 }

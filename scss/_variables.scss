@@ -24,16 +24,14 @@ $pseudos: (
 
 // Grid
 // -------------
-$grid-gutter-base: 20px !default;
-
 $grid-col-count: 12 !default;
 
 $grid-gutters: (
   null: 0,
-  SM:   $grid-gutter-base,
-  MD:   $grid-gutter-base,
-  LG:   $grid-gutter-base,
-  XL:   $grid-gutter-base,
+  SM:   20px,
+  MD:   20px,
+  LG:   20px,
+  XL:   20px,
 ) !default;
 
 $grid-widths: (
@@ -50,7 +48,6 @@ $grid-widths: (
 $palette: (
   cc: currentColor,
   tt: transparent,
-  i:  inherit,
 
   // Greyscale
   w:  #fff,
@@ -60,7 +57,7 @@ $palette: (
   g4: #888a85,
   g5: #555753,
   g6: #2e3436,
-  b: #000,
+  b:  #000,
 
   // Yellow
   ly: #fce94f,
@@ -96,6 +93,8 @@ $palette: (
   lr: #ef2929,
   r:  #cc0000,
   dr: #a40000,
+
+  i:  inherit,
 ) !default;
 
 
@@ -114,14 +113,13 @@ $border-widths: (
 ) !default;
 
 $border-radiuses: (
-  i:  inherit,
-  10: 10px,
-  5:  5px,
-  c:  999px, // Circle
+  i:       inherit,
+  10:      10px,
+  5:       5px,
+  circle:  999px, // Circle
 ) !default;
 
 $border-styles: (
-  i:      inherit,
   n:      none,
   h:      hidden,
   dt:     dotted,
@@ -135,6 +133,7 @@ $border-styles: (
   r:      ridge,
   in:     inset,
   o:      outset,
+  i:      inherit,
 ) !default;
 
 
@@ -180,11 +179,16 @@ $line-heights: (
 
 $letter-spacings: (
   1: 1px,
-  2: 2px,
+  3: 3px,
 ) !default;
 
-$text-indents: (
-  1r: 1rem,
+$text-indents: () !default;
+
+$text-decorations: (
+  u:  underline,
+  n:  none,
+  o:  overline,
+  lt: line-through,
 ) !default;
 
 
@@ -210,26 +214,26 @@ $paddings: (
 // Positions
 // -------------
 $positions: (
-  0:     0,
-  50p:   50%,
-  100p:  100%,
+  0:    0,
+  50p:  50%,
+  100p: 100%,
 ) !default;
 
 
 // Dimensions
 // -------------
 $widths: (
-  i:    inherit,
   0:    0,
   50p:  50%,
   100p: 100%,
+  i:    inherit,
 ) !default;
 
 $heights: (
-  i:    inherit,
   0:    0,
   50p:  50%,
   100p: 100%,
+  i:    inherit,
 ) !default;
 
 $box-shadows: () !default;

@@ -1,5 +1,5 @@
 .st {
-  @include create-partials($border-colors, stroke);
+  @include create-cartesian-partials($border-colors, stroke);
 
   &w { @include create-partials($border-widths, stroke-width) }
 
@@ -17,7 +17,7 @@
 
   &op#{$ordinal-sep} {
     @for $opacity from 0 through 100 {
-      &#{$opacity} { opacity: $opacity / 100 }
+      &#{$opacity} { stroke-opacity: $opacity / 100 }
     }
   }
 }

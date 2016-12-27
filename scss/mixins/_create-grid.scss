@@ -1,5 +1,5 @@
 // Generates partials for column width, shifts ans offset.
-@mixin generate-grid-cols(
+@mixin create-grid-cols(
   $col-count: $grid-col-count
 ) {
   @for $i from 0 through $col-count {
@@ -13,13 +13,13 @@
       }
     }
 
-    &o#{$id}  { margin-left: $width }
-    &sl#{$id} { right: $width }
-    &sr#{$id} { left:  $width }
+    &o#{$id} { margin-left: $width }
+    &r#{$id} { right: $width } // Push from right
+    &l#{$id} { left:  $width } // Push from left
   }
 }
 
-@mixin generate-grid(
+@mixin create-grid(
   $gutter:      0,
   $width:       null,
   $col-count:   $grid-col-count,
@@ -30,7 +30,7 @@
   padding-right: $gutter;
 
   &#{$literal-sep} {
-    &f {
+    &f { // Fluid grid
       width: auto;
       max-width: 100%;
     }

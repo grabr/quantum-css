@@ -1,6 +1,8 @@
-.tbl#{$literal-sep} {
-  &a { table-layout: auto }
-  &f { table-layout: fixed }
+.tb {
+  &l#{$literal-sep} {
+    &a { table-layout: auto }
+    &f { table-layout: fixed }
+  }
 }
 
 .cps#{$literal-sep} {
@@ -11,4 +13,12 @@
 .ec#{$literal-sep} {
   &s { empty-cells: show }
   &h { empty-cells: hide }
+}
+
+.bd {
+  &ce#{$literal-sep} {
+    &c { border-collapse: collapse }
+    &s { border-collapse: separate }
+    &i { border-collapse: inherit }
+  }
 }

@@ -1,4 +1,6 @@
 @include create-responsive-classes(t) {
+  &d { @include create-cartesian-partials($text-decorations, text-decoration) }
+
   &a {
     &#{$literal-sep} {
       &l { text-align: left }
@@ -14,21 +16,28 @@
       &j { text-align-last: justify }
     }
   }
-
-  &d {
-    @include create-cartesian-partials((u: underline, n: none), text-decoration);
-
-    &#{$literal-sep} {
-      &n  { text-decoration: none }
-      &u  { text-decoration: underline }
-      &o  { text-decoration: overline }
-      &lt { text-decoration: line-through }
-    }
-  }
 }
 
 .t {
   &i { @include create-partials($text-indents, text-indent) }
+
+  &ds#{$literal-sep} {
+    &s  { text-decoration-style: solid }
+    &db { text-decoration-style: double }
+    &dt { text-decoration-style: dotted }
+    &ds { text-decoration-style: dashed }
+    &w  { text-decoration-style: wavy }
+    &i  { text-decoration-style: inherit }
+  }
+
+  &dsk#{$literal-sep} {
+    &n   { text-decoration-skip: none }
+    &o   { text-decoration-skip: objects }
+    &sp  { text-decoration-skip: spaces }
+    &i   { text-decoration-skip: ink }
+    &e   { text-decoration-skip: edges }
+    &bxd { text-decoration-skip: box-decoration }
+  }
 
   &t#{$literal-sep} {
     &c  { text-transform: capitalize }

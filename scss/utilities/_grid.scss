@@ -7,13 +7,11 @@
     flex-wrap: wrap;
   }
 
-  @each $key in map-keys($breakpoints) {
-    @include respond-to($key) {
-      @include generate-grid(map-get($grid-gutters, $key), map-get($grid-widths, $key));
+  @each $id in map-keys($breakpoints) {
+    @include respond-to($id) {
+      @include create-grid(map-get($grid-gutters, $id), map-get($grid-widths, $id));
     }
   }
 }
 
-@include create-responsive-classes(g) {
-  @include generate-grid-cols();
-}
+@include create-responsive-classes(g) { @include create-grid-cols() }

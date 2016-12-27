@@ -23,11 +23,3 @@
   &br, &rr, &brr { @include create-partials($border-radiuses, border-bottom-right-radius) }
   &br, &lr, &blr { @include create-partials($border-radiuses, border-bottom-left-radius) }
 }
-
-.bd {
-  &ce#{$literal-sep} {
-    &c { border-collapse: collapse }
-    &s { border-collapse: separate }
-    &i { border-collapse: inherit }
-  }
-}

@@ -5,7 +5,7 @@
   }
 
   &d#{$ordinal-sep} {
-    @for $i from 1 through 10 {
+    @for $i from 1 through 10 { // 0ms … 1s
       $duration: $i * 100ms;
       &#{$duration} { transition-duration: $duration }
     }

@@ -1,5 +1,5 @@
 .fi {
-  @include create-partials($background-colors, fill);
+  @include create-cartesian-partials($background-colors, fill);
 
   &r#{$literal-sep} {
     &nz { fill-rule: nonzero }
@@ -9,7 +9,7 @@
 
   &op#{$ordinal-sep} {
     @for $opacity from 0 through 100 {
-      &#{$opacity} { opacity: $opacity / 100 }
+      &#{$opacity} { fill-opacity: $opacity / 100 }
     }
   }
 }
