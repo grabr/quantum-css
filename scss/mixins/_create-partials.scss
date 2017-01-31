@@ -1,29 +1,19 @@
-// Create media query for requested breakpoint.
-@mixin respond-to(
-  $breakpoint-id,
-  $breakpoints: $breakpoints
-) {
-  $width: map-get($breakpoints, $breakpoint-id);
-
-  @if $width == 0 {
-    @content;
+@mixin respond-to($name, $media-queries: $media-queries) {
+  $media: map-get($media-queries, $name);
+  @if $media {
+    @media #{$media} { @content }
   }
-  @else {
-    @media (min-width: $width) {
-      @content;
-    }
-  }
+  @else { @content }
 }
 
-// Inject breakpoint prefix for each selector in context and place inside corresponding media query.
 @mixin create-responsive-classes(
   $class,
-  $breakpoint-ids: map-keys($breakpoints),
-  $breakpoints:    $breakpoints
+  $names: map-keys($media-queries),
+  $media-queries: $media-queries
 ) {
-  @each $breakpoint-id in $breakpoint-ids {
-    @include respond-to($breakpoint-id, $breakpoints) {
-      .#{$breakpoint-id}#{if($breakpoint-id, $breakpoint-sep, null)}#{$class} {
+  @each $name in $names {
+    @include respond-to($name, $media-queries) {
+      .#{$name}#{if($name, $media-separator, null)}#{$class} {
         @content;
       }
     }
@@ -42,7 +32,7 @@
 
 // Choose separator depending on $value-id.
 @function value-sep($value-id) {
-  @return if(str-length(#{$value-id}) == 0, null, if(type-of($value-id) == string, $literal-sep, $ordinal-sep));
+  @return if(str-length(#{$value-id}) == 0, null, if(type-of($value-id) == string, $literal-separator, $ordinal-separator));
 }
 
 // Generates partials for each id-value pair from `$values`.
@@ -85,7 +75,7 @@
             $selectors: append($selectors, unquote($selector), comma);
           }
 
-          $selectors-all: join($selectors-all, selector-append(&, #{$pseudo-sep}#{$pseudo-id}, $selectors), comma);
+          $selectors-all: join($selectors-all, selector-append(&, #{$pseudo-separator}#{$pseudo-id}, $selectors), comma);
         }
 
         @at-root {

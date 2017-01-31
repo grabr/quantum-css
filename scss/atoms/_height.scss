@@ -1,7 +1,7 @@
 @include create-responsive-classes(h)   { @include create-partials($heights, height) }
 @include create-responsive-classes(mih) { @include create-partials($heights, min-height) }
 @include create-responsive-classes(mah) {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &n { max-height: none }
   }
 

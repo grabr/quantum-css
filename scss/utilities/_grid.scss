@@ -7,9 +7,9 @@
     flex-wrap: wrap;
   }
 
-  @each $id in map-keys($breakpoints) {
-    @include respond-to($id) {
-      @include create-grid(map-get($grid-gutters, $id), map-get($grid-widths, $id));
+  @each $name in map-keys($media-queries) {
+    @include respond-to($name) {
+      @include create-grid(map-get($grid-gutters, $name), map-get($grid-widths, $name));
     }
   }
 }

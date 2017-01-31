@@ -2,14 +2,14 @@
   &d { @include create-cartesian-partials($text-decorations, text-decoration) }
 
   &a {
-    &#{$literal-sep} {
+    &#{$literal-separator} {
       &l { text-align: left }
       &c { text-align: center }
       &r { text-align: right }
       &j { text-align: justify }
     }
 
-    &l#{$literal-sep} {
+    &l#{$literal-separator} {
       &l { text-align-last: left }
       &c { text-align-last: center }
       &r { text-align-last: right }
@@ -21,7 +21,7 @@
 .t {
   &i { @include create-partials($text-indents, text-indent) }
 
-  &ds#{$literal-sep} {
+  &ds#{$literal-separator} {
     &s  { text-decoration-style: solid }
     &db { text-decoration-style: double }
     &dt { text-decoration-style: dotted }
@@ -30,7 +30,7 @@
     &i  { text-decoration-style: inherit }
   }
 
-  &dsk#{$literal-sep} {
+  &dsk#{$literal-separator} {
     &n   { text-decoration-skip: none }
     &o   { text-decoration-skip: objects }
     &sp  { text-decoration-skip: spaces }
@@ -39,7 +39,7 @@
     &bxd { text-decoration-skip: box-decoration }
   }
 
-  &t#{$literal-sep} {
+  &t#{$literal-separator} {
     &c  { text-transform: capitalize }
     &u  { text-transform: uppercase }
     &l  { text-transform: lowercase }
@@ -47,7 +47,7 @@
     &fw { text-transform: full-width }
   }
 
-  &ov#{$literal-sep} {
+  &ov#{$literal-separator} {
     &e { text-overflow: ellipsis }
     &c { text-overflow: clip }
   }

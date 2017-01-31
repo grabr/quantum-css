@@ -1,17 +1,14 @@
-// Setup
-// -------------
-$breakpoint-sep: '_' !default;
-$pseudo-sep:     '-' !default;
-$literal-sep:    '-' !default;
-$ordinal-sep:    '' !default;
+$media-separator:   '_' !default;
+$literal-separator: '-' !default;
+$ordinal-separator: '' !default;
+$pseudo-separator:  '-' !default;
 
-// Mapping from breakpoint prefix to min-width when breakpoint is applied.
-$breakpoints: (
-  null: 0,
-  SM:   576px,
-  MD:   768px,
-  LG:   992px,
-  XL:   1200px,
+$media-queries: (
+  null: null,
+  SM: 'screen and (min-width: 576px)',
+  MD: 'screen and (min-width: 768px)',
+  LG: 'screen and (min-width: 992px)',
+  XL: 'screen and (min-width: 1200px)',
 ) !default;
 
 // Pseudo-class and pseudo-element suffixes.

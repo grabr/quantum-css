@@ -1,10 +1,10 @@
 .z {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &a { z-index: auto }
     &i { z-index: inherit }
   }
 
-  &#{$ordinal-sep} {
+  &#{$ordinal-separator} {
     @for $z-index from 0 through 10 { // 0 … 10
       &#{$z-index} { z-index: $z-index }
     }

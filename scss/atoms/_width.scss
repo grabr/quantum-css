@@ -1,7 +1,7 @@
 @include create-responsive-classes(w)   { @include create-partials($widths, width) }
 @include create-responsive-classes(miw) { @include create-partials($widths, min-width) }
 @include create-responsive-classes(maw) {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &n { max-width: none }
   }
 

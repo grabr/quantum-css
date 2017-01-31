@@ -1,6 +1,6 @@
 @include create-responsive-classes(f) {
   &z {
-    &#{$literal-sep} {
+    &#{$literal-separator} {
       &xxs {font-size: xx-small }
       &xs  {font-size: x-small }
       &s   {font-size: small }
@@ -17,7 +17,7 @@
   }
 
   &f {
-    &#{$literal-sep} {
+    &#{$literal-separator} {
       &s  {font-family: serif }
       &ss {font-family: sans-serif }
       &m  {font-family: monospace }
@@ -30,13 +30,13 @@
   }
 
   &w {
-    &#{$ordinal-sep} {
+    &#{$ordinal-separator} {
       @for $weight from 1 through 9 { // 100 … 900
         &#{$weight * 100} { font-weight: $weight * 100 }
       }
     }
 
-    &#{$literal-sep} {
+    &#{$literal-separator} {
       &n  { font-weight: normal }
       &b  { font-weight: bold }
       &br { font-weight: bolder }
@@ -45,7 +45,7 @@
     }
   }
 
-  &s#{$literal-sep} {
+  &s#{$literal-separator} {
     &n { font-style: normal }
     &i { font-style: italic }
     &o { font-style: oblique }
@@ -53,7 +53,7 @@
 }
 
 .f {
-  &v#{$literal-sep} {
+  &v#{$literal-separator} {
     &cl  { font-variant: common-ligatures }
     &apc { font-variant: all-petite-caps }
     &asc { font-variant: all-small-caps }
@@ -70,11 +70,11 @@
     &pw  { font-variant: proportional-width }
   }
 
-  &za#{$literal-sep} {
+  &za#{$literal-separator} {
     &n { font-size-adjust: none }
   }
 
-  &st#{$literal-sep} {
+  &st#{$literal-separator} {
     &n  { font-stretch: normal }
     &uc { font-stretch: ultra-condensed }
     &ec { font-stretch: extra-condensed }
@@ -87,13 +87,13 @@
   }
 }
 
-.-wfsm#{$literal-sep} {
+.-wfsm#{$literal-separator} {
   &a  { -webkit-font-smoothing: antialiased }
   &sa { -webkit-font-smoothing: subpixel-antialiased }
   &n  { -webkit-font-smoothing: none }
 }
 
-.-mfsm#{$literal-sep} {
+.-mfsm#{$literal-separator} {
   &a { -moz-osx-font-smoothing: auto }
   &g { -moz-osx-font-smoothing: grayscale }
 }

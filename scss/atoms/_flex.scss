@@ -1,12 +1,12 @@
 @include create-responsive-classes(fx) {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     // Shorthands to create flex rows and columns by adding a single class name.
     &r, &rr, &c, &cr { display: flex }
   }
 
   &,
   &d {
-    &#{$literal-sep} {
+    &#{$literal-separator} {
       &r  { flex-direction: row }
       &rr { flex-direction: row-reverse }
       &c  { flex-direction: column }
@@ -14,25 +14,25 @@
     }
   }
 
-  &w#{$literal-sep} {
+  &w#{$literal-separator} {
     &nw { flex-wrap: nowrap }
     &w  { flex-wrap: wrap }
     &wr { flex-wrap: wrap-reverse }
   }
 
-  &g#{$ordinal-sep} {
+  &g#{$ordinal-separator} {
     @for $grow from 0 through 10 {
       &#{$grow} { flex-grow: $grow }
     }
   }
 
-  &s#{$ordinal-sep} {
+  &s#{$ordinal-separator} {
     @for $shrink from 0 through 10 {
       &#{$shrink} { flex-shrink: $shrink }
     }
   }
 
-  &b#{$literal-sep} {
+  &b#{$literal-separator} {
     &a   { flex-basis: auto }
     &mac { flex-basis: max-content }
     &mic { flex-basis: min-content }
@@ -42,7 +42,7 @@
 }
 
 @include create-responsive-classes(jc) {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &fs { justify-content: flex-start }
     &fe { justify-content: flex-end }
     &c  { justify-content: center }
@@ -52,7 +52,7 @@
 }
 
 @include create-responsive-classes(ai) {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &fs { align-items: flex-start }
     &fe { align-items: flex-end }
     &c  { align-items: center }
@@ -62,7 +62,7 @@
 }
 
 @include create-responsive-classes(ac) {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &fs { align-content: flex-start }
     &fe { align-content: flex-end }
     &c  { align-content: center }
@@ -73,7 +73,7 @@
 }
 
 @include create-responsive-classes(as) {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &a  { align-self: auto }
     &fs { align-self: flex-start }
     &fe { align-self: flex-end }
@@ -84,7 +84,7 @@
 }
 
 @include create-responsive-classes(ord) {
-  &#{$ordinal-sep} {
+  &#{$ordinal-separator} {
     @for $order from 0 through 10 {
       &#{$order} { order: $order }
     }

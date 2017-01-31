@@ -3,31 +3,31 @@
 }
 
 .bg {
-  &a#{$literal-sep} {
+  &a#{$literal-separator} {
     &f { background-attachment: fixed }
     &s { background-attachment: scroll }
   }
 
-  &cp#{$literal-sep} {
+  &cp#{$literal-separator} {
     &bb { background-clip: border-box }
     &pb { background-clip: padding-box }
     &cb { background-clip: content-box }
     &i  { background-clip: inherit }
   }
 
-  &i#{$literal-sep} {
+  &i#{$literal-separator} {
     &n { background-image: none }
     &i { background-image: inherit }
   }
 
-  &o#{$literal-sep} {
+  &o#{$literal-separator} {
     &bb { background-origin: border-box }
     &pb { background-origin: padding-box }
     &cb { background-origin: content-box }
   }
 
   &p {
-    &#{$literal-sep} {
+    &#{$literal-separator} {
       &tc { background-position: top center }
       &tl { background-position: top left }
       &cr { background-position: center right }
@@ -38,20 +38,20 @@
       &bl { background-position: bottom left }
     }
 
-    &x#{$literal-sep} {
+    &x#{$literal-separator} {
       &r { background-position-x: right }
       &c { background-position-x: center }
       &l { background-position-x: left }
     }
 
-    &y#{$literal-sep} {
+    &y#{$literal-separator} {
       &t { background-position-y: top }
       &c { background-position-y: center }
       &b { background-position-y: bottom }
     }
   }
 
-  &r#{$literal-sep} {
+  &r#{$literal-separator} {
     &n { background-repeat: no-repeat }
     &x { background-repeat: repeat-x }
     &y { background-repeat: repeat-y }
@@ -59,7 +59,7 @@
     &r { background-repeat: round }
   }
 
-  &z#{$literal-sep} {
+  &z#{$literal-separator} {
     &a  { background-size: auto }
     &ct { background-size: contain }
     &cv { background-size: cover }

@@ -1,5 +1,5 @@
 @include create-responsive-classes(v) {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &v { visibility: visible }
     &h { visibility: hidden }
     &c { visibility: collapse }

@@ -4,7 +4,7 @@
   &y, &t { @include create-partials($paddings, padding-top) }
   &x, &r { @include create-partials($paddings, padding-right) }
 
-  &b#{$ordinal-sep} {
+  &b#{$ordinal-separator} {
     &100p { padding-bottom: 100% }
   }
   &y, &b { @include create-partials($paddings, padding-bottom) }

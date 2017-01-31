@@ -1,4 +1,4 @@
-.op#{$ordinal-sep} {
+.op#{$ordinal-separator} {
   @for $opacity from 0 through 100 {
     &#{$opacity} { opacity: $opacity / 100 }
   }

@@ -1,11 +1,11 @@
 .wo {
-  &b#{$literal-sep} {
+  &b#{$literal-separator} {
     &n  { word-break: normal }
     &ka { word-break: keep-all }
     &ba { word-break: break-all }
   }
 
-  &w#{$literal-sep} {
+  &w#{$literal-separator} {
     &n  { word-wrap: normal }
     &bw { word-wrap: break-word }
   }

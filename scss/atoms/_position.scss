@@ -1,5 +1,5 @@
 @include create-responsive-classes(pos) {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &s { position: static }
     &a { position: absolute }
     &r { position: relative }

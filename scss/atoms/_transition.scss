@@ -1,17 +1,17 @@
 .tr {
-  &p#{$literal-sep} {
+  &p#{$literal-separator} {
     &n { transition-property: none }
     &a { transition-property: all }
   }
 
-  &d#{$ordinal-sep} {
+  &d#{$ordinal-separator} {
     @for $i from 1 through 10 { // 0ms … 1s
       $duration: $i * 100ms;
       &#{$duration} { transition-duration: $duration }
     }
   }
 
-  &tf#{$literal-sep} {
+  &tf#{$literal-separator} {
     &e   { transition-timing-function: ease }
     &ei  { transition-timing-function: ease-in }
     &eo  { transition-timing-function: ease-out }

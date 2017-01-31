@@ -1,5 +1,5 @@
 .pgb {
-  &b#{$literal-sep} {
+  &b#{$literal-separator} {
     &a  { page-break-before: auto }
     &al { page-break-before: always }
     &av { page-break-before: avoid }
@@ -7,12 +7,12 @@
     &r  { page-break-before: right }
   }
 
-  &i#{$literal-sep} {
+  &i#{$literal-separator} {
     &a  { page-break-inside: auto }
     &av { page-break-inside: avoid }
   }
 
-  &a#{$literal-sep} {
+  &a#{$literal-separator} {
     &a  { page-break-after: auto }
     &al { page-break-after: always }
     &av { page-break-after: avoid }

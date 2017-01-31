@@ -1,15 +1,15 @@
 @include create-responsive-classes(ts) {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &n { transform: none }
     &i { transform: inherit }
   }
 
   &r {
-    &#{$ordinal-sep} {
+    &#{$ordinal-separator} {
       &0 { transform: rotate(0deg) }
     }
 
-    &#{$literal-sep} {
+    &#{$literal-separator} {
       @for $i from 1 through 8 { // 45 … 360
         $angle: $i * 45;
         &ccw#{$angle}d { transform: rotate(-#{$angle}deg) }
@@ -18,7 +18,7 @@
     }
   }
 
-  &sc#{$ordinal-sep} {
+  &sc#{$ordinal-separator} {
     @for $i from 0 through 8 { // 0 … 2x
       $scale: $i * 25;
       &#{$scale} { transform: scale(#{$scale / 100}) }
@@ -29,23 +29,23 @@
     @for $i from -4 through 4 { // -100% … 100%
       $shift: $i * 25;
 
-      &x#{$ordinal-sep} {
+      &x#{$ordinal-separator} {
         &#{$shift}p { transform: translateX(#{$shift * 1%}) }
       }
 
-      &y#{$ordinal-sep} {
+      &y#{$ordinal-separator} {
         &#{$shift}p { transform: translateY(#{$shift * 1%}) }
       }
     }
   }
 
-  &s#{$literal-sep} {
+  &s#{$literal-separator} {
     &p3d { transform-style: preserve-3d }
     &f   { transform-style: flat }
     &i   { transform-style: inherit }
   }
 
-  &o#{$literal-sep} {
+  &o#{$literal-separator} {
     &lt { transform-origin: left top }
     &lb { transform-origin: left bottom }
     &lc { transform-origin: left center }
@@ -58,7 +58,7 @@
   }
 }
 
-.bv#{$literal-sep} {
+.bv#{$literal-separator} {
   &v { backface-visibility: visible }
   &h { backface-visibility: hidden }
 }

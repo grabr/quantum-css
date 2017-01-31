@@ -3,19 +3,19 @@
 
   &w { @include create-partials($border-widths, stroke-width) }
 
-  &lc#{$literal-sep} {
+  &lc#{$literal-separator} {
     &b { stroke-linecap: butt }
     &s { stroke-linecap: square }
     &r { stroke-linecap: round }
   }
 
-  &lj#{$literal-sep} {
+  &lj#{$literal-separator} {
     &m { stroke-linejoin: miter }
     &r { stroke-linejoin: round }
     &b { stroke-linejoin: bevel }
   }
 
-  &op#{$ordinal-sep} {
+  &op#{$ordinal-separator} {
     @for $opacity from 0 through 100 {
       &#{$opacity} { stroke-opacity: $opacity / 100 }
     }

@@ -1,32 +1,32 @@
 .ov {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &v { overflow: visible }
     &h { overflow: hidden }
     &s { overflow: scroll }
     &a { overflow: auto }
   }
 
-  &x#{$literal-sep} {
+  &x#{$literal-separator} {
     &v { overflow-x: visible }
     &h { overflow-x: hidden }
     &s { overflow-x: scroll }
     &a { overflow-x: auto }
   }
 
-  &y#{$literal-sep} {
+  &y#{$literal-separator} {
     &v { overflow-y: visible }
     &h { overflow-y: hidden }
     &s { overflow-y: scroll }
     &a { overflow-y: auto }
   }
 
-  &w#{$literal-sep} {
+  &w#{$literal-separator} {
     &n { overflow-wrap: normal }
     &b { overflow-wrap: break-word }
   }
 }
 
-.-wovs#{$literal-sep} {
+.-wovs#{$literal-separator} {
   &t { -webkit-overflow-scrolling: touch }
   &a { -webkit-overflow-scrolling: auto }
 }

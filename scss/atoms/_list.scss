@@ -1,16 +1,16 @@
 .lis {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &n { list-style: none }
     &i { list-style: inherit }
   }
 
-  &p#{$literal-sep} {
+  &p#{$literal-separator} {
     &in { list-style-position: inside }
     &o  { list-style-position: outside }
     &i  { list-style-position: inherit }
   }
 
-  &t#{$literal-sep} {
+  &t#{$literal-separator} {
     &n    { list-style-type: none }
     &d    { list-style-type: disc }
     &c    { list-style-type: circle }

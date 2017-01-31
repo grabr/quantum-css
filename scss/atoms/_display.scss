@@ -1,5 +1,5 @@
 @include create-responsive-classes(d) {
-  &#{$literal-sep} {
+  &#{$literal-separator} {
     &n  { display: none }
     &b  { display: block }
     &fx { display: flex }
