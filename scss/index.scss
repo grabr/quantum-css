@@ -2,10 +2,10 @@
 
 @import 'mixins/clearfix';
 @import 'mixins/create-partials';
-//@import 'mixins/create-grid';
+@import 'mixins/create-grid';
 
 @import 'utilities/clearfix';
-//@import 'utilities/grid';
+@import 'utilities/grid';
 
 @import 'atoms/background';
 @import 'atoms/border';
