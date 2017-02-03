@@ -28,6 +28,7 @@
 
   &p {
     &#{$literal-separator} {
+      &tr { background-position: top right }
       &tc { background-position: top center }
       &tl { background-position: top left }
       &cr { background-position: center right }
