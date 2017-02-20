@@ -1,0 +1,12 @@
+.pe#{$literal-separator} {
+  &a  { pointer-events: auto }
+  &n  { pointer-events: none }
+  &vp { pointer-events: visiblePainted }
+  &vf { pointer-events: visibleFill }
+  &vs { pointer-events: visibleStroke }
+  &v  { pointer-events: visible }
+  &p  { pointer-events: painted }
+  &f  { pointer-events: fill }
+  &s  { pointer-events: stroke }
+  &al { pointer-events: all }
+}
