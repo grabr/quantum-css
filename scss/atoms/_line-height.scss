@@ -1,4 +1,4 @@
-.lh {
+@include create-responsive-classes(lh) {
   &#{$literal-separator} {
     &n { line-height: normal }
     &i { line-height: inherit }
