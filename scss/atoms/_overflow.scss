@@ -1,4 +1,4 @@
-.ov {
+@include create-responsive-classes(ov) {
   &#{$literal-separator} {
     &v { overflow: visible }
     &h { overflow: hidden }

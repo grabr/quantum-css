@@ -29,6 +29,10 @@
     @for $i from -4 through 4 { // -100% … 100%
       $shift: $i * 25;
 
+      &#{$ordinal-separator} {
+        &#{$shift}p { transform: translate(#{$shift * 1%}, #{$shift * 1%}) }
+      }
+
       &x#{$ordinal-separator} {
         &#{$shift}p { transform: translateX(#{$shift * 1%}) }
       }
@@ -36,6 +40,10 @@
       &y#{$ordinal-separator} {
         &#{$shift}p { transform: translateY(#{$shift * 1%}) }
       }
+    }
+
+    &3d#{$ordinal-separator} {
+      &0 { transform: translate3d(0, 0, 0) }
     }
   }
 
