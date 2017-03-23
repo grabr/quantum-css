@@ -1,4 +1,4 @@
-.z {
+@include create-responsive-classes(z) {
   &#{$literal-separator} {
     &a { z-index: auto }
     &i { z-index: inherit }
