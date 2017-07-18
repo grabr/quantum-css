@@ -1,11 +1,11 @@
 @include create-responsive-classes(m) {
   @include create-partials($margins, margin);
 
-  &x#{$literal-separator} {
-    &a {
-      margin-left: auto;
-      margin-right: auto;
-    }
+  &x, &r {
+    &#{$literal-separator}a { margin-right: auto }
+  }
+  &x, &l {
+    &#{$literal-separator}a { margin-left: auto }
   }
 
   &y, &t { @include create-partials($margins, margin-top) }
