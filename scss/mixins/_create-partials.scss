@@ -47,7 +47,7 @@
   $props,
   $pseudo-ids:       null,
   $pseudos:          $pseudos,
-  $create-no-pseudo: true
+  $pseudos-required: false
 ) {
   @each $value-id, $value in $values {
     &#{value-sep($value-id)}#{$value-id} {
@@ -55,7 +55,7 @@
       // Append pseudo ids to selector when needed.
       @if $pseudo-ids {
         $selectors-all: ();
-        @if $create-no-pseudo {
+        @if not $pseudos-required {
           $selectors-all: &;
         }
         @each $pseudo-id in $pseudo-ids {
@@ -85,7 +85,7 @@
         }
       }
       @else {
-        @if $create-no-pseudo {
+        @if not $pseudos-required {
           @include spread-properties($props, $value);
         }
       }
@@ -99,5 +99,5 @@
   $pseudo-ids: map-keys($pseudos),
   $pseudos:    $pseudos
 ) {
-  @include create-partials($values, $props, $pseudo-ids, $pseudos, true);
+  @include create-partials($values, $props, $pseudo-ids, $pseudos, false);
 }

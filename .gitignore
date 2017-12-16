@@ -32,6 +32,9 @@ css/
 ## sFTP configuration file
 sftp-config.json
 
+## Package control identity of dependency trees
+package-lock.json
+
 ## Package control specific files
 Package Control.last-run
 Package Control.ca-list

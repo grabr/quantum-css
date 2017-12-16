@@ -40,6 +40,13 @@ $grid-widths: (
 ) !default;
 
 
+// Columns
+// -------------
+$col-count: $grid-col-count !default;
+
+$col-gaps: $grid-gutters !default;
+
+
 // Colors
 // -------------
 $palette: (
