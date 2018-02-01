@@ -1,13 +1,10 @@
 @include create-responsive-classes(lh) {
-  &#{$literal-separator} {
-    &n { line-height: normal }
-    &i { line-height: inherit }
-  }
-
-  &#{$ordinal-separator} {
-    &0 { line-height: 0 }
-    &1 { line-height: 1 }
-  }
+  @include prop(line-height, (
+      n: normal,
+      i: inherit,
+      0: 0,
+      1: 1,
+  ));
 
   @include create-partials($line-heights, line-height);
 }

@@ -1,37 +1,39 @@
-.cur#{$literal-separator} {
-  &a     { cursor: auto }
-  &d     { cursor: default }
-  &cm    { cursor: context-menu }
-  &h     { cursor: help }
-  &p     { cursor: pointer }
-  &ps    { cursor: progress }
-  &w     { cursor: wait }
-  &cl    { cursor: cell }
-  &c     { cursor: crosshair }
-  &t     { cursor: text }
-  &al    { cursor: alias }
-  &cp    { cursor: copy }
-  &m     { cursor: move }
-  &nd    { cursor: no-drop }
-  &na    { cursor: not-allowed }
-  &as    { cursor: all-scroll }
-  &cr    { cursor: col-resize }
-  &rr    { cursor: row-resize }
-  &nr    { cursor: n-resize }
-  &er    { cursor: e-resize }
-  &sr    { cursor: s-resize }
-  &wr    { cursor: w-resize }
-  &ner   { cursor: ne-resize }
-  &nwr   { cursor: nw-resize }
-  &ser   { cursor: se-resize }
-  &swr   { cursor: sw-resize }
-  &ewr   { cursor: ew-resize }
-  &nsr   { cursor: ns-resize }
-  &neswr { cursor: nesw-resize }
-  &nwser { cursor: nwse-resize }
-  &zi    { cursor: zoom-in }
-  &zo    { cursor: zoom-out }
-  &g     { cursor: grab }
-  &gr    { cursor: grabbing }
-  &n     { cursor: none }
+.cur {
+  @include prop(cursor, (
+      a:     auto,
+      d:     default,
+      cm:    context-menu,
+      h:     help,
+      p:     pointer,
+      ps:    progress,
+      w:     wait,
+      cl:    cell,
+      c:     crosshair,
+      t:     text,
+      al:    alias,
+      cp:    copy,
+      m:     move,
+      nd:    no-drop,
+      na:    not-allowed,
+      as:    all-scroll,
+      cr:    col-resize,
+      rr:    row-resize,
+      nr:    n-resize,
+      er:    e-resize,
+      sr:    s-resize,
+      wr:    w-resize,
+      ner:   ne-resize,
+      nwr:   nw-resize,
+      ser:   se-resize,
+      swr:   sw-resize,
+      ewr:   ew-resize,
+      nsr:   ns-resize,
+      neswr: nesw-resize,
+      nwser: nwse-resize,
+      zi:    zoom-in,
+      zo:    zoom-out,
+      g:     grab,
+      gr:    grabbing,
+      n:     none,
+  ));
 }

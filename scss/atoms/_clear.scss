@@ -1,6 +1,8 @@
-.cl#{$literal-separator} {
-  &l { clear: left }
-  &r { clear: right }
-  &b { clear: both }
-  &n { clear: none }
+.cl {
+  @include prop(clear, (
+      l: left,
+      r: right,
+      b: both,
+      n: none,
+  ));
 }

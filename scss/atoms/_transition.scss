@@ -1,23 +1,30 @@
 .tr {
-  &p#{$literal-separator} {
-    &n { transition-property: none }
-    &a { transition-property: all }
+  &p {
+    @include prop(transition-property, (
+        n: none,
+        a: all,
+    ));
   }
 
-  &d#{$ordinal-separator} {
+  &d {
     @for $i from 1 through 10 { // 0ms … 1s
       $duration: $i * 100ms;
-      &#{$duration} { transition-duration: $duration }
+
+      @include prop(transition-duration, (
+          #{$duration}: $duration
+      ));
     }
   }
 
-  &tf#{$literal-separator} {
-    &e   { transition-timing-function: ease }
-    &ei  { transition-timing-function: ease-in }
-    &eo  { transition-timing-function: ease-out }
-    &eio { transition-timing-function: ease-in-out }
-    &l   { transition-timing-function: linear }
-    &ss  { transition-timing-function: step-start }
-    &se  { transition-timing-function: step-end }
+  &tf {
+    @include prop(transition-timing-function, (
+        e:   ease,
+        ei:  ease-in,
+        eo:  ease-out,
+        eio: ease-in-out,
+        l:   linear,
+        ss:  step-start,
+        se:  step-end,
+    ));
   }
 }

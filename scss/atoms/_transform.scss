@@ -1,27 +1,31 @@
 @include create-responsive-classes(ts) {
-  &#{$literal-separator} {
-    &n { transform: none }
-    &i { transform: inherit }
-  }
+  @include prop(transform, (
+      n: none,
+      i: inherit,
+  ));
 
   &r {
-    &#{$ordinal-separator} {
-      &0 { transform: rotate(0deg) }
-    }
+    @include prop(transform, (
+        0: rotate(0deg),
+    ));
 
-    &#{$literal-separator} {
-      @for $i from 1 through 8 { // 45 … 360
-        $angle: $i * 45;
-        &ccw#{$angle}d { transform: rotate(-#{$angle}deg) }
-        &cw#{$angle}d  { transform: rotate( #{$angle}deg) }
-      }
+    @for $i from 1 through 8 { // 45 … 360
+      $angle: $i * 45;
+
+      @include prop(transform, (
+          ccw#{$angle}d: rotate(-#{$angle}deg),
+          cw#{$angle}d:  rotate( #{$angle}deg),
+      ));
     }
   }
 
-  &sc#{$ordinal-separator} {
+  &sc {
     @for $i from 0 through 8 { // 0 … 2x
       $scale: $i * 25;
-      &#{$scale} { transform: scale(#{$scale / 100}) }
+
+      @include prop(transform, (
+          #{$scale}: scale(#{$scale / 100})
+      ));
     }
   }
 
@@ -29,44 +33,46 @@
     @for $i from -4 through 4 { // -100% … 100%
       $shift: $i * 25;
 
-      &#{$ordinal-separator} {
-        &#{$shift}p { transform: translate(#{$shift * 1%}, #{$shift * 1%}) }
-      }
-
-      &x#{$ordinal-separator} {
-        &#{$shift}p { transform: translateX(#{$shift * 1%}) }
-      }
-
-      &y#{$ordinal-separator} {
-        &#{$shift}p { transform: translateY(#{$shift * 1%}) }
-      }
+      @include prop(transform, (
+          #{$shift}p:  translate (#{$shift * 1%}, #{$shift * 1%}),
+          x#{$shift}p: translateX(#{$shift * 1%}),
+          y#{$shift}p: translateY(#{$shift * 1%}),
+      ));
     }
 
-    &3d#{$ordinal-separator} {
-      &0 { transform: translate3d(0, 0, 0) }
+    &3d {
+      @include prop(transform, (
+          0: translate3d(0, 0, 0),
+      ));
     }
   }
 
-  &s#{$literal-separator} {
-    &p3d { transform-style: preserve-3d }
-    &f   { transform-style: flat }
-    &i   { transform-style: inherit }
+  &s {
+    @include prop(transform-style, (
+        p3d: preserve-3d,
+        f:   flat,
+        i:   inherit,
+    ));
   }
 
-  &o#{$literal-separator} {
-    &lt { transform-origin: left top }
-    &lb { transform-origin: left bottom }
-    &lc { transform-origin: left center }
-    &rt { transform-origin: right top }
-    &rb { transform-origin: right bottom }
-    &rc { transform-origin: right center }
-    &ct { transform-origin: center top }
-    &cb { transform-origin: center bottom }
-    &cc { transform-origin: center center }
+  &o {
+    @include prop(transform-origin, (
+        lt: left top,
+        lb: left bottom,
+        lc: left center,
+        rt: right top,
+        rb: right bottom,
+        rc: right center,
+        ct: center top,
+        cb: center bottom,
+        cc: center center,
+    ));
   }
 }
 
-.bv#{$literal-separator} {
-  &v { backface-visibility: visible }
-  &h { backface-visibility: hidden }
+.bv {
+  @include prop(backface-visibility, (
+      v: visible,
+      h: hidden,
+  ));
 }

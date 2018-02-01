@@ -1,12 +1,12 @@
 @include create-responsive-classes(z) {
-  &#{$literal-separator} {
-    &a { z-index: auto }
-    &i { z-index: inherit }
-  }
+  @include prop(z-index, (
+      a: auto,
+      i: inherit,
+  ));
 
-  &#{$ordinal-separator} {
-    @for $z-index from 0 through 10 { // 0 … 10
-      &#{$z-index} { z-index: $z-index }
-    }
+  @for $z-index from 0 through 10 { // 0 … 10
+    @include prop(z-index, (
+        #{$z-index}: $z-index
+    ));
   }
 }

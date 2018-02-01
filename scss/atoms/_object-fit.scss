@@ -1,8 +1,10 @@
-.of#{$literal-separator} {
-  &n  { object-fit: none }
-  &f  { object-fit: fill }
-  &ct { object-fit: contain }
-  &cv { object-fit: cover }
-  &sd { object-fit: scale-down }
-  &i  { object-fit: inherit }
+.of {
+  @include prop(object-fit, (
+      n:  none,
+      f:  fill,
+      ct: contain,
+      cv: cover,
+      sd: scale-down,
+      i:  inherit,
+  ));
 }

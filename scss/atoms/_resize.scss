@@ -1,6 +1,8 @@
-.rz#{$literal-separator} {
-  &n { resize: none }
-  &b { resize: both }
-  &h { resize: horizontal }
-  &v { resize: vertical }
+.rz {
+  @include prop(resize, (
+      n: none,
+      b: both,
+      h: horizontal,
+      v: vertical,
+  ));
 }

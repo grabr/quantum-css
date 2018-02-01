@@ -1,12 +1,16 @@
 .wo {
-  &b#{$literal-separator} {
-    &n  { word-break: normal }
-    &ka { word-break: keep-all }
-    &ba { word-break: break-all }
+  &b {
+    @include prop(word-break, (
+        n:  normal,
+        ka: keep-all,
+        ba: break-all,
+    ));
   }
 
-  &w#{$literal-separator} {
-    &n  { word-wrap: normal }
-    &bw { word-wrap: break-word }
+  &w {
+    @include prop(word-wrap, (
+        n:  normal,
+        bw: break-word,
+    ));
   }
 }

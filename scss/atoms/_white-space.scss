@@ -1,9 +1,9 @@
 @include create-responsive-classes(ws) {
-  &#{$literal-separator} {
-    &n  { white-space: normal }
-    &p  { white-space: pre }
-    &nw { white-space: nowrap }
-    &pw { white-space: pre-wrap }
-    &pl { white-space: pre-line }
-  }
+  @include prop(white-space, (
+      n:  normal,
+      p:  pre,
+      nw: nowrap,
+      pw: pre-wrap,
+      pl: pre-line,
+  ));
 }

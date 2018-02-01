@@ -1,24 +1,28 @@
 .lis {
-  &#{$literal-separator} {
-    &n { list-style: none }
-    &i { list-style: inherit }
+  @include prop(list-style, (
+      n: none,
+      i: inherit,
+  ));
+
+  &p {
+    @include prop(list-style-position, (
+        in: inside,
+        o:  outside,
+        i:  inherit,
+    ));
   }
 
-  &p#{$literal-separator} {
-    &in { list-style-position: inside }
-    &o  { list-style-position: outside }
-    &i  { list-style-position: inherit }
-  }
-
-  &t#{$literal-separator} {
-    &n    { list-style-type: none }
-    &d    { list-style-type: disc }
-    &c    { list-style-type: circle }
-    &s    { list-style-type: square }
-    &dc   { list-style-type: decimal }
-    &dclz { list-style-type: decimal-leading-zero }
-    &lr   { list-style-type: lower-roman }
-    &ur   { list-style-type: upper-roman }
-    &i    { list-style-type: inherit }
+  &t {
+    @include prop(list-style-type, (
+        n:    none,
+        d:    disc,
+        c:    circle,
+        s:    square,
+        dc:   decimal,
+        dclz: decimal-leading-zero,
+        lr:   lower-roman,
+        ur:   upper-roman,
+        i:    inherit,
+    ));
   }
 }

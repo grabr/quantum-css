@@ -1,39 +1,30 @@
 @include create-responsive-classes(d) {
-  &#{$literal-separator} {
-    &n  { display: none }
-    &b  { display: block }
-    &fx { display: flex }
-    &li { display: list-item }
-    &ri { display: run-in }
+  @include prop(display, (
+      n:  none,
+      b:  block,
+      fx: flex,
+      li: list-item,
+      ri: run-in,
 
-    &i {
-      display: inline;
+      i:   inline,
+      itb: inline-table,
+      ifx: inline-flex,
+      ib:  inline-block,
 
-      &tb { display: inline-table }
-      &fx { display: inline-flex }
-      &b  { display: inline-block }
-    }
+      tb:   table,
+      tbcp: table-caption,
+      tbc:  table-column,
+      tbcg: table-column-group,
+      tbhg: table-header-group,
+      tbfg: table-footer-group,
+      tbr:  table-row,
+      tbrg: table-row-group,
+      tbcl: table-cell,
 
-    &tb {
-      display: table;
-
-      &cp { display: table-caption }
-      &c  { display: table-column }
-      &cg { display: table-column-group }
-      &hg { display: table-header-group }
-      &fg { display: table-footer-group }
-      &r  { display: table-row }
-      &rg { display: table-row-group }
-      &cl { display: table-cell }
-    }
-
-    &rb {
-      display: ruby;
-
-      &b  { display: ruby-base }
-      &bc { display: ruby-base-container }
-      &t  { display: ruby-text }
-      &tc { display: ruby-text-container }
-    }
-  }
+      rb:   ruby,
+      rbb:  ruby-base,
+      rbbc: ruby-base-container,
+      rbt:  ruby-text,
+      rbtc: ruby-text-container,
+  ));
 }

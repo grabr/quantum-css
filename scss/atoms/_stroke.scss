@@ -3,21 +3,27 @@
 
   &w { @include create-partials($border-widths, stroke-width) }
 
-  &lc#{$literal-separator} {
-    &b { stroke-linecap: butt }
-    &s { stroke-linecap: square }
-    &r { stroke-linecap: round }
+  &lc {
+    @include prop(stroke-linecap, (
+        b: butt,
+        s: square,
+        r: round,
+    ));
   }
 
-  &lj#{$literal-separator} {
-    &m { stroke-linejoin: miter }
-    &r { stroke-linejoin: round }
-    &b { stroke-linejoin: bevel }
+  &lj {
+    @include prop(stroke-linejoin, (
+        m: miter,
+        r: round,
+        b: bevel,
+    ));
   }
 
-  &op#{$ordinal-separator} {
+  &op {
     @for $opacity from 0 through 100 {
-      &#{$opacity} { stroke-opacity: $opacity / 100 }
+      @include prop(stroke-opacity, (
+          #{$opacity}: $opacity / 100
+      ));
     }
   }
 }

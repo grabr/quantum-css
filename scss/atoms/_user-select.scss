@@ -1,5 +1,7 @@
-.us#{$literal-separator} {
-  &n { user-select: none }
-  &t { user-select: text }
-  &a { user-select: all }
+.us {
+  @include prop(user-select, (
+      n: none,
+      t: text,
+      a: all,
+  ));
 }

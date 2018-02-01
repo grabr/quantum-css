@@ -1,10 +1,10 @@
 @include create-responsive-classes(pos) {
-  &#{$literal-separator} {
-    &s { position: static }
-    &a { position: absolute }
-    &r { position: relative }
-    &f { position: fixed }
-  }
+  @include prop(position, (
+      s: static,
+      a: absolute,
+      r: relative,
+      f: fixed,
+  ));
 }
 
 @include create-responsive-classes(t) { @include create-partials($positions, top) }

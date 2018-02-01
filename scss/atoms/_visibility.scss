@@ -1,7 +1,7 @@
 @include create-responsive-classes(v) {
-  &#{$literal-separator} {
-    &v { visibility: visible }
-    &h { visibility: hidden }
-    &c { visibility: collapse }
-  }
+  @include prop(visibility, (
+      v: visible,
+      h: hidden,
+      c: collapse,
+  ));
 }

@@ -1,32 +1,40 @@
 @include create-responsive-classes(ov) {
-  &#{$literal-separator} {
-    &v { overflow: visible }
-    &h { overflow: hidden }
-    &s { overflow: scroll }
-    &a { overflow: auto }
+  @include prop(overflow, (
+      v: visible,
+      h: hidden,
+      s: scroll,
+      a: auto,
+  ));
+
+  &x {
+    @include prop(overflow-x, (
+        v: visible,
+        h: hidden,
+        s: scroll,
+        a: auto,
+    ));
   }
 
-  &x#{$literal-separator} {
-    &v { overflow-x: visible }
-    &h { overflow-x: hidden }
-    &s { overflow-x: scroll }
-    &a { overflow-x: auto }
+  &y {
+    @include prop(overflow-y, (
+        v: visible,
+        h: hidden,
+        s: scroll,
+        a: auto,
+    ));
   }
 
-  &y#{$literal-separator} {
-    &v { overflow-y: visible }
-    &h { overflow-y: hidden }
-    &s { overflow-y: scroll }
-    &a { overflow-y: auto }
-  }
-
-  &w#{$literal-separator} {
-    &n { overflow-wrap: normal }
-    &b { overflow-wrap: break-word }
+  &w {
+    @include prop(overflow-wrap, (
+        n: normal,
+        b: break-word,
+    ));
   }
 }
 
-.-wovs#{$literal-separator} {
-  &t { -webkit-overflow-scrolling: touch }
-  &a { -webkit-overflow-scrolling: auto }
+.-wovs {
+  @include prop(-webkit-overflow-scrolling, (
+      t: touch,
+      a: auto,
+  ));
 }

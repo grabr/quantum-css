@@ -1,92 +1,104 @@
 @include create-responsive-classes(fx) {
-  &#{$literal-separator} {
-    // Shorthands to create flex rows and columns by adding a single class name.
-    &r, &rr, &c, &cr { display: flex }
-  }
+
+  // Shorthands to create flex rows and columns by adding a single class name.
+  @include prop(display, (
+      r:  flex,
+      rr: flex,
+      c:  flex,
+      cr: flex,
+  ));
 
   &,
   &d {
-    &#{$literal-separator} {
-      &r  { flex-direction: row }
-      &rr { flex-direction: row-reverse }
-      &c  { flex-direction: column }
-      &cr { flex-direction: column-reverse }
-    }
+    @include prop(flex-direction, (
+        r:  row,
+        rr: row-reverse,
+        c:  column,
+        cr: column-reverse,
+    ));
   }
 
-  &w#{$literal-separator} {
-    &nw { flex-wrap: nowrap }
-    &w  { flex-wrap: wrap }
-    &wr { flex-wrap: wrap-reverse }
+  &w {
+    @include prop(flex-wrap, (
+        nw: nowrap,
+        w:  wrap,
+        wr: wrap-reverse,
+    ));
   }
 
-  &g#{$ordinal-separator} {
+  &g {
     @for $grow from 0 through 10 {
-      &#{$grow} { flex-grow: $grow }
+      @include prop(flex-grow, (
+          #{$grow}: $grow
+      ));
     }
   }
 
-  &s#{$ordinal-separator} {
+  &s {
     @for $shrink from 0 through 10 {
-      &#{$shrink} { flex-shrink: $shrink }
+      @include prop(flex-shrink, (
+          #{$shrink}: $shrink
+      ));
     }
   }
 
-  &b#{$literal-separator} {
-    &a   { flex-basis: auto }
-    &mac { flex-basis: max-content }
-    &mic { flex-basis: min-content }
-    &fc  { flex-basis: fit-content }
-    &c   { flex-basis: content }
+  &b {
+    @include prop(flex-basis, (
+        a:   auto,
+        mac: max-content,
+        mic: min-content,
+        fc:  fit-content,
+        c:   content,
+    ));
   }
 }
 
 @include create-responsive-classes(jc) {
-  &#{$literal-separator} {
-    &fs { justify-content: flex-start }
-    &fe { justify-content: flex-end }
-    &c  { justify-content: center }
-    &sb { justify-content: space-between }
-    &sa { justify-content: space-around }
-  }
+  @include prop(justify-content, (
+      fs: flex-start,
+      fe: flex-end,
+      c:  center,
+      sb: space-between,
+      sa: space-around,
+  ));
 }
 
 @include create-responsive-classes(ai) {
-  &#{$literal-separator} {
-    &fs { align-items: flex-start }
-    &fe { align-items: flex-end }
-    &c  { align-items: center }
-    &bs { align-items: baseline }
-    &s  { align-items: stretch }
-  }
+  @include prop(align-items, (
+      fs: flex-start,
+      fe: flex-end,
+      c:  center,
+      bs: baseline,
+      s:  stretch,
+  ));
 }
 
 @include create-responsive-classes(ac) {
-  &#{$literal-separator} {
-    &fs { align-content: flex-start }
-    &fe { align-content: flex-end }
-    &c  { align-content: center }
-    &sb { align-content: space-between }
-    &sa { align-content: space-around }
-    &s  { align-content: stretch }
-  }
+  @include prop(align-content, (
+      fs: flex-start,
+      fe: flex-end,
+      c:  center,
+      sb: space-between,
+      sa: space-around,
+      s:  stretch,
+  ));
 }
 
 @include create-responsive-classes(as) {
-  &#{$literal-separator} {
-    &a  { align-self: auto }
-    &fs { align-self: flex-start }
-    &fe { align-self: flex-end }
-    &c  { align-self: center }
-    &b  { align-self: baseline }
-    &s  { align-self: stretch }
-  }
+  @include prop(align-self, (
+      a:  auto,
+      fs: flex-start,
+      fe: flex-end,
+      c:  center,
+      b:  baseline,
+      s:  stretch,
+  ));
 }
 
 @include create-responsive-classes(ord) {
-  &#{$ordinal-separator} {
-    @for $order from 0 through 10 {
-      &#{$order} { order: $order }
-    }
+  @for $order from 0 through 10 {
+    @include prop(order, (
+        #{$order}: $order
+    ));
   }
 }

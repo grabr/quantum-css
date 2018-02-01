@@ -1,13 +1,12 @@
 .c {
   @each $name in map-keys($media-queries) {
     @include respond-to($name) {
-      $gap: map-get($col-gaps, $name);
-      $cc-id: unique-id();
-      @at-root {
-        %#{$cc-id} { column-gap: $gap }
-      }
       @for $i from 1 through $col-count {
-        &c#{$ordinal-separator}#{$i} { @extend %#{$cc-id} }
+        &c {
+          @include prop(column-gap, (
+              #{$i}: map-get($col-gaps, $name)
+          ));
+        }
       }
     }
   }
@@ -15,62 +14,81 @@
 
 @include create-responsive-classes(c) {
   @for $i from 1 through $col-count {
-    &c#{$ordinal-separator}#{$i} { column-count: $i }
+    &c {
+      @include prop(column-count, (
+          #{$i}: $i
+      ));
+    }
   }
-  &fi#{$literal-separator} {
-    &a { column-fill: auto }
-    &b { column-fill: balance }
-    &i { column-fill: inherit }
+
+  &fi {
+    @include prop(column-fill, (
+        a: auto,
+        b: balance,
+        i: inherit,
+    ));
   }
-  &s#{$literal-separator} {
-    &n  { column-span: none }
-    &al { column-span: all }
-    &i  { column-span: inherit }
+
+  &s {
+    @include prop(column-span, (
+        n:  none,
+        al: all,
+        i:  inherit,
+    ));
   }
+
   &rc { @include create-partials($border-colors, column-rule-color) }
   &rw { @include create-partials($border-widths, column-rule-width) }
   &rs { @include create-partials($border-styles, column-rule-style) }
 }
 
 @include create-responsive-classes(b) {
-  &a#{$literal-separator} {
-    &a    { break-after: auto }
-    &av   { break-after: avoid }
-    &avpg { break-after: avoid-page }
-    &pg   { break-after: page }
-    &al   { break-after: always }
-    &l    { break-after: left }
-    &r    { break-after: right }
-    &re   { break-after: recto }
-    &v    { break-after: verso }
-    &avc  { break-after: avoid-column }
-    &c    { break-after: column }
-    &avr  { break-after: avoid-region }
-    &r    { break-after: region }
-    &i    { break-after: inherit }
+  &a {
+    @include prop(break-after, (
+        a:    auto,
+        av:   avoid,
+        avpg: avoid-page,
+        pg:   page,
+        al:   always,
+        l:    left,
+        r:    right,
+        re:   recto,
+        v:    verso,
+        avc:  avoid-column,
+        c:    column,
+        avr:  avoid-region,
+        r:    region,
+        i:    inherit,
+    ));
   }
-  &b#{$literal-separator} {
-    &a    { break-before: auto }
-    &av   { break-before: avoid }
-    &avpg { break-before: avoid-page }
-    &pg   { break-before: page }
-    &al   { break-before: always }
-    &l    { break-before: left }
-    &r    { break-before: right }
-    &re   { break-before: recto }
-    &v    { break-before: verso }
-    &avc  { break-before: avoid-column }
-    &c    { break-before: column }
-    &avr  { break-before: avoid-region }
-    &r    { break-before: region }
-    &i    { break-before: inherit }
+
+  &b {
+    @include prop(break-before, (
+        a:    auto,
+        av:   avoid,
+        avpg: avoid-page,
+        pg:   page,
+        al:   always,
+        l:    left,
+        r:    right,
+        re:   recto,
+        v:    verso,
+        avc:  avoid-column,
+        c:    column,
+        avr:  avoid-region,
+        r:    region,
+        i:    inherit,
+    ));
   }
-  &i#{$literal-separator} {
-    &a    { break-inside: auto }
-    &av   { break-inside: avoid }
-    &avpg { break-inside: avoid-page }
-    &avc  { break-inside: avoid-column }
-    &avr  { break-inside: avoid-region }
-    &i    { break-inside: inherit }
+
+  &i {
+    @include prop(break-inside, (
+        a:    auto,
+        av:   avoid,
+        avpg: avoid-page,
+        avc:  avoid-column,
+        avr:  avoid-region,
+        i:    inherit,
+    ));
   }
 }

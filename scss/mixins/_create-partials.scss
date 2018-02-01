@@ -101,3 +101,7 @@
 ) {
   @include create-partials($values, $props, $pseudo-ids, $pseudos, false);
 }
+
+@mixin prop($props, $values) {
+  @include create-partials($values, $props);
+}

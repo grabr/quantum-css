@@ -1,7 +1,7 @@
 @include create-responsive-classes(fl) {
-  &#{$literal-separator} {
-    &l { float: left }
-    &r { float: right }
-    &n { float: none }
-  }
+  @include prop(float, (
+      l: left,
+      r: right,
+      n: none,
+  ));
 }

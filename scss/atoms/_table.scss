@@ -1,24 +1,28 @@
-.tb {
-  &l#{$literal-separator} {
-    &a { table-layout: auto }
-    &f { table-layout: fixed }
-  }
+.tbl {
+  @include prop(table-layout, (
+      a: auto,
+      f: fixed,
+  ));
 }
 
-.cps#{$literal-separator} {
-  &t { caption-side: top }
-  &b { caption-side: bottom }
+.cps {
+  @include prop(caption-side, (
+      t: top,
+      b: bottom,
+  ));
 }
 
-.ec#{$literal-separator} {
-  &s { empty-cells: show }
-  &h { empty-cells: hide }
+.ec {
+  @include prop(empty-cells, (
+      s: show,
+      h: hide,
+  ));
 }
 
-.bd {
-  &ce#{$literal-separator} {
-    &c { border-collapse: collapse }
-    &s { border-collapse: separate }
-    &i { border-collapse: inherit }
-  }
+.bdce {
+  @include prop(border-collapse, (
+      c: collapse,
+      s: separate,
+      i: inherit,
+  ));
 }

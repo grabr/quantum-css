@@ -1,15 +1,19 @@
 .fi {
   @include create-cartesian-partials($background-colors, fill);
 
-  &r#{$literal-separator} {
-    &nz { fill-rule: nonzero }
-    &eo { fill-rule: evenodd }
-    &i  { fill-rule: inherit }
+  &r {
+    @include prop(fill-rule, (
+        nz: nonzero,
+        eo: evenodd,
+        i:  inherit,
+    ));
   }
 
-  &op#{$ordinal-separator} {
+  &op {
     @for $opacity from 0 through 100 {
-      &#{$opacity} { fill-opacity: $opacity / 100 }
+      @include prop(fill-opacity, (
+          #{$opacity}: $opacity / 100
+      ));
     }
   }
 }

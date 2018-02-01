@@ -2,18 +2,20 @@
   &d { @include create-cartesian-partials($text-decorations, text-decoration) }
 
   &a {
-    &#{$literal-separator} {
-      &l { text-align: left }
-      &c { text-align: center }
-      &r { text-align: right }
-      &j { text-align: justify }
-    }
+    @include prop(text-align, (
+        l: left,
+        c: center,
+        r: right,
+        j: justify,
+    ));
 
-    &l#{$literal-separator} {
-      &l { text-align-last: left }
-      &c { text-align-last: center }
-      &r { text-align-last: right }
-      &j { text-align-last: justify }
+    &l {
+      @include prop(text-align-last, (
+          l: left,
+          c: center,
+          r: right,
+          j: justify,
+      ));
     }
   }
 }
@@ -21,34 +23,42 @@
 .t {
   &i { @include create-partials($text-indents, text-indent) }
 
-  &ds#{$literal-separator} {
-    &s  { text-decoration-style: solid }
-    &db { text-decoration-style: double }
-    &dt { text-decoration-style: dotted }
-    &ds { text-decoration-style: dashed }
-    &w  { text-decoration-style: wavy }
-    &i  { text-decoration-style: inherit }
+  &ds {
+    @include prop(text-decoration-style, (
+        s:  solid,
+        db: double,
+        dt: dotted,
+        ds: dashed,
+        w:  wavy,
+        i:  inherit,
+    ));
   }
 
-  &dsk#{$literal-separator} {
-    &n   { text-decoration-skip: none }
-    &o   { text-decoration-skip: objects }
-    &sp  { text-decoration-skip: spaces }
-    &i   { text-decoration-skip: ink }
-    &e   { text-decoration-skip: edges }
-    &bxd { text-decoration-skip: box-decoration }
+  &dsk {
+    @include prop(text-decoration-skip, (
+        n:   none,
+        o:   objects,
+        sp:  spaces,
+        i:   ink,
+        e:   edges,
+        bxd: box-decoration,
+    ));
   }
 
-  &t#{$literal-separator} {
-    &c  { text-transform: capitalize }
-    &u  { text-transform: uppercase }
-    &l  { text-transform: lowercase }
-    &n  { text-transform: none }
-    &fw { text-transform: full-width }
+  &t {
+    @include prop(text-transform, (
+        c:  capitalize,
+        u:  uppercase,
+        l:  lowercase,
+        n:  none,
+        fw: full-width,
+    ));
   }
 
-  &ov#{$literal-separator} {
-    &e { text-overflow: ellipsis }
-    &c { text-overflow: clip }
+  &ov {
+    @include prop(text-overflow, (
+        e: ellipsis,
+        c: clip,
+    ));
   }
 }

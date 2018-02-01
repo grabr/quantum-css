@@ -1,4 +1,6 @@
-.ve#{$literal-separator} {
-  &n   { vector-effect: none }
-  &nss { vector-effect: non-scaling-stroke }
+.ve {
+  @include prop(vector-effect, (
+      n:   none,
+      nss: non-scaling-stroke,
+  ));
 }

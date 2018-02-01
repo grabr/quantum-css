@@ -1,8 +1,8 @@
 .ls {
-  &#{$literal-separator} {
-    &n { letter-spacing: normal }
-    &i { letter-spacing: inherit }
-  }
+  @include prop(letter-spacing, (
+      n: normal,
+      i: inherit,
+  ));
 
   @include create-partials($letter-spacings, letter-spacing);
 }

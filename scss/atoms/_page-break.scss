@@ -1,22 +1,28 @@
 .pgb {
-  &b#{$literal-separator} {
-    &a  { page-break-before: auto }
-    &al { page-break-before: always }
-    &av { page-break-before: avoid }
-    &l  { page-break-before: left }
-    &r  { page-break-before: right }
+  &b {
+    @include prop(page-break-before, (
+        a:  auto,
+        al: always,
+        av: avoid,
+        l:  left,
+        r:  right,
+    ));
   }
 
-  &i#{$literal-separator} {
-    &a  { page-break-inside: auto }
-    &av { page-break-inside: avoid }
+  &i {
+    @include prop(page-break-inside, (
+        a:  auto,
+        av: avoid,
+    ));
   }
 
-  &a#{$literal-separator} {
-    &a  { page-break-after: auto }
-    &al { page-break-after: always }
-    &av { page-break-after: avoid }
-    &l  { page-break-after: left }
-    &r  { page-break-after: right }
+  &a {
+    @include prop(page-break-after, (
+        a:  auto,
+        al: always,
+        av: avoid,
+        l:  left,
+        r:  right,
+    ));
   }
 }

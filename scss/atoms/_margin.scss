@@ -2,10 +2,14 @@
   @include create-partials($margins, margin);
 
   &x, &r {
-    &#{$literal-separator}a { margin-right: auto }
+    @include prop(margin-right, (
+        a: auto,
+    ));
   }
   &x, &l {
-    &#{$literal-separator}a { margin-left: auto }
+    @include prop(margin-left, (
+        a: auto,
+    ));
   }
 
   &y, &t { @include create-partials($margins, margin-top) }

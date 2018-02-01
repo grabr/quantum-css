@@ -1,99 +1,108 @@
 @include create-responsive-classes(f) {
   &z {
-    &#{$literal-separator} {
-      &xxs { font-size: xx-small }
-      &xs  { font-size: x-small }
-      &s   { font-size: small }
-      &m   { font-size: medium }
-      &l   { font-size: large }
-      &xl  { font-size: x-large }
-      &xxl { font-size: xx-large }
-      &lr  { font-size: larger }
-      &sr  { font-size: smaller }
-      &i   { font-size: inherit }
-    }
-
-    @include create-partials($font-sizes, font-size);
+    @include prop(font-size, (
+        xxs: xx-small,
+        xs:  x-small,
+        s:   small,
+        m:   medium,
+        l:   large,
+        xl:  x-large,
+        xxl: xx-large,
+        lr:  larger,
+        sr:  smaller,
+        i:   inherit,
+    ));
+    @include prop(font-size, $font-sizes);
   }
 
   &f {
-    &#{$literal-separator} {
-      &s  { font-family: serif }
-      &ss { font-family: sans-serif }
-      &m  { font-family: monospace }
-      &c  { font-family: cursive }
-      &f  { font-family: fantasy }
-      &i  { font-family: inherit }
-    }
-
-    @include create-partials($font-families, font-family);
+    @include prop(font-size, (
+        s:  serif,
+        ss: sans-serif,
+        m:  monospace,
+        c:  cursive,
+        f:  fantasy,
+        i:  inherit,
+    ));
+    @include prop(font-family, $font-families);
   }
 
   &w {
-    &#{$ordinal-separator} {
-      @for $weight from 1 through 9 { // 100 … 900
-        &#{$weight * 100} { font-weight: $weight * 100 }
-      }
+    @for $weight from 1 through 9 { // 100 … 900
+      @include prop(font-weight, (
+          #{$weight * 100}: $weight * 100
+      ));
     }
-
-    &#{$literal-separator} {
-      &n  { font-weight: normal }
-      &b  { font-weight: bold }
-      &br { font-weight: bolder }
-      &lr { font-weight: lighter }
-      &i  { font-weight: inherit }
-    }
+    @include prop(font-weight, (
+        n:  normal,
+        b:  bold,
+        br: bolder,
+        lr: lighter,
+        i:  inherit,
+    ));
   }
 
-  &s#{$literal-separator} {
-    &n { font-style: normal }
-    &i { font-style: italic }
-    &o { font-style: oblique }
+  &s {
+    @include prop(font-style, (
+        n: normal,
+        i: italic,
+        o: oblique,
+    ));
   }
 }
 
 .f {
-  &v#{$literal-separator} {
-    &cl  { font-variant: common-ligatures }
-    &apc { font-variant: all-petite-caps }
-    &asc { font-variant: all-small-caps }
-    &sc  { font-variant: small-caps }
-    &c   { font-variant: contextual }
-    &df  { font-variant: diagonal-fractions }
-    &sf  { font-variant: stacked-fractions }
-    &hf  { font-variant: historical-forms }
-    &hl  { font-variant: historical-ligatures }
-    &i   { font-variant: inherit }
-    &n   { font-variant: normal }
-    &tn  { font-variant: tabular-nums }
-    &pn  { font-variant: proportional-nums }
-    &pw  { font-variant: proportional-width }
+  &v {
+    @include prop(font-style, (
+        cl:  common-ligatures,
+        apc: all-petite-caps,
+        asc: all-small-caps,
+        sc:  small-caps,
+        c:   contextual,
+        df:  diagonal-fractions,
+        sf:  stacked-fractions,
+        hf:  historical-forms,
+        hl:  historical-ligatures,
+        i:   inherit,
+        n:   normal,
+        tn:  tabular-nums,
+        pn:  proportional-nums,
+        pw:  proportional-width,
+    ));
   }
 
-  &za#{$literal-separator} {
-    &n { font-size-adjust: none }
+  &za {
+    @include prop(font-size-adjust, (
+        n: none,
+    ));
   }
 
-  &st#{$literal-separator} {
-    &n  { font-stretch: normal }
-    &uc { font-stretch: ultra-condensed }
-    &ec { font-stretch: extra-condensed }
-    &c  { font-stretch: condensed }
-    &sc { font-stretch: semi-condensed }
-    &se { font-stretch: semi-expanded }
-    &e  { font-stretch: expanded }
-    &ee { font-stretch: extra-expanded }
-    &ue { font-stretch: ultra-expanded }
+  &st {
+    @include prop(font-stretch, (
+        n:  normal,
+        uc: ultra-condensed,
+        ec: extra-condensed,
+        c:  condensed,
+        sc: semi-condensed,
+        se: semi-expanded,
+        e:  expanded,
+        ee: extra-expanded,
+        ue: ultra-expanded,
+    ));
   }
 }
 
-.-wfsm#{$literal-separator} {
-  &a  { -webkit-font-smoothing: antialiased }
-  &sa { -webkit-font-smoothing: subpixel-antialiased }
-  &n  { -webkit-font-smoothing: none }
+.-wfsm {
+  @include prop(-webkit-font-smoothing, (
+      a:  antialiased,
+      sa: subpixel-antialiased,
+      n:  none,
+  ));
 }
 
-.-mfsm#{$literal-separator} {
-  &a { -moz-osx-font-smoothing: auto }
-  &g { -moz-osx-font-smoothing: grayscale }
+.-mfsm {
+  @include prop(-moz-osx-font-smoothing, (
+      a: auto,
+      g: grayscale,
+  ));
 }

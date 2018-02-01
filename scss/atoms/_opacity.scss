@@ -1,5 +1,7 @@
-.op#{$ordinal-separator} {
+.op {
   @for $opacity from 0 through 100 {
-    &#{$opacity} { opacity: $opacity / 100 }
+    @include prop(opacity, (
+        #{$opacity}: $opacity / 100
+    ));
   }
 }
