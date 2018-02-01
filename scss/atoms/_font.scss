@@ -1,16 +1,16 @@
 @include create-responsive-classes(f) {
   &z {
     &#{$literal-separator} {
-      &xxs {font-size: xx-small }
-      &xs  {font-size: x-small }
-      &s   {font-size: small }
-      &m   {font-size: medium }
-      &l   {font-size: large }
-      &xl  {font-size: x-large }
-      &xxl {font-size: xx-large }
-      &lr  {font-size: larger }
-      &sr  {font-size: smaller }
-      &i   {font-size: inherit }
+      &xxs { font-size: xx-small }
+      &xs  { font-size: x-small }
+      &s   { font-size: small }
+      &m   { font-size: medium }
+      &l   { font-size: large }
+      &xl  { font-size: x-large }
+      &xxl { font-size: xx-large }
+      &lr  { font-size: larger }
+      &sr  { font-size: smaller }
+      &i   { font-size: inherit }
     }
 
     @include create-partials($font-sizes, font-size);
@@ -18,12 +18,12 @@
 
   &f {
     &#{$literal-separator} {
-      &s  {font-family: serif }
-      &ss {font-family: sans-serif }
-      &m  {font-family: monospace }
-      &c  {font-family: cursive }
-      &f  {font-family: fantasy }
-      &i  {font-family: inherit }
+      &s  { font-family: serif }
+      &ss { font-family: sans-serif }
+      &m  { font-family: monospace }
+      &c  { font-family: cursive }
+      &f  { font-family: fantasy }
+      &i  { font-family: inherit }
     }
 
     @include create-partials($font-families, font-family);
