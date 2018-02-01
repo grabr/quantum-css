@@ -56,8 +56,8 @@
         v:    verso,
         avc:  avoid-column,
         c:    column,
-        avr:  avoid-region,
-        r:    region,
+        avrg: avoid-region,
+        rg:   region,
         i:    inherit,
     ));
   }
@@ -75,8 +75,8 @@
         v:    verso,
         avc:  avoid-column,
         c:    column,
-        avr:  avoid-region,
-        r:    region,
+        avrg: avoid-region,
+        rg:   region,
         i:    inherit,
     ));
   }
@@ -87,7 +87,7 @@
         av:   avoid,
         avpg: avoid-page,
         avc:  avoid-column,
-        avr:  avoid-region,
+        avrg: avoid-region,
         i:    inherit,
     ));
   }
