@@ -7,7 +7,7 @@
     flex-wrap: wrap;
   }
 
-  @each $name in map-keys($media-queries) {
+  @each $name in map-keys($media_queries) {
     @include respond-to($name) {
       @include create-grid(map-get($grid-gutters, $name), map-get($grid-widths, $name));
     }

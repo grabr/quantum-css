@@ -1,0 +1,16 @@
+@mixin atoms() {
+  .foo {
+    bar: 123;
+  }
+}
+
+$schema: (
+  display:
+    atoms(d, $breakpoints, $hover, (
+      b: block
+    ))
+    atoms(d, null, null, (
+      b: block
+    ))
+);
+

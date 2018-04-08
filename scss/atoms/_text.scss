@@ -1,5 +1,5 @@
 @include create-responsive-classes(t) {
-  &d { @include create-cartesian-partials($text-decorations, text-decoration) }
+  &d { @include prop_ps(text-decoration, $text-decorations) }
 
   &a {
     @include prop(text-align, (

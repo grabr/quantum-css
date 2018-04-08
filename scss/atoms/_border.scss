@@ -1,25 +1,25 @@
-@include create-responsive-classes(bd) {
-  &c       { @include create-cartesian-partials($border-colors, border-color) }
-  &yc, &tc { @include create-cartesian-partials($border-colors, border-top-color) }
-  &xc, &rc { @include create-cartesian-partials($border-colors, border-right-color) }
-  &yc, &bc { @include create-cartesian-partials($border-colors, border-bottom-color) }
-  &xc, &lc { @include create-cartesian-partials($border-colors, border-left-color) }
+.bd {
+  &c       { @include prop_values(border-color) }
+  &yc, &tc { @include prop_values(border-top-color) }
+  &xc, &rc { @include prop_values(border-right-color) }
+  &yc, &bc { @include prop_values(border-bottom-color) }
+  &xc, &lc { @include prop_values(border-left-color) }
 
-  &w       { @include create-partials($border-widths, border-width) }
-  &yw, &tw { @include create-partials($border-widths, border-top-width) }
-  &xw, &rw { @include create-partials($border-widths, border-right-width) }
-  &yw, &bw { @include create-partials($border-widths, border-bottom-width) }
-  &xw, &lw { @include create-partials($border-widths, border-left-width) }
+  &w       { @include prop_values(border-width) }
+  &yw, &tw { @include prop_values(border-top-width) }
+  &xw, &rw { @include prop_values(border-right-width) }
+  &yw, &bw { @include prop_values(border-bottom-width) }
+  &xw, &lw { @include prop_values(border-left-width) }
 
-  &s       { @include create-partials($border-styles, border-style) }
-  &ys, &ts { @include create-partials($border-styles, border-top-style) }
-  &xs, &rs { @include create-partials($border-styles, border-right-style) }
-  &ys, &bs { @include create-partials($border-styles, border-bottom-style) }
-  &xs, &ls { @include create-partials($border-styles, border-left-style) }
+  &s       { @include prop_values(border-style) }
+  &ys, &ts { @include prop_values(border-top-style) }
+  &xs, &rs { @include prop_values(border-right-style) }
+  &ys, &bs { @include prop_values(border-bottom-style) }
+  &xs, &ls { @include prop_values(border-left-style) }
 
-  &r             { @include create-partials($border-radiuses, border-radius) }
-  &tr, &rr, &trr { @include create-partials($border-radiuses, border-top-right-radius) }
-  &tr, &lr, &tlr { @include create-partials($border-radiuses, border-top-left-radius) }
-  &br, &rr, &brr { @include create-partials($border-radiuses, border-bottom-right-radius) }
-  &br, &lr, &blr { @include create-partials($border-radiuses, border-bottom-left-radius) }
+  &r             { @include prop_values(border-radius) }
+  &tr, &rr, &trr { @include prop_values(border-top-right-radius) }
+  &tr, &lr, &tlr { @include prop_values(border-top-left-radius) }
+  &br, &rr, &brr { @include prop_values(border-bottom-right-radius) }
+  &br, &lr, &blr { @include prop_values(border-bottom-left-radius) }
 }

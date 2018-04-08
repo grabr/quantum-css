@@ -1,94 +1,28 @@
+//.c {
+//  @each $name in map-keys($media_queries) {
+//    @include respond-to($name) {
+//      @for $i from 1 through $col-count {
+//        &c {
+//          @include prop_values(column-gap, (
+//              $i: map-get($col-gaps, $name)
+//          ));
+//        }
+//      }
+//    }
+//  }
+//}
+
 .c {
-  @each $name in map-keys($media-queries) {
-    @include respond-to($name) {
-      @for $i from 1 through $col-count {
-        &c {
-          @include prop(column-gap, (
-              #{$i}: map-get($col-gaps, $name)
-          ));
-        }
-      }
-    }
-  }
+  &c  { @include prop_values(column-count) }
+  &fi { @include prop_values(column-fill) }
+  &s  { @include prop_values(column-span) }
+  &rc { @include prop_values(column-rule-color) }
+  &rw { @include prop_values(column-rule-width) }
+  &rs { @include prop_values(column-rule-style) }
 }
 
-@include create-responsive-classes(c) {
-  @for $i from 1 through $col-count {
-    &c {
-      @include prop(column-count, (
-          #{$i}: $i
-      ));
-    }
-  }
-
-  &fi {
-    @include prop(column-fill, (
-        a: auto,
-        b: balance,
-        i: inherit,
-    ));
-  }
-
-  &s {
-    @include prop(column-span, (
-        n:  none,
-        al: all,
-        i:  inherit,
-    ));
-  }
-
-  &rc { @include create-partials($border-colors, column-rule-color) }
-  &rw { @include create-partials($border-widths, column-rule-width) }
-  &rs { @include create-partials($border-styles, column-rule-style) }
-}
-
-@include create-responsive-classes(b) {
-  &a {
-    @include prop(break-after, (
-        a:    auto,
-        av:   avoid,
-        avpg: avoid-page,
-        pg:   page,
-        al:   always,
-        l:    left,
-        r:    right,
-        re:   recto,
-        v:    verso,
-        avc:  avoid-column,
-        c:    column,
-        avrg: avoid-region,
-        rg:   region,
-        i:    inherit,
-    ));
-  }
-
-  &b {
-    @include prop(break-before, (
-        a:    auto,
-        av:   avoid,
-        avpg: avoid-page,
-        pg:   page,
-        al:   always,
-        l:    left,
-        r:    right,
-        re:   recto,
-        v:    verso,
-        avc:  avoid-column,
-        c:    column,
-        avrg: avoid-region,
-        rg:   region,
-        i:    inherit,
-    ));
-  }
-
-  &i {
-    @include prop(break-inside, (
-        a:    auto,
-        av:   avoid,
-        avpg: avoid-page,
-        avc:  avoid-column,
-        avrg: avoid-region,
-        i:    inherit,
-    ));
-  }
+.b {
+  &a { @include prop_values(break-after) }
+  &b { @include prop_values(break-before) }
+  &i { @include prop_values(break-inside) }
 }

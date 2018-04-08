@@ -6,15 +6,15 @@
 
   &r {
     @include prop(transform, (
-        0: rotate(0deg),
+        0: 'rotate(0deg)',
     ));
 
     @for $i from 1 through 8 { // 45 … 360
       $angle: $i * 45;
 
       @include prop(transform, (
-          ccw#{$angle}d: rotate(-#{$angle}deg),
-          cw#{$angle}d:  rotate( #{$angle}deg),
+          ccw#{$angle}d: 'rotate(-#{$angle}deg)',
+          cw#{$angle}d:  'rotate( #{$angle}deg)',
       ));
     }
   }
@@ -24,7 +24,7 @@
       $scale: $i * 25;
 
       @include prop(transform, (
-          #{$scale}: scale(#{$scale / 100})
+          $scale: 'scale(#{$scale / 100})'
       ));
     }
   }
@@ -33,16 +33,29 @@
     @for $i from -4 through 4 { // -100% … 100%
       $shift: $i * 25;
 
+      $key:   $shift + 0p;
+      $value: $shift + 0%;
+
       @include prop(transform, (
-          #{$shift}p:  translate (#{$shift * 1%}, #{$shift * 1%}),
-          x#{$shift}p: translateX(#{$shift * 1%}),
-          y#{$shift}p: translateY(#{$shift * 1%}),
+          $key:  'translate(#{$value}, #{$value})',
       ));
+
+      &x {
+        @include prop(transform, (
+            $key: 'translateX(#{$value})',
+        ));
+      }
+
+      &y {
+        @include prop(transform, (
+            $key: 'translateY(#{$value})',
+        ));
+      }
     }
 
     &3d {
       @include prop(transform, (
-          0: translate3d(0, 0, 0),
+          0: 'translate3d(0, 0, 0)',
       ));
     }
   }

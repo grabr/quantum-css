@@ -1,7 +1,1 @@
-.bxz {
-  @include prop(box-sizing, (
-      cb: content-box,
-      bb: border-box,
-      i:  inherit,
-  ));
-}
+.bxz { @include prop_values(box-sizing) }

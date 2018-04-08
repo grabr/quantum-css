@@ -1,7 +1,1 @@
-@include create-responsive-classes(fl) {
-  @include prop(float, (
-      l: left,
-      r: right,
-      n: none,
-  ));
-}
+.fl { @include prop(float) }

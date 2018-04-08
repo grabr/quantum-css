@@ -11,7 +11,7 @@
       $duration: $i * 100ms;
 
       @include prop(transition-duration, (
-          #{$duration}: $duration
+          $duration: $duration
       ));
     }
   }

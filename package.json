@@ -31,10 +31,12 @@
     "test": "echo no tests specified; exit 0"
   },
   "devDependencies": {
+    "css-mqpacker": "^6.0.2",
+    "cssnano": "~3.8.0",
     "gulp": "~3.9.1",
-    "gulp-sass": "~3.0.0",
     "gulp-postcss": "~6.2.0",
+    "gulp-sass": "~3.0.0",
     "postcss-import": "~8.2.0",
-    "cssnano": "~3.8.0"
+    "postcss-merge-rules": "^2.1.2"
   }
 }

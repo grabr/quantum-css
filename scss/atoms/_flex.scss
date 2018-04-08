@@ -1,104 +1,35 @@
 @include create-responsive-classes(fx) {
+  &d { @include prop(flex-direction) }
+  &w { @include prop(flex-wrap) }
 
-  // Shorthands to create flex rows and columns by adding a single class name.
-  @include prop(display, (
-      r:  flex,
-      rr: flex,
-      c:  flex,
-      cr: flex,
-  ));
+  //&g {
+  //  @for $grow from 0 through 10 {
+  //    @include prop(flex-grow, (
+  //        $grow: $grow
+  //    ));
+  //  }
+  //}
+  //
+  //&s {
+  //  @for $shrink from 0 through 10 {
+  //    @include prop(flex-shrink, (
+  //        $shrink: $shrink
+  //    ));
+  //  }
+  //}
 
-  &,
-  &d {
-    @include prop(flex-direction, (
-        r:  row,
-        rr: row-reverse,
-        c:  column,
-        cr: column-reverse,
-    ));
-  }
-
-  &w {
-    @include prop(flex-wrap, (
-        nw: nowrap,
-        w:  wrap,
-        wr: wrap-reverse,
-    ));
-  }
-
-  &g {
-    @for $grow from 0 through 10 {
-      @include prop(flex-grow, (
-          #{$grow}: $grow
-      ));
-    }
-  }
-
-  &s {
-    @for $shrink from 0 through 10 {
-      @include prop(flex-shrink, (
-          #{$shrink}: $shrink
-      ));
-    }
-  }
-
-  &b {
-    @include prop(flex-basis, (
-        a:   auto,
-        mac: max-content,
-        mic: min-content,
-        fc:  fit-content,
-        c:   content,
-    ));
-  }
+  &b { @include prop(flex-basis) }
 }
 
-@include create-responsive-classes(jc) {
-  @include prop(justify-content, (
-      fs: flex-start,
-      fe: flex-end,
-      c:  center,
-      sb: space-between,
-      sa: space-around,
-  ));
-}
+.jc { @include prop(justify-content) }
+.ai { @include prop(align-items) }
+.ac { @include prop(align-content) }
+.as { @include prop(align-self) }
 
-@include create-responsive-classes(ai) {
-  @include prop(align-items, (
-      fs: flex-start,
-      fe: flex-end,
-      c:  center,
-      bs: baseline,
-      s:  stretch,
-  ));
-}
-
-@include create-responsive-classes(ac) {
-  @include prop(align-content, (
-      fs: flex-start,
-      fe: flex-end,
-      c:  center,
-      sb: space-between,
-      sa: space-around,
-      s:  stretch,
-  ));
-}
-
-@include create-responsive-classes(as) {
-  @include prop(align-self, (
-      a:  auto,
-      fs: flex-start,
-      fe: flex-end,
-      c:  center,
-      b:  baseline,
-      s:  stretch,
-  ));
-}
-
-@include create-responsive-classes(ord) {
-  @for $order from 0 through 10 {
-    @include prop(order, (
-        #{$order}: $order
-    ));
-  }
-}
+//@include create-responsive-classes(ord) {
+//  @for $order from 0 through 10 {
+//    @include prop(order, (
+//        $order: $order
+//    ));
+//  }
+//}

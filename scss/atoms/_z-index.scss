@@ -6,7 +6,7 @@
 
   @for $z-index from 0 through 10 { // 0 … 10
     @include prop(z-index, (
-        #{$z-index}: $z-index
+        $z-index: $z-index
     ));
   }
 }

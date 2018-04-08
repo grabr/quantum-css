@@ -1,108 +1,14 @@
-@include create-responsive-classes(f) {
-  &z {
-    @include prop(font-size, (
-        xxs: xx-small,
-        xs:  x-small,
-        s:   small,
-        m:   medium,
-        l:   large,
-        xl:  x-large,
-        xxl: xx-large,
-        lr:  larger,
-        sr:  smaller,
-        i:   inherit,
-    ));
-    @include prop(font-size, $font-sizes);
-  }
-
-  &f {
-    @include prop(font-size, (
-        s:  serif,
-        ss: sans-serif,
-        m:  monospace,
-        c:  cursive,
-        f:  fantasy,
-        i:  inherit,
-    ));
-    @include prop(font-family, $font-families);
-  }
-
-  &w {
-    @for $weight from 1 through 9 { // 100 … 900
-      @include prop(font-weight, (
-          #{$weight * 100}: $weight * 100
-      ));
-    }
-    @include prop(font-weight, (
-        n:  normal,
-        b:  bold,
-        br: bolder,
-        lr: lighter,
-        i:  inherit,
-    ));
-  }
-
-  &s {
-    @include prop(font-style, (
-        n: normal,
-        i: italic,
-        o: oblique,
-    ));
-  }
-}
-
 .f {
-  &v {
-    @include prop(font-style, (
-        cl:  common-ligatures,
-        apc: all-petite-caps,
-        asc: all-small-caps,
-        sc:  small-caps,
-        c:   contextual,
-        df:  diagonal-fractions,
-        sf:  stacked-fractions,
-        hf:  historical-forms,
-        hl:  historical-ligatures,
-        i:   inherit,
-        n:   normal,
-        tn:  tabular-nums,
-        pn:  proportional-nums,
-        pw:  proportional-width,
-    ));
-  }
+  @include prop(font);
 
-  &za {
-    @include prop(font-size-adjust, (
-        n: none,
-    ));
-  }
-
-  &st {
-    @include prop(font-stretch, (
-        n:  normal,
-        uc: ultra-condensed,
-        ec: extra-condensed,
-        c:  condensed,
-        sc: semi-condensed,
-        se: semi-expanded,
-        e:  expanded,
-        ee: extra-expanded,
-        ue: ultra-expanded,
-    ));
-  }
+  &z  { @include prop(font-size) }
+  &f  { @include prop(font-family) }
+  &w  { @include prop(font-weight) }
+  &s  { @include prop(font-style) }
+  &v  { @include prop(font-variant) }
+  &za { @include prop(font-size-adjust) }
+  &st { @include prop(font-stretch) }
 }
 
-.-wfsm {
-  @include prop(-webkit-font-smoothing, (
-      a:  antialiased,
-      sa: subpixel-antialiased,
-      n:  none,
-  ));
-}
-
-.-mfsm {
-  @include prop(-moz-osx-font-smoothing, (
-      a: auto,
-      g: grayscale,
-  ));
-}
+.-wfsm { @include prop(-webkit-font-smoothing)}
+.-mfsm { @include prop(-moz-osx-font-smoothing) }

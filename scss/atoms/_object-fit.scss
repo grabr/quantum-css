@@ -1,10 +1,1 @@
-.of {
-  @include prop(object-fit, (
-      n:  none,
-      f:  fill,
-      ct: contain,
-      cv: cover,
-      sd: scale-down,
-      i:  inherit,
-  ));
-}
+.of { @include prop(object-fit) }

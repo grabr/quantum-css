@@ -1,19 +1,8 @@
-@include create-responsive-classes(m) {
-  @include create-partials($margins, margin);
+.m {
+  @include prop_values(margin);
 
-  &x, &r {
-    @include prop(margin-right, (
-        a: auto,
-    ));
-  }
-  &x, &l {
-    @include prop(margin-left, (
-        a: auto,
-    ));
-  }
-
-  &y, &t { @include create-partials($margins, margin-top) }
-  &x, &r { @include create-partials($margins, margin-right) }
-  &y, &b { @include create-partials($margins, margin-bottom) }
-  &x, &l { @include create-partials($margins, margin-left) }
+  &y, &t { @include prop(margin-top) }
+  &x, &r { @include prop(margin-right) }
+  &y, &b { @include prop(margin-bottom) }
+  &x, &l { @include prop(margin-left) }
 }

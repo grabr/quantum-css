@@ -1,8 +1,1 @@
-.cl {
-  @include prop(clear, (
-      l: left,
-      r: right,
-      b: both,
-      n: none,
-  ));
-}
+.cl { @include prop_values(clear) }

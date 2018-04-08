@@ -1,0 +1,6 @@
+.fx {
+  &r  { @extend .d-fx, .fxd-r }
+  &rr { @extend .d-fx, .fxd-rr }
+  &c  { @extend .d-fx, .fxd-c }
+  &cr { @extend .d-fx, .fxd-cr }
+}

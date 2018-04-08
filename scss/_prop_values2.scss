@@ -1,0 +1,139 @@
+@function atoms($values, $media_queries: null, $suffixes: null) {
+  @return (
+    values: $values,
+    media_queries: $media_queries,
+    suffixes: $suffixes,
+  );
+}
+
+@function default_to($value, $default) {
+  @return if($value, $value, $default);
+}
+
+@function pick_prop_values($prop) {
+
+  $q: map_get($prop_values, $prop);
+
+  @debug type_of($q);
+
+  @return if($q, map_get($q, values), null);
+}
+
+@function pick_prop_suffixes($prop) {
+  $q: map_get($prop_values, $prop);
+  @return if($q, map_get($q, suffixes), null);
+}
+
+@function pick_prop_media_queries($prop) {
+  $q: map_get($prop_values, $prop);
+  @return if($q, map_get($q, media_queries), null);
+}
+
+@function last($list) {
+  @return nth($list, length($list));
+}
+
+@function slice($list, $start, $end: length($list) + 1) {
+  $result: ();
+  @if $end - 1 > $start {
+    @for $i from $start through $end - 1 {
+      $result: append($result, nth($list, $i));
+    }
+  }
+  @return $result;
+}
+
+@function value_separator($value_key) {
+  @return if(str_length(#{$value_key}) == 0, null, if(type_of($value_key) == string, $literal_separator, $ordinal_separator));
+}
+
+@mixin prop_media_query0($prop, $selector, $class, $media_query_key, $media_query) {
+  @if mixin_exists(prop_media_query) {
+    @include prop_media_query($prop, $selector, $class, $media_query_key, $media_query) {
+      @content;
+    }
+  } @else {
+    @at-root {
+      #{$selector} .#{if($media_query_key, #{$media_query_key}#{$query_separator}, null)}#{str_slice($class, 2)} {
+        @if $media_query {
+          @media #{$media_query} {
+            @content;
+          }
+        } @else {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+@mixin prop_media_queries($prop, $media_queries: pick_prop_media_queries($prop)) {
+  @if $media_queries {
+    @each $query_key, $query in $media_queries {
+      @each $selector in & {
+        $class: last($selector);
+        @if str_slice($class, 1, 1) == '.' {
+          @include prop_media_query0($prop, slice($selector, 1, length($selector)), $class, $query_key, $query) {
+            @content;
+          }
+        } @else {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin prop_suffix0($prop, $suffix_key, $suffix) {
+  @if mixin_exists(prop_suffix) {
+    @include prop_suffix($prop, $suffix_key, $suffix) {
+      @content;
+    }
+  } @else {
+    &#{if($suffix_key, #{$suffix_separator}#{$suffix_key}, null)}#{$suffix} {
+      @content;
+    }
+  }
+}
+
+@mixin prop_suffixes($prop, $suffixes: pick_prop_suffixes($prop)) {
+  @if $suffixes {
+    @each $suffix_key, $suffix_set in $suffixes {
+      @each $suffix in $suffix_set {
+        @include prop_suffix0($prop, $suffix_key, $suffix) {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin prop_value0($prop, $value_key, $value) {
+  @if mixin_exists(prop_value) {
+    @include prop_value($prop, $value) {
+      @content;
+    }
+  } @else {
+    &#{value_separator($value_key)}#{$value_key} {
+      @content;
+    }
+  }
+}
+
+@mixin prop_values($prop, $values: pick_prop_values($prop)) {
+  @if not index($ignore_props, $prop) {
+    @each $value_key, $value in $values {
+      @include prop_value0($prop, $value_key, $value) {
+        @include prop_suffixes($prop) {
+          @include prop_media_queries($prop) {
+            #{$prop}: if(type-of($value) == string, unquote($value), $value);
+          }
+        }
+      }
+    }
+  }
+}

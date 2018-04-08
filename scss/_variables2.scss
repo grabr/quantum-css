@@ -1,0 +1,595 @@
+// Atom Setup
+// ----------
+
+$query_separator: '_' !default;
+$literal_separator: '-' !default;
+$ordinal_separator: '' !default;
+$suffix_separator: '-' !default;
+
+// Grid
+// -------------
+$grid-col-count: 12 !default;
+
+$grid-gutters: (
+  null: 0,
+  SM: 20px,
+  MD: 20px,
+  LG: 20px,
+  XL: 20px,
+) !default;
+
+$grid-widths: (
+  null: 100%,
+  SM: 540px,
+  MD: 720px,
+  LG: 960px,
+  XL: 1140px,
+) !default;
+
+// Columns
+// -------------
+$col-count: $grid-col-count !default;
+
+$col-gaps: $grid-gutters !default;
+
+// Defaults
+// --------
+
+$suffixes: (
+  null: null,
+  hf: ':hover' ':focus',
+  h: ':hover',
+  f: ':focus',
+) !default;
+
+$media_queries: (
+  null: null,
+  SM: 'screen and (min-width: 576px)',
+  //MD: 'screen and (min-width: 768px)',
+  //LG: 'screen and (min-width: 992px)',
+  //XL: 'screen and (min-width: 1200px)',
+) !default;
+
+$palette: (
+  cc: currentColor,
+  tt: transparent,
+  // Greyscale
+  w: #fff,
+  g1: #eeeeec,
+  g2: #d3d7cf,
+  g3: #babdb6,
+  g4: #888a85,
+  g5: #555753,
+  g6: #2e3436,
+  b: #000,
+  // Yellow
+  ly: #fce94f,
+  y: #edd400,
+  dy: #c4a000,
+  // Orange
+  lo: #fcaf3e,
+  o: #f57900,
+  do: #ce5c00,
+  // Chocolate
+  lc: #e9b96e,
+  c: #c17d11,
+  dc: #8f5902,
+  // Green
+  lg: #8ae234,
+  g: #73d216,
+  dg: #4e9a06,
+  // Navy
+  ln: #729fcf,
+  n: #3465a4,
+  dn: #204a87,
+  // Purple
+  lp: #ad7f8a,
+  p: #75507b,
+  dp: #5c3566,
+  // Red
+  lr: #ef2929,
+  r: #cc0000,
+  dr: #a40000,
+  i: inherit,
+) !default;
+
+$colors: $palette !default;
+
+$background_colors: $palette !default;
+
+$border_colors: $palette !default;
+
+$border_widths: (
+  i: inherit,
+  1: 1px,
+) !default;
+
+$border_radiuses: (
+  i: inherit,
+  10: 10px,
+  5: 5px,
+  circle: 999px, // Circle
+) !default;
+
+$border_styles: (
+  n: none,
+  h: hidden,
+  dt: dotted,
+  ds: dashed,
+  s: solid,
+  db: double,
+  dtds: dot-dash,
+  dtdtds: dot-dot-dash,
+  w: wave,
+  g: groove,
+  r: ridge,
+  in: inset,
+  o: outset,
+  i: inherit,
+) !default;
+
+// Property Setup
+// --------------
+
+$ignore_props: () !default;
+
+$prop_values: (
+  // Background
+  background-color: atoms($palette, $media_queries, $suffixes),
+  background-attachment: atoms((
+    f: fixed,
+    s: scroll,
+  )),
+  background-clip: atoms((
+    bb: border-box,
+    pb: padding-box,
+    cb: content-box,
+    i: inherit,
+  )),
+  background-image: atoms((
+    n: none,
+    i: inherit,
+  )),
+  background-origin: atoms((
+    bb: border-box,
+    pb: padding-box,
+    cb: content-box,
+  )),
+  background-position: atoms((
+    tr: top right,
+    tc: top center,
+    tl: top left,
+    cr: center right,
+    cc: center center,
+    cl: center left,
+    br: bottom right,
+    bc: bottom center,
+    bl: bottom left,
+  )),
+  background-position-x: atoms((
+    r: right,
+    c: center,
+    l: left,
+  )),
+  background-position-y: atoms((
+    t: top,
+    c: center,
+    b: bottom,
+  )),
+  background-repeat: atoms((
+    n: no-repeat,
+    x: repeat-x,
+    y: repeat-y,
+    s: space,
+    r: round,
+  )),
+  background-size: atoms((
+    a: auto,
+    ct: contain,
+    cv: cover,
+  )),
+  // Border
+  border-color: atoms($border_colors, $media_queries, $suffixes),
+  border-top-color: atoms($border_colors, $media_queries, $suffixes),
+  border-right-color: atoms($border_colors, $media_queries, $suffixes),
+  border-bottom-color: atoms($border_colors, $media_queries, $suffixes),
+  border-left-color: atoms($border_colors, $media_queries, $suffixes),
+  border-width: atoms($border_widths, $media_queries),
+  border-top-width: atoms($border_widths, $media_queries),
+  border-right-width: atoms($border_widths, $media_queries),
+  border-bottom-width: atoms($border_widths, $media_queries),
+  border-left-width: atoms($border_widths, $media_queries),
+  border-style: atoms($border_styles, $media_queries),
+  border-top-style: atoms($border_styles, $media_queries),
+  border-right-style: atoms($border_styles, $media_queries),
+  border-bottom-style: atoms($border_styles, $media_queries),
+  border-left-style: atoms($border_styles, $media_queries),
+  border-radius: atoms($border_radiuses, $media_queries),
+  border-top-right-radius: atoms($border_radiuses, $media_queries),
+  border-top-left-radius: atoms($border_radiuses, $media_queries),
+  border-bottom-right-radius: atoms($border_radiuses, $media_queries),
+  border-bottom-left-radius: atoms($border_radiuses, $media_queries),
+  // Box Shadow
+  box-shadow: null,
+  // Box Sizing
+  box-sizing: atoms((
+    cb: content-box,
+    bb: border-box,
+    i: inherit,
+  )),
+  clear: atoms((
+    l: left,
+    r: right,
+    b: both,
+    n: none,
+  )),
+  color: atoms($colors, $media_queries, $suffixes),
+
+
+  column-count: null, //range(1, $col-count),
+  column-fill: atoms((
+    a: auto,
+    b: balance,
+    i: inherit,
+  )),
+  column-span: atoms((
+    n: none,
+    al: all,
+    i: inherit,
+  )),
+  column-rule-color: atoms($border_colors),
+  column-rule-width: atoms($border_widths),
+  column-rule-style: atoms($border_styles),
+  break-after: atoms((
+    a: auto,
+    av: avoid,
+    avpg: avoid-page,
+    pg: page,
+    al: always,
+    l: left,
+    r: right,
+    re: recto,
+    v: verso,
+    avc: avoid-column,
+    c: column,
+    avrg: avoid-region,
+    rg: region,
+    i: inherit,
+  )),
+  break-before: atoms((
+    a: auto,
+    av: avoid,
+    avpg: avoid-page,
+    pg: page,
+    al: always,
+    l: left,
+    r: right,
+    re: recto,
+    v: verso,
+    avc: avoid-column,
+    c: column,
+    avrg: avoid-region,
+    rg: region,
+    i: inherit,
+  )),
+  break-inside: atoms((
+    a: auto,
+    av: avoid,
+    avpg: avoid-page,
+    avc: avoid-column,
+    avrg: avoid-region,
+    i: inherit,
+  )),
+
+  cursor: atoms((
+    a:     auto,
+    d:     default,
+    cm:    context-menu,
+    h:     help,
+    p:     pointer,
+    ps:    progress,
+    w:     wait,
+    cl:    cell,
+    c:     crosshair,
+    t:     text,
+    al:    alias,
+    cp:    copy,
+    m:     move,
+    nd:    no-drop,
+    na:    not-allowed,
+    as:    all-scroll,
+    cr:    col-resize,
+    rr:    row-resize,
+    nr:    n-resize,
+    er:    e-resize,
+    sr:    s-resize,
+    wr:    w-resize,
+    ner:   ne-resize,
+    nwr:   nw-resize,
+    ser:   se-resize,
+    swr:   sw-resize,
+    ewr:   ew-resize,
+    nsr:   ns-resize,
+    neswr: nesw-resize,
+    nwser: nwse-resize,
+    zi:    zoom-in,
+    zo:    zoom-out,
+    g:     grab,
+    gr:    grabbing,
+    n:     none,
+  )),
+
+  display: atoms((
+    n:  none,
+    b:  block,
+    fx: flex,
+    li: list-item,
+    ri: run-in,
+
+    i:   inline,
+    itb: inline-table,
+    ifx: inline-flex,
+    ib:  inline-block,
+
+    tb:   table,
+    tbcp: table-caption,
+    tbc:  table-column,
+    tbcg: table-column-group,
+    tbhg: table-header-group,
+    tbfg: table-footer-group,
+    tbr:  table-row,
+    tbrg: table-row-group,
+    tbcl: table-cell,
+
+    rb:   ruby,
+    rbb:  ruby-base,
+    rbbc: ruby-base-container,
+    rbt:  ruby-text,
+    rbtc: ruby-text-container,
+  ), $media_queries),
+
+  fill: atoms($background-colors, null, $suffixes),
+  fill-rule: atoms((
+    nz: nonzero,
+    eo: evenodd,
+    i:  inherit,
+  )),
+  fill-opacity: null,//atoms(range(0, 100, 1))
+
+  flex-direction: atoms((
+    r:  row,
+    rr: row-reverse,
+    c:  column,
+    cr: column-reverse,
+  ), $media_queries),
+  flex-wrap: atoms((
+    nw: nowrap,
+    w:  wrap,
+    wr: wrap-reverse,
+  )),
+  flex-grow: null,
+  flex-shrink: null,
+  flex-basis: (
+    a:   auto,
+    mac: max-content,
+    mic: min-content,
+    fc:  fit-content,
+    c:   content,
+  ),
+  justify-content: atoms((
+    fs: flex-start,
+    fe: flex-end,
+    c:  center,
+    sb: space-between,
+    sa: space-around,
+  ), $media_queries),
+  align-items: atoms((
+    fs: flex-start,
+    fe: flex-end,
+    c:  center,
+    bs: baseline,
+    s:  stretch,
+  ), $media_queries),
+  align-content: atoms((
+    fs: flex-start,
+    fe: flex-end,
+    c:  center,
+    sb: space-between,
+    sa: space-around,
+    s:  stretch,
+  ), $media_queries),
+  align-self: atoms((
+    a:  auto,
+    fs: flex-start,
+    fe: flex-end,
+    c:  center,
+    b:  baseline,
+    s:  stretch,
+  )),
+  order: null,
+
+  float: atoms((
+    l: left,
+    r: right,
+    n: none,
+  )),
+
+  font: null,
+  font-size: atoms((
+    xxs: xx-small,
+    xs:  x-small,
+    s:   small,
+    m:   medium,
+    l:   large,
+    xl:  x-large,
+    xxl: xx-large,
+    lr:  larger,
+    sr:  smaller,
+    i:   inherit,
+  ), $media_queries),
+  font-family: atoms((
+    s:  serif,
+    ss: sans-serif,
+    m:  monospace,
+    c:  cursive,
+    f:  fantasy,
+    i:  inherit,
+  )),
+  font-weight: atoms((
+    n:  normal,
+    b:  bold,
+    br: bolder,
+    lr: lighter,
+    i:  inherit,
+  ), $media_queries),
+  font-style: atoms((
+    n: normal,
+    i: italic,
+    o: oblique,
+  )),
+  font-variant: atoms((
+    cl:  common-ligatures,
+    apc: all-petite-caps,
+    asc: all-small-caps,
+    sc:  small-caps,
+    c:   contextual,
+    df:  diagonal-fractions,
+    sf:  stacked-fractions,
+    hf:  historical-forms,
+    hl:  historical-ligatures,
+    i:   inherit,
+    n:   normal,
+    tn:  tabular-nums,
+    pn:  proportional-nums,
+    pw:  proportional-width,
+  )),
+  font-size-adjust: atoms((
+    n: none,
+  )),
+  font-stretch: atoms((
+    n:  normal,
+    uc: ultra-condensed,
+    ec: extra-condensed,
+    c:  condensed,
+    sc: semi-condensed,
+    se: semi-expanded,
+    e:  expanded,
+    ee: extra-expanded,
+    ue: ultra-expanded,
+  )),
+  -webkit-font-smoothing: atoms((
+    a:  antialiased,
+    sa: subpixel-antialiased,
+    n:  none,
+  )),
+  -moz-osx-font-smoothing: atoms((
+    a: auto,
+    g: grayscale,
+  )),
+
+  height: atoms($heights, $media_queries),
+  min-height: atoms($heights, $media_queries),
+  max-height: atoms(map_merge($heights, (n: none)), $media_queries),
+
+  letter-spacing: atoms((
+    n: normal,
+    i: inherit,
+  )),
+  line-height: atoms((
+    n: normal,
+    i: inherit,
+    0: 0,
+    1: 1,
+  ), $media_queries),
+  list-style: atoms((
+    n: none,
+    i: inherit,
+  )),
+  list-style-position: atoms((
+    in: inside,
+    o:  outside,
+    i:  inherit,
+  )),
+  list-style-type: atoms((
+    n:    none,
+    d:    disc,
+    c:    circle,
+    s:    square,
+    dc:   decimal,
+    dclz: decimal-leading-zero,
+    lr:   lower-roman,
+    ur:   upper-roman,
+    i:    inherit,
+  )),
+
+  margin: atoms($margins, $media_queries),
+  margin-right: atoms(map_merge($margins, (a: auto)), $media_queries),
+  margin-left: atoms(map_merge($margins, (a: auto)), $media_queries),
+  margin-top: atoms($margins, $media_queries),
+  margin-bottom: atoms($margins, $media_queries),
+
+  object-fit: atoms((
+    n:  none,
+    f:  fill,
+    ct: contain,
+    cv: cover,
+    sd: scale-down,
+    i:  inherit,
+  )),
+
+  opacity: null,
+
+  overflow: atoms((
+    v: visible,
+    h: hidden,
+    s: scroll,
+    a: auto,
+  ), $media_queries),
+  overflow-x: atoms((
+    v: visible,
+    h: hidden,
+    s: scroll,
+    a: auto,
+  ), $media_queries),
+  overflow-y: atoms((
+    v: visible,
+    h: hidden,
+    s: scroll,
+    a: auto,
+  ), $media_queries),
+  overflow-wrap: atoms((
+    n: normal,
+    b: break-word,
+  ), $media_queries),
+  -webkit-overflow-scrolling: atoms((
+    t: touch,
+    a: auto,
+  )),
+
+  padding: atoms($paddings, $media_queries),
+  padding-right: atoms($paddings, $media_queries),
+  padding-left: atoms($paddings, $media_queries),
+  padding-top: atoms($paddings, $media_queries),
+  padding-bottom: atoms(map_merge($paddings, (100p: 100%)), $media_queries),
+
+  page-break-before: atoms((
+    a:  auto,
+    al: always,
+    av: avoid,
+    l:  left,
+    r:  right,
+  )),
+
+  page-break-inside: atoms((
+    a:  auto,
+    av: avoid,
+  )),
+  page-break-after: atoms((
+    a:  auto,
+    al: always,
+    av: avoid,
+    l:  left,
+    r:  right,
+  ))
+
+) !default;

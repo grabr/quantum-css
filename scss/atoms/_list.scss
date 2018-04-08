@@ -1,28 +1,6 @@
 .lis {
-  @include prop(list-style, (
-      n: none,
-      i: inherit,
-  ));
+  @include prop(list-style);
 
-  &p {
-    @include prop(list-style-position, (
-        in: inside,
-        o:  outside,
-        i:  inherit,
-    ));
-  }
-
-  &t {
-    @include prop(list-style-type, (
-        n:    none,
-        d:    disc,
-        c:    circle,
-        s:    square,
-        dc:   decimal,
-        dclz: decimal-leading-zero,
-        lr:   lower-roman,
-        ur:   upper-roman,
-        i:    inherit,
-    ));
-  }
+  &p { @include prop(list-style-position) }
+  &t { @include prop(list-style-type) }
 }

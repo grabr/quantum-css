@@ -1,1 +1,1 @@
-.bxs { @include create-cartesian-partials($box-shadows, box-shadow) }
+.bxs { @include prop_values(box-shadow) }

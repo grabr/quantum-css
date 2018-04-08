@@ -1,4 +1,4 @@
-@mixin respond-to($name, $media-queries: $media-queries) {
+@mixin respond-to($name, $media-queries: $media_queries) {
   $media: map-get($media-queries, $name);
   @if $media {
     @media #{$media} { @content }
@@ -8,8 +8,8 @@
 
 @mixin create-responsive-classes(
   $class,
-  $names: map-keys($media-queries),
-  $media-queries: $media-queries
+  $names: map-keys($media_queries),
+  $media-queries: $media_queries
 ) {
   @each $name in $names {
     @include respond-to($name, $media-queries) {
@@ -20,13 +20,30 @@
   }
 }
 
+@mixin create_res(
+  $prop
+) {
+  @if (index($responsive_props, $prop)) {
+    @at-root {
+      @include create-responsive-classes(str_slice(#{&}, 2)) {
+        @content;
+      }
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
 // Generates cartesian product of `$props` and `$value`.
 //
 // $props - list of CSS property names.
 // $value - value to assign to each property.
 @mixin spread-properties($props, $value) {
   @each $prop in $props {
-    #{$prop}: $value;
+    @include create_res($prop) {
+      #{$prop}: if(type-of($value) == string, unquote($value), $value);
+    }
   }
 }
 
@@ -104,4 +121,8 @@
 
 @mixin prop($props, $values) {
   @include create-partials($values, $props);
+}
+
+@mixin prop_ps($props, $values) {
+  @include create-cartesian-partials($values, $props);
 }

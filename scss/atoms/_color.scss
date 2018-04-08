@@ -1,1 +1,1 @@
-@include create-responsive-classes(c) { @include create-cartesian-partials($colors, color) }
+.c { @include prop_values(color) }

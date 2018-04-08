@@ -1,84 +1,17 @@
-@include create-responsive-classes(bg) {
-  &c { @include create-cartesian-partials($background-colors, background-color) }
-}
-
 .bg {
-  &a {
-    @include prop(background-attachment, (
-        f: fixed,
-        s: scroll,
-    ));
-  }
-
-  &cp {
-    @include prop(background-clip, (
-        bb: border-box,
-        pb: padding-box,
-        cb: content-box,
-        i:  inherit,
-    ));
-  }
-
-  &i {
-    @include prop(background-image, (
-        n: none,
-        i: inherit,
-    ));
-  }
-
-  &o {
-    @include prop(background-origin, (
-        bb: border-box,
-        pb: padding-box,
-        cb: content-box,
-    ));
-  }
+  &c  { @include prop_values(background-color) }
+  &a  { @include prop_values(background-attachment) }
+  &cp { @include prop_values(background-clip) }
+  &i  { @include prop_values(background-image) }
+  &o  { @include prop_values(background-origin) }
 
   &p {
-    @include prop(background-position, (
-        tr: top right,
-        tc: top center,
-        tl: top left,
-        cr: center right,
-        cc: center center,
-        cl: center left,
-        br: bottom right,
-        bc: bottom center,
-        bl: bottom left,
-    ));
+    @include prop_values(background-position);
 
-    &x {
-      @include prop(background-position-x, (
-          r: right,
-          c: center,
-          l: left,
-      ));
-    }
-
-    &y {
-      @include prop(background-position-y, (
-          t: top,
-          c: center,
-          b: bottom,
-      ));
-    }
+    &x { @include prop_values(background-position-x) }
+    &y { @include prop_values(background-position-y) }
   }
 
-  &r {
-    @include prop(background-repeat, (
-        n: no-repeat,
-        x: repeat-x,
-        y: repeat-y,
-        s: space,
-        r: round,
-    ));
-  }
-
-  &z {
-    @include prop(background-size, (
-        a:  auto,
-        ct: contain,
-        cv: cover,
-    ));
-  }
+  &r { @include prop_values(background-repeat) }
+  &z { @include prop_values(background-size) }
 }

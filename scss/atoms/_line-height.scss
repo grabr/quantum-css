@@ -1,10 +1,1 @@
-@include create-responsive-classes(lh) {
-  @include prop(line-height, (
-      n: normal,
-      i: inherit,
-      0: 0,
-      1: 1,
-  ));
-
-  @include create-partials($line-heights, line-height);
-}
+.lh { @include prop(line-height) }

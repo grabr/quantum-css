@@ -1,19 +1,13 @@
 .fi {
-  @include create-cartesian-partials($background-colors, fill);
+  @include prop_values(fill);
 
-  &r {
-    @include prop(fill-rule, (
-        nz: nonzero,
-        eo: evenodd,
-        i:  inherit,
-    ));
-  }
+  &r { @include prop_values(fill-rule) }
 
-  &op {
-    @for $opacity from 0 through 100 {
-      @include prop(fill-opacity, (
-          #{$opacity}: $opacity / 100
-      ));
-    }
-  }
+  //&op {
+  //  @for $opacity from 0 through 100 {
+  //    @include prop(fill-opacity, (
+  //        $opacity: $opacity / 100
+  //    ));
+  //  }
+  //}
 }

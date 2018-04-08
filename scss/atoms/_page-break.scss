@@ -1,28 +1,5 @@
 .pgb {
-  &b {
-    @include prop(page-break-before, (
-        a:  auto,
-        al: always,
-        av: avoid,
-        l:  left,
-        r:  right,
-    ));
-  }
-
-  &i {
-    @include prop(page-break-inside, (
-        a:  auto,
-        av: avoid,
-    ));
-  }
-
-  &a {
-    @include prop(page-break-after, (
-        a:  auto,
-        al: always,
-        av: avoid,
-        l:  left,
-        r:  right,
-    ));
-  }
+  &b { @include prop(page-break-before) }
+  &i { @include prop(page-break-inside) }
+  &a { @include prop(page-break-after) }
 }

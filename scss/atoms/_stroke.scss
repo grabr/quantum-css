@@ -1,7 +1,7 @@
 .st {
-  @include create-cartesian-partials($border-colors, stroke);
+  @include prop_ps(stroke, $border_colors);
 
-  &w { @include create-partials($border-widths, stroke-width) }
+  &w { @include create-partials($border_widths, stroke-width) }
 
   &lc {
     @include prop(stroke-linecap, (
@@ -22,7 +22,7 @@
   &op {
     @for $opacity from 0 through 100 {
       @include prop(stroke-opacity, (
-          #{$opacity}: $opacity / 100
+          $opacity: $opacity / 100
       ));
     }
   }
