@@ -31,12 +31,12 @@
   }
 
   &dsk#{$literal-separator} {
-    &n   { text-decoration-skip-ink: none }
-    &o   { text-decoration-skip-ink: objects }
-    &sp  { text-decoration-skip-ink: spaces }
-    &i   { text-decoration-skip-ink: ink }
-    &e   { text-decoration-skip-ink: edges }
-    &bxd { text-decoration-skip-ink: box-decoration }
+    &n   { text-decoration-skip: none }
+    &o   { text-decoration-skip: objects }
+    &sp  { text-decoration-skip: spaces }
+    &i   { text-decoration-skip-ink: auto }
+    &e   { text-decoration-skip: edges }
+    &bxd { text-decoration-skip: box-decoration }
   }
 
   &t#{$literal-separator} {
