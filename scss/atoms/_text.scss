@@ -34,7 +34,7 @@
     &n   { text-decoration-skip: none }
     &o   { text-decoration-skip: objects }
     &sp  { text-decoration-skip: spaces }
-    &i   { text-decoration-skip: ink }
+    &i   { text-decoration-skip-ink: auto }
     &e   { text-decoration-skip: edges }
     &bxd { text-decoration-skip: box-decoration }
   }
